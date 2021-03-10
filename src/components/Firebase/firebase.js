@@ -19,7 +19,20 @@ class Firebase {
     this.serverValue = app.database.ServerValue;
     this.auth = app.auth();
     this.db = app.database();
+
+
+    /* let ref = this.db.ref('profile')  BY PATHUM FoR TESTING PURPOSE
+    let data = {
+      fav_player: "PathumNew",
+      fav_team: "SL",
+      uid: "testUid"
+    }
+
+    ref.push(data); */
   }
+
+
+
   //*** Auth API ***/
   doCreateUserWithEmailAndPassword = (email, password) =>
     this.auth.createUserWithEmailAndPassword(email, password);
