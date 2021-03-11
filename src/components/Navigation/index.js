@@ -21,7 +21,11 @@ const Ul = styled.ul`
   justify-content: flex-end;
   align-items: center;
   list-style: none;
-  background-color: #50c818;
+  background: rgb(32,224,63);
+background: -moz-linear-gradient(0deg, rgba(32,224,63,1) 0%, rgba(31,119,22,1) 100%);
+background: -webkit-linear-gradient(0deg, rgba(32,224,63,1) 0%, rgba(31,119,22,1) 100%);
+background: linear-gradient(0deg, rgba(32,224,63,1) 0%, rgba(31,119,22,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#20e03f",endColorstr="#1f7716",GradientType=1);
   height: 100%;
   font-size: 1.2rem;
   & > li {
