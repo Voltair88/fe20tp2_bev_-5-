@@ -12,6 +12,7 @@ const AccountPage = () => (
         <PasswordForgetForm />
         <PasswordChangeForm />
         <UserProfile />
+        {console.log(authUser.uid)}
       </div>
     )}
   </AuthUserContext.Consumer>

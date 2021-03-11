@@ -21,7 +21,7 @@ class Firebase {
     this.db = app.database();
 
 
-    /* let ref = this.db.ref('profile')  BY PATHUM FoR TESTING PURPOSE
+    /* let ref = this.db.ref('profile')
     let data = {
       fav_player: "PathumNew",
       fav_team: "SL",
@@ -79,5 +79,11 @@ class Firebase {
   // *** Message API ***
   message = (uid) => this.db.ref(`messages/${uid}`);
   messages = () => this.db.ref("messages");
+
+
+  // *** Profile API ****
+  profile = () => this.db.ref(`profile`);
+  /* profile = (uid) => this.db.ref(`profile/${uid}`); */
+
 }
 export default Firebase;
