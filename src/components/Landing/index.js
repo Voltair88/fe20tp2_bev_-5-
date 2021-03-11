@@ -23,10 +23,19 @@ const H1 = styled.h1`
   font-size: 3rem;
   margin-top: -8vw;
   padding: 1rem;
+
+  @media screen and (max-width: 768px) {
+    font-size: 2.1rem;
+  }
 `;
 
 const P = styled.p`
   font-size: 1.4rem;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.2rem;
+    padding: 0 1rem;
+  }
 `;
 
 const Landing = () => {
