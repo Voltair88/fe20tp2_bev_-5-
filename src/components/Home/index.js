@@ -2,12 +2,12 @@ import { AuthUserContext, withAuthorization } from "../Session";
 import React, { Component } from "react";
 import { withFirebase } from "../Firebase";
 
-const HomePage = () => {
+const HomePage = ({ scorers }) => {
   return (
     <div>
       <h1>Home</h1>
       <p>The Home Page is accessible by every signed in user.</p>
-
+      <ScorersList scorers={scorers} />
       {/* <Messages /> */}
     </div>
   );
@@ -210,6 +210,19 @@ class MessageItem extends Component {
 }
 
 const Messages = withFirebase(MessagesBase);
+
+const ScorersList = ({ scorers }) => {
+  return (
+    <ul>
+      {scorers.map((item, index) => (
+        <li key={index}>
+          <span>player: {item.player.name}</span>
+          <span>Number of goals:{item.numberOfGoals}</span>
+        </li>
+      ))}
+    </ul>
+  );
+};
 
 const condition = (authUser) => !!authUser;
 export default withAuthorization(condition)(HomePage);
