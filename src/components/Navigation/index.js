@@ -4,9 +4,39 @@ import * as ROUTES from "../../constants/routes";
 import * as ROLES from "../../constants/roles";
 import SignOutButton from "../SignOut";
 
+import styled from "styled-components";
+
+const Navbar = styled.div`
+  width: 100%;
+  height: 8vh;
+`;
+
+const Ul = styled.ul`
+  margin: 0;
+  padding-right: 2.5rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
+  background-color: #50c818;
+  height: 100%;
+  font-size: 1.2rem;
+  & > li {
+    padding: 1rem;
+  }
+`;
+
+const NavLink = styled(Link)`
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+`;
+
 const Navigation = () => {
   return (
-    <div>
+    <Navbar>
       <AuthUserContext.Consumer>
         {(authUser) =>
           authUser ? (
@@ -16,40 +46,40 @@ const Navigation = () => {
           )
         }
       </AuthUserContext.Consumer>
-    </div>
+    </Navbar>
   );
 };
 
 const NavigationAuth = ({ authUser }) => (
-  <ul>
+  <Ul>
     <li>
-      <Link to={ROUTES.LANDING}>Landing</Link>
+      <NavLink to={ROUTES.LANDING}>Landing</NavLink>
     </li>
     <li>
-      <Link to={ROUTES.HOME}>Home</Link>
+      <NavLink to={ROUTES.HOME}>Home</NavLink>
     </li>
     <li>
-      <Link to={ROUTES.ACCOUNT}>Account</Link>
+      <NavLink to={ROUTES.ACCOUNT}>Account</NavLink>
     </li>
     {!!authUser.roles[ROLES.ADMIN] && (
       <li>
-        <Link to={ROUTES.ADMIN}>Admin</Link>
+        <NavLink to={ROUTES.ADMIN}>Admin</NavLink>
       </li>
     )}
     <li>
       <SignOutButton />
     </li>
-  </ul>
+  </Ul>
 );
 const NavigationNonAuth = () => (
-  <ul>
+  <Ul>
     <li>
-      <Link to={ROUTES.LANDING}>Landing</Link>
+      <NavLink to={ROUTES.LANDING}>Landing</NavLink>
     </li>
     <li>
-      <Link to={ROUTES.SIGN_IN}>Sign In</Link>
+      <NavLink to={ROUTES.SIGN_IN}>Sign In</NavLink>
     </li>
-  </ul>
+  </Ul>
 );
 
 export default Navigation;
