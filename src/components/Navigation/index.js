@@ -21,7 +21,7 @@ const Ul = styled.ul`
   justify-content: flex-end;
   align-items: center;
   list-style: none;
-  background: rgb(32,224,63);
+  background: rgb(33,224,63);
 background: -moz-linear-gradient(0deg, rgba(32,224,63,1) 0%, rgba(31,119,22,1) 100%);
 background: -webkit-linear-gradient(0deg, rgba(32,224,63,1) 0%, rgba(31,119,22,1) 100%);
 background: linear-gradient(0deg, rgba(32,224,63,1) 0%, rgba(31,119,22,1) 100%);
