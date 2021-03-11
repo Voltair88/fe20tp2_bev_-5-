@@ -21,7 +21,12 @@ const Ul = styled.ul`
   justify-content: flex-end;
   align-items: center;
   list-style: none;
-  background-color: #50c818;
+  background: rgb(32, 224, 63);
+  background: linear-gradient(
+    0deg,
+    rgba(32, 224, 63, 1) 0%,
+    rgba(31, 119, 22, 1) 100%
+  );
   height: 100%;
   font-size: 1.2rem;
   & > li {
