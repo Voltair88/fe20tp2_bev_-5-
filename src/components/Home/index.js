@@ -1,12 +1,15 @@
 import { AuthUserContext, withAuthorization } from "../Session";
 import React, { Component } from "react";
 import { withFirebase } from "../Firebase";
+import Player from "../Player";
+import Team from "../Team";
 
-const HomePage = ({ scorers }) => {
+const HomePage = ({ scorers, team }) => {
   return (
     <div>
       <h1>Home</h1>
       <p>The Home Page is accessible by every signed in user.</p>
+      <Team team={team} />
       <ScorersList scorers={scorers} />
       {/* <Messages /> */}
     </div>
@@ -216,7 +219,7 @@ const ScorersList = ({ scorers }) => {
     <ul>
       {scorers.map((item, index) => (
         <li key={index}>
-          <span>player: {item.player.name}</span>
+          <Player player={item.player} />
           <span>Number of goals:{item.numberOfGoals}</span>
         </li>
       ))}
