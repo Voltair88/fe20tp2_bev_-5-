@@ -2,14 +2,12 @@ import { AuthUserContext, withAuthorization } from "../Session";
 import React, { Component } from "react";
 import { withFirebase } from "../Firebase";
 import Player from "../Player";
-import Team from "../Team";
 
 const HomePage = ({ scorers, team }) => {
   return (
     <div>
       <h1>Home</h1>
       <p>The Home Page is accessible by every signed in user.</p>
-      <Team team={team} />
       <ScorersList scorers={scorers} />
       {/* <Messages /> */}
     </div>
