@@ -1,6 +1,8 @@
 import { AuthUserContext, withAuthorization } from "../Session";
 import React, { Component } from "react";
 import { withFirebase } from "../Firebase";
+
+import Player from "../Player";
 import styled from "styled-components";
 
 const Background = styled.main`
@@ -36,7 +38,7 @@ const Content = styled.div`
   height: 92vh;
 `;
 
-const HomePage = () => {
+const HomePage = ({ scorers }) => {
   return (
     <Background>
       <Blur>
@@ -44,7 +46,7 @@ const HomePage = () => {
           <Content>
             <h1>Home</h1>
             <p>The Home Page is accessible by every signed in user.</p>
-
+            <ScorersList scorers={scorers} />
             {/* <Messages /> */}
           </Content>
         </Main>
@@ -250,6 +252,19 @@ class MessageItem extends Component {
 }
 
 const Messages = withFirebase(MessagesBase);
+
+const ScorersList = ({ scorers }) => {
+  return (
+    <ul>
+      {scorers.map((item, index) => (
+        <li key={index}>
+          <Player player={item.player} />
+          <span>Number of goals:{item.numberOfGoals}</span>
+        </li>
+      ))}
+    </ul>
+  );
+};
 
 const condition = (authUser) => !!authUser;
 export default withAuthorization(condition)(HomePage);
