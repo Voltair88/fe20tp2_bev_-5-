@@ -2,14 +2,56 @@ import { AuthUserContext, withAuthorization } from "../Session";
 import React, { Component } from "react";
 import { withFirebase } from "../Firebase";
 
-const HomePage = () => {
-  return (
-    <div>
-      <h1>Home</h1>
-      <p>The Home Page is accessible by every signed in user.</p>
+import Player from "../Player";
+import styled from "styled-components";
 
-      <Messages />
-    </div>
+const Background = styled.main`
+  background-color: #e8e8e8;
+  background-image: url("https://images.unsplash.com/photo-1459865264687-595d652de67e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+`;
+
+const Blur = styled.main`
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  height: auto;
+  width: 100%;
+`;
+
+const Main = styled.main`
+  box-sizing: border-box;
+  display: flex;
+  font-family: "Poppins", sans-serif;
+  width: 100%;
+  height: 92vh;
+`;
+
+const Content = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  height: 92vh;
+`;
+
+const HomePage = ({ scorers }) => {
+  return (
+    <Background>
+      <Blur>
+        <Main>
+          <Content>
+            <h1>Home</h1>
+            <p>The Home Page is accessible by every signed in user.</p>
+            <ScorersList scorers={scorers} />
+            {/* <Messages /> */}
+          </Content>
+        </Main>
+      </Blur>
+    </Background>
   );
 };
 
@@ -210,6 +252,19 @@ class MessageItem extends Component {
 }
 
 const Messages = withFirebase(MessagesBase);
+
+const ScorersList = ({ scorers }) => {
+  return (
+    <ul>
+      {scorers.map((item, index) => (
+        <li key={index}>
+          <Player player={item.player} />
+          <span>Number of goals:{item.numberOfGoals}</span>
+        </li>
+      ))}
+    </ul>
+  );
+};
 
 const condition = (authUser) => !!authUser;
 export default withAuthorization(condition)(HomePage);

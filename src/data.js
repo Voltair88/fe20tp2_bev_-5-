@@ -1,4 +1,4 @@
-const LEAGUES_DATA = {
+export const LEAGUES_DATA = {
   count: 152,
   filters: {},
   competitions: [
@@ -3465,7 +3465,8 @@ const LEAGUES_DATA = {
     },
   ],
 };
-const CL_TEAMS_DATA = {
+
+export const CL_TEAMS_DATA = {
   count: 79,
   filters: {},
   competition: {
@@ -4994,7 +4995,12342 @@ const CL_TEAMS_DATA = {
   ],
 };
 
-const TEAM_DATA = {
+export const CL_MATCH_DATA = {
+  count: 165,
+  filters: {},
+  competition: {
+    id: 2001,
+    area: {
+      id: 2077,
+      name: "Europe",
+    },
+    name: "UEFA Champions League",
+    code: "CL",
+    plan: "TIER_ONE",
+    lastUpdated: "2021-03-11T02:55:03Z",
+  },
+  matches: [
+    {
+      id: 310551,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-08-08T13:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "PRELIMINARY_SEMI_FINALS",
+      group: "Preliminary Semi-finals",
+      lastUpdated: "2020-12-17T15:30:06Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 2,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 7473,
+        name: "SP Tre Fiori",
+      },
+      awayTeam: {
+        id: 1896,
+        name: "Linfield FC",
+      },
+      referees: [],
+    },
+    {
+      id: 310552,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-08-08T16:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "PRELIMINARY_SEMI_FINALS",
+      group: "Preliminary Semi-finals",
+      lastUpdated: "2020-12-17T15:30:06Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 2,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 2,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 7282,
+        name: "Drita KF Gjilan",
+      },
+      awayTeam: {
+        id: 8912,
+        name: "Inter Club d'Escaldes",
+      },
+      referees: [],
+    },
+    {
+      id: 310553,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-08-11T16:00:00Z",
+      status: "AWARDED",
+      matchday: null,
+      stage: "PRELIMINARY_FINAL",
+      group: "Preliminary Final",
+      lastUpdated: "2020-09-02T19:30:09Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 3,
+        },
+        halfTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 7282,
+        name: "Drita KF Gjilan",
+      },
+      awayTeam: {
+        id: 1896,
+        name: "Linfield FC",
+      },
+      referees: [],
+    },
+    {
+      id: 310554,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-08-18T16:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "1ST_QUALIFYING_ROUND",
+      group: "1st Qualifying Round",
+      lastUpdated: "2020-12-17T15:30:06Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 4,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 2,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 611,
+        name: "Qarabağ Ağdam FK",
+      },
+      awayTeam: {
+        id: 8920,
+        name: "FK Sileks",
+      },
+      referees: [],
+    },
+    {
+      id: 310555,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-08-18T17:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "1ST_QUALIFYING_ROUND",
+      group: "1st Qualifying Round",
+      lastUpdated: "2020-12-17T15:30:07Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 1,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 1105,
+        name: "Legia Warszawa",
+      },
+      awayTeam: {
+        id: 1896,
+        name: "Linfield FC",
+      },
+      referees: [],
+    },
+    {
+      id: 310556,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-08-18T18:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "1ST_QUALIFYING_ROUND",
+      group: "1st Qualifying Round",
+      lastUpdated: "2020-12-17T15:30:07Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 6,
+          awayTeam: 3,
+        },
+        halfTime: {
+          homeTeam: 4,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 7518,
+        name: "FK Dinamo Brest",
+      },
+      awayTeam: {
+        id: 1884,
+        name: "Astana FK",
+      },
+      referees: [],
+    },
+    {
+      id: 310557,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-08-18T18:45:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "1ST_QUALIFYING_ROUND",
+      group: "1st Qualifying Round",
+      lastUpdated: "2020-12-14T14:30:07Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 6,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 3,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 732,
+        name: "Celtic FC",
+      },
+      awayTeam: {
+        id: 5947,
+        name: "KR Reykjavík",
+      },
+      referees: [],
+    },
+    {
+      id: 310558,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-08-18T19:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "1ST_QUALIFYING_ROUND",
+      group: "1st Qualifying Round",
+      lastUpdated: "2020-12-17T15:30:07Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 5,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 2,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 7283,
+        name: "FK Crvena Zvezda",
+      },
+      awayTeam: {
+        id: 1874,
+        name: "Europa FC",
+      },
+      referees: [],
+    },
+    {
+      id: 310559,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-08-19T15:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "1ST_QUALIFYING_ROUND",
+      group: "1st Qualifying Round",
+      lastUpdated: "2020-09-02T19:30:09Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "EXTRA_TIME",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: 0,
+          awayTeam: 1,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 8164,
+        name: "FC Ararat-Armenia",
+      },
+      awayTeam: {
+        id: 8983,
+        name: "AS Omonia Lefkosía",
+      },
+      referees: [],
+    },
+    {
+      id: 310560,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-08-19T16:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "1ST_QUALIFYING_ROUND",
+      group: "1st Qualifying Round",
+      lastUpdated: "2020-12-17T15:30:07Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 5,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 2,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 5726,
+        name: "Molde FK",
+      },
+      awayTeam: {
+        id: 4655,
+        name: "Kuopion PS",
+      },
+      referees: [],
+    },
+    {
+      id: 310561,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-08-19T16:30:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "1ST_QUALIFYING_ROUND",
+      group: "1st Qualifying Round",
+      lastUpdated: "2020-12-17T15:30:07Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "PENALTY_SHOOTOUT",
+        fullTime: {
+          homeTeam: 1,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        penalties: {
+          homeTeam: 2,
+          awayTeam: 4,
+        },
+      },
+      homeTeam: {
+        id: 5100,
+        name: "FC Flora",
+      },
+      awayTeam: {
+        id: 5819,
+        name: "FK Sūduva Marijampolė",
+      },
+      referees: [],
+    },
+    {
+      id: 310562,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-08-19T17:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "1ST_QUALIFYING_ROUND",
+      group: "1st Qualifying Round",
+      lastUpdated: "2020-12-17T15:30:07Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 2,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 7482,
+        name: "FC Dinamo Tbilisi",
+      },
+      awayTeam: {
+        id: 8984,
+        name: "KF Tirana",
+      },
+      referees: [],
+    },
+    {
+      id: 310563,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-08-19T17:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "1ST_QUALIFYING_ROUND",
+      group: "1st Qualifying Round",
+      lastUpdated: "2020-09-02T19:30:09Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 2,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 5929,
+        name: "Maccabi Tel Aviv FC",
+      },
+      awayTeam: {
+        id: 5826,
+        name: "Rīga FC",
+      },
+      referees: [],
+    },
+    {
+      id: 310564,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-08-19T17:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "1ST_QUALIFYING_ROUND",
+      group: "1st Qualifying Round",
+      lastUpdated: "2020-09-02T19:30:09Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 3,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 8985,
+        name: "NK Celje",
+      },
+      awayTeam: {
+        id: 1873,
+        name: "Dundalk FC",
+      },
+      referees: [],
+    },
+    {
+      id: 310565,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-08-19T17:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "1ST_QUALIFYING_ROUND",
+      group: "1st Qualifying Round",
+      lastUpdated: "2021-01-06T14:30:07Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 2,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 5954,
+        name: "Ferencvárosi TC",
+      },
+      awayTeam: {
+        id: 5280,
+        name: "Djurgårdens IF Fotboll",
+      },
+      referees: [],
+    },
+    {
+      id: 310566,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-08-19T18:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "1ST_QUALIFYING_ROUND",
+      group: "1st Qualifying Round",
+      lastUpdated: "2021-01-06T14:30:07Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 1,
+          awayTeam: 3,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 2,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 1885,
+        name: "FK Budućnost Podgorica",
+      },
+      awayTeam: {
+        id: 1901,
+        name: "PFK Ludogorets 1945 Razgrad",
+      },
+      referees: [],
+    },
+    {
+      id: 310567,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-08-19T18:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "1ST_QUALIFYING_ROUND",
+      group: "1st Qualifying Round",
+      lastUpdated: "2021-01-06T14:30:07Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 2,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 5142,
+        name: "Connah's Quay Nomads FC",
+      },
+      awayTeam: {
+        id: 4275,
+        name: "FK Sarajevo",
+      },
+      referees: [],
+    },
+    {
+      id: 310568,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-08-19T18:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "1ST_QUALIFYING_ROUND",
+      group: "1st Qualifying Round",
+      lastUpdated: "2021-01-06T14:30:07Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 2,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 1880,
+        name: "FC Sheriff Tiraspol",
+      },
+      awayTeam: {
+        id: 7480,
+        name: "CS Fola Esch",
+      },
+      referees: [],
+    },
+    {
+      id: 310569,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-08-19T19:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "1ST_QUALIFYING_ROUND",
+      group: "1st Qualifying Round",
+      lastUpdated: "2021-01-06T14:30:07Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 2,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 5804,
+        name: "Floriana FC",
+      },
+      awayTeam: {
+        id: 5515,
+        name: "FC CFR 1907 Cluj",
+      },
+      referees: [],
+    },
+    {
+      id: 310570,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-08-21T16:00:00Z",
+      status: "AWARDED",
+      matchday: null,
+      stage: "1ST_QUALIFYING_ROUND",
+      group: "1st Qualifying Round",
+      lastUpdated: "2020-10-01T14:30:09Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 3,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 7472,
+        name: "KÍ",
+      },
+      awayTeam: {
+        id: 7509,
+        name: "ŠK Slovan Bratislava",
+      },
+      referees: [],
+    },
+    {
+      id: 310571,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-08-25T18:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "2ND_QUALIFYING_ROUND",
+      group: "2nd Qualifying Round",
+      lastUpdated: "2021-01-06T14:30:08Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 3,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 3,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 6146,
+        name: "PAOK FC",
+      },
+      awayTeam: {
+        id: 600,
+        name: "Beşiktaş JK",
+      },
+      referees: [],
+    },
+    {
+      id: 310572,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-08-25T18:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "2ND_QUALIFYING_ROUND",
+      group: "2nd Qualifying Round",
+      lastUpdated: "2021-01-06T14:30:08Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 8984,
+        name: "KF Tirana",
+      },
+      awayTeam: {
+        id: 7283,
+        name: "FK Crvena Zvezda",
+      },
+      referees: [],
+    },
+    {
+      id: 310573,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-08-26T14:30:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "2ND_QUALIFYING_ROUND",
+      group: "2nd Qualifying Round",
+      lastUpdated: "2021-01-06T14:30:08Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "EXTRA_TIME",
+        fullTime: {
+          homeTeam: 3,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: 2,
+          awayTeam: 0,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 682,
+        name: "AZ",
+      },
+      awayTeam: {
+        id: 1881,
+        name: "FC Viktoria Plzeň",
+      },
+      referees: [],
+    },
+    {
+      id: 310574,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-08-26T16:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "2ND_QUALIFYING_ROUND",
+      group: "2nd Qualifying Round",
+      lastUpdated: "2021-01-06T14:30:08Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 2,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 611,
+        name: "Qarabağ Ağdam FK",
+      },
+      awayTeam: {
+        id: 1880,
+        name: "FC Sheriff Tiraspol",
+      },
+      referees: [],
+    },
+    {
+      id: 310575,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-08-26T16:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "2ND_QUALIFYING_ROUND",
+      group: "2nd Qualifying Round",
+      lastUpdated: "2021-01-06T14:30:08Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 3,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 5819,
+        name: "FK Sūduva Marijampolė",
+      },
+      awayTeam: {
+        id: 5929,
+        name: "Maccabi Tel Aviv FC",
+      },
+      referees: [],
+    },
+    {
+      id: 310576,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-08-26T16:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "2ND_QUALIFYING_ROUND",
+      group: "2nd Qualifying Round",
+      lastUpdated: "2021-01-06T14:30:08Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 1,
+          awayTeam: 2,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 8985,
+        name: "NK Celje",
+      },
+      awayTeam: {
+        id: 5726,
+        name: "Molde FK",
+      },
+      referees: [],
+    },
+    {
+      id: 310577,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-08-26T17:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "2ND_QUALIFYING_ROUND",
+      group: "2nd Qualifying Round",
+      lastUpdated: "2021-01-06T14:30:08Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 4450,
+        name: "NK Lokomotiva Zagreb",
+      },
+      awayTeam: {
+        id: 2014,
+        name: "SK Rapid Wien",
+      },
+      referees: [],
+    },
+    {
+      id: 310578,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-08-26T17:30:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "2ND_QUALIFYING_ROUND",
+      group: "2nd Qualifying Round",
+      lastUpdated: "2021-01-06T14:30:08Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 1901,
+        name: "PFK Ludogorets 1945 Razgrad",
+      },
+      awayTeam: {
+        id: 4485,
+        name: "FC Midtjylland",
+      },
+      referees: [],
+    },
+    {
+      id: 310579,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-08-26T18:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "2ND_QUALIFYING_ROUND",
+      group: "2nd Qualifying Round",
+      lastUpdated: "2021-01-06T14:30:08Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "PENALTY_SHOOTOUT",
+        fullTime: {
+          homeTeam: 2,
+          awayTeam: 2,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        penalties: {
+          homeTeam: 5,
+          awayTeam: 6,
+        },
+      },
+      homeTeam: {
+        id: 5515,
+        name: "FC CFR 1907 Cluj",
+      },
+      awayTeam: {
+        id: 755,
+        name: "GNK Dinamo Zagreb",
+      },
+      referees: [],
+    },
+    {
+      id: 310580,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-08-26T18:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "2ND_QUALIFYING_ROUND",
+      group: "2nd Qualifying Round",
+      lastUpdated: "2021-01-06T14:30:08Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "EXTRA_TIME",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 2,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: 0,
+          awayTeam: 2,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 1105,
+        name: "Legia Warszawa",
+      },
+      awayTeam: {
+        id: 8983,
+        name: "AS Omonia Lefkosía",
+      },
+      referees: [],
+    },
+    {
+      id: 310581,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-08-26T18:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "2ND_QUALIFYING_ROUND",
+      group: "2nd Qualifying Round",
+      lastUpdated: "2021-01-06T14:30:08Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 2,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 7518,
+        name: "FK Dinamo Brest",
+      },
+      awayTeam: {
+        id: 4275,
+        name: "FK Sarajevo",
+      },
+      referees: [],
+    },
+    {
+      id: 310582,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-08-26T18:15:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "2ND_QUALIFYING_ROUND",
+      group: "2nd Qualifying Round",
+      lastUpdated: "2021-01-06T14:30:08Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 3,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 1871,
+        name: "BSC Young Boys",
+      },
+      awayTeam: {
+        id: 7472,
+        name: "KÍ",
+      },
+      referees: [],
+    },
+    {
+      id: 310583,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-08-26T18:45:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "2ND_QUALIFYING_ROUND",
+      group: "2nd Qualifying Round",
+      lastUpdated: "2021-01-06T14:30:08Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 1,
+          awayTeam: 2,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 732,
+        name: "Celtic FC",
+      },
+      awayTeam: {
+        id: 5954,
+        name: "Ferencvárosi TC",
+      },
+      referees: [],
+    },
+    {
+      id: 310584,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-09-15T17:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "3RD_QUALIFYING_ROUND",
+      group: "3rd Qualifying Round",
+      lastUpdated: "2021-01-06T14:30:08Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 2,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 842,
+        name: "FK Dynamo Kyiv",
+      },
+      awayTeam: {
+        id: 682,
+        name: "AZ",
+      },
+      referees: [
+        {
+          id: 40663,
+          name: "Orel Grinfeeld",
+          role: "REF",
+          nationality: "Israel",
+        },
+        {
+          id: 64594,
+          name: "Roy Hassan",
+          role: "REF",
+          nationality: "Israel",
+        },
+        {
+          id: 41353,
+          name: "Idan Yarkoni",
+          role: "REF",
+          nationality: "Israel",
+        },
+        {
+          id: 130272,
+          name: "Gal Leibovitz",
+          role: "REF",
+          nationality: "Israel",
+        },
+      ],
+    },
+    {
+      id: 310585,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-09-15T18:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "3RD_QUALIFYING_ROUND",
+      group: "3rd Qualifying Round",
+      lastUpdated: "2021-01-06T14:30:09Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 2,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 6146,
+        name: "PAOK FC",
+      },
+      awayTeam: {
+        id: 1903,
+        name: "Sport Lisboa e Benfica",
+      },
+      referees: [
+        {
+          id: 43875,
+          name: "Felix Brych",
+          role: "REF",
+          nationality: "Germany",
+        },
+        {
+          id: 43876,
+          name: "Mark Borsch",
+          role: "REF",
+          nationality: "Germany",
+        },
+        {
+          id: 43877,
+          name: "Stefan Lupp",
+          role: "REF",
+          nationality: "Germany",
+        },
+        {
+          id: 15746,
+          name: "Bastian Dankert",
+          role: "REF",
+          nationality: "Germany",
+        },
+      ],
+    },
+    {
+      id: 310586,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-09-15T18:30:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "3RD_QUALIFYING_ROUND",
+      group: "3rd Qualifying Round",
+      lastUpdated: "2021-01-06T14:30:09Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 2,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 1057,
+        name: "KAA Gent",
+      },
+      awayTeam: {
+        id: 2014,
+        name: "SK Rapid Wien",
+      },
+      referees: [
+        {
+          id: 15332,
+          name: "Andreas Ekberg",
+          role: "REF",
+          nationality: "Sweden",
+        },
+        {
+          id: 15333,
+          name: "Mehmet-Mohammed Culum",
+          role: "REF",
+          nationality: "Sweden",
+        },
+        {
+          id: 15334,
+          name: "Stefan Hallberg",
+          role: "REF",
+          nationality: "Sweden",
+        },
+        {
+          id: 15335,
+          name: "Kristoffer Karlsson",
+          role: "REF",
+          nationality: "Sweden",
+        },
+      ],
+    },
+    {
+      id: 310588,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-09-16T15:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "3RD_QUALIFYING_ROUND",
+      group: "3rd Qualifying Round",
+      lastUpdated: "2021-01-06T14:30:09Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "PENALTY_SHOOTOUT",
+        fullTime: {
+          homeTeam: 1,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        penalties: {
+          homeTeam: 4,
+          awayTeam: 2,
+        },
+      },
+      homeTeam: {
+        id: 8983,
+        name: "AS Omonia Lefkosía",
+      },
+      awayTeam: {
+        id: 7283,
+        name: "FK Crvena Zvezda",
+      },
+      referees: [
+        {
+          id: 11443,
+          name: "Chris Kavanagh",
+          role: "REF",
+          nationality: "England",
+        },
+        {
+          id: 11438,
+          name: "Dan Cook",
+          role: "REF",
+          nationality: "England",
+        },
+        {
+          id: 11530,
+          name: "Lee Betts",
+          role: "REF",
+          nationality: "England",
+        },
+        {
+          id: 11309,
+          name: "Peter Bankes",
+          role: "REF",
+          nationality: "England",
+        },
+      ],
+    },
+    {
+      id: 310587,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-09-16T17:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "3RD_QUALIFYING_ROUND",
+      group: "3rd Qualifying Round",
+      lastUpdated: "2021-01-06T14:30:09Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "PENALTY_SHOOTOUT",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        penalties: {
+          homeTeam: 5,
+          awayTeam: 6,
+        },
+      },
+      homeTeam: {
+        id: 611,
+        name: "Qarabağ Ağdam FK",
+      },
+      awayTeam: {
+        id: 5726,
+        name: "Molde FK",
+      },
+      referees: [
+        {
+          id: 15649,
+          name: "Srđan Jovanović",
+          role: "REF",
+          nationality: "Serbia",
+        },
+        {
+          id: 15650,
+          name: "Uroš Stojković",
+          role: "REF",
+          nationality: "Serbia",
+        },
+        {
+          id: 15651,
+          name: "Milan Mihajlović",
+          role: "REF",
+          nationality: "Serbia",
+        },
+        {
+          id: 81775,
+          name: "Novak Simović",
+          role: "REF",
+          nationality: "Serbia",
+        },
+      ],
+    },
+    {
+      id: 310589,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-09-16T17:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "3RD_QUALIFYING_ROUND",
+      group: "3rd Qualifying Round",
+      lastUpdated: "2021-01-06T14:30:09Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 1,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 5929,
+        name: "Maccabi Tel Aviv FC",
+      },
+      awayTeam: {
+        id: 7518,
+        name: "FK Dinamo Brest",
+      },
+      referees: [
+        {
+          id: 11029,
+          name: "Davide Massa",
+          role: "REF",
+          nationality: "Italy",
+        },
+        {
+          id: 11055,
+          name: "Filippo Meli",
+          role: "REF",
+          nationality: "Italy",
+        },
+        {
+          id: 10992,
+          name: "Stefano Alassio",
+          role: "REF",
+          nationality: "Italy",
+        },
+        {
+          id: 11065,
+          name: "Daniele Doveri",
+          role: "REF",
+          nationality: "Italy",
+        },
+      ],
+    },
+    {
+      id: 310590,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-09-16T17:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "3RD_QUALIFYING_ROUND",
+      group: "3rd Qualifying Round",
+      lastUpdated: "2021-01-06T14:30:09Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 2,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 5954,
+        name: "Ferencvárosi TC",
+      },
+      awayTeam: {
+        id: 755,
+        name: "GNK Dinamo Zagreb",
+      },
+      referees: [
+        {
+          id: 43943,
+          name: "Tobias Stieler",
+          role: "REF",
+          nationality: "Germany",
+        },
+        {
+          id: 15747,
+          name: "Christian Gittelmann",
+          role: "REF",
+          nationality: "Germany",
+        },
+        {
+          id: 15409,
+          name: "Jan Seidel",
+          role: "REF",
+          nationality: "Germany",
+        },
+        {
+          id: 57518,
+          name: "Florian Badstübner",
+          role: "REF",
+          nationality: "Germany",
+        },
+      ],
+    },
+    {
+      id: 310591,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-09-16T18:30:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "3RD_QUALIFYING_ROUND",
+      group: "3rd Qualifying Round",
+      lastUpdated: "2021-01-06T14:30:09Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 3,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 4485,
+        name: "FC Midtjylland",
+      },
+      awayTeam: {
+        id: 1871,
+        name: "BSC Young Boys",
+      },
+      referees: [
+        {
+          id: 15654,
+          name: "Georgi Kabakov",
+          role: "REF",
+          nationality: "Bulgaria",
+        },
+        {
+          id: 15655,
+          name: "Martin Margaritov",
+          role: "REF",
+          nationality: "Bulgaria",
+        },
+        {
+          id: 21108,
+          name: "Diyan Valkov",
+          role: "REF",
+          nationality: "Bulgaria",
+        },
+        {
+          id: 21095,
+          name: "Vladimir Valkov",
+          role: "REF",
+          nationality: "Bulgaria",
+        },
+      ],
+    },
+    {
+      id: 312343,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-09-22T19:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "PLAY_OFF_ROUND",
+      group: null,
+      lastUpdated: "2021-01-06T14:30:09Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 2,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 5452,
+        name: "FK Krasnodar",
+      },
+      awayTeam: {
+        id: 6146,
+        name: "PAOK FC",
+      },
+      referees: [
+        {
+          id: 9374,
+          name: "Clément Turpin",
+          role: "REF",
+          nationality: "France",
+        },
+        {
+          id: 43883,
+          name: "Nicolas Danos",
+          role: "REF",
+          nationality: "France",
+        },
+        {
+          id: 43927,
+          name: "Frédéric Haquette",
+          role: "REF",
+          nationality: "France",
+        },
+        {
+          id: 57090,
+          name: "Franck Schneider",
+          role: "REF",
+          nationality: "France",
+        },
+        {
+          id: 57042,
+          name: "Willy Delajod",
+          role: "REF",
+          nationality: "France",
+        },
+      ],
+    },
+    {
+      id: 312345,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-09-22T19:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "PLAY_OFF_ROUND",
+      group: null,
+      lastUpdated: "2021-01-06T14:30:10Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "DRAW",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 930,
+        name: "SK Slavia Praha",
+      },
+      awayTeam: {
+        id: 4485,
+        name: "FC Midtjylland",
+      },
+      referees: [
+        {
+          id: 30687,
+          name: "Cüneyt Çakιr",
+          role: "REF",
+          nationality: "Turkey",
+        },
+        {
+          id: 30688,
+          name: "Bahattin Duran",
+          role: "REF",
+          nationality: "Turkey",
+        },
+        {
+          id: 30689,
+          name: "Tarık Ongun",
+          role: "REF",
+          nationality: "Turkey",
+        },
+        {
+          id: 15093,
+          name: "Mete Kalkavan",
+          role: "REF",
+          nationality: "Turkey",
+        },
+        {
+          id: 30236,
+          name: "Abdulkadir Bitigen",
+          role: "REF",
+          nationality: "Turkey",
+        },
+      ],
+    },
+    {
+      id: 312347,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-09-22T19:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "PLAY_OFF_ROUND",
+      group: null,
+      lastUpdated: "2021-01-06T14:30:10Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 1,
+          awayTeam: 2,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 5929,
+        name: "Maccabi Tel Aviv FC",
+      },
+      awayTeam: {
+        id: 1877,
+        name: "FC Red Bull Salzburg",
+      },
+      referees: [
+        {
+          id: 11605,
+          name: "Michael Oliver",
+          role: "REF",
+          nationality: "England",
+        },
+        {
+          id: 11564,
+          name: "Stuart Burt",
+          role: "REF",
+          nationality: "England",
+        },
+        {
+          id: 11488,
+          name: "Simon Bennett",
+          role: "REF",
+          nationality: "England",
+        },
+        {
+          id: 11556,
+          name: "David Coote",
+          role: "REF",
+          nationality: "England",
+        },
+        {
+          id: 11443,
+          name: "Chris Kavanagh",
+          role: "REF",
+          nationality: "England",
+        },
+      ],
+    },
+    {
+      id: 312341,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-09-23T19:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "PLAY_OFF_ROUND",
+      group: null,
+      lastUpdated: "2021-01-06T14:30:09Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "DRAW",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 3,
+          awayTeam: 3,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 5726,
+        name: "Molde FK",
+      },
+      awayTeam: {
+        id: 5954,
+        name: "Ferencvárosi TC",
+      },
+      referees: [
+        {
+          id: 43843,
+          name: "Carlos del Cerro",
+          role: "REF",
+          nationality: "Spain",
+        },
+        {
+          id: 43872,
+          name: "Roberto Alonso",
+          role: "REF",
+          nationality: "Spain",
+        },
+        {
+          id: 134,
+          name: "Pau Cebrián Devis",
+          role: "REF",
+          nationality: "Spain",
+        },
+        {
+          id: 55934,
+          name: "Guillermo Cuadra",
+          role: "REF",
+          nationality: "Spain",
+        },
+        {
+          id: 81,
+          name: "Juan Martínez",
+          role: "REF",
+          nationality: "Spain",
+        },
+      ],
+    },
+    {
+      id: 312349,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-09-23T19:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "PLAY_OFF_ROUND",
+      group: null,
+      lastUpdated: "2021-01-06T14:30:10Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 1,
+          awayTeam: 2,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 1057,
+        name: "KAA Gent",
+      },
+      awayTeam: {
+        id: 842,
+        name: "FK Dynamo Kyiv",
+      },
+      referees: [
+        {
+          id: 36314,
+          name: "Ovidiu Hațegan",
+          role: "REF",
+          nationality: "Romania",
+        },
+        {
+          id: 36316,
+          name: "Octavian Șovre",
+          role: "REF",
+          nationality: "Romania",
+        },
+        {
+          id: 36837,
+          name: "Sebastian Gheorghe",
+          role: "REF",
+          nationality: "Romania",
+        },
+        {
+          id: 36425,
+          name: "Sebastian Colțescu",
+          role: "REF",
+          nationality: "Romania",
+        },
+        {
+          id: 11054,
+          name: "Massimiliano Irrati",
+          role: "REF",
+          nationality: "Italy",
+        },
+      ],
+    },
+    {
+      id: 312351,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-09-23T19:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "PLAY_OFF_ROUND",
+      group: null,
+      lastUpdated: "2021-01-06T14:30:10Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 2,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 654,
+        name: "PAE Olympiakos SFP",
+      },
+      awayTeam: {
+        id: 8983,
+        name: "AS Omonia Lefkosía",
+      },
+      referees: [
+        {
+          id: 43899,
+          name: "Danny Makkelie",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+        {
+          id: 43874,
+          name: "Mario Diks",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+        {
+          id: 43900,
+          name: "Hessel Steegstra",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+        {
+          id: 9561,
+          name: "Allard Lindhout",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+        {
+          id: 43716,
+          name: "Jochem Kamphuis",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+      ],
+    },
+    {
+      id: 312342,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-09-29T19:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "PLAY_OFF_ROUND",
+      group: null,
+      lastUpdated: "2021-01-06T14:30:09Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "DRAW",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 5954,
+        name: "Ferencvárosi TC",
+      },
+      awayTeam: {
+        id: 5726,
+        name: "Molde FK",
+      },
+      referees: [
+        {
+          id: 9558,
+          name: "Björn Kuipers",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+        {
+          id: 9559,
+          name: "Sander van Roekel",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+        {
+          id: 9560,
+          name: "Erwin Zeinstra",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+        {
+          id: 43858,
+          name: "Serdar Gözübüyük",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+        {
+          id: 15152,
+          name: "Pol van Boekel",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+      ],
+    },
+    {
+      id: 312350,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-09-29T19:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "PLAY_OFF_ROUND",
+      group: null,
+      lastUpdated: "2021-01-06T14:30:10Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 3,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 2,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 842,
+        name: "FK Dynamo Kyiv",
+      },
+      awayTeam: {
+        id: 1057,
+        name: "KAA Gent",
+      },
+      referees: [
+        {
+          id: 43888,
+          name: "Szymon Marciniak",
+          role: "REF",
+          nationality: "Poland",
+        },
+        {
+          id: 43889,
+          name: "Paweł Sokolnicki",
+          role: "REF",
+          nationality: "Poland",
+        },
+        {
+          id: 43890,
+          name: "Tomasz Listkiewicz",
+          role: "REF",
+          nationality: "Poland",
+        },
+        {
+          id: 43892,
+          name: "Paweł Raczkowski",
+          role: "REF",
+          nationality: "Poland",
+        },
+        {
+          id: 43854,
+          name: "Paweł Gil",
+          role: "REF",
+          nationality: "Poland",
+        },
+      ],
+    },
+    {
+      id: 312352,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-09-29T19:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "PLAY_OFF_ROUND",
+      group: null,
+      lastUpdated: "2021-01-06T14:30:10Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "DRAW",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 8983,
+        name: "AS Omonia Lefkosía",
+      },
+      awayTeam: {
+        id: 654,
+        name: "PAE Olympiakos SFP",
+      },
+      referees: [
+        {
+          id: 43869,
+          name: "Antonio Matéu Lahoz",
+          role: "REF",
+          nationality: "Spain",
+        },
+        {
+          id: 134,
+          name: "Pau Cebrián Devis",
+          role: "REF",
+          nationality: "Spain",
+        },
+        {
+          id: 82,
+          name: "Roberto Díaz Pérez",
+          role: "REF",
+          nationality: "Spain",
+        },
+        {
+          id: 58184,
+          name: "José Luis Munuera",
+          role: "REF",
+          nationality: "Spain",
+        },
+        {
+          id: 15625,
+          name: "Alejandro Hernández",
+          role: "REF",
+          nationality: "Spain",
+        },
+      ],
+    },
+    {
+      id: 312344,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-09-30T19:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "PLAY_OFF_ROUND",
+      group: null,
+      lastUpdated: "2021-01-06T14:30:09Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 1,
+          awayTeam: 2,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 6146,
+        name: "PAOK FC",
+      },
+      awayTeam: {
+        id: 5452,
+        name: "FK Krasnodar",
+      },
+      referees: [
+        {
+          id: 11116,
+          name: "Daniele Orsato",
+          role: "REF",
+          nationality: "Italy",
+        },
+        {
+          id: 11076,
+          name: "Alessandro Giallatini",
+          role: "REF",
+          nationality: "Italy",
+        },
+        {
+          id: 11069,
+          name: "Fabiano Preti",
+          role: "REF",
+          nationality: "Italy",
+        },
+        {
+          id: 11065,
+          name: "Daniele Doveri",
+          role: "REF",
+          nationality: "Italy",
+        },
+        {
+          id: 11079,
+          name: "Marco Guida",
+          role: "REF",
+          nationality: "Italy",
+        },
+      ],
+    },
+    {
+      id: 312346,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-09-30T19:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "PLAY_OFF_ROUND",
+      group: null,
+      lastUpdated: "2021-01-06T14:30:10Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 4,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 4485,
+        name: "FC Midtjylland",
+      },
+      awayTeam: {
+        id: 930,
+        name: "SK Slavia Praha",
+      },
+      referees: [
+        {
+          id: 9346,
+          name: "Damir Skomina",
+          role: "REF",
+          nationality: "Slovenia",
+        },
+        {
+          id: 9347,
+          name: "Jure Praprotnik",
+          role: "REF",
+          nationality: "Slovenia",
+        },
+        {
+          id: 9349,
+          name: "Tomaž Klančnik",
+          role: "REF",
+          nationality: "Slovenia",
+        },
+        {
+          id: 43936,
+          name: "Rade Obrenović",
+          role: "REF",
+          nationality: "Slovenia",
+        },
+        {
+          id: 11054,
+          name: "Massimiliano Irrati",
+          role: "REF",
+          nationality: "Italy",
+        },
+      ],
+    },
+    {
+      id: 312348,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-09-30T19:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "PLAY_OFF_ROUND",
+      group: null,
+      lastUpdated: "2021-01-06T14:30:10Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 3,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 2,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 1877,
+        name: "FC Red Bull Salzburg",
+      },
+      awayTeam: {
+        id: 5929,
+        name: "Maccabi Tel Aviv FC",
+      },
+      referees: [
+        {
+          id: 43875,
+          name: "Felix Brych",
+          role: "REF",
+          nationality: "Germany",
+        },
+        {
+          id: 43876,
+          name: "Mark Borsch",
+          role: "REF",
+          nationality: "Germany",
+        },
+        {
+          id: 43877,
+          name: "Stefan Lupp",
+          role: "REF",
+          nationality: "Germany",
+        },
+        {
+          id: 15408,
+          name: "Daniel Siebert",
+          role: "REF",
+          nationality: "Germany",
+        },
+        {
+          id: 15746,
+          name: "Bastian Dankert",
+          role: "REF",
+          nationality: "Germany",
+        },
+      ],
+    },
+    {
+      id: 313221,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-10-20T16:55:00Z",
+      status: "FINISHED",
+      matchday: 1,
+      stage: "GROUP_STAGE",
+      group: "Group F",
+      lastUpdated: "2020-10-21T11:55:03Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 1,
+          awayTeam: 2,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 731,
+        name: "FK Zenit Sankt-Petersburg",
+      },
+      awayTeam: {
+        id: 851,
+        name: "Club Brugge KV",
+      },
+      referees: [
+        {
+          id: 43926,
+          name: "Benoît Bastien",
+          role: "REF",
+          nationality: "France",
+        },
+        {
+          id: 43927,
+          name: "Frédéric Haquette",
+          role: "REF",
+          nationality: "France",
+        },
+        {
+          id: 64594,
+          name: "Roy Hassan",
+          role: "REF",
+          nationality: "Israel",
+        },
+        {
+          id: 57051,
+          name: "Karim Abed",
+          role: "REF",
+          nationality: "France",
+        },
+        {
+          id: 15545,
+          name: "Benoît Millot",
+          role: "REF",
+          nationality: "France",
+        },
+        {
+          id: 57042,
+          name: "Willy Delajod",
+          role: "REF",
+          nationality: "France",
+        },
+      ],
+    },
+    {
+      id: 313233,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-10-20T16:55:00Z",
+      status: "FINISHED",
+      matchday: 1,
+      stage: "GROUP_STAGE",
+      group: "Group G",
+      lastUpdated: "2020-10-21T11:50:03Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 2,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 842,
+        name: "FK Dynamo Kyiv",
+      },
+      awayTeam: {
+        id: 109,
+        name: "Juventus FC",
+      },
+      referees: [
+        {
+          id: 36314,
+          name: "Ovidiu Hațegan",
+          role: "REF",
+          nationality: "Romania",
+        },
+        {
+          id: 36316,
+          name: "Octavian Șovre",
+          role: "REF",
+          nationality: "Romania",
+        },
+        {
+          id: 36837,
+          name: "Sebastian Gheorghe",
+          role: "REF",
+          nationality: "Romania",
+        },
+        {
+          id: 36425,
+          name: "Sebastian Colțescu",
+          role: "REF",
+          nationality: "Romania",
+        },
+        {
+          id: 15746,
+          name: "Bastian Dankert",
+          role: "REF",
+          nationality: "Germany",
+        },
+        {
+          id: 253,
+          name: "Harm Osmers",
+          role: "REF",
+          nationality: "Germany",
+        },
+      ],
+    },
+    {
+      id: 313209,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-10-20T19:00:00Z",
+      status: "FINISHED",
+      matchday: 1,
+      stage: "GROUP_STAGE",
+      group: "Group E",
+      lastUpdated: "2021-01-14T17:30:13Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "DRAW",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 61,
+        name: "Chelsea FC",
+      },
+      awayTeam: {
+        id: 559,
+        name: "Sevilla FC",
+      },
+      referees: [
+        {
+          id: 11029,
+          name: "Davide Massa",
+          role: "REF",
+          nationality: "Italy",
+        },
+        {
+          id: 10992,
+          name: "Stefano Alassio",
+          role: "REF",
+          nationality: "Italy",
+        },
+        {
+          id: 11048,
+          name: "Alberto Tegoni",
+          role: "REF",
+          nationality: "Italy",
+        },
+        {
+          id: 11050,
+          name: "Giampaolo Calvarese",
+          role: "REF",
+          nationality: "Italy",
+        },
+        {
+          id: 11060,
+          name: "Marco Di Bello",
+          role: "REF",
+          nationality: "Italy",
+        },
+        {
+          id: 11043,
+          name: "Maurizio Mariani",
+          role: "REF",
+          nationality: "Italy",
+        },
+      ],
+    },
+    {
+      id: 313210,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-10-20T19:00:00Z",
+      status: "FINISHED",
+      matchday: 1,
+      stage: "GROUP_STAGE",
+      group: "Group E",
+      lastUpdated: "2020-11-07T05:30:12Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "DRAW",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 1,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 529,
+        name: "Stade Rennais FC 1901",
+      },
+      awayTeam: {
+        id: 5452,
+        name: "FK Krasnodar",
+      },
+      referees: [
+        {
+          id: 43905,
+          name: "Anastasios Sidiropoulos",
+          role: "REF",
+          nationality: "Greece",
+        },
+        {
+          id: 43906,
+          name: "Polychronis Kostaras",
+          role: "REF",
+          nationality: "Greece",
+        },
+        {
+          id: 43907,
+          name: "Lazaros Dimitriadis",
+          role: "REF",
+          nationality: "Greece",
+        },
+        {
+          id: 83810,
+          name: "Ioannis Papadopoulos",
+          role: "REF",
+          nationality: "Greece",
+        },
+        {
+          id: 11075,
+          name: "Paolo Valeri",
+          role: "REF",
+          nationality: "Italy",
+        },
+        {
+          id: 10977,
+          name: "Fabio Maresca",
+          role: "REF",
+          nationality: "Italy",
+        },
+      ],
+    },
+    {
+      id: 313222,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-10-20T19:00:00Z",
+      status: "FINISHED",
+      matchday: 1,
+      stage: "GROUP_STAGE",
+      group: "Group F",
+      lastUpdated: "2020-10-21T12:10:04Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 3,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 2,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 110,
+        name: "SS Lazio",
+      },
+      awayTeam: {
+        id: 4,
+        name: "Borussia Dortmund",
+      },
+      referees: [
+        {
+          id: 9374,
+          name: "Clément Turpin",
+          role: "REF",
+          nationality: "France",
+        },
+        {
+          id: 43883,
+          name: "Nicolas Danos",
+          role: "REF",
+          nationality: "France",
+        },
+        {
+          id: 43884,
+          name: "Cyril Gringore",
+          role: "REF",
+          nationality: "France",
+        },
+        {
+          id: 57090,
+          name: "Franck Schneider",
+          role: "REF",
+          nationality: "France",
+        },
+        {
+          id: 43918,
+          name: "François Letexier",
+          role: "REF",
+          nationality: "France",
+        },
+        {
+          id: 15548,
+          name: "Jérôme Brisard",
+          role: "REF",
+          nationality: "France",
+        },
+      ],
+    },
+    {
+      id: 313234,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-10-20T19:00:00Z",
+      status: "FINISHED",
+      matchday: 1,
+      stage: "GROUP_STAGE",
+      group: "Group G",
+      lastUpdated: "2021-02-03T11:30:22Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 5,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 2,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 81,
+        name: "FC Barcelona",
+      },
+      awayTeam: {
+        id: 5954,
+        name: "Ferencvárosi TC",
+      },
+      referees: [
+        {
+          id: 31823,
+          name: "Sandro Schärer",
+          role: "REF",
+          nationality: "Switzerland",
+        },
+        {
+          id: 14932,
+          name: "Stéphane De Almeida",
+          role: "REF",
+          nationality: "Switzerland",
+        },
+        {
+          id: 30769,
+          name: "Bekim Zogaj",
+          role: "REF",
+          nationality: "Switzerland",
+        },
+        {
+          id: 14931,
+          name: "Fedayi San",
+          role: "REF",
+          nationality: "Switzerland",
+        },
+        {
+          id: 11054,
+          name: "Massimiliano Irrati",
+          role: "REF",
+          nationality: "Italy",
+        },
+        {
+          id: 11069,
+          name: "Fabiano Preti",
+          role: "REF",
+          nationality: "Italy",
+        },
+      ],
+    },
+    {
+      id: 313245,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-10-20T19:00:00Z",
+      status: "FINISHED",
+      matchday: 1,
+      stage: "GROUP_STAGE",
+      group: "Group H",
+      lastUpdated: "2021-01-14T17:30:15Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 1,
+          awayTeam: 2,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 524,
+        name: "Paris Saint-Germain FC",
+      },
+      awayTeam: {
+        id: 66,
+        name: "Manchester United FC",
+      },
+      referees: [
+        {
+          id: 43869,
+          name: "Antonio Matéu Lahoz",
+          role: "REF",
+          nationality: "Spain",
+        },
+        {
+          id: 134,
+          name: "Pau Cebrián Devis",
+          role: "REF",
+          nationality: "Spain",
+        },
+        {
+          id: 82,
+          name: "Roberto Díaz Pérez",
+          role: "REF",
+          nationality: "Spain",
+        },
+        {
+          id: 43864,
+          name: "Javier Estrada",
+          role: "REF",
+          nationality: "Spain",
+        },
+        {
+          id: 81,
+          name: "Juan Martínez",
+          role: "REF",
+          nationality: "Spain",
+        },
+        {
+          id: 55934,
+          name: "Guillermo Cuadra",
+          role: "REF",
+          nationality: "Spain",
+        },
+      ],
+    },
+    {
+      id: 313246,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-10-20T19:00:00Z",
+      status: "FINISHED",
+      matchday: 1,
+      stage: "GROUP_STAGE",
+      group: "Group H",
+      lastUpdated: "2020-11-07T05:30:14Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 2,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 2,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 721,
+        name: "RB Leipzig",
+      },
+      awayTeam: {
+        id: 1897,
+        name: "Medipol Başakşehir FK",
+      },
+      referees: [
+        {
+          id: 43870,
+          name: "Jesús Gil",
+          role: "REF",
+          nationality: "Spain",
+        },
+        {
+          id: 43873,
+          name: "Diego Barbero",
+          role: "REF",
+          nationality: "Spain",
+        },
+        {
+          id: 32192,
+          name: "Ángel Nevado",
+          role: "REF",
+          nationality: "Spain",
+        },
+        {
+          id: 15628,
+          name: "Ricardo de Burgos",
+          role: "REF",
+          nationality: "Spain",
+        },
+        {
+          id: 15625,
+          name: "Alejandro Hernández",
+          role: "REF",
+          nationality: "Spain",
+        },
+        {
+          id: 3158,
+          name: "Iñigo Prieto",
+          role: "REF",
+          nationality: "Spain",
+        },
+      ],
+    },
+    {
+      id: 313161,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-10-21T16:55:00Z",
+      status: "FINISHED",
+      matchday: 1,
+      stage: "GROUP_STAGE",
+      group: "Group A",
+      lastUpdated: "2020-10-22T01:35:02Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "DRAW",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 2,
+          awayTeam: 2,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 1877,
+        name: "FC Red Bull Salzburg",
+      },
+      awayTeam: {
+        id: 5455,
+        name: "FK Lokomotiv Moskva",
+      },
+      referees: [
+        {
+          id: 43858,
+          name: "Serdar Gözübüyük",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+        {
+          id: 43860,
+          name: "Joost van Zuilen",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+        {
+          id: 14764,
+          name: "Johan Balder",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+        {
+          id: 56905,
+          name: "Bas Nijhuis",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+        {
+          id: 15152,
+          name: "Pol van Boekel",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+        {
+          id: 43861,
+          name: "Dennis Higler",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+      ],
+    },
+    {
+      id: 313173,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-10-21T16:55:00Z",
+      status: "FINISHED",
+      matchday: 1,
+      stage: "GROUP_STAGE",
+      group: "Group B",
+      lastUpdated: "2021-01-14T17:30:11Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 2,
+          awayTeam: 3,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 3,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 86,
+        name: "Real Madrid CF",
+      },
+      awayTeam: {
+        id: 1887,
+        name: "FK Shakhtar Donetsk",
+      },
+      referees: [
+        {
+          id: 15649,
+          name: "Srđan Jovanović",
+          role: "REF",
+          nationality: "Serbia",
+        },
+        {
+          id: 15650,
+          name: "Uroš Stojković",
+          role: "REF",
+          nationality: "Serbia",
+        },
+        {
+          id: 15651,
+          name: "Milan Mihajlović",
+          role: "REF",
+          nationality: "Serbia",
+        },
+        {
+          id: 81775,
+          name: "Novak Simović",
+          role: "REF",
+          nationality: "Serbia",
+        },
+        {
+          id: 43888,
+          name: "Szymon Marciniak",
+          role: "REF",
+          nationality: "Poland",
+        },
+        {
+          id: 72624,
+          name: "Tomasz Kwiatkowski",
+          role: "REF",
+          nationality: "Poland",
+        },
+      ],
+    },
+    {
+      id: 313162,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-10-21T19:00:00Z",
+      status: "FINISHED",
+      matchday: 1,
+      stage: "GROUP_STAGE",
+      group: "Group A",
+      lastUpdated: "2021-01-06T14:30:10Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 4,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 2,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 5,
+        name: "FC Bayern München",
+      },
+      awayTeam: {
+        id: 78,
+        name: "Club Atlético de Madrid",
+      },
+      referees: [
+        {
+          id: 11605,
+          name: "Michael Oliver",
+          role: "REF",
+          nationality: "England",
+        },
+        {
+          id: 11564,
+          name: "Stuart Burt",
+          role: "REF",
+          nationality: "England",
+        },
+        {
+          id: 11488,
+          name: "Simon Bennett",
+          role: "REF",
+          nationality: "England",
+        },
+        {
+          id: 11423,
+          name: "Andy Madley",
+          role: "REF",
+          nationality: "England",
+        },
+        {
+          id: 11494,
+          name: "Stuart Attwell",
+          role: "REF",
+          nationality: "England",
+        },
+        {
+          id: 11585,
+          name: "Craig Pawson",
+          role: "REF",
+          nationality: "England",
+        },
+      ],
+    },
+    {
+      id: 313174,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-10-21T19:00:00Z",
+      status: "FINISHED",
+      matchday: 1,
+      stage: "GROUP_STAGE",
+      group: "Group B",
+      lastUpdated: "2020-10-22T12:50:02Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "DRAW",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 2,
+          awayTeam: 2,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 108,
+        name: "FC Internazionale Milano",
+      },
+      awayTeam: {
+        id: 18,
+        name: "Borussia Mönchengladbach",
+      },
+      referees: [
+        {
+          id: 9558,
+          name: "Björn Kuipers",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+        {
+          id: 9559,
+          name: "Sander van Roekel",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+        {
+          id: 9560,
+          name: "Erwin Zeinstra",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+        {
+          id: 9561,
+          name: "Allard Lindhout",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+        {
+          id: 43899,
+          name: "Danny Makkelie",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+        {
+          id: 15154,
+          name: "Jan de Vries",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+      ],
+    },
+    {
+      id: 313185,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-10-21T19:00:00Z",
+      status: "FINISHED",
+      matchday: 1,
+      stage: "GROUP_STAGE",
+      group: "Group C",
+      lastUpdated: "2021-01-14T17:30:12Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 3,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 65,
+        name: "Manchester City FC",
+      },
+      awayTeam: {
+        id: 503,
+        name: "FC Porto",
+      },
+      referees: [
+        {
+          id: 43838,
+          name: "Andris Treimanis",
+          role: "REF",
+          nationality: "Latvia",
+        },
+        {
+          id: 43839,
+          name: "Haralds Gudermanis",
+          role: "REF",
+          nationality: "Latvia",
+        },
+        {
+          id: 43840,
+          name: "Aleksejs Spasjoņņikovs",
+          role: "REF",
+          nationality: "Latvia",
+        },
+        {
+          id: 43841,
+          name: "Aleksandrs Golubevs",
+          role: "REF",
+          nationality: "Latvia",
+        },
+        {
+          id: 43716,
+          name: "Jochem Kamphuis",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+        {
+          id: 43902,
+          name: "Kevin Blom",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+      ],
+    },
+    {
+      id: 313186,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-10-21T19:00:00Z",
+      status: "FINISHED",
+      matchday: 1,
+      stage: "GROUP_STAGE",
+      group: "Group C",
+      lastUpdated: "2021-01-14T17:30:12Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 1,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 654,
+        name: "PAE Olympiakos SFP",
+      },
+      awayTeam: {
+        id: 516,
+        name: "Olympique de Marseille",
+      },
+      referees: [
+        {
+          id: 11116,
+          name: "Daniele Orsato",
+          role: "REF",
+          nationality: "Italy",
+        },
+        {
+          id: 11055,
+          name: "Filippo Meli",
+          role: "REF",
+          nationality: "Italy",
+        },
+        {
+          id: 11049,
+          name: "Ciro Carbone",
+          role: "REF",
+          nationality: "Italy",
+        },
+        {
+          id: 10990,
+          name: "Piero Giacomelli",
+          role: "REF",
+          nationality: "Italy",
+        },
+        {
+          id: 11079,
+          name: "Marco Guida",
+          role: "REF",
+          nationality: "Italy",
+        },
+        {
+          id: 10991,
+          name: "Giorgio Peretti",
+          role: "REF",
+          nationality: "Italy",
+        },
+      ],
+    },
+    {
+      id: 313197,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-10-21T19:00:00Z",
+      status: "FINISHED",
+      matchday: 1,
+      stage: "GROUP_STAGE",
+      group: "Group D",
+      lastUpdated: "2021-01-14T17:30:12Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 678,
+        name: "AFC Ajax",
+      },
+      awayTeam: {
+        id: 64,
+        name: "Liverpool FC",
+      },
+      referees: [
+        {
+          id: 43875,
+          name: "Felix Brych",
+          role: "REF",
+          nationality: "Germany",
+        },
+        {
+          id: 43876,
+          name: "Mark Borsch",
+          role: "REF",
+          nationality: "Germany",
+        },
+        {
+          id: 43877,
+          name: "Stefan Lupp",
+          role: "REF",
+          nationality: "Germany",
+        },
+        {
+          id: 15408,
+          name: "Daniel Siebert",
+          role: "REF",
+          nationality: "Germany",
+        },
+        {
+          id: 57526,
+          name: "Christian Dingert",
+          role: "REF",
+          nationality: "Germany",
+        },
+        {
+          id: 15821,
+          name: "Marco Fritz",
+          role: "REF",
+          nationality: "Germany",
+        },
+      ],
+    },
+    {
+      id: 313198,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-10-21T19:00:00Z",
+      status: "FINISHED",
+      matchday: 1,
+      stage: "GROUP_STAGE",
+      group: "Group D",
+      lastUpdated: "2020-10-22T12:55:03Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 4,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 3,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 4485,
+        name: "FC Midtjylland",
+      },
+      awayTeam: {
+        id: 102,
+        name: "Atalanta BC",
+      },
+      referees: [
+        {
+          id: 43540,
+          name: "Artur Soares Dias",
+          role: "REF",
+          nationality: "Portugal",
+        },
+        {
+          id: 37626,
+          name: "Rui Tavares",
+          role: "REF",
+          nationality: "Portugal",
+        },
+        {
+          id: 37714,
+          name: "Paulo Soares",
+          role: "REF",
+          nationality: "Portugal",
+        },
+        {
+          id: 38806,
+          name: "João Pinheiro",
+          role: "REF",
+          nationality: "Portugal",
+        },
+        {
+          id: 15713,
+          name: "Tiago Martins",
+          role: "REF",
+          nationality: "Portugal",
+        },
+        {
+          id: 37629,
+          name: "Luís Godinho",
+          role: "REF",
+          nationality: "Portugal",
+        },
+      ],
+    },
+    {
+      id: 313163,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-10-27T17:55:00Z",
+      status: "FINISHED",
+      matchday: 2,
+      stage: "GROUP_STAGE",
+      group: "Group A",
+      lastUpdated: "2020-10-28T11:05:04Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 1,
+          awayTeam: 2,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 5455,
+        name: "FK Lokomotiv Moskva",
+      },
+      awayTeam: {
+        id: 5,
+        name: "FC Bayern München",
+      },
+      referees: [
+        {
+          id: 37278,
+          name: "István Kovács",
+          role: "REF",
+          nationality: "Romania",
+        },
+        {
+          id: 36700,
+          name: "Vasile Marinescu",
+          role: "REF",
+          nationality: "Romania",
+        },
+        {
+          id: 36546,
+          name: "Mihai Artene",
+          role: "REF",
+          nationality: "Romania",
+        },
+        {
+          id: 37162,
+          name: "Marius Avram",
+          role: "REF",
+          nationality: "Romania",
+        },
+        {
+          id: 15625,
+          name: "Alejandro Hernández",
+          role: "REF",
+          nationality: "Spain",
+        },
+        {
+          id: 55934,
+          name: "Guillermo Cuadra",
+          role: "REF",
+          nationality: "Spain",
+        },
+      ],
+    },
+    {
+      id: 313175,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-10-27T17:55:00Z",
+      status: "FINISHED",
+      matchday: 2,
+      stage: "GROUP_STAGE",
+      group: "Group B",
+      lastUpdated: "2020-10-28T11:15:04Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "DRAW",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 1887,
+        name: "FK Shakhtar Donetsk",
+      },
+      awayTeam: {
+        id: 108,
+        name: "FC Internazionale Milano",
+      },
+      referees: [
+        {
+          id: 15654,
+          name: "Georgi Kabakov",
+          role: "REF",
+          nationality: "Bulgaria",
+        },
+        {
+          id: 15655,
+          name: "Martin Margaritov",
+          role: "REF",
+          nationality: "Bulgaria",
+        },
+        {
+          id: 21108,
+          name: "Diyan Valkov",
+          role: "REF",
+          nationality: "Bulgaria",
+        },
+        {
+          id: 20928,
+          name: "V. Chinkov",
+          role: "REF",
+          nationality: null,
+        },
+        {
+          id: 43878,
+          name: "Felix Zwayer",
+          role: "REF",
+          nationality: "Germany",
+        },
+        {
+          id: 43879,
+          name: "Marco Achmüller",
+          role: "REF",
+          nationality: "Germany",
+        },
+      ],
+    },
+    {
+      id: 313164,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-10-27T20:00:00Z",
+      status: "FINISHED",
+      matchday: 2,
+      stage: "GROUP_STAGE",
+      group: "Group A",
+      lastUpdated: "2021-01-14T17:30:10Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 3,
+          awayTeam: 2,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 78,
+        name: "Club Atlético de Madrid",
+      },
+      awayTeam: {
+        id: 1877,
+        name: "FC Red Bull Salzburg",
+      },
+      referees: [
+        {
+          id: 36314,
+          name: "Ovidiu Hațegan",
+          role: "REF",
+          nationality: "Romania",
+        },
+        {
+          id: 36316,
+          name: "Octavian Șovre",
+          role: "REF",
+          nationality: "Romania",
+        },
+        {
+          id: 36837,
+          name: "Sebastian Gheorghe",
+          role: "REF",
+          nationality: "Romania",
+        },
+        {
+          id: 10977,
+          name: "Fabio Maresca",
+          role: "REF",
+          nationality: "Italy",
+        },
+        {
+          id: 11060,
+          name: "Marco Di Bello",
+          role: "REF",
+          nationality: "Italy",
+        },
+        {
+          id: 11075,
+          name: "Paolo Valeri",
+          role: "REF",
+          nationality: "Italy",
+        },
+      ],
+    },
+    {
+      id: 313176,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-10-27T20:00:00Z",
+      status: "FINISHED",
+      matchday: 2,
+      stage: "GROUP_STAGE",
+      group: "Group B",
+      lastUpdated: "2021-01-14T17:30:11Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "DRAW",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 2,
+          awayTeam: 2,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 18,
+        name: "Borussia Mönchengladbach",
+      },
+      awayTeam: {
+        id: 86,
+        name: "Real Madrid CF",
+      },
+      referees: [
+        {
+          id: 40663,
+          name: "Orel Grinfeeld",
+          role: "REF",
+          nationality: "Israel",
+        },
+        {
+          id: 64594,
+          name: "Roy Hassan",
+          role: "REF",
+          nationality: "Israel",
+        },
+        {
+          id: 41353,
+          name: "Idan Yarkoni",
+          role: "REF",
+          nationality: "Israel",
+        },
+        {
+          id: 130272,
+          name: "Gal Leibovitz",
+          role: "REF",
+          nationality: "Israel",
+        },
+        {
+          id: 38806,
+          name: "João Pinheiro",
+          role: "REF",
+          nationality: "Portugal",
+        },
+        {
+          id: 15664,
+          name: "Roi Reinshreiber",
+          role: "REF",
+          nationality: "Israel",
+        },
+      ],
+    },
+    {
+      id: 313187,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-10-27T20:00:00Z",
+      status: "FINISHED",
+      matchday: 2,
+      stage: "GROUP_STAGE",
+      group: "Group C",
+      lastUpdated: "2021-01-14T17:30:12Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 3,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 516,
+        name: "Olympique de Marseille",
+      },
+      awayTeam: {
+        id: 65,
+        name: "Manchester City FC",
+      },
+      referees: [
+        {
+          id: 43943,
+          name: "Tobias Stieler",
+          role: "REF",
+          nationality: "Germany",
+        },
+        {
+          id: 9569,
+          name: "Mike Pickel",
+          role: "REF",
+          nationality: "Germany",
+        },
+        {
+          id: 15747,
+          name: "Christian Gittelmann",
+          role: "REF",
+          nationality: "Germany",
+        },
+        {
+          id: 57518,
+          name: "Florian Badstübner",
+          role: "REF",
+          nationality: "Germany",
+        },
+        {
+          id: 9567,
+          name: "Sascha Stegemann",
+          role: "REF",
+          nationality: "Germany",
+        },
+        {
+          id: 253,
+          name: "Harm Osmers",
+          role: "REF",
+          nationality: "Germany",
+        },
+      ],
+    },
+    {
+      id: 313188,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-10-27T20:00:00Z",
+      status: "FINISHED",
+      matchday: 2,
+      stage: "GROUP_STAGE",
+      group: "Group C",
+      lastUpdated: "2020-11-07T05:30:11Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 2,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 503,
+        name: "FC Porto",
+      },
+      awayTeam: {
+        id: 654,
+        name: "PAE Olympiakos SFP",
+      },
+      referees: [
+        {
+          id: 15408,
+          name: "Daniel Siebert",
+          role: "REF",
+          nationality: "Germany",
+        },
+        {
+          id: 15409,
+          name: "Jan Seidel",
+          role: "REF",
+          nationality: "Germany",
+        },
+        {
+          id: 43880,
+          name: "Rafael Foltyn",
+          role: "REF",
+          nationality: "Germany",
+        },
+        {
+          id: 15821,
+          name: "Marco Fritz",
+          role: "REF",
+          nationality: "Germany",
+        },
+        {
+          id: 15746,
+          name: "Bastian Dankert",
+          role: "REF",
+          nationality: "Germany",
+        },
+        {
+          id: 43876,
+          name: "Mark Borsch",
+          role: "REF",
+          nationality: "Germany",
+        },
+      ],
+    },
+    {
+      id: 313199,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-10-27T20:00:00Z",
+      status: "FINISHED",
+      matchday: 2,
+      stage: "GROUP_STAGE",
+      group: "Group D",
+      lastUpdated: "2021-01-14T17:30:13Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 2,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 64,
+        name: "Liverpool FC",
+      },
+      awayTeam: {
+        id: 4485,
+        name: "FC Midtjylland",
+      },
+      referees: [
+        {
+          id: 43892,
+          name: "Paweł Raczkowski",
+          role: "REF",
+          nationality: "Poland",
+        },
+        {
+          id: 43891,
+          name: "Radosław Siejka",
+          role: "REF",
+          nationality: "Poland",
+        },
+        {
+          id: 99006,
+          name: "Adam Kupsik",
+          role: "REF",
+          nationality: "Poland",
+        },
+        {
+          id: 64258,
+          name: "Krzysztof Jakubik",
+          role: "REF",
+          nationality: "Poland",
+        },
+        {
+          id: 43854,
+          name: "Paweł Gil",
+          role: "REF",
+          nationality: "Poland",
+        },
+        {
+          id: 131857,
+          name: "Pawel Gil",
+          role: "REF",
+          nationality: "Poland",
+        },
+        {
+          id: 43857,
+          name: "Bartosz Frankowski",
+          role: "REF",
+          nationality: "Poland",
+        },
+      ],
+    },
+    {
+      id: 313200,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-10-27T20:00:00Z",
+      status: "FINISHED",
+      matchday: 2,
+      stage: "GROUP_STAGE",
+      group: "Group D",
+      lastUpdated: "2021-01-14T17:30:13Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "DRAW",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 2,
+          awayTeam: 2,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 2,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 102,
+        name: "Atalanta BC",
+      },
+      awayTeam: {
+        id: 678,
+        name: "AFC Ajax",
+      },
+      referees: [
+        {
+          id: 9346,
+          name: "Damir Skomina",
+          role: "REF",
+          nationality: "Slovenia",
+        },
+        {
+          id: 9347,
+          name: "Jure Praprotnik",
+          role: "REF",
+          nationality: "Slovenia",
+        },
+        {
+          id: 9348,
+          name: "Robert Vukan",
+          role: "REF",
+          nationality: "Slovenia",
+        },
+        {
+          id: 100353,
+          name: "Dragoslav Perić",
+          role: "REF",
+          nationality: "Slovenia",
+        },
+        {
+          id: 81,
+          name: "Juan Martínez",
+          role: "REF",
+          nationality: "Spain",
+        },
+        {
+          id: 82,
+          name: "Roberto Díaz Pérez",
+          role: "REF",
+          nationality: "Spain",
+        },
+      ],
+    },
+    {
+      id: 313211,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-10-28T17:55:00Z",
+      status: "FINISHED",
+      matchday: 2,
+      stage: "GROUP_STAGE",
+      group: "Group E",
+      lastUpdated: "2020-11-07T05:30:12Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 4,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 5452,
+        name: "FK Krasnodar",
+      },
+      awayTeam: {
+        id: 61,
+        name: "Chelsea FC",
+      },
+      referees: [
+        {
+          id: 30784,
+          name: "Ali Palabıyık",
+          role: "REF",
+          nationality: "Turkey",
+        },
+        {
+          id: 30680,
+          name: "Ceyhun Sesigüzel",
+          role: "REF",
+          nationality: "Turkey",
+        },
+        {
+          id: 30786,
+          name: "Serkan Olguncan",
+          role: "REF",
+          nationality: "Turkey",
+        },
+        {
+          id: 30698,
+          name: "Arda Kardeşler",
+          role: "REF",
+          nationality: "Turkey",
+        },
+        {
+          id: 11054,
+          name: "Massimiliano Irrati",
+          role: "REF",
+          nationality: "Italy",
+        },
+        {
+          id: 15093,
+          name: "Mete Kalkavan",
+          role: "REF",
+          nationality: "Turkey",
+        },
+      ],
+    },
+    {
+      id: 313247,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-10-28T17:55:00Z",
+      status: "FINISHED",
+      matchday: 2,
+      stage: "GROUP_STAGE",
+      group: "Group H",
+      lastUpdated: "2020-10-29T02:10:03Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 2,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 1897,
+        name: "Medipol Başakşehir FK",
+      },
+      awayTeam: {
+        id: 524,
+        name: "Paris Saint-Germain FC",
+      },
+      referees: [
+        {
+          id: 15332,
+          name: "Andreas Ekberg",
+          role: "REF",
+          nationality: "Sweden",
+        },
+        {
+          id: 15334,
+          name: "Stefan Hallberg",
+          role: "REF",
+          nationality: "Sweden",
+        },
+        {
+          id: 34580,
+          name: "Graeme Stewart",
+          role: "REF",
+          nationality: "Scotland",
+        },
+        {
+          id: 15335,
+          name: "Kristoffer Karlsson",
+          role: "REF",
+          nationality: "Sweden",
+        },
+        {
+          id: 43843,
+          name: "Carlos del Cerro",
+          role: "REF",
+          nationality: "Spain",
+        },
+        {
+          id: 15628,
+          name: "Ricardo de Burgos",
+          role: "REF",
+          nationality: "Spain",
+        },
+      ],
+    },
+    {
+      id: 313212,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-10-28T20:00:00Z",
+      status: "FINISHED",
+      matchday: 2,
+      stage: "GROUP_STAGE",
+      group: "Group E",
+      lastUpdated: "2021-01-14T17:30:13Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 1,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 559,
+        name: "Sevilla FC",
+      },
+      awayTeam: {
+        id: 529,
+        name: "Stade Rennais FC 1901",
+      },
+      referees: [
+        {
+          id: 30687,
+          name: "Cüneyt Çakιr",
+          role: "REF",
+          nationality: "Turkey",
+        },
+        {
+          id: 30688,
+          name: "Bahattin Duran",
+          role: "REF",
+          nationality: "Turkey",
+        },
+        {
+          id: 30689,
+          name: "Tarık Ongun",
+          role: "REF",
+          nationality: "Turkey",
+        },
+        {
+          id: 15096,
+          name: "Halil Umut Meler",
+          role: "REF",
+          nationality: "Turkey",
+        },
+        {
+          id: 43888,
+          name: "Szymon Marciniak",
+          role: "REF",
+          nationality: "Poland",
+        },
+        {
+          id: 30236,
+          name: "Abdulkadir Bitigen",
+          role: "REF",
+          nationality: "Turkey",
+        },
+      ],
+    },
+    {
+      id: 313223,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-10-28T20:00:00Z",
+      status: "FINISHED",
+      matchday: 2,
+      stage: "GROUP_STAGE",
+      group: "Group F",
+      lastUpdated: "2020-11-07T05:30:13Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 2,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 4,
+        name: "Borussia Dortmund",
+      },
+      awayTeam: {
+        id: 731,
+        name: "FK Zenit Sankt-Petersburg",
+      },
+      referees: [
+        {
+          id: 9558,
+          name: "Björn Kuipers",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+        {
+          id: 9559,
+          name: "Sander van Roekel",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+        {
+          id: 9560,
+          name: "Erwin Zeinstra",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+        {
+          id: 43858,
+          name: "Serdar Gözübüyük",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+        {
+          id: 15152,
+          name: "Pol van Boekel",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+        {
+          id: 43861,
+          name: "Dennis Higler",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+      ],
+    },
+    {
+      id: 313224,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-10-28T20:00:00Z",
+      status: "FINISHED",
+      matchday: 2,
+      stage: "GROUP_STAGE",
+      group: "Group F",
+      lastUpdated: "2021-01-14T17:30:14Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "DRAW",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 1,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 851,
+        name: "Club Brugge KV",
+      },
+      awayTeam: {
+        id: 110,
+        name: "SS Lazio",
+      },
+      referees: [
+        {
+          id: 11580,
+          name: "Anthony Taylor",
+          role: "REF",
+          nationality: "England",
+        },
+        {
+          id: 11581,
+          name: "Gary Beswick",
+          role: "REF",
+          nationality: "England",
+        },
+        {
+          id: 11615,
+          name: "Adam Nunn",
+          role: "REF",
+          nationality: "England",
+        },
+        {
+          id: 11520,
+          name: "Paul Tierney",
+          role: "REF",
+          nationality: "England",
+        },
+        {
+          id: 11494,
+          name: "Stuart Attwell",
+          role: "REF",
+          nationality: "England",
+        },
+        {
+          id: 11530,
+          name: "Lee Betts",
+          role: "REF",
+          nationality: "England",
+        },
+      ],
+    },
+    {
+      id: 313235,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-10-28T20:00:00Z",
+      status: "FINISHED",
+      matchday: 2,
+      stage: "GROUP_STAGE",
+      group: "Group G",
+      lastUpdated: "2021-01-14T17:30:15Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 2,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 109,
+        name: "Juventus FC",
+      },
+      awayTeam: {
+        id: 81,
+        name: "FC Barcelona",
+      },
+      referees: [
+        {
+          id: 43899,
+          name: "Danny Makkelie",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+        {
+          id: 43874,
+          name: "Mario Diks",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+        {
+          id: 43900,
+          name: "Hessel Steegstra",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+        {
+          id: 9561,
+          name: "Allard Lindhout",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+        {
+          id: 43902,
+          name: "Kevin Blom",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+        {
+          id: 17141,
+          name: "Rob Dieperink",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+      ],
+    },
+    {
+      id: 313236,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-10-28T20:00:00Z",
+      status: "FINISHED",
+      matchday: 2,
+      stage: "GROUP_STAGE",
+      group: "Group G",
+      lastUpdated: "2020-11-07T05:30:14Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "DRAW",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 2,
+          awayTeam: 2,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 2,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 5954,
+        name: "Ferencvárosi TC",
+      },
+      awayTeam: {
+        id: 842,
+        name: "FK Dynamo Kyiv",
+      },
+      referees: [
+        {
+          id: 43954,
+          name: "Ivan Kružliak",
+          role: "REF",
+          nationality: "Slovakia",
+        },
+        {
+          id: 43956,
+          name: "Tomáš Somoláni",
+          role: "REF",
+          nationality: "Slovakia",
+        },
+        {
+          id: 43884,
+          name: "Cyril Gringore",
+          role: "REF",
+          nationality: "France",
+        },
+        {
+          id: 79620,
+          name: "Boris Marhefka",
+          role: "REF",
+          nationality: null,
+        },
+        {
+          id: 57526,
+          name: "Christian Dingert",
+          role: "REF",
+          nationality: "Germany",
+        },
+        {
+          id: 26174,
+          name: "Bibiana Steinhaus",
+          role: "REF",
+          nationality: "Germany",
+        },
+      ],
+    },
+    {
+      id: 313248,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-10-28T20:00:00Z",
+      status: "FINISHED",
+      matchday: 2,
+      stage: "GROUP_STAGE",
+      group: "Group H",
+      lastUpdated: "2020-11-07T05:30:15Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 5,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 66,
+        name: "Manchester United FC",
+      },
+      awayTeam: {
+        id: 721,
+        name: "RB Leipzig",
+      },
+      referees: [
+        {
+          id: 9350,
+          name: "Matej Jug",
+          role: "REF",
+          nationality: "Slovenia",
+        },
+        {
+          id: 9349,
+          name: "Tomaž Klančnik",
+          role: "REF",
+          nationality: "Slovenia",
+        },
+        {
+          id: 43935,
+          name: "Grega Kordež",
+          role: "REF",
+          nationality: null,
+        },
+        {
+          id: 74656,
+          name: "Asmir Sagrković",
+          role: "REF",
+          nationality: null,
+        },
+        {
+          id: 106,
+          name: "José Sánchez",
+          role: "REF",
+          nationality: "Spain",
+        },
+        {
+          id: 43854,
+          name: "Paweł Gil",
+          role: "REF",
+          nationality: "Poland",
+        },
+        {
+          id: 56905,
+          name: "Bas Nijhuis",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+      ],
+    },
+    {
+      id: 313165,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-11-03T17:55:00Z",
+      status: "FINISHED",
+      matchday: 3,
+      stage: "GROUP_STAGE",
+      group: "Group A",
+      lastUpdated: "2020-11-07T05:30:09Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "DRAW",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 1,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 5455,
+        name: "FK Lokomotiv Moskva",
+      },
+      awayTeam: {
+        id: 78,
+        name: "Club Atlético de Madrid",
+      },
+      referees: [
+        {
+          id: 43926,
+          name: "Benoît Bastien",
+          role: "REF",
+          nationality: "France",
+        },
+        {
+          id: 43885,
+          name: "Hicham Zakrani",
+          role: "REF",
+          nationality: "France",
+        },
+        {
+          id: 43927,
+          name: "Frédéric Haquette",
+          role: "REF",
+          nationality: "France",
+        },
+        {
+          id: 57051,
+          name: "Karim Abed",
+          role: "REF",
+          nationality: "France",
+        },
+        {
+          id: 57042,
+          name: "Willy Delajod",
+          role: "REF",
+          nationality: "France",
+        },
+        {
+          id: 30236,
+          name: "Abdulkadir Bitigen",
+          role: "REF",
+          nationality: "Turkey",
+        },
+      ],
+    },
+    {
+      id: 313177,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-11-03T17:55:00Z",
+      status: "FINISHED",
+      matchday: 3,
+      stage: "GROUP_STAGE",
+      group: "Group B",
+      lastUpdated: "2021-01-25T14:30:13Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 6,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 4,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 1887,
+        name: "FK Shakhtar Donetsk",
+      },
+      awayTeam: {
+        id: 18,
+        name: "Borussia Mönchengladbach",
+      },
+      referees: [
+        {
+          id: 43858,
+          name: "Serdar Gözübüyük",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+        {
+          id: 43860,
+          name: "Joost van Zuilen",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+        {
+          id: 14764,
+          name: "Johan Balder",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+        {
+          id: 9561,
+          name: "Allard Lindhout",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+        {
+          id: 15152,
+          name: "Pol van Boekel",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+        {
+          id: 43861,
+          name: "Dennis Higler",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+      ],
+    },
+    {
+      id: 313166,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-11-03T20:00:00Z",
+      status: "FINISHED",
+      matchday: 3,
+      stage: "GROUP_STAGE",
+      group: "Group A",
+      lastUpdated: "2021-01-25T14:30:12Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 2,
+          awayTeam: 6,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 2,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 1877,
+        name: "FC Red Bull Salzburg",
+      },
+      awayTeam: {
+        id: 5,
+        name: "FC Bayern München",
+      },
+      referees: [
+        {
+          id: 43899,
+          name: "Danny Makkelie",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+        {
+          id: 43874,
+          name: "Mario Diks",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+        {
+          id: 43900,
+          name: "Hessel Steegstra",
+          role: "REF",
+          nationality: "Netherlands",
+        },
+        {
+          id: 11065,
+          name: "Daniele Doveri",
+          role: "REF",
+          nationality: "Italy",
+        },
+        {
+          id: 11054,
+          name: "Massimiliano Irrati",
+          role: "REF",
+          nationality: "Italy",
+        },
+        {
+          id: 57636,
+          name: "Vitaly Meshkov",
+          role: "REF",
+          nationality: "Russia",
+        },
+      ],
+    },
+    {
+      id: 313178,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-11-03T20:00:00Z",
+      status: "FINISHED",
+      matchday: 3,
+      stage: "GROUP_STAGE",
+      group: "Group B",
+      lastUpdated: "2021-01-25T14:30:13Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 3,
+          awayTeam: 2,
+        },
+        halfTime: {
+          homeTeam: 2,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 86,
+        name: "Real Madrid CF",
+      },
+      awayTeam: {
+        id: 108,
+        name: "FC Internazionale Milano",
+      },
+      referees: [
+        {
+          id: 9374,
+          name: "Clément Turpin",
+          role: "REF",
+          nationality: "France",
+        },
+        {
+          id: 43883,
+          name: "Nicolas Danos",
+          role: "REF",
+          nationality: "France",
+        },
+        {
+          id: 43884,
+          name: "Cyril Gringore",
+          role: "REF",
+          nationality: "France",
+        },
+        {
+          id: 57090,
+          name: "Franck Schneider",
+          role: "REF",
+          nationality: "France",
+        },
+        {
+          id: 43918,
+          name: "François Letexier",
+          role: "REF",
+          nationality: "France",
+        },
+        {
+          id: 15548,
+          name: "Jérôme Brisard",
+          role: "REF",
+          nationality: "France",
+        },
+      ],
+    },
+    {
+      id: 313189,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-11-03T20:00:00Z",
+      status: "FINISHED",
+      matchday: 3,
+      stage: "GROUP_STAGE",
+      group: "Group C",
+      lastUpdated: "2021-01-25T14:30:14Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 3,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 65,
+        name: "Manchester City FC",
+      },
+      awayTeam: {
+        id: 654,
+        name: "PAE Olympiakos SFP",
+      },
+      referees: [
+        {
+          id: 43843,
+          name: "Carlos del Cerro",
+          role: "REF",
+          nationality: "Spain",
+        },
+        {
+          id: 43844,
+          name: "Juan Carlos Yuste",
+          role: "REF",
+          nationality: "Spain",
+        },
+        {
+          id: 43872,
+          name: "Roberto Alonso",
+          role: "REF",
+          nationality: "Spain",
+        },
+        {
+          id: 58184,
+          name: "José Luis Munuera",
+          role: "REF",
+          nationality: "Spain",
+        },
+        {
+          id: 106,
+          name: "José Sánchez",
+          role: "REF",
+          nationality: "Spain",
+        },
+        {
+          id: 55934,
+          name: "Guillermo Cuadra",
+          role: "REF",
+          nationality: "Spain",
+        },
+      ],
+    },
+    {
+      id: 313190,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-11-03T20:00:00Z",
+      status: "FINISHED",
+      matchday: 3,
+      stage: "GROUP_STAGE",
+      group: "Group C",
+      lastUpdated: "2021-01-25T14:30:14Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 3,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 2,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 503,
+        name: "FC Porto",
+      },
+      awayTeam: {
+        id: 516,
+        name: "Olympique de Marseille",
+      },
+      referees: [
+        {
+          id: 43869,
+          name: "Antonio Matéu Lahoz",
+          role: "REF",
+          nationality: "Spain",
+        },
+        {
+          id: 134,
+          name: "Pau Cebrián Devis",
+          role: "REF",
+          nationality: "Spain",
+        },
+        {
+          id: 82,
+          name: "Roberto Díaz Pérez",
+          role: "REF",
+          nationality: "Spain",
+        },
+        {
+          id: 43864,
+          name: "Javier Estrada",
+          role: "REF",
+          nationality: "Spain",
+        },
+        {
+          id: 15625,
+          name: "Alejandro Hernández",
+          role: "REF",
+          nationality: "Spain",
+        },
+        {
+          id: 15628,
+          name: "Ricardo de Burgos",
+          role: "REF",
+          nationality: "Spain",
+        },
+      ],
+    },
+    {
+      id: 313201,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-11-03T20:00:00Z",
+      status: "FINISHED",
+      matchday: 3,
+      stage: "GROUP_STAGE",
+      group: "Group D",
+      lastUpdated: "2021-01-25T14:30:15Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 5,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 2,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 102,
+        name: "Atalanta BC",
+      },
+      awayTeam: {
+        id: 64,
+        name: "Liverpool FC",
+      },
+      referees: [
+        {
+          id: 36314,
+          name: "Ovidiu Hațegan",
+          role: "REF",
+          nationality: "Romania",
+        },
+        {
+          id: 36316,
+          name: "Octavian Șovre",
+          role: "REF",
+          nationality: "Romania",
+        },
+        {
+          id: 36837,
+          name: "Sebastian Gheorghe",
+          role: "REF",
+          nationality: "Romania",
+        },
+        {
+          id: 36425,
+          name: "Sebastian Colțescu",
+          role: "REF",
+          nationality: "Romania",
+        },
+        {
+          id: 81,
+          name: "Juan Martínez",
+          role: "REF",
+          nationality: "Spain",
+        },
+        {
+          id: 37278,
+          name: "István Kovács",
+          role: "REF",
+          nationality: "Romania",
+        },
+      ],
+    },
+    {
+      id: 313202,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-11-03T20:00:00Z",
+      status: "FINISHED",
+      matchday: 3,
+      stage: "GROUP_STAGE",
+      group: "Group D",
+      lastUpdated: "2020-11-04T04:15:03Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 1,
+          awayTeam: 2,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 2,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 4485,
+        name: "FC Midtjylland",
+      },
+      awayTeam: {
+        id: 678,
+        name: "AFC Ajax",
+      },
+      referees: [
+        {
+          id: 34948,
+          name: "Bobby Madden",
+          role: "REF",
+          nationality: "Scotland",
+        },
+        {
+          id: 35360,
+          name: "David Roome",
+          role: "REF",
+          nationality: "Scotland",
+        },
+        {
+          id: 34580,
+          name: "Graeme Stewart",
+          role: "REF",
+          nationality: "Scotland",
+        },
+        {
+          id: 35112,
+          name: "Don Robertson",
+          role: "REF",
+          nationality: "Scotland",
+        },
+        {
+          id: 11494,
+          name: "Stuart Attwell",
+          role: "REF",
+          nationality: "England",
+        },
+        {
+          id: 11520,
+          name: "Paul Tierney",
+          role: "REF",
+          nationality: "England",
+        },
+      ],
+    },
+    {
+      id: 313225,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-11-04T17:55:00Z",
+      status: "FINISHED",
+      matchday: 3,
+      stage: "GROUP_STAGE",
+      group: "Group F",
+      lastUpdated: "2020-11-07T05:30:13Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "DRAW",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 1,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 731,
+        name: "FK Zenit Sankt-Petersburg",
+      },
+      awayTeam: {
+        id: 110,
+        name: "SS Lazio",
+      },
+      referees: [
+        {
+          id: 43540,
+          name: "Artur Soares Dias",
+          role: "REF",
+          nationality: "Portugal",
+        },
+        {
+          id: 37626,
+          name: "Rui Tavares",
+          role: "REF",
+          nationality: "Portugal",
+        },
+        {
+          id: 37714,
+          name: "Paulo Soares",
+          role: "REF",
+          nationality: "Portugal",
+        },
+        {
+          id: 37386,
+          name: "António Nobre",
+          role: "REF",
+          nationality: "Portugal",
+        },
+        {
+          id: 15713,
+          name: "Tiago Martins",
+          role: "REF",
+          nationality: "Portugal",
+        },
+        {
+          id: 37629,
+          name: "Luís Godinho",
+          role: "REF",
+          nationality: "Portugal",
+        },
+      ],
+    },
+    {
+      id: 313249,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-11-04T17:55:00Z",
+      status: "FINISHED",
+      matchday: 3,
+      stage: "GROUP_STAGE",
+      group: "Group H",
+      lastUpdated: "2020-11-05T02:50:02Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 2,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 2,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 1897,
+        name: "Medipol Başakşehir FK",
+      },
+      awayTeam: {
+        id: 66,
+        name: "Manchester United FC",
+      },
+      referees: [
+        {
+          id: 11029,
+          name: "Davide Massa",
+          role: "REF",
+          nationality: "Italy",
+        },
+        {
+          id: 11055,
+          name: "Filippo Meli",
+          role: "REF",
+          nationality: "Italy",
+        },
+        {
+          id: 10992,
+          name: "Stefano Alassio",
+          role: "REF",
+          nationality: "Italy",
+        },
+        {
+          id: 11050,
+          name: "Giampaolo Calvarese",
+          role: "REF",
+          nationality: "Italy",
+        },
+        {
+          id: 11060,
+          name: "Marco Di Bello",
+          role: "REF",
+          nationality: "Italy",
+        },
+        {
+          id: 11043,
+          name: "Maurizio Mariani",
+          role: "REF",
+          nationality: "Italy",
+        },
+      ],
+    },
+    {
+      id: 313213,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-11-04T20:00:00Z",
+      status: "FINISHED",
+      matchday: 3,
+      stage: "GROUP_STAGE",
+      group: "Group E",
+      lastUpdated: "2021-01-25T14:30:16Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 3,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 2,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 61,
+        name: "Chelsea FC",
+      },
+      awayTeam: {
+        id: 529,
+        name: "Stade Rennais FC 1901",
+      },
+      referees: [
+        {
+          id: 43878,
+          name: "Felix Zwayer",
+          role: "REF",
+          nationality: "Germany",
+        },
+        {
+          id: 43923,
+          name: "Thorsten Schiffner",
+          role: "REF",
+          nationality: "Germany",
+        },
+        {
+          id: 43879,
+          name: "Marco Achmüller",
+          role: "REF",
+          nationality: "Germany",
+        },
+        {
+          id: 43943,
+          name: "Tobias Stieler",
+          role: "REF",
+          nationality: "Germany",
+        },
+        {
+          id: 9567,
+          name: "Sascha Stegemann",
+          role: "REF",
+          nationality: "Germany",
+        },
+        {
+          id: 26174,
+          name: "Bibiana Steinhaus",
+          role: "REF",
+          nationality: "Germany",
+        },
+      ],
+    },
+    {
+      id: 313214,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-11-04T20:00:00Z",
+      status: "FINISHED",
+      matchday: 3,
+      stage: "GROUP_STAGE",
+      group: "Group E",
+      lastUpdated: "2021-01-25T14:30:16Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 3,
+          awayTeam: 2,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 2,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 559,
+        name: "Sevilla FC",
+      },
+      awayTeam: {
+        id: 5452,
+        name: "FK Krasnodar",
+      },
+      referees: [
+        {
+          id: 43875,
+          name: "Felix Brych",
+          role: "REF",
+          nationality: "Germany",
+        },
+        {
+          id: 43876,
+          name: "Mark Borsch",
+          role: "REF",
+          nationality: "Germany",
+        },
+        {
+          id: 43877,
+          name: "Stefan Lupp",
+          role: "REF",
+          nationality: "Germany",
+        },
+        {
+          id: 15408,
+          name: "Daniel Siebert",
+          role: "REF",
+          nationality: "Germany",
+        },
+        {
+          id: 15821,
+          name: "Marco Fritz",
+          role: "REF",
+          nationality: "Germany",
+        },
+        {
+          id: 57542,
+          name: "Günter Perl",
+          role: "REF",
+          nationality: "Germany",
+        },
+      ],
+    },
+    {
+      id: 313226,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-11-04T20:00:00Z",
+      status: "FINISHED",
+      matchday: 3,
+      stage: "GROUP_STAGE",
+      group: "Group F",
+      lastUpdated: "2021-01-25T14:30:17Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 3,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 3,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 851,
+        name: "Club Brugge KV",
+      },
+      awayTeam: {
+        id: 4,
+        name: "Borussia Dortmund",
+      },
+      referees: [
+        {
+          id: 9346,
+          name: "Damir Skomina",
+          role: "REF",
+          nationality: "Slovenia",
+        },
+        {
+          id: 9347,
+          name: "Jure Praprotnik",
+          role: "REF",
+          nationality: "Slovenia",
+        },
+        {
+          id: 9349,
+          name: "Tomaž Klančnik",
+          role: "REF",
+          nationality: "Slovenia",
+        },
+        {
+          id: 100353,
+          name: "Dragoslav Perić",
+          role: "REF",
+          nationality: "Slovenia",
+        },
+        {
+          id: 11079,
+          name: "Marco Guida",
+          role: "REF",
+          nationality: "Italy",
+        },
+        {
+          id: 10977,
+          name: "Fabio Maresca",
+          role: "REF",
+          nationality: "Italy",
+        },
+      ],
+    },
+    {
+      id: 313237,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-11-04T20:00:00Z",
+      status: "FINISHED",
+      matchday: 3,
+      stage: "GROUP_STAGE",
+      group: "Group G",
+      lastUpdated: "2021-01-25T14:30:18Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 2,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 81,
+        name: "FC Barcelona",
+      },
+      awayTeam: {
+        id: 842,
+        name: "FK Dynamo Kyiv",
+      },
+      referees: [
+        {
+          id: 11605,
+          name: "Michael Oliver",
+          role: "REF",
+          nationality: "England",
+        },
+        {
+          id: 11564,
+          name: "Stuart Burt",
+          role: "REF",
+          nationality: "England",
+        },
+        {
+          id: 11488,
+          name: "Simon Bennett",
+          role: "REF",
+          nationality: "England",
+        },
+        {
+          id: 11556,
+          name: "David Coote",
+          role: "REF",
+          nationality: "England",
+        },
+        {
+          id: 11443,
+          name: "Chris Kavanagh",
+          role: "REF",
+          nationality: "England",
+        },
+        {
+          id: 11585,
+          name: "Craig Pawson",
+          role: "REF",
+          nationality: "England",
+        },
+      ],
+    },
+    {
+      id: 313238,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-11-04T20:00:00Z",
+      status: "FINISHED",
+      matchday: 3,
+      stage: "GROUP_STAGE",
+      group: "Group G",
+      lastUpdated: "2021-02-03T11:30:22Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 1,
+          awayTeam: 4,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 5954,
+        name: "Ferencvárosi TC",
+      },
+      awayTeam: {
+        id: 109,
+        name: "Juventus FC",
+      },
+      referees: [
+        {
+          id: 40663,
+          name: "Orel Grinfeeld",
+          role: "REF",
+          nationality: "Israel",
+        },
+        {
+          id: 64594,
+          name: "Roy Hassan",
+          role: "REF",
+          nationality: "Israel",
+        },
+        {
+          id: 41353,
+          name: "Idan Yarkoni",
+          role: "REF",
+          nationality: "Israel",
+        },
+        {
+          id: 130272,
+          name: "Gal Leibovitz",
+          role: "REF",
+          nationality: "Israel",
+        },
+        {
+          id: 15746,
+          name: "Bastian Dankert",
+          role: "REF",
+          nationality: "Germany",
+        },
+        {
+          id: 253,
+          name: "Harm Osmers",
+          role: "REF",
+          nationality: "Germany",
+        },
+      ],
+    },
+    {
+      id: 313250,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-11-04T20:00:00Z",
+      status: "FINISHED",
+      matchday: 3,
+      stage: "GROUP_STAGE",
+      group: "Group H",
+      lastUpdated: "2021-01-25T14:30:19Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 2,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 721,
+        name: "RB Leipzig",
+      },
+      awayTeam: {
+        id: 524,
+        name: "Paris Saint-Germain FC",
+      },
+      referees: [
+        {
+          id: 43888,
+          name: "Szymon Marciniak",
+          role: "REF",
+          nationality: "Poland",
+        },
+        {
+          id: 43889,
+          name: "Paweł Sokolnicki",
+          role: "REF",
+          nationality: "Poland",
+        },
+        {
+          id: 43891,
+          name: "Radosław Siejka",
+          role: "REF",
+          nationality: "Poland",
+        },
+        {
+          id: 43892,
+          name: "Paweł Raczkowski",
+          role: "REF",
+          nationality: "Poland",
+        },
+        {
+          id: 43854,
+          name: "Paweł Gil",
+          role: "REF",
+          nationality: "Poland",
+        },
+        {
+          id: 131857,
+          name: "Pawel Gil",
+          role: "REF",
+          nationality: "Poland",
+        },
+        {
+          id: 72624,
+          name: "Tomasz Kwiatkowski",
+          role: "REF",
+          nationality: "Poland",
+        },
+      ],
+    },
+    {
+      id: 313215,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-11-24T17:55:00Z",
+      status: "FINISHED",
+      matchday: 4,
+      stage: "GROUP_STAGE",
+      group: "Group E",
+      lastUpdated: "2021-01-25T16:30:16Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 1,
+          awayTeam: 2,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 529,
+        name: "Stade Rennais FC 1901",
+      },
+      awayTeam: {
+        id: 61,
+        name: "Chelsea FC",
+      },
+      referees: [
+        {
+          id: 9558,
+          name: "Björn Kuipers",
+          role: "MAIN_REFEREE",
+          nationality: "Netherlands",
+        },
+        {
+          id: 9559,
+          name: "Sander van Roekel",
+          role: "ASSISTANT_N1",
+          nationality: "Netherlands",
+        },
+        {
+          id: 9560,
+          name: "Erwin Zeinstra",
+          role: "ASSISTANT_N2",
+          nationality: "Netherlands",
+        },
+        {
+          id: 43858,
+          name: "Serdar Gözübüyük",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Netherlands",
+        },
+        {
+          id: 15152,
+          name: "Pol van Boekel",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Netherlands",
+        },
+        {
+          id: 43861,
+          name: "Dennis Higler",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "Netherlands",
+        },
+      ],
+    },
+    {
+      id: 313216,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-11-24T17:55:00Z",
+      status: "FINISHED",
+      matchday: 4,
+      stage: "GROUP_STAGE",
+      group: "Group E",
+      lastUpdated: "2021-01-06T14:30:14Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 1,
+          awayTeam: 2,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 5452,
+        name: "FK Krasnodar",
+      },
+      awayTeam: {
+        id: 559,
+        name: "Sevilla FC",
+      },
+      referees: [
+        {
+          id: 11079,
+          name: "Marco Guida",
+          role: "MAIN_REFEREE",
+          nationality: "Italy",
+        },
+        {
+          id: 11049,
+          name: "Ciro Carbone",
+          role: "ASSISTANT_N1",
+          nationality: "Italy",
+        },
+        {
+          id: 10991,
+          name: "Giorgio Peretti",
+          role: "ASSISTANT_N2",
+          nationality: "Italy",
+        },
+        {
+          id: 10977,
+          name: "Fabio Maresca",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Italy",
+        },
+        {
+          id: 11060,
+          name: "Marco Di Bello",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Italy",
+        },
+        {
+          id: 11043,
+          name: "Maurizio Mariani",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "Italy",
+        },
+      ],
+    },
+    {
+      id: 313227,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-11-24T20:00:00Z",
+      status: "FINISHED",
+      matchday: 4,
+      stage: "GROUP_STAGE",
+      group: "Group F",
+      lastUpdated: "2021-01-25T16:30:17Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 3,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 2,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 4,
+        name: "Borussia Dortmund",
+      },
+      awayTeam: {
+        id: 851,
+        name: "Club Brugge KV",
+      },
+      referees: [
+        {
+          id: 43954,
+          name: "Ivan Kružliak",
+          role: "MAIN_REFEREE",
+          nationality: "Slovakia",
+        },
+        {
+          id: 43957,
+          name: "Branislav Hancko",
+          role: "ASSISTANT_N1",
+          nationality: "Slovakia",
+        },
+        {
+          id: 37626,
+          name: "Rui Tavares",
+          role: "ASSISTANT_N2",
+          nationality: "Portugal",
+        },
+        {
+          id: 15643,
+          name: "Peter Kráľovič",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Slovakia",
+        },
+        {
+          id: 43854,
+          name: "Paweł Gil",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Poland",
+        },
+        {
+          id: 131857,
+          name: "Pawel Gil",
+          role: "ADDITIONAL_ASSISTANT_N1",
+          nationality: "Poland",
+        },
+        {
+          id: 43857,
+          name: "Bartosz Frankowski",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "Poland",
+        },
+      ],
+    },
+    {
+      id: 313228,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-11-24T20:00:00Z",
+      status: "FINISHED",
+      matchday: 4,
+      stage: "GROUP_STAGE",
+      group: "Group F",
+      lastUpdated: "2021-01-25T16:30:17Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 3,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 2,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 110,
+        name: "SS Lazio",
+      },
+      awayTeam: {
+        id: 731,
+        name: "FK Zenit Sankt-Petersburg",
+      },
+      referees: [
+        {
+          id: 11605,
+          name: "Michael Oliver",
+          role: "MAIN_REFEREE",
+          nationality: "England",
+        },
+        {
+          id: 11564,
+          name: "Stuart Burt",
+          role: "ASSISTANT_N1",
+          nationality: "England",
+        },
+        {
+          id: 11488,
+          name: "Simon Bennett",
+          role: "ASSISTANT_N2",
+          nationality: "England",
+        },
+        {
+          id: 11423,
+          name: "Andy Madley",
+          role: "FOURTH_OFFICIAL",
+          nationality: "England",
+        },
+        {
+          id: 11443,
+          name: "Chris Kavanagh",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "England",
+        },
+        {
+          id: 11585,
+          name: "Craig Pawson",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "England",
+        },
+      ],
+    },
+    {
+      id: 313239,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-11-24T20:00:00Z",
+      status: "FINISHED",
+      matchday: 4,
+      stage: "GROUP_STAGE",
+      group: "Group G",
+      lastUpdated: "2021-01-25T16:30:18Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 2,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 109,
+        name: "Juventus FC",
+      },
+      awayTeam: {
+        id: 5954,
+        name: "Ferencvárosi TC",
+      },
+      referees: [
+        {
+          id: 15408,
+          name: "Daniel Siebert",
+          role: "MAIN_REFEREE",
+          nationality: "Germany",
+        },
+        {
+          id: 15409,
+          name: "Jan Seidel",
+          role: "ASSISTANT_N1",
+          nationality: "Germany",
+        },
+        {
+          id: 43880,
+          name: "Rafael Foltyn",
+          role: "ASSISTANT_N2",
+          nationality: "Germany",
+        },
+        {
+          id: 253,
+          name: "Harm Osmers",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Germany",
+        },
+        {
+          id: 15821,
+          name: "Marco Fritz",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Germany",
+        },
+        {
+          id: 43876,
+          name: "Mark Borsch",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "Germany",
+        },
+      ],
+    },
+    {
+      id: 313240,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-11-24T20:00:00Z",
+      status: "FINISHED",
+      matchday: 4,
+      stage: "GROUP_STAGE",
+      group: "Group G",
+      lastUpdated: "2021-01-25T16:30:18Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 4,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 842,
+        name: "FK Dynamo Kyiv",
+      },
+      awayTeam: {
+        id: 81,
+        name: "FC Barcelona",
+      },
+      referees: [
+        {
+          id: 9350,
+          name: "Matej Jug",
+          role: "MAIN_REFEREE",
+          nationality: "Slovenia",
+        },
+        {
+          id: 43959,
+          name: "Matej Žunič",
+          role: "ASSISTANT_N1",
+          nationality: "Slovenia",
+        },
+        {
+          id: 9348,
+          name: "Robert Vukan",
+          role: "ASSISTANT_N2",
+          nationality: "Slovenia",
+        },
+        {
+          id: 111463,
+          name: "Nejc Kajtazovic",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Slovenia",
+        },
+        {
+          id: 9567,
+          name: "Sascha Stegemann",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Germany",
+        },
+        {
+          id: 9347,
+          name: "Jure Praprotnik",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "Slovenia",
+        },
+      ],
+    },
+    {
+      id: 313251,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-11-24T20:00:00Z",
+      status: "FINISHED",
+      matchday: 4,
+      stage: "GROUP_STAGE",
+      group: "Group H",
+      lastUpdated: "2021-01-06T14:30:16Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 4,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 3,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 66,
+        name: "Manchester United FC",
+      },
+      awayTeam: {
+        id: 1897,
+        name: "Medipol Başakşehir FK",
+      },
+      referees: [
+        {
+          id: 36314,
+          name: "Ovidiu Hațegan",
+          role: "MAIN_REFEREE",
+          nationality: "Romania",
+        },
+        {
+          id: 36316,
+          name: "Octavian Șovre",
+          role: "ASSISTANT_N1",
+          nationality: "Romania",
+        },
+        {
+          id: 36837,
+          name: "Sebastian Gheorghe",
+          role: "ASSISTANT_N2",
+          nationality: "Romania",
+        },
+        {
+          id: 37162,
+          name: "Marius Avram",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Romania",
+        },
+        {
+          id: 38806,
+          name: "João Pinheiro",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Portugal",
+        },
+        {
+          id: 111436,
+          name: "Xavi Estrada",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "Spain",
+        },
+      ],
+    },
+    {
+      id: 313252,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-11-24T20:00:00Z",
+      status: "FINISHED",
+      matchday: 4,
+      stage: "GROUP_STAGE",
+      group: "Group H",
+      lastUpdated: "2021-01-25T16:30:19Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 1,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 524,
+        name: "Paris Saint-Germain FC",
+      },
+      awayTeam: {
+        id: 721,
+        name: "RB Leipzig",
+      },
+      referees: [
+        {
+          id: 43899,
+          name: "Danny Makkelie",
+          role: "MAIN_REFEREE",
+          nationality: "Netherlands",
+        },
+        {
+          id: 43874,
+          name: "Mario Diks",
+          role: "ASSISTANT_N1",
+          nationality: "Netherlands",
+        },
+        {
+          id: 43900,
+          name: "Hessel Steegstra",
+          role: "ASSISTANT_N2",
+          nationality: "Netherlands",
+        },
+        {
+          id: 9561,
+          name: "Allard Lindhout",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Netherlands",
+        },
+        {
+          id: 43902,
+          name: "Kevin Blom",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Netherlands",
+        },
+        {
+          id: 43716,
+          name: "Jochem Kamphuis",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "Netherlands",
+        },
+      ],
+    },
+    {
+      id: 313179,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-11-25T17:55:00Z",
+      status: "FINISHED",
+      matchday: 4,
+      stage: "GROUP_STAGE",
+      group: "Group B",
+      lastUpdated: "2021-01-25T15:30:16Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 4,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 3,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 18,
+        name: "Borussia Mönchengladbach",
+      },
+      awayTeam: {
+        id: 1887,
+        name: "FK Shakhtar Donetsk",
+      },
+      referees: [
+        {
+          id: 30687,
+          name: "Cüneyt Çakιr",
+          role: "MAIN_REFEREE",
+          nationality: "Turkey",
+        },
+        {
+          id: 30688,
+          name: "Bahattin Duran",
+          role: "ASSISTANT_N1",
+          nationality: "Turkey",
+        },
+        {
+          id: 30689,
+          name: "Tarık Ongun",
+          role: "ASSISTANT_N2",
+          nationality: "Turkey",
+        },
+        {
+          id: 15096,
+          name: "Halil Umut Meler",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Turkey",
+        },
+        {
+          id: 30236,
+          name: "Abdulkadir Bitigen",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Turkey",
+        },
+        {
+          id: 15093,
+          name: "Mete Kalkavan",
+          role: "ADDITIONAL_ASSISTANT_N1",
+          nationality: "Turkey",
+        },
+      ],
+    },
+    {
+      id: 313191,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-11-25T17:55:00Z",
+      status: "FINISHED",
+      matchday: 4,
+      stage: "GROUP_STAGE",
+      group: "Group C",
+      lastUpdated: "2021-01-25T15:30:18Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 654,
+        name: "PAE Olympiakos SFP",
+      },
+      awayTeam: {
+        id: 65,
+        name: "Manchester City FC",
+      },
+      referees: [
+        {
+          id: 11029,
+          name: "Davide Massa",
+          role: "MAIN_REFEREE",
+          nationality: "Italy",
+        },
+        {
+          id: 11055,
+          name: "Filippo Meli",
+          role: "ASSISTANT_N1",
+          nationality: "Italy",
+        },
+        {
+          id: 10992,
+          name: "Stefano Alassio",
+          role: "ASSISTANT_N2",
+          nationality: "Italy",
+        },
+        {
+          id: 11075,
+          name: "Paolo Valeri",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Italy",
+        },
+        {
+          id: 11054,
+          name: "Massimiliano Irrati",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Italy",
+        },
+        {
+          id: 11048,
+          name: "Alberto Tegoni",
+          role: "ADDITIONAL_ASSISTANT_N1",
+          nationality: "Italy",
+        },
+      ],
+    },
+    {
+      id: 313167,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-11-25T20:00:00Z",
+      status: "FINISHED",
+      matchday: 4,
+      stage: "GROUP_STAGE",
+      group: "Group A",
+      lastUpdated: "2021-01-25T15:30:15Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 3,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 5,
+        name: "FC Bayern München",
+      },
+      awayTeam: {
+        id: 1877,
+        name: "FC Red Bull Salzburg",
+      },
+      referees: [
+        {
+          id: 40663,
+          name: "Orel Grinfeeld",
+          role: "MAIN_REFEREE",
+          nationality: "Israel",
+        },
+        {
+          id: 64594,
+          name: "Roy Hassan",
+          role: "ASSISTANT_N1",
+          nationality: "Israel",
+        },
+        {
+          id: 41353,
+          name: "Idan Yarkoni",
+          role: "ASSISTANT_N2",
+          nationality: "Israel",
+        },
+        {
+          id: 42060,
+          name: "Eitan Shmuelevich",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Israel",
+        },
+        {
+          id: 15664,
+          name: "Roi Reinshreiber",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Israel",
+        },
+        {
+          id: 72698,
+          name: "David Fuxman",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "Israel",
+        },
+      ],
+    },
+    {
+      id: 313168,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-11-25T20:00:00Z",
+      status: "FINISHED",
+      matchday: 4,
+      stage: "GROUP_STAGE",
+      group: "Group A",
+      lastUpdated: "2021-01-25T15:30:15Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "DRAW",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 78,
+        name: "Club Atlético de Madrid",
+      },
+      awayTeam: {
+        id: 5455,
+        name: "FK Lokomotiv Moskva",
+      },
+      referees: [
+        {
+          id: 9351,
+          name: "Slavko Vinčič",
+          role: "MAIN_REFEREE",
+          nationality: "Slovenia",
+        },
+        {
+          id: 9349,
+          name: "Tomaž Klančnik",
+          role: "ASSISTANT_N1",
+          nationality: "Slovenia",
+        },
+        {
+          id: 43934,
+          name: "Andraž Kovačič",
+          role: "ASSISTANT_N2",
+          nationality: "Slovenia",
+        },
+        {
+          id: 43936,
+          name: "Rade Obrenović",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Slovenia",
+        },
+        {
+          id: 15746,
+          name: "Bastian Dankert",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Germany",
+        },
+        {
+          id: 26174,
+          name: "Bibiana Steinhaus",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "Germany",
+        },
+      ],
+    },
+    {
+      id: 313180,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-11-25T20:00:00Z",
+      status: "FINISHED",
+      matchday: 4,
+      stage: "GROUP_STAGE",
+      group: "Group B",
+      lastUpdated: "2021-01-25T15:30:16Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 2,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 108,
+        name: "FC Internazionale Milano",
+      },
+      awayTeam: {
+        id: 86,
+        name: "Real Madrid CF",
+      },
+      referees: [
+        {
+          id: 11580,
+          name: "Anthony Taylor",
+          role: "MAIN_REFEREE",
+          nationality: "England",
+        },
+        {
+          id: 11581,
+          name: "Gary Beswick",
+          role: "ASSISTANT_N1",
+          nationality: "England",
+        },
+        {
+          id: 11615,
+          name: "Adam Nunn",
+          role: "ASSISTANT_N2",
+          nationality: "England",
+        },
+        {
+          id: 11556,
+          name: "David Coote",
+          role: "FOURTH_OFFICIAL",
+          nationality: "England",
+        },
+        {
+          id: 11494,
+          name: "Stuart Attwell",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "England",
+        },
+        {
+          id: 11530,
+          name: "Lee Betts",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "England",
+        },
+      ],
+    },
+    {
+      id: 313192,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-11-25T20:00:00Z",
+      status: "FINISHED",
+      matchday: 4,
+      stage: "GROUP_STAGE",
+      group: "Group C",
+      lastUpdated: "2021-01-25T15:30:18Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 2,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 516,
+        name: "Olympique de Marseille",
+      },
+      awayTeam: {
+        id: 503,
+        name: "FC Porto",
+      },
+      referees: [
+        {
+          id: 15332,
+          name: "Andreas Ekberg",
+          role: "MAIN_REFEREE",
+          nationality: "Sweden",
+        },
+        {
+          id: 15333,
+          name: "Mehmet-Mohammed Culum",
+          role: "ASSISTANT_N1",
+          nationality: "Sweden",
+        },
+        {
+          id: 15334,
+          name: "Stefan Hallberg",
+          role: "ASSISTANT_N2",
+          nationality: "Sweden",
+        },
+        {
+          id: 15335,
+          name: "Kristoffer Karlsson",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Sweden",
+        },
+        {
+          id: 81,
+          name: "Juan Martínez",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Spain",
+        },
+        {
+          id: 15628,
+          name: "Ricardo de Burgos",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "Spain",
+        },
+      ],
+    },
+    {
+      id: 313203,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-11-25T20:00:00Z",
+      status: "FINISHED",
+      matchday: 4,
+      stage: "GROUP_STAGE",
+      group: "Group D",
+      lastUpdated: "2021-01-25T15:30:19Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 2,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 64,
+        name: "Liverpool FC",
+      },
+      awayTeam: {
+        id: 102,
+        name: "Atalanta BC",
+      },
+      referees: [
+        {
+          id: 43843,
+          name: "Carlos del Cerro",
+          role: "MAIN_REFEREE",
+          nationality: "Spain",
+        },
+        {
+          id: 43844,
+          name: "Juan Carlos Yuste",
+          role: "ASSISTANT_N1",
+          nationality: "Spain",
+        },
+        {
+          id: 43872,
+          name: "Roberto Alonso",
+          role: "ASSISTANT_N2",
+          nationality: "Spain",
+        },
+        {
+          id: 58184,
+          name: "José Luis Munuera",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Spain",
+        },
+        {
+          id: 15625,
+          name: "Alejandro Hernández",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Spain",
+        },
+        {
+          id: 55934,
+          name: "Guillermo Cuadra",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "Spain",
+        },
+      ],
+    },
+    {
+      id: 313204,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-11-25T20:00:00Z",
+      status: "FINISHED",
+      matchday: 4,
+      stage: "GROUP_STAGE",
+      group: "Group D",
+      lastUpdated: "2021-01-25T15:30:19Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 3,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 678,
+        name: "AFC Ajax",
+      },
+      awayTeam: {
+        id: 4485,
+        name: "FC Midtjylland",
+      },
+      referees: [
+        {
+          id: 43938,
+          name: "Sergey Karasev",
+          role: "MAIN_REFEREE",
+          nationality: "Russia",
+        },
+        {
+          id: 43850,
+          name: "Igor Demeshko",
+          role: "ASSISTANT_N1",
+          nationality: "Russia",
+        },
+        {
+          id: 36197,
+          name: "Maksim Gavrilin",
+          role: "ASSISTANT_N2",
+          nationality: "Russia",
+        },
+        {
+          id: 43851,
+          name: "Kirill Levnikov",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Russia",
+        },
+        {
+          id: 57636,
+          name: "Vitaly Meshkov",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Russia",
+        },
+        {
+          id: 57573,
+          name: "Vladimir Moskalev",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "Russia",
+        },
+      ],
+    },
+    {
+      id: 313169,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-12-01T17:55:00Z",
+      status: "FINISHED",
+      matchday: 5,
+      stage: "GROUP_STAGE",
+      group: "Group A",
+      lastUpdated: "2020-12-02T02:15:08Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 1,
+          awayTeam: 3,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 2,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 5455,
+        name: "FK Lokomotiv Moskva",
+      },
+      awayTeam: {
+        id: 1877,
+        name: "FC Red Bull Salzburg",
+      },
+      referees: [
+        {
+          id: 30784,
+          name: "Ali Palabıyık",
+          role: "MAIN_REFEREE",
+          nationality: "Turkey",
+        },
+        {
+          id: 30680,
+          name: "Ceyhun Sesigüzel",
+          role: "ASSISTANT_N1",
+          nationality: "Turkey",
+        },
+        {
+          id: 30786,
+          name: "Serkan Olguncan",
+          role: "ASSISTANT_N2",
+          nationality: "Turkey",
+        },
+        {
+          id: 30698,
+          name: "Arda Kardeşler",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Turkey",
+        },
+        {
+          id: 30236,
+          name: "Abdulkadir Bitigen",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Turkey",
+        },
+        {
+          id: 15093,
+          name: "Mete Kalkavan",
+          role: "ADDITIONAL_ASSISTANT_N1",
+          nationality: "Turkey",
+        },
+      ],
+    },
+    {
+      id: 313181,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-12-01T17:55:00Z",
+      status: "FINISHED",
+      matchday: 5,
+      stage: "GROUP_STAGE",
+      group: "Group B",
+      lastUpdated: "2021-01-27T17:30:12Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 2,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 1887,
+        name: "FK Shakhtar Donetsk",
+      },
+      awayTeam: {
+        id: 86,
+        name: "Real Madrid CF",
+      },
+      referees: [
+        {
+          id: 36314,
+          name: "Ovidiu Hațegan",
+          role: "MAIN_REFEREE",
+          nationality: "Romania",
+        },
+        {
+          id: 36316,
+          name: "Octavian Șovre",
+          role: "ASSISTANT_N1",
+          nationality: "Romania",
+        },
+        {
+          id: 36837,
+          name: "Sebastian Gheorghe",
+          role: "ASSISTANT_N2",
+          nationality: "Romania",
+        },
+        {
+          id: 36425,
+          name: "Sebastian Colțescu",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Romania",
+        },
+        {
+          id: 43854,
+          name: "Paweł Gil",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Poland",
+        },
+        {
+          id: 43856,
+          name: "Marcin Borkowski",
+          role: "ADDITIONAL_ASSISTANT_N1",
+          nationality: "Poland",
+        },
+      ],
+    },
+    {
+      id: 313170,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-12-01T20:00:00Z",
+      status: "FINISHED",
+      matchday: 5,
+      stage: "GROUP_STAGE",
+      group: "Group A",
+      lastUpdated: "2021-01-27T17:30:11Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "DRAW",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 1,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 78,
+        name: "Club Atlético de Madrid",
+      },
+      awayTeam: {
+        id: 5,
+        name: "FC Bayern München",
+      },
+      referees: [
+        {
+          id: 9374,
+          name: "Clément Turpin",
+          role: "MAIN_REFEREE",
+          nationality: "France",
+        },
+        {
+          id: 43883,
+          name: "Nicolas Danos",
+          role: "ASSISTANT_N1",
+          nationality: "France",
+        },
+        {
+          id: 43884,
+          name: "Cyril Gringore",
+          role: "ASSISTANT_N2",
+          nationality: "France",
+        },
+        {
+          id: 57090,
+          name: "Franck Schneider",
+          role: "FOURTH_OFFICIAL",
+          nationality: "France",
+        },
+        {
+          id: 43918,
+          name: "François Letexier",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "France",
+        },
+        {
+          id: 15548,
+          name: "Jérôme Brisard",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "France",
+        },
+      ],
+    },
+    {
+      id: 313182,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-12-01T20:00:00Z",
+      status: "FINISHED",
+      matchday: 5,
+      stage: "GROUP_STAGE",
+      group: "Group B",
+      lastUpdated: "2021-01-27T17:30:12Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 2,
+          awayTeam: 3,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 18,
+        name: "Borussia Mönchengladbach",
+      },
+      awayTeam: {
+        id: 108,
+        name: "FC Internazionale Milano",
+      },
+      referees: [
+        {
+          id: 43899,
+          name: "Danny Makkelie",
+          role: "MAIN_REFEREE",
+          nationality: "Netherlands",
+        },
+        {
+          id: 43874,
+          name: "Mario Diks",
+          role: "ASSISTANT_N1",
+          nationality: "Netherlands",
+        },
+        {
+          id: 43900,
+          name: "Hessel Steegstra",
+          role: "ASSISTANT_N2",
+          nationality: "Netherlands",
+        },
+        {
+          id: 43954,
+          name: "Ivan Kružliak",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Slovakia",
+        },
+        {
+          id: 43902,
+          name: "Kevin Blom",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Netherlands",
+        },
+        {
+          id: 43716,
+          name: "Jochem Kamphuis",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "Netherlands",
+        },
+      ],
+    },
+    {
+      id: 313193,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-12-01T20:00:00Z",
+      status: "FINISHED",
+      matchday: 5,
+      stage: "GROUP_STAGE",
+      group: "Group C",
+      lastUpdated: "2021-01-27T17:30:13Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 2,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 516,
+        name: "Olympique de Marseille",
+      },
+      awayTeam: {
+        id: 654,
+        name: "PAE Olympiakos SFP",
+      },
+      referees: [
+        {
+          id: 43870,
+          name: "Jesús Gil",
+          role: "MAIN_REFEREE",
+          nationality: "Spain",
+        },
+        {
+          id: 32192,
+          name: "Ángel Nevado",
+          role: "ASSISTANT_N1",
+          nationality: "Spain",
+        },
+        {
+          id: 15627,
+          name: "José Naranjo",
+          role: "ASSISTANT_N2",
+          nationality: "Spain",
+        },
+        {
+          id: 10977,
+          name: "Fabio Maresca",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Italy",
+        },
+        {
+          id: 15628,
+          name: "Ricardo de Burgos",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Spain",
+        },
+        {
+          id: 3158,
+          name: "Iñigo Prieto",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "Spain",
+        },
+      ],
+    },
+    {
+      id: 313194,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-12-01T20:00:00Z",
+      status: "FINISHED",
+      matchday: 5,
+      stage: "GROUP_STAGE",
+      group: "Group C",
+      lastUpdated: "2021-01-27T17:30:13Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "DRAW",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 503,
+        name: "FC Porto",
+      },
+      awayTeam: {
+        id: 65,
+        name: "Manchester City FC",
+      },
+      referees: [
+        {
+          id: 9558,
+          name: "Björn Kuipers",
+          role: "MAIN_REFEREE",
+          nationality: "Netherlands",
+        },
+        {
+          id: 9559,
+          name: "Sander van Roekel",
+          role: "ASSISTANT_N1",
+          nationality: "Netherlands",
+        },
+        {
+          id: 9560,
+          name: "Erwin Zeinstra",
+          role: "ASSISTANT_N2",
+          nationality: "Netherlands",
+        },
+        {
+          id: 15038,
+          name: "Lawrence Visser",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Belgium",
+        },
+        {
+          id: 15152,
+          name: "Pol van Boekel",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Netherlands",
+        },
+        {
+          id: 17141,
+          name: "Rob Dieperink",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "Netherlands",
+        },
+      ],
+    },
+    {
+      id: 313205,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-12-01T20:00:00Z",
+      status: "FINISHED",
+      matchday: 5,
+      stage: "GROUP_STAGE",
+      group: "Group D",
+      lastUpdated: "2021-01-27T17:30:14Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 1,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 64,
+        name: "Liverpool FC",
+      },
+      awayTeam: {
+        id: 678,
+        name: "AFC Ajax",
+      },
+      referees: [
+        {
+          id: 43943,
+          name: "Tobias Stieler",
+          role: "MAIN_REFEREE",
+          nationality: "Germany",
+        },
+        {
+          id: 9569,
+          name: "Mike Pickel",
+          role: "ASSISTANT_N1",
+          nationality: "Germany",
+        },
+        {
+          id: 15747,
+          name: "Christian Gittelmann",
+          role: "ASSISTANT_N2",
+          nationality: "Germany",
+        },
+        {
+          id: 15821,
+          name: "Marco Fritz",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Germany",
+        },
+        {
+          id: 15746,
+          name: "Bastian Dankert",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Germany",
+        },
+        {
+          id: 253,
+          name: "Harm Osmers",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "Germany",
+        },
+      ],
+    },
+    {
+      id: 313206,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-12-01T20:00:00Z",
+      status: "FINISHED",
+      matchday: 5,
+      stage: "GROUP_STAGE",
+      group: "Group D",
+      lastUpdated: "2021-01-27T17:30:14Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "DRAW",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 1,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 102,
+        name: "Atalanta BC",
+      },
+      awayTeam: {
+        id: 4485,
+        name: "FC Midtjylland",
+      },
+      referees: [
+        {
+          id: 43905,
+          name: "Anastasios Sidiropoulos",
+          role: "MAIN_REFEREE",
+          nationality: "Greece",
+        },
+        {
+          id: 43906,
+          name: "Polychronis Kostaras",
+          role: "ASSISTANT_N1",
+          nationality: "Greece",
+        },
+        {
+          id: 43907,
+          name: "Lazaros Dimitriadis",
+          role: "ASSISTANT_N2",
+          nationality: "Greece",
+        },
+        {
+          id: 83810,
+          name: "Ioannis Papadopoulos",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Greece",
+        },
+        {
+          id: 57526,
+          name: "Christian Dingert",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Germany",
+        },
+        {
+          id: 26174,
+          name: "Bibiana Steinhaus",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "Germany",
+        },
+      ],
+    },
+    {
+      id: 313217,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-12-02T17:55:00Z",
+      status: "FINISHED",
+      matchday: 5,
+      stage: "GROUP_STAGE",
+      group: "Group E",
+      lastUpdated: "2020-12-02T22:01:34Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 1,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 5452,
+        name: "FK Krasnodar",
+      },
+      awayTeam: {
+        id: 529,
+        name: "Stade Rennais FC 1901",
+      },
+      referees: [
+        {
+          id: 34579,
+          name: "William Collum",
+          role: "MAIN_REFEREE",
+          nationality: "Scotland",
+        },
+        {
+          id: 57225,
+          name: "Francis Connor",
+          role: "ASSISTANT_N1",
+          nationality: "Scotland",
+        },
+        {
+          id: 35163,
+          name: "David McGeachie",
+          role: "ASSISTANT_N2",
+          nationality: "Scotland",
+        },
+        {
+          id: 15510,
+          name: "Nick Walsh",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Scotland",
+        },
+        {
+          id: 11520,
+          name: "Paul Tierney",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "England",
+        },
+        {
+          id: 11606,
+          name: "Constantine Hatzidakis",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "England",
+        },
+      ],
+    },
+    {
+      id: 313253,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-12-02T17:55:00Z",
+      status: "FINISHED",
+      matchday: 5,
+      stage: "GROUP_STAGE",
+      group: "Group H",
+      lastUpdated: "2021-01-26T17:30:15Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 3,
+          awayTeam: 4,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 2,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 1897,
+        name: "Medipol Başakşehir FK",
+      },
+      awayTeam: {
+        id: 721,
+        name: "RB Leipzig",
+      },
+      referees: [
+        {
+          id: 43843,
+          name: "Carlos del Cerro",
+          role: "MAIN_REFEREE",
+          nationality: "Spain",
+        },
+        {
+          id: 43844,
+          name: "Juan Carlos Yuste",
+          role: "ASSISTANT_N1",
+          nationality: "Spain",
+        },
+        {
+          id: 43872,
+          name: "Roberto Alonso",
+          role: "ASSISTANT_N2",
+          nationality: "Spain",
+        },
+        {
+          id: 55934,
+          name: "Guillermo Cuadra",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Spain",
+        },
+        {
+          id: 81,
+          name: "Juan Martínez",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Spain",
+        },
+        {
+          id: 43873,
+          name: "Diego Barbero",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "Spain",
+        },
+      ],
+    },
+    {
+      id: 313218,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-12-02T20:00:00Z",
+      status: "FINISHED",
+      matchday: 5,
+      stage: "GROUP_STAGE",
+      group: "Group E",
+      lastUpdated: "2021-01-26T17:30:13Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 4,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 559,
+        name: "Sevilla FC",
+      },
+      awayTeam: {
+        id: 61,
+        name: "Chelsea FC",
+      },
+      referees: [
+        {
+          id: 43540,
+          name: "Artur Soares Dias",
+          role: "MAIN_REFEREE",
+          nationality: "Portugal",
+        },
+        {
+          id: 37626,
+          name: "Rui Tavares",
+          role: "ASSISTANT_N1",
+          nationality: "Portugal",
+        },
+        {
+          id: 37714,
+          name: "Paulo Soares",
+          role: "ASSISTANT_N2",
+          nationality: "Portugal",
+        },
+        {
+          id: 37862,
+          name: "Hugo Miguel",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Portugal",
+        },
+        {
+          id: 15713,
+          name: "Tiago Martins",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Portugal",
+        },
+        {
+          id: 37629,
+          name: "Luís Godinho",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "Portugal",
+        },
+      ],
+    },
+    {
+      id: 313229,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-12-02T20:00:00Z",
+      status: "FINISHED",
+      matchday: 5,
+      stage: "GROUP_STAGE",
+      group: "Group F",
+      lastUpdated: "2021-01-26T17:30:14Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "DRAW",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 1,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 4,
+        name: "Borussia Dortmund",
+      },
+      awayTeam: {
+        id: 110,
+        name: "SS Lazio",
+      },
+      referees: [
+        {
+          id: 43869,
+          name: "Antonio Matéu Lahoz",
+          role: "MAIN_REFEREE",
+          nationality: "Spain",
+        },
+        {
+          id: 134,
+          name: "Pau Cebrián Devis",
+          role: "ASSISTANT_N1",
+          nationality: "Spain",
+        },
+        {
+          id: 82,
+          name: "Roberto Díaz Pérez",
+          role: "ASSISTANT_N2",
+          nationality: "Spain",
+        },
+        {
+          id: 58184,
+          name: "José Luis Munuera",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Spain",
+        },
+        {
+          id: 15625,
+          name: "Alejandro Hernández",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Spain",
+        },
+        {
+          id: 106,
+          name: "José Sánchez",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "Spain",
+        },
+      ],
+    },
+    {
+      id: 313230,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-12-02T20:00:00Z",
+      status: "FINISHED",
+      matchday: 5,
+      stage: "GROUP_STAGE",
+      group: "Group F",
+      lastUpdated: "2021-01-26T17:30:14Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 3,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 851,
+        name: "Club Brugge KV",
+      },
+      awayTeam: {
+        id: 731,
+        name: "FK Zenit Sankt-Petersburg",
+      },
+      referees: [
+        {
+          id: 43858,
+          name: "Serdar Gözübüyük",
+          role: "MAIN_REFEREE",
+          nationality: "Netherlands",
+        },
+        {
+          id: 43860,
+          name: "Joost van Zuilen",
+          role: "ASSISTANT_N1",
+          nationality: "Netherlands",
+        },
+        {
+          id: 14764,
+          name: "Johan Balder",
+          role: "ASSISTANT_N2",
+          nationality: "Netherlands",
+        },
+        {
+          id: 9561,
+          name: "Allard Lindhout",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Netherlands",
+        },
+        {
+          id: 43861,
+          name: "Dennis Higler",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Netherlands",
+        },
+        {
+          id: 56905,
+          name: "Bas Nijhuis",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "Netherlands",
+        },
+      ],
+    },
+    {
+      id: 313241,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-12-02T20:00:00Z",
+      status: "FINISHED",
+      matchday: 5,
+      stage: "GROUP_STAGE",
+      group: "Group G",
+      lastUpdated: "2021-01-26T17:30:15Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 3,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 109,
+        name: "Juventus FC",
+      },
+      awayTeam: {
+        id: 842,
+        name: "FK Dynamo Kyiv",
+      },
+      referees: [
+        {
+          id: 25786,
+          name: "Stéphanie Frappart",
+          role: "MAIN_REFEREE",
+          nationality: "France",
+        },
+        {
+          id: 43885,
+          name: "Hicham Zakrani",
+          role: "ASSISTANT_N1",
+          nationality: "France",
+        },
+        {
+          id: 57049,
+          name: "Mehdi Rahmouni",
+          role: "ASSISTANT_N2",
+          nationality: "France",
+        },
+        {
+          id: 57051,
+          name: "Karim Abed",
+          role: "FOURTH_OFFICIAL",
+          nationality: "France",
+        },
+        {
+          id: 15545,
+          name: "Benoît Millot",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "France",
+        },
+        {
+          id: 57042,
+          name: "Willy Delajod",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "France",
+        },
+      ],
+    },
+    {
+      id: 313242,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-12-02T20:00:00Z",
+      status: "FINISHED",
+      matchday: 5,
+      stage: "GROUP_STAGE",
+      group: "Group G",
+      lastUpdated: "2021-02-03T11:30:23Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 3,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 3,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 5954,
+        name: "Ferencvárosi TC",
+      },
+      awayTeam: {
+        id: 81,
+        name: "FC Barcelona",
+      },
+      referees: [
+        {
+          id: 43929,
+          name: "Aliaksei Kulbakou",
+          role: "MAIN_REFEREE",
+          nationality: "Belarus",
+        },
+        {
+          id: 43930,
+          name: "Dmitry Zhuk",
+          role: "ASSISTANT_N1",
+          nationality: "Belarus",
+        },
+        {
+          id: 43931,
+          name: "Oleg Maslyanko",
+          role: "ASSISTANT_N2",
+          nationality: "Belarus",
+        },
+        {
+          id: 15752,
+          name: "Viktor Shimusik",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Belarus",
+        },
+        {
+          id: 57636,
+          name: "Vitaly Meshkov",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Russia",
+        },
+        {
+          id: 43941,
+          name: "Sergey Ivanov",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "Russia",
+        },
+      ],
+    },
+    {
+      id: 313254,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-12-02T20:00:00Z",
+      status: "FINISHED",
+      matchday: 5,
+      stage: "GROUP_STAGE",
+      group: "Group H",
+      lastUpdated: "2021-01-26T17:30:16Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 1,
+          awayTeam: 3,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 66,
+        name: "Manchester United FC",
+      },
+      awayTeam: {
+        id: 524,
+        name: "Paris Saint-Germain FC",
+      },
+      referees: [
+        {
+          id: 11116,
+          name: "Daniele Orsato",
+          role: "MAIN_REFEREE",
+          nationality: "Italy",
+        },
+        {
+          id: 11076,
+          name: "Alessandro Giallatini",
+          role: "ASSISTANT_N1",
+          nationality: "Italy",
+        },
+        {
+          id: 11069,
+          name: "Fabiano Preti",
+          role: "ASSISTANT_N2",
+          nationality: "Italy",
+        },
+        {
+          id: 11065,
+          name: "Daniele Doveri",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Italy",
+        },
+        {
+          id: 11079,
+          name: "Marco Guida",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Italy",
+        },
+        {
+          id: 11060,
+          name: "Marco Di Bello",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "Italy",
+        },
+      ],
+    },
+    {
+      id: 313231,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-12-08T17:55:00Z",
+      status: "FINISHED",
+      matchday: 6,
+      stage: "GROUP_STAGE",
+      group: "Group F",
+      lastUpdated: "2020-12-09T03:00:08Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 1,
+          awayTeam: 2,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 731,
+        name: "FK Zenit Sankt-Petersburg",
+      },
+      awayTeam: {
+        id: 4,
+        name: "Borussia Dortmund",
+      },
+      referees: [
+        {
+          id: 37278,
+          name: "István Kovács",
+          role: "MAIN_REFEREE",
+          nationality: "Romania",
+        },
+        {
+          id: 36700,
+          name: "Vasile Marinescu",
+          role: "ASSISTANT_N1",
+          nationality: "Romania",
+        },
+        {
+          id: 36546,
+          name: "Mihai Artene",
+          role: "ASSISTANT_N2",
+          nationality: "Romania",
+        },
+        {
+          id: 37162,
+          name: "Marius Avram",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Romania",
+        },
+        {
+          id: 43716,
+          name: "Jochem Kamphuis",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Netherlands",
+        },
+        {
+          id: 43902,
+          name: "Kevin Blom",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "Netherlands",
+        },
+      ],
+    },
+    {
+      id: 313232,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-12-08T17:55:00Z",
+      status: "FINISHED",
+      matchday: 6,
+      stage: "GROUP_STAGE",
+      group: "Group F",
+      lastUpdated: "2021-02-03T16:30:18Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "DRAW",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 2,
+          awayTeam: 2,
+        },
+        halfTime: {
+          homeTeam: 2,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 110,
+        name: "SS Lazio",
+      },
+      awayTeam: {
+        id: 851,
+        name: "Club Brugge KV",
+      },
+      referees: [
+        {
+          id: 30687,
+          name: "Cüneyt Çakιr",
+          role: "MAIN_REFEREE",
+          nationality: "Turkey",
+        },
+        {
+          id: 30688,
+          name: "Bahattin Duran",
+          role: "ASSISTANT_N1",
+          nationality: "Turkey",
+        },
+        {
+          id: 30689,
+          name: "Tarık Ongun",
+          role: "ASSISTANT_N2",
+          nationality: "Turkey",
+        },
+        {
+          id: 30645,
+          name: "Hüseyin Göçek",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Turkey",
+        },
+        {
+          id: 30236,
+          name: "Abdulkadir Bitigen",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Turkey",
+        },
+        {
+          id: 15093,
+          name: "Mete Kalkavan",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "Turkey",
+        },
+      ],
+    },
+    {
+      id: 313219,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-12-08T20:00:00Z",
+      status: "FINISHED",
+      matchday: 6,
+      stage: "GROUP_STAGE",
+      group: "Group E",
+      lastUpdated: "2020-12-09T03:10:05Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "DRAW",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 1,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 61,
+        name: "Chelsea FC",
+      },
+      awayTeam: {
+        id: 5452,
+        name: "FK Krasnodar",
+      },
+      referees: [
+        {
+          id: 43894,
+          name: "Pavel Královec",
+          role: "MAIN_REFEREE",
+          nationality: "Czech Republic",
+        },
+        {
+          id: 62627,
+          name: "Jan Paták",
+          role: "ASSISTANT_N1",
+          nationality: "Czech Republic",
+        },
+        {
+          id: 15605,
+          name: "Tomáš Mokrusch",
+          role: "ASSISTANT_N2",
+          nationality: "Czech Republic",
+        },
+        {
+          id: 62699,
+          name: "Miroslav Zelinka",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Czech Republic",
+        },
+        {
+          id: 11075,
+          name: "Paolo Valeri",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Italy",
+        },
+        {
+          id: 11054,
+          name: "Massimiliano Irrati",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "Italy",
+        },
+      ],
+    },
+    {
+      id: 313220,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-12-08T20:00:00Z",
+      status: "FINISHED",
+      matchday: 6,
+      stage: "GROUP_STAGE",
+      group: "Group E",
+      lastUpdated: "2021-02-03T16:30:17Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 1,
+          awayTeam: 3,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 2,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 529,
+        name: "Stade Rennais FC 1901",
+      },
+      awayTeam: {
+        id: 559,
+        name: "Sevilla FC",
+      },
+      referees: [
+        {
+          id: 43857,
+          name: "Bartosz Frankowski",
+          role: "MAIN_REFEREE",
+          nationality: "Poland",
+        },
+        {
+          id: 43832,
+          name: "Marcin Boniek",
+          role: "ASSISTANT_N1",
+          nationality: "Poland",
+        },
+        {
+          id: 76332,
+          name: "Jakub Winkler",
+          role: "ASSISTANT_N2",
+          nationality: "Poland",
+        },
+        {
+          id: 43831,
+          name: "Daniel Stefański",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Poland",
+        },
+        {
+          id: 43888,
+          name: "Szymon Marciniak",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Poland",
+        },
+        {
+          id: 43892,
+          name: "Paweł Raczkowski",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Poland",
+        },
+        {
+          id: 15545,
+          name: "Benoît Millot",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "France",
+        },
+      ],
+    },
+    {
+      id: 313243,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-12-08T20:00:00Z",
+      status: "FINISHED",
+      matchday: 6,
+      stage: "GROUP_STAGE",
+      group: "Group G",
+      lastUpdated: "2021-02-03T16:30:18Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 3,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 2,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 81,
+        name: "FC Barcelona",
+      },
+      awayTeam: {
+        id: 109,
+        name: "Juventus FC",
+      },
+      referees: [
+        {
+          id: 43943,
+          name: "Tobias Stieler",
+          role: "MAIN_REFEREE",
+          nationality: "Germany",
+        },
+        {
+          id: 9569,
+          name: "Mike Pickel",
+          role: "ASSISTANT_N1",
+          nationality: "Germany",
+        },
+        {
+          id: 15747,
+          name: "Christian Gittelmann",
+          role: "ASSISTANT_N2",
+          nationality: "Germany",
+        },
+        {
+          id: 43858,
+          name: "Serdar Gözübüyük",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Netherlands",
+        },
+        {
+          id: 15746,
+          name: "Bastian Dankert",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Germany",
+        },
+        {
+          id: 57521,
+          name: "René Rohde",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "Germany",
+        },
+      ],
+    },
+    {
+      id: 313244,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-12-08T20:00:00Z",
+      status: "FINISHED",
+      matchday: 6,
+      stage: "GROUP_STAGE",
+      group: "Group G",
+      lastUpdated: "2020-12-09T03:15:09Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 1,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 842,
+        name: "FK Dynamo Kyiv",
+      },
+      awayTeam: {
+        id: 5954,
+        name: "Ferencvárosi TC",
+      },
+      referees: [
+        {
+          id: 15332,
+          name: "Andreas Ekberg",
+          role: "MAIN_REFEREE",
+          nationality: "Sweden",
+        },
+        {
+          id: 15333,
+          name: "Mehmet-Mohammed Culum",
+          role: "ASSISTANT_N1",
+          nationality: "Sweden",
+        },
+        {
+          id: 15334,
+          name: "Stefan Hallberg",
+          role: "ASSISTANT_N2",
+          nationality: "Sweden",
+        },
+        {
+          id: 15335,
+          name: "Kristoffer Karlsson",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Sweden",
+        },
+        {
+          id: 57526,
+          name: "Christian Dingert",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Germany",
+        },
+        {
+          id: 15408,
+          name: "Daniel Siebert",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "Germany",
+        },
+      ],
+    },
+    {
+      id: 313256,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-12-08T20:00:00Z",
+      status: "FINISHED",
+      matchday: 6,
+      stage: "GROUP_STAGE",
+      group: "Group H",
+      lastUpdated: "2021-02-03T16:30:19Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 3,
+          awayTeam: 2,
+        },
+        halfTime: {
+          homeTeam: 2,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 721,
+        name: "RB Leipzig",
+      },
+      awayTeam: {
+        id: 66,
+        name: "Manchester United FC",
+      },
+      referees: [
+        {
+          id: 43869,
+          name: "Antonio Matéu Lahoz",
+          role: "MAIN_REFEREE",
+          nationality: "Spain",
+        },
+        {
+          id: 134,
+          name: "Pau Cebrián Devis",
+          role: "ASSISTANT_N1",
+          nationality: "Spain",
+        },
+        {
+          id: 82,
+          name: "Roberto Díaz Pérez",
+          role: "ASSISTANT_N2",
+          nationality: "Spain",
+        },
+        {
+          id: 37812,
+          name: "Fábio Veríssimo",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Portugal",
+        },
+        {
+          id: 15625,
+          name: "Alejandro Hernández",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Spain",
+        },
+        {
+          id: 15628,
+          name: "Ricardo de Burgos",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "Spain",
+        },
+      ],
+    },
+    {
+      id: 313207,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-12-09T17:55:00Z",
+      status: "FINISHED",
+      matchday: 6,
+      stage: "GROUP_STAGE",
+      group: "Group D",
+      lastUpdated: "2021-02-03T15:30:15Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 678,
+        name: "AFC Ajax",
+      },
+      awayTeam: {
+        id: 102,
+        name: "Atalanta BC",
+      },
+      referees: [
+        {
+          id: 43843,
+          name: "Carlos del Cerro",
+          role: "MAIN_REFEREE",
+          nationality: "Spain",
+        },
+        {
+          id: 43844,
+          name: "Juan Carlos Yuste",
+          role: "ASSISTANT_N1",
+          nationality: "Spain",
+        },
+        {
+          id: 43872,
+          name: "Roberto Alonso",
+          role: "ASSISTANT_N2",
+          nationality: "Spain",
+        },
+        {
+          id: 15654,
+          name: "Georgi Kabakov",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Bulgaria",
+        },
+        {
+          id: 81,
+          name: "Juan Martínez",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Spain",
+        },
+        {
+          id: 156900,
+          name: "Estrada Fernandez ",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "Spain",
+        },
+      ],
+    },
+    {
+      id: 313208,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-12-09T17:55:00Z",
+      status: "FINISHED",
+      matchday: 6,
+      stage: "GROUP_STAGE",
+      group: "Group D",
+      lastUpdated: "2021-02-03T15:30:15Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "DRAW",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 1,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 4485,
+        name: "FC Midtjylland",
+      },
+      awayTeam: {
+        id: 64,
+        name: "Liverpool FC",
+      },
+      referees: [
+        {
+          id: 43918,
+          name: "François Letexier",
+          role: "MAIN_REFEREE",
+          nationality: "France",
+        },
+        {
+          id: 57049,
+          name: "Mehdi Rahmouni",
+          role: "ASSISTANT_N1",
+          nationality: "France",
+        },
+        {
+          id: 43884,
+          name: "Cyril Gringore",
+          role: "ASSISTANT_N2",
+          nationality: "France",
+        },
+        {
+          id: 43917,
+          name: "Amaury Delerue",
+          role: "FOURTH_OFFICIAL",
+          nationality: "France",
+        },
+        {
+          id: 9374,
+          name: "Clément Turpin",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "France",
+        },
+        {
+          id: 15548,
+          name: "Jérôme Brisard",
+          role: "ADDITIONAL_ASSISTANT_N1",
+          nationality: "France",
+        },
+      ],
+    },
+    {
+      id: 313255,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-12-09T17:55:00Z",
+      status: "FINISHED",
+      matchday: 6,
+      stage: "GROUP_STAGE",
+      group: "Group H",
+      lastUpdated: "2021-02-03T16:30:19Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 5,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 3,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 524,
+        name: "Paris Saint-Germain FC",
+      },
+      awayTeam: {
+        id: 1897,
+        name: "Medipol Başakşehir FK",
+      },
+      referees: [
+        {
+          id: 36314,
+          name: "Ovidiu Hațegan",
+          role: "MAIN_REFEREE",
+          nationality: "Romania",
+        },
+        {
+          id: 36316,
+          name: "Octavian Șovre",
+          role: "ASSISTANT_N1",
+          nationality: "Romania",
+        },
+        {
+          id: 36837,
+          name: "Sebastian Gheorghe",
+          role: "ASSISTANT_N2",
+          nationality: "Romania",
+        },
+        {
+          id: 36425,
+          name: "Sebastian Colțescu",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Romania",
+        },
+        {
+          id: 11060,
+          name: "Marco Di Bello",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Italy",
+        },
+        {
+          id: 11043,
+          name: "Maurizio Mariani",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "Italy",
+        },
+        {
+          id: 43899,
+          name: "Danny Makkelie",
+          role: "MAIN_REFEREE",
+          nationality: "Netherlands",
+        },
+        {
+          id: 43874,
+          name: "Mario Diks",
+          role: "ASSISTANT_N1",
+          nationality: "Netherlands",
+        },
+        {
+          id: 43832,
+          name: "Marcin Boniek",
+          role: "ASSISTANT_N2",
+          nationality: "Poland",
+        },
+        {
+          id: 43857,
+          name: "Bartosz Frankowski",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Poland",
+        },
+      ],
+    },
+    {
+      id: 313171,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-12-09T20:00:00Z",
+      status: "FINISHED",
+      matchday: 6,
+      stage: "GROUP_STAGE",
+      group: "Group A",
+      lastUpdated: "2021-02-03T15:30:12Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 2,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 5,
+        name: "FC Bayern München",
+      },
+      awayTeam: {
+        id: 5455,
+        name: "FK Lokomotiv Moskva",
+      },
+      referees: [
+        {
+          id: 31823,
+          name: "Sandro Schärer",
+          role: "MAIN_REFEREE",
+          nationality: "Switzerland",
+        },
+        {
+          id: 14932,
+          name: "Stéphane De Almeida",
+          role: "ASSISTANT_N1",
+          nationality: "Switzerland",
+        },
+        {
+          id: 30769,
+          name: "Bekim Zogaj",
+          role: "ASSISTANT_N2",
+          nationality: "Switzerland",
+        },
+        {
+          id: 30810,
+          name: "Alain Bieri",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Switzerland",
+        },
+        {
+          id: 11054,
+          name: "Massimiliano Irrati",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Italy",
+        },
+        {
+          id: 31257,
+          name: "Jonas Erni",
+          role: "ASSISTANT_N2",
+          nationality: "Switzerland",
+        },
+        {
+          id: 11075,
+          name: "Paolo Valeri",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "Italy",
+        },
+      ],
+    },
+    {
+      id: 313172,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-12-09T20:00:00Z",
+      status: "FINISHED",
+      matchday: 6,
+      stage: "GROUP_STAGE",
+      group: "Group A",
+      lastUpdated: "2021-02-03T15:30:12Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 2,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 1877,
+        name: "FC Red Bull Salzburg",
+      },
+      awayTeam: {
+        id: 78,
+        name: "Club Atlético de Madrid",
+      },
+      referees: [
+        {
+          id: 11580,
+          name: "Anthony Taylor",
+          role: "MAIN_REFEREE",
+          nationality: "England",
+        },
+        {
+          id: 11581,
+          name: "Gary Beswick",
+          role: "ASSISTANT_N1",
+          nationality: "England",
+        },
+        {
+          id: 11615,
+          name: "Adam Nunn",
+          role: "ASSISTANT_N2",
+          nationality: "England",
+        },
+        {
+          id: 11585,
+          name: "Craig Pawson",
+          role: "FOURTH_OFFICIAL",
+          nationality: "England",
+        },
+        {
+          id: 11494,
+          name: "Stuart Attwell",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "England",
+        },
+        {
+          id: 11520,
+          name: "Paul Tierney",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "England",
+        },
+      ],
+    },
+    {
+      id: 313183,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-12-09T20:00:00Z",
+      status: "FINISHED",
+      matchday: 6,
+      stage: "GROUP_STAGE",
+      group: "Group B",
+      lastUpdated: "2021-01-06T14:30:12Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 2,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 2,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 86,
+        name: "Real Madrid CF",
+      },
+      awayTeam: {
+        id: 18,
+        name: "Borussia Mönchengladbach",
+      },
+      referees: [
+        {
+          id: 9558,
+          name: "Björn Kuipers",
+          role: "MAIN_REFEREE",
+          nationality: "Netherlands",
+        },
+        {
+          id: 9559,
+          name: "Sander van Roekel",
+          role: "ASSISTANT_N1",
+          nationality: "Netherlands",
+        },
+        {
+          id: 9560,
+          name: "Erwin Zeinstra",
+          role: "ASSISTANT_N2",
+          nationality: "Netherlands",
+        },
+        {
+          id: 9561,
+          name: "Allard Lindhout",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Netherlands",
+        },
+        {
+          id: 15152,
+          name: "Pol van Boekel",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Netherlands",
+        },
+        {
+          id: 43861,
+          name: "Dennis Higler",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "Netherlands",
+        },
+      ],
+    },
+    {
+      id: 313184,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-12-09T20:00:00Z",
+      status: "FINISHED",
+      matchday: 6,
+      stage: "GROUP_STAGE",
+      group: "Group B",
+      lastUpdated: "2021-02-03T15:30:13Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "DRAW",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 108,
+        name: "FC Internazionale Milano",
+      },
+      awayTeam: {
+        id: 1887,
+        name: "FK Shakhtar Donetsk",
+      },
+      referees: [
+        {
+          id: 9351,
+          name: "Slavko Vinčič",
+          role: "MAIN_REFEREE",
+          nationality: "Slovenia",
+        },
+        {
+          id: 9349,
+          name: "Tomaž Klančnik",
+          role: "ASSISTANT_N1",
+          nationality: "Slovenia",
+        },
+        {
+          id: 43934,
+          name: "Andraž Kovačič",
+          role: "ASSISTANT_N2",
+          nationality: "Slovenia",
+        },
+        {
+          id: 43936,
+          name: "Rade Obrenović",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Slovenia",
+        },
+        {
+          id: 43854,
+          name: "Paweł Gil",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Poland",
+        },
+        {
+          id: 131857,
+          name: "Pawel Gil",
+          role: "ADDITIONAL_ASSISTANT_N1",
+          nationality: "Poland",
+        },
+        {
+          id: 9347,
+          name: "Jure Praprotnik",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "Slovenia",
+        },
+      ],
+    },
+    {
+      id: 313195,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-12-09T20:00:00Z",
+      status: "FINISHED",
+      matchday: 6,
+      stage: "GROUP_STAGE",
+      group: "Group C",
+      lastUpdated: "2021-02-03T15:30:14Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 3,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 65,
+        name: "Manchester City FC",
+      },
+      awayTeam: {
+        id: 516,
+        name: "Olympique de Marseille",
+      },
+      referees: [
+        {
+          id: 15096,
+          name: "Halil Umut Meler",
+          role: "MAIN_REFEREE",
+          nationality: "Turkey",
+        },
+        {
+          id: 30813,
+          name: "Mustafa Emre Eyisoy",
+          role: "ASSISTANT_N1",
+          nationality: "Turkey",
+        },
+        {
+          id: 30352,
+          name: "Cevdet Kömürcüoğlu",
+          role: "ASSISTANT_N2",
+          nationality: "Turkey",
+        },
+        {
+          id: 30698,
+          name: "Arda Kardeşler",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Turkey",
+        },
+        {
+          id: 9567,
+          name: "Sascha Stegemann",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Germany",
+        },
+        {
+          id: 30784,
+          name: "Ali Palabıyık",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "Turkey",
+        },
+      ],
+    },
+    {
+      id: 313196,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2020-12-09T20:00:00Z",
+      status: "FINISHED",
+      matchday: 6,
+      stage: "GROUP_STAGE",
+      group: "Group C",
+      lastUpdated: "2021-02-03T15:30:14Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 2,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 654,
+        name: "PAE Olympiakos SFP",
+      },
+      awayTeam: {
+        id: 503,
+        name: "FC Porto",
+      },
+      referees: [
+        {
+          id: 43875,
+          name: "Felix Brych",
+          role: "MAIN_REFEREE",
+          nationality: "Germany",
+        },
+        {
+          id: 43876,
+          name: "Mark Borsch",
+          role: "ASSISTANT_N1",
+          nationality: "Germany",
+        },
+        {
+          id: 43877,
+          name: "Stefan Lupp",
+          role: "ASSISTANT_N2",
+          nationality: "Germany",
+        },
+        {
+          id: 43952,
+          name: "Donatas Rumšas",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Lithuania",
+        },
+        {
+          id: 15821,
+          name: "Marco Fritz",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Germany",
+        },
+        {
+          id: 253,
+          name: "Harm Osmers",
+          role: "ADDITIONAL_ASSISTANT_N2",
+          nationality: "Germany",
+        },
+      ],
+    },
+    {
+      id: 315756,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2021-02-16T20:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "ROUND_OF_16",
+      group: null,
+      lastUpdated: "2021-02-20T13:30:16Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 2,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 721,
+        name: "RB Leipzig",
+      },
+      awayTeam: {
+        id: 64,
+        name: "Liverpool FC",
+      },
+      referees: [
+        {
+          id: 9351,
+          name: "Slavko Vinčič",
+          role: "MAIN_REFEREE",
+          nationality: "Slovenia",
+        },
+        {
+          id: 9349,
+          name: "Tomaž Klančnik",
+          role: "ASSISTANT_N1",
+          nationality: "Slovenia",
+        },
+        {
+          id: 43934,
+          name: "Andraž Kovačič",
+          role: "ASSISTANT_N2",
+          nationality: "Slovenia",
+        },
+        {
+          id: 9350,
+          name: "Matej Jug",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Slovenia",
+        },
+        {
+          id: 11054,
+          name: "Massimiliano Irrati",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Italy",
+        },
+      ],
+    },
+    {
+      id: 315760,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2021-02-16T20:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "ROUND_OF_16",
+      group: null,
+      lastUpdated: "2021-02-20T13:30:17Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 1,
+          awayTeam: 4,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 81,
+        name: "FC Barcelona",
+      },
+      awayTeam: {
+        id: 524,
+        name: "Paris Saint-Germain FC",
+      },
+      referees: [
+        {
+          id: 9558,
+          name: "Björn Kuipers",
+          role: "MAIN_REFEREE",
+          nationality: "Netherlands",
+        },
+        {
+          id: 9559,
+          name: "Sander van Roekel",
+          role: "ASSISTANT_N1",
+          nationality: "Netherlands",
+        },
+        {
+          id: 9560,
+          name: "Erwin Zeinstra",
+          role: "ASSISTANT_N2",
+          nationality: "Netherlands",
+        },
+        {
+          id: 43858,
+          name: "Serdar Gözübüyük",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Netherlands",
+        },
+        {
+          id: 15152,
+          name: "Pol van Boekel",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Netherlands",
+        },
+      ],
+    },
+    {
+      id: 315758,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2021-02-17T20:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "ROUND_OF_16",
+      group: null,
+      lastUpdated: "2021-02-18T14:30:02Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 2,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 503,
+        name: "FC Porto",
+      },
+      awayTeam: {
+        id: 109,
+        name: "Juventus FC",
+      },
+      referees: [
+        {
+          id: 43843,
+          name: "Carlos del Cerro",
+          role: "MAIN_REFEREE",
+          nationality: "Spain",
+        },
+        {
+          id: 43844,
+          name: "Juan Carlos Yuste",
+          role: "ASSISTANT_N1",
+          nationality: "Spain",
+        },
+        {
+          id: 43872,
+          name: "Roberto Alonso",
+          role: "ASSISTANT_N2",
+          nationality: "Spain",
+        },
+        {
+          id: 106,
+          name: "José Sánchez",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Spain",
+        },
+        {
+          id: 15625,
+          name: "Alejandro Hernández",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Spain",
+        },
+      ],
+    },
+    {
+      id: 315762,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2021-02-17T20:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "ROUND_OF_16",
+      group: null,
+      lastUpdated: "2021-02-20T13:30:17Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 2,
+          awayTeam: 3,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 3,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 559,
+        name: "Sevilla FC",
+      },
+      awayTeam: {
+        id: 4,
+        name: "Borussia Dortmund",
+      },
+      referees: [
+        {
+          id: 43899,
+          name: "Danny Makkelie",
+          role: "MAIN_REFEREE",
+          nationality: "Netherlands",
+        },
+        {
+          id: 43900,
+          name: "Hessel Steegstra",
+          role: "ASSISTANT_N1",
+          nationality: "Netherlands",
+        },
+        {
+          id: 43874,
+          name: "Mario Diks",
+          role: "ASSISTANT_N2",
+          nationality: "Netherlands",
+        },
+        {
+          id: 9561,
+          name: "Allard Lindhout",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Netherlands",
+        },
+        {
+          id: 43902,
+          name: "Kevin Blom",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Netherlands",
+        },
+      ],
+    },
+    {
+      id: 315752,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2021-02-23T20:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "ROUND_OF_16",
+      group: null,
+      lastUpdated: "2021-03-04T16:30:17Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 1,
+          awayTeam: 4,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 3,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 110,
+        name: "SS Lazio",
+      },
+      awayTeam: {
+        id: 5,
+        name: "FC Bayern München",
+      },
+      referees: [
+        {
+          id: 40663,
+          name: "Orel Grinfeeld",
+          role: "MAIN_REFEREE",
+          nationality: "Israel",
+        },
+        {
+          id: 64594,
+          name: "Roy Hassan",
+          role: "ASSISTANT_N1",
+          nationality: "Israel",
+        },
+        {
+          id: 41353,
+          name: "Idan Yarkoni",
+          role: "ASSISTANT_N2",
+          nationality: "Israel",
+        },
+        {
+          id: 130272,
+          name: "Gal Leibovitz",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Israel",
+        },
+        {
+          id: 81,
+          name: "Juan Martínez",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Spain",
+        },
+      ],
+    },
+    {
+      id: 315754,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2021-02-23T20:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "ROUND_OF_16",
+      group: null,
+      lastUpdated: "2021-03-04T16:30:18Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 78,
+        name: "Club Atlético de Madrid",
+      },
+      awayTeam: {
+        id: 61,
+        name: "Chelsea FC",
+      },
+      referees: [
+        {
+          id: 43875,
+          name: "Felix Brych",
+          role: "MAIN_REFEREE",
+          nationality: "Germany",
+        },
+        {
+          id: 43876,
+          name: "Mark Borsch",
+          role: "ASSISTANT_N1",
+          nationality: "Germany",
+        },
+        {
+          id: 43877,
+          name: "Stefan Lupp",
+          role: "ASSISTANT_N2",
+          nationality: "Germany",
+        },
+        {
+          id: 57526,
+          name: "Christian Dingert",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Germany",
+        },
+        {
+          id: 15821,
+          name: "Marco Fritz",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Germany",
+        },
+      ],
+    },
+    {
+      id: 315750,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2021-02-24T20:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "ROUND_OF_16",
+      group: null,
+      lastUpdated: "2021-03-04T16:30:17Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 2,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 18,
+        name: "Borussia Mönchengladbach",
+      },
+      awayTeam: {
+        id: 65,
+        name: "Manchester City FC",
+      },
+      referees: [
+        {
+          id: 43540,
+          name: "Artur Soares Dias",
+          role: "MAIN_REFEREE",
+          nationality: "Portugal",
+        },
+        {
+          id: 37626,
+          name: "Rui Tavares",
+          role: "ASSISTANT_N1",
+          nationality: "Portugal",
+        },
+        {
+          id: 37660,
+          name: "Bruno Rodrigues",
+          role: "ASSISTANT_N2",
+          nationality: "Portugal",
+        },
+        {
+          id: 37862,
+          name: "Hugo Miguel",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Portugal",
+        },
+        {
+          id: 38806,
+          name: "João Pinheiro",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Portugal",
+        },
+      ],
+    },
+    {
+      id: 315764,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2021-02-24T20:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "ROUND_OF_16",
+      group: null,
+      lastUpdated: "2021-03-04T16:30:18Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "AWAY_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 0,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 102,
+        name: "Atalanta BC",
+      },
+      awayTeam: {
+        id: 86,
+        name: "Real Madrid CF",
+      },
+      referees: [
+        {
+          id: 43943,
+          name: "Tobias Stieler",
+          role: "MAIN_REFEREE",
+          nationality: "Germany",
+        },
+        {
+          id: 15747,
+          name: "Christian Gittelmann",
+          role: "ASSISTANT_N1",
+          nationality: "Germany",
+        },
+        {
+          id: 8827,
+          name: "Eduard Beitinger",
+          role: "ASSISTANT_N2",
+          nationality: "Germany",
+        },
+        {
+          id: 31823,
+          name: "Sandro Schärer",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Switzerland",
+        },
+        {
+          id: 15746,
+          name: "Bastian Dankert",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Germany",
+        },
+      ],
+    },
+    {
+      id: 315759,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2021-03-09T20:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "ROUND_OF_16",
+      group: null,
+      lastUpdated: "2021-03-10T17:05:03Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 3,
+          awayTeam: 2,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 109,
+        name: "Juventus FC",
+      },
+      awayTeam: {
+        id: 503,
+        name: "FC Porto",
+      },
+      referees: [
+        {
+          id: 9558,
+          name: "Björn Kuipers",
+          role: "MAIN_REFEREE",
+          nationality: "Netherlands",
+        },
+        {
+          id: 9559,
+          name: "Sander van Roekel",
+          role: "ASSISTANT_N1",
+          nationality: "Netherlands",
+        },
+        {
+          id: 9560,
+          name: "Erwin Zeinstra",
+          role: "ASSISTANT_N2",
+          nationality: "Netherlands",
+        },
+        {
+          id: 56905,
+          name: "Bas Nijhuis",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Netherlands",
+        },
+        {
+          id: 15152,
+          name: "Pol van Boekel",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Netherlands",
+        },
+      ],
+    },
+    {
+      id: 315763,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2021-03-09T20:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "ROUND_OF_16",
+      group: null,
+      lastUpdated: "2021-03-10T17:05:03Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "DRAW",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 2,
+          awayTeam: 2,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 4,
+        name: "Borussia Dortmund",
+      },
+      awayTeam: {
+        id: 559,
+        name: "Sevilla FC",
+      },
+      referees: [
+        {
+          id: 30687,
+          name: "Cüneyt Çakιr",
+          role: "MAIN_REFEREE",
+          nationality: "Turkey",
+        },
+        {
+          id: 30688,
+          name: "Bahattin Duran",
+          role: "ASSISTANT_N1",
+          nationality: "Turkey",
+        },
+        {
+          id: 30689,
+          name: "Tarık Ongun",
+          role: "ASSISTANT_N2",
+          nationality: "Turkey",
+        },
+        {
+          id: 30698,
+          name: "Arda Kardeşler",
+          role: "FOURTH_OFFICIAL",
+          nationality: "Turkey",
+        },
+        {
+          id: 11054,
+          name: "Massimiliano Irrati",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "Italy",
+        },
+      ],
+    },
+    {
+      id: 315757,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2021-03-10T20:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "ROUND_OF_16",
+      group: null,
+      lastUpdated: "2021-03-11T02:50:01Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "HOME_TEAM",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 2,
+          awayTeam: 0,
+        },
+        halfTime: {
+          homeTeam: 0,
+          awayTeam: 0,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 64,
+        name: "Liverpool FC",
+      },
+      awayTeam: {
+        id: 721,
+        name: "RB Leipzig",
+      },
+      referees: [
+        {
+          id: 9374,
+          name: "Clément Turpin",
+          role: "MAIN_REFEREE",
+          nationality: "France",
+        },
+        {
+          id: 43883,
+          name: "Nicolas Danos",
+          role: "ASSISTANT_N1",
+          nationality: "France",
+        },
+        {
+          id: 43884,
+          name: "Cyril Gringore",
+          role: "ASSISTANT_N2",
+          nationality: "France",
+        },
+        {
+          id: 57090,
+          name: "Franck Schneider",
+          role: "FOURTH_OFFICIAL",
+          nationality: "France",
+        },
+        {
+          id: 15548,
+          name: "Jérôme Brisard",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "France",
+        },
+      ],
+    },
+    {
+      id: 315761,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2021-03-10T20:00:00Z",
+      status: "FINISHED",
+      matchday: null,
+      stage: "ROUND_OF_16",
+      group: null,
+      lastUpdated: "2021-03-11T02:55:03Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: "DRAW",
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: 1,
+          awayTeam: 1,
+        },
+        halfTime: {
+          homeTeam: 1,
+          awayTeam: 1,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 524,
+        name: "Paris Saint-Germain FC",
+      },
+      awayTeam: {
+        id: 81,
+        name: "FC Barcelona",
+      },
+      referees: [
+        {
+          id: 11580,
+          name: "Anthony Taylor",
+          role: "MAIN_REFEREE",
+          nationality: "England",
+        },
+        {
+          id: 11581,
+          name: "Gary Beswick",
+          role: "ASSISTANT_N1",
+          nationality: "England",
+        },
+        {
+          id: 11615,
+          name: "Adam Nunn",
+          role: "ASSISTANT_N2",
+          nationality: "England",
+        },
+        {
+          id: 11556,
+          name: "David Coote",
+          role: "FOURTH_OFFICIAL",
+          nationality: "England",
+        },
+        {
+          id: 11494,
+          name: "Stuart Attwell",
+          role: "VIDEO_ASSISTANT_REFEREE",
+          nationality: "England",
+        },
+      ],
+    },
+    {
+      id: 315751,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2021-03-16T20:00:00Z",
+      status: "SCHEDULED",
+      matchday: null,
+      stage: "ROUND_OF_16",
+      group: null,
+      lastUpdated: "2020-12-14T19:30:18Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: null,
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        halfTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 65,
+        name: "Manchester City FC",
+      },
+      awayTeam: {
+        id: 18,
+        name: "Borussia Mönchengladbach",
+      },
+      referees: [],
+    },
+    {
+      id: 315765,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2021-03-16T20:00:00Z",
+      status: "SCHEDULED",
+      matchday: null,
+      stage: "ROUND_OF_16",
+      group: null,
+      lastUpdated: "2020-12-14T19:30:19Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: null,
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        halfTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 86,
+        name: "Real Madrid CF",
+      },
+      awayTeam: {
+        id: 102,
+        name: "Atalanta BC",
+      },
+      referees: [],
+    },
+    {
+      id: 315753,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2021-03-17T20:00:00Z",
+      status: "SCHEDULED",
+      matchday: null,
+      stage: "ROUND_OF_16",
+      group: null,
+      lastUpdated: "2020-12-14T19:30:18Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: null,
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        halfTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 5,
+        name: "FC Bayern München",
+      },
+      awayTeam: {
+        id: 110,
+        name: "SS Lazio",
+      },
+      referees: [],
+    },
+    {
+      id: 315755,
+      season: {
+        id: 642,
+        startDate: "2020-08-08",
+        endDate: "2021-05-29",
+        currentMatchday: 6,
+      },
+      utcDate: "2021-03-17T20:00:00Z",
+      status: "SCHEDULED",
+      matchday: null,
+      stage: "ROUND_OF_16",
+      group: null,
+      lastUpdated: "2020-12-14T19:30:18Z",
+      odds: {
+        msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+      },
+      score: {
+        winner: null,
+        duration: "REGULAR",
+        fullTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        halfTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        extraTime: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+        penalties: {
+          homeTeam: null,
+          awayTeam: null,
+        },
+      },
+      homeTeam: {
+        id: 61,
+        name: "Chelsea FC",
+      },
+      awayTeam: {
+        id: 78,
+        name: "Club Atlético de Madrid",
+      },
+      referees: [],
+    },
+  ],
+};
+
+export const TEAM_DATA = {
   id: 81,
   area: {
     id: 2224,
@@ -5381,7 +17717,7 @@ const TEAM_DATA = {
   lastUpdated: "2021-02-08T10:15:43Z",
 };
 
-const PLAYER_DATA = {
+export const PLAYER_DATA = {
   id: 3218,
   name: "Lionel Messi",
   firstName: "Lionel Andrés",
@@ -5394,7 +17730,7 @@ const PLAYER_DATA = {
   lastUpdated: "2020-09-07T21:25:55Z",
 };
 
-const SEASON_DATA = {
+export const SEASON_DATA = {
   filters: {},
   competition: {
     id: 2001,
@@ -7218,4 +19554,220 @@ const SEASON_DATA = {
   ],
 };
 
+export const SCORERS_DATA = {
+  count: 10,
+  filters: {
+    limit: 10,
+  },
+  competition: {
+    id: 2001,
+    area: {
+      id: 2077,
+      name: "Europe",
+    },
+    name: "UEFA Champions League",
+    code: "CL",
+    plan: "TIER_ONE",
+    lastUpdated: "2021-03-11T02:55:03Z",
+  },
+  season: {
+    id: 642,
+    startDate: "2020-08-08",
+    endDate: "2021-05-29",
+    currentMatchday: 6,
+    winner: null,
+  },
+  scorers: [
+    {
+      player: {
+        id: 38101,
+        name: "Erling Haaland",
+        firstName: "Erling Braut",
+        lastName: null,
+        dateOfBirth: "2000-07-21",
+        countryOfBirth: "England",
+        nationality: "Norway",
+        position: "Attacker",
+        shirtNumber: null,
+        lastUpdated: "2020-09-07T18:47:42Z",
+      },
+      team: {
+        id: 4,
+        name: "Borussia Dortmund",
+      },
+      numberOfGoals: 10,
+    },
+    {
+      player: {
+        id: 7819,
+        name: "Álvaro Morata",
+        firstName: "Álvaro Borja",
+        lastName: null,
+        dateOfBirth: "1992-10-23",
+        countryOfBirth: "Spain",
+        nationality: "Spain",
+        position: "Attacker",
+        shirtNumber: null,
+        lastUpdated: "2020-11-26T02:19:40Z",
+      },
+      team: {
+        id: 109,
+        name: "Juventus FC",
+      },
+      numberOfGoals: 6,
+    },
+    {
+      player: {
+        id: 3331,
+        name: "Marcus Rashford",
+        firstName: "Marcus",
+        lastName: null,
+        dateOfBirth: "1997-10-31",
+        countryOfBirth: "England",
+        nationality: "England",
+        position: "Attacker",
+        shirtNumber: null,
+        lastUpdated: "2020-11-26T02:14:23Z",
+      },
+      team: {
+        id: 66,
+        name: "Manchester United FC",
+      },
+      numberOfGoals: 6,
+    },
+    {
+      player: {
+        id: 32836,
+        name: "Youssef En-Nesyri",
+        firstName: "Youssef",
+        lastName: null,
+        dateOfBirth: "1997-06-01",
+        countryOfBirth: "Morocco",
+        nationality: "Morocco",
+        position: "Attacker",
+        shirtNumber: null,
+        lastUpdated: "2020-09-07T21:26:21Z",
+      },
+      team: {
+        id: 559,
+        name: "Sevilla FC",
+      },
+      numberOfGoals: 6,
+    },
+    {
+      player: {
+        id: 3371,
+        name: "Olivier Giroud",
+        firstName: "Olivier",
+        lastName: null,
+        dateOfBirth: "1986-09-30",
+        countryOfBirth: "France",
+        nationality: "France",
+        position: "Attacker",
+        shirtNumber: null,
+        lastUpdated: "2020-11-26T02:14:18Z",
+      },
+      team: {
+        id: 61,
+        name: "Chelsea FC",
+      },
+      numberOfGoals: 6,
+    },
+    {
+      player: {
+        id: 8491,
+        name: "Neymar Jr.",
+        firstName: "Neymar",
+        lastName: null,
+        dateOfBirth: "1992-02-05",
+        countryOfBirth: "Brazil",
+        nationality: "Brazil",
+        position: "Attacker",
+        shirtNumber: null,
+        lastUpdated: "2020-09-07T21:05:24Z",
+      },
+      team: {
+        id: 524,
+        name: "Paris Saint-Germain FC",
+      },
+      numberOfGoals: 6,
+    },
+    {
+      player: {
+        id: 3374,
+        name: "Kylian Mbappé",
+        firstName: "Kylian Sanmi",
+        lastName: null,
+        dateOfBirth: "1998-12-20",
+        countryOfBirth: "France",
+        nationality: "France",
+        position: "Attacker",
+        shirtNumber: null,
+        lastUpdated: "2020-09-07T21:05:24Z",
+      },
+      team: {
+        id: 524,
+        name: "Paris Saint-Germain FC",
+      },
+      numberOfGoals: 6,
+    },
+    {
+      player: {
+        id: 2076,
+        name: "Ciro Immobile",
+        firstName: "Ciro",
+        lastName: null,
+        dateOfBirth: "1990-02-20",
+        countryOfBirth: "Italy",
+        nationality: "Italy",
+        position: "Attacker",
+        shirtNumber: null,
+        lastUpdated: "2020-11-26T02:19:41Z",
+      },
+      team: {
+        id: 110,
+        name: "SS Lazio",
+      },
+      numberOfGoals: 5,
+    },
+    {
+      player: {
+        id: 3218,
+        name: "Lionel Messi",
+        firstName: "Lionel Andrés",
+        lastName: null,
+        dateOfBirth: "1987-06-24",
+        countryOfBirth: "Argentina",
+        nationality: "Argentina",
+        position: "Attacker",
+        shirtNumber: null,
+        lastUpdated: "2020-09-07T21:25:55Z",
+      },
+      team: {
+        id: 81,
+        name: "FC Barcelona",
+      },
+      numberOfGoals: 5,
+    },
+    {
+      player: {
+        id: 15912,
+        name: "Sergio Oliveira",
+        firstName: "Sérgio Miguel",
+        lastName: null,
+        dateOfBirth: "1992-06-02",
+        countryOfBirth: "Portugal",
+        nationality: "Portugal",
+        position: "Midfielder",
+        shirtNumber: null,
+        lastUpdated: "2020-08-25T05:11:08Z",
+      },
+      team: {
+        id: 503,
+        name: "FC Porto",
+      },
+      numberOfGoals: 5,
+    },
+  ],
+};
 //how to get other data https://www.football-data.org/documentation/quickstart

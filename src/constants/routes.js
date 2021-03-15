@@ -6,3 +6,7 @@ export const ACCOUNT = "/account";
 export const ADMIN = "/admin";
 export const ADMIN_DETAILS = "/admin/:id";
 export const PASSWORD_FORGET = "/pw-forget";
+export const TEAM = "/team/:id";
+export const PLAYER = "/player/:id";
+export const MATCH = "/match/:id";
+export const LEAGUE = "/league/:id";
