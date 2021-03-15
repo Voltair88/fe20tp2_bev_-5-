@@ -82,7 +82,7 @@ class Firebase {
 
 
   // *** Profile API ****
-  profile = () => this.db.ref(`profile`);
+  profile = (uid) => this.db.ref(`profile/${uid}`);
   /* profile = (uid) => this.db.ref(`profile/${uid}`); */
 
 }
