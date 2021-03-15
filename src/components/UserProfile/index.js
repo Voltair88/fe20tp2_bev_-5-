@@ -4,7 +4,23 @@ import { AuthUserContext, withAuthentication } from "../Session";
 
 function UserProfile(props) {
 
+
     /* const [authUser, setAuthUser] = useState(''); */
+
+
+    const players = [
+        { value: 'zlatan', label: 'Zlatan' },
+        { value: 'messi', label: 'Messi' },
+        { value: 'ronaldo', label: 'Ronaldo' },
+    ];
+    const teams = [
+        { value: 'sl', label: 'SL' },
+        { value: 'sw', label: 'SW' },
+        { value: 'rr', label: 'Rr' },
+    ];
+
+
+
 
     function onChangePassword() {
         console.log("On change Password")
@@ -18,13 +34,16 @@ function UserProfile(props) {
 
 
         console.log("On change save")
-        console.log(authUser.uid)
-        props.firebase.profile(authUser.uid).set({
-            fav_player: "Sanga",
-            fav_team: "LK",
-            uid: authUser.uid
+        /* console.log(authUser.uid) */
+        props.firebase.user(authUser.uid).set({
+            fav_player: "RONA",
+            fav_team: "LK"
+            /* uid: authUser.uid */
         });
+
     }
+
+
 
 
     /* this.props.firebase.message(message.uid).set({
@@ -61,8 +80,10 @@ function UserProfile(props) {
                     <h1>This is user profile page</h1>
                     <input type="file" />
                     <p>{"Auth user: " + authUser.uid}</p>
-                    <Dropdown placeholder={'Choose your favorite team'} />
-                    <Dropdown placeholder={'Choose your favorite player'} />
+                    <Dropdown placeholder={'Choose your favorite team'} dataSet={teams} dropdownId="TEAMS" />
+                    <Dropdown placeholder={'Choose your favorite player'} dataSet={players} dropdownId="PLAYERS" />
+
+
 
                     <select
                     /* value={this.state.selectValue}

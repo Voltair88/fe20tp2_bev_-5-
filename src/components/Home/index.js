@@ -29,7 +29,7 @@ class MessagesBase extends Component {
   };
 
   onCreateMessage = (event, authUser) => {
-    this.props.firebase.messages().push({
+    this.props.firebase.messages().push({     /* messages = () => this.db.ref("messages"); Pathum */
       text: this.state.text,
       userId: authUser.uid,
       createdAt: this.props.firebase.serverValue.TIMESTAMP,
