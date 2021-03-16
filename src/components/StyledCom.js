@@ -44,20 +44,6 @@ export const NavLink = styled(Link)`
     transition: 0.3s ease-in-out;
   }
 `;
-
-export const HamMenu = styled(FontAwesomeIcon)`
-  color: white;
-  font-size: 1.6rem;
-  margin-right: auto;
-  cursor: pointer;
-  display: none;
-
-  @media screen and (max-width: 768px) {
-    display: block;
-    margin-left: -1rem;
-  }
-`;
-
 //Styling for Landingpage
 
 export const Main = styled.main`
@@ -98,4 +84,20 @@ export const P = styled.p`
     font-size: 1.2rem;
     padding: 0 1rem;
   }
+`;
+
+
+export const Background = styled.main`
+  background-color: #e8e8e8;
+  background-image: url("https://images.unsplash.com/photo-1556056504-5c7696c4c28d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2083&q=80");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+`;
+
+export const Blur = styled.main`
+  -webkit-backdrop-filter: blur(1.5px);
+  backdrop-filter: blur(1.5px);
+  height: auto;
+  width: 100%;
 `;

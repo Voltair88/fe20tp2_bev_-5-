@@ -41,8 +41,8 @@ const Content = styled.div`
 
 const ChartContainer = styled.div`
   height: 500px;
-  width: 600px;
-  position: absolute;
+  width: 500px;
+  position: flex;
   left: 10px;
   top: 40px;
 `
@@ -50,18 +50,16 @@ const ChartContainer = styled.div`
 const HomePage = ({ scorers }) => {
   return (
     <Background>
-      <Blur>
+      {/* <Blur> */}
         <Main>
           <Content>
-            <h1>Home</h1>
-            <p>The Home Page is accessible by every signed in user.</p>
             {/* <ScorersList scorers={scorers} /> */}
-            <BarChart scorers={scorers} />
+            {<BarChart scorers={scorers} />}
 
             {/* <Messages /> */}
           </Content>
         </Main>
-      </Blur>
+      {/* </Blur> */}
     </Background>
   );
 };
