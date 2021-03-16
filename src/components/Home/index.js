@@ -6,52 +6,15 @@ import Player from "../Player";
 import styled from "styled-components";
 import { Bar, Line } from 'react-chartjs-2';
 
-const Background = styled.main`
-  background-color: #e8e8e8;
-  background-image: url("https://images.unsplash.com/photo-1459865264687-595d652de67e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-`;
+import { Background, ChartContainer, Blur, HomeMain, Content } from '../StyledCom';
 
-const Blur = styled.main`
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
-  height: auto;
-  width: 100%;
-`;
 
-const Main = styled.main`
-  box-sizing: border-box;
-  display: flex;
-  font-family: "Poppins", sans-serif;
-  width: 100%;
-  height: 92vh;
-`;
-
-const Content = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  flex-direction: column;
-  height: 92vh;
-`;
-
-const ChartContainer = styled.div`
-  height: 500px;
-  width: 600px;
-  position: absolute;
-  left: 10px;
-  top: 40px;
-`
 
 const HomePage = ({ scorers }) => {
   return (
     <Background>
       <Blur>
-        <Main>
+        <HomeMain>
           <Content>
             <h1>Home</h1>
             <p>The Home Page is accessible by every signed in user.</p>
@@ -60,7 +23,7 @@ const HomePage = ({ scorers }) => {
 
             {/* <Messages /> */}
           </Content>
-        </Main>
+        </HomeMain>
       </Blur>
     </Background>
   );
