@@ -4,6 +4,7 @@ import { withFirebase } from "../Firebase";
 
 import Player from "../Player";
 import styled from "styled-components";
+import { Bar, Line } from 'react-chartjs-2';
 
 const Background = styled.main`
   background-color: #e8e8e8;
@@ -38,6 +39,14 @@ const Content = styled.div`
   height: 92vh;
 `;
 
+const ChartContainer = styled.div`
+  height: 500px;
+  width: 600px;
+  position: absolute;
+  left: 10px;
+  top: 40px;
+`
+
 const HomePage = ({ scorers }) => {
   return (
     <Background>
@@ -47,6 +56,8 @@ const HomePage = ({ scorers }) => {
             <h1>Home</h1>
             <p>The Home Page is accessible by every signed in user.</p>
             <ScorersList scorers={scorers} />
+            <BarChart />
+
             {/* <Messages /> */}
           </Content>
         </Main>
@@ -71,7 +82,7 @@ class MessagesBase extends Component {
   };
 
   onCreateMessage = (event, authUser) => {
-    this.props.firebase.messages().push({
+    this.props.firebase.messages().push({     /* messages = () => this.db.ref("messages"); Pathum */
       text: this.state.text,
       userId: authUser.uid,
       createdAt: this.props.firebase.serverValue.TIMESTAMP,
@@ -253,18 +264,79 @@ class MessageItem extends Component {
 
 const Messages = withFirebase(MessagesBase);
 
+const goals = [];
+const player = [];
+
 const ScorersList = ({ scorers }) => {
   return (
-    <ul>
-      {scorers.map((item, index) => (
-        <li key={index}>
-          <Player player={item.player} />
-          <span>Number of goals:{item.numberOfGoals}</span>
-        </li>
-      ))}
-    </ul>
+    <div>
+
+
+      <ul>
+        {scorers.map((item, index) => (
+          <li key={index}>
+            <Player player={item.player} />
+            <span>Number of goals:{item.numberOfGoals}</span>
+          </li>
+        ))}
+      </ul>
+
+      {scorers.map(item => goals.push(item.numberOfGoals))}   {/* Set data to array to display in chart */}
+      {scorers.map(item => player.push(item.player.name))}
+
+
+    </div>
   );
 };
+
+
+const BarChart = () => {
+  return (
+    <ChartContainer>
+      <Bar
+        data={{
+          labels: player,
+          datasets: [
+            {
+              label: 'Goals',
+              data: (goals.length) <= 0 ? '' : goals,
+
+              backgroundColor: [
+                "#f38b4a",
+                "#56d798",
+                "#ff8397",
+                "#6970d5",
+                "#f38b4a",
+                "#56d798",
+                "#f38b4a",
+                "#56d798",
+                "#ff8397",
+                "#6970d5",
+              ],
+            }
+          ]
+        }}
+        height={500}
+        width={50}
+        options={{
+          maintainAspectRatio: false,
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  beginAtZero: true,
+                }
+              }
+            ]
+          }
+        }}
+
+      />
+    </ChartContainer>
+  )
+}
+
+
 
 const condition = (authUser) => !!authUser;
 export default withAuthorization(condition)(HomePage);
