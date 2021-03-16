@@ -5,14 +5,19 @@ import { SignUpLink } from '../SignUp';
 import { PasswordForgetLink } from '../PasswordForget';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
+import styled from "styled-components";
+
+import { Content, Input, MyButton } from '../StyledCom';
+    
+
 
 const SignInPage = () => (
-    <div>
+    <Content>
         <h1>SignIn</h1>
         <SignInForm />
         <SignUpLink />
         <PasswordForgetLink />
-    </div>
+    </Content>
 );
 
 const INITIAL_STATE = {
@@ -53,23 +58,24 @@ class SignInFormBase extends Component {
         const isInvalid = password === '' || email === '';
         return ( 
             <form onSubmit={this.onSubmit}>
-                <input
+                
+                <Input
                     name="email"
                     value={email}
                     onChange={this.onChange}
                     type="text"
                     placeholder="Email Address"
                 />
-                <input
+                <Input
                     name="password"
                     value={password}
                     onChange={this.onChange}
                     type="password"
                     placeholder="Password"
                 />
-                <button disabled={isInvalid} type="submit">
+                <MyButton disabled={isInvalid} type="submit">
                 Sign In
-                </button>
+                </MyButton>
                 {error && <p>{error.message}</p>}
             </form>
          );
