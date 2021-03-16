@@ -128,7 +128,7 @@ export const Input = styled.input`
 
     &:focus{
       border-color: #50c818;
-      box-shadow: 0 0 8px; 0 #50c818;
+      box-shadow: 0 0 8px 0 #50c818;
     }
     @media screen and (max-width: 1024px) {
         width: 40%;
