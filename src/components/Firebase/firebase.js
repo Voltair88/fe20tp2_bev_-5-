@@ -19,7 +19,20 @@ class Firebase {
     this.serverValue = app.database.ServerValue;
     this.auth = app.auth();
     this.db = app.database();
+
+
+    /* let ref = this.db.ref('profile')
+    let data = {
+      fav_player: "PathumNew",
+      fav_team: "SL",
+      uid: "testUid"
+    }
+
+    ref.push(data); */
   }
+
+
+
   //*** Auth API ***/
   doCreateUserWithEmailAndPassword = (email, password) =>
     this.auth.createUserWithEmailAndPassword(email, password);
@@ -66,5 +79,11 @@ class Firebase {
   // *** Message API ***
   message = (uid) => this.db.ref(`messages/${uid}`);
   messages = () => this.db.ref("messages");
+
+
+  // *** Profile API ****
+  profile = (uid) => this.db.ref(`profile/${uid}`);
+  /* profile = (uid) => this.db.ref(`profile/${uid}`); */
+
 }
 export default Firebase;

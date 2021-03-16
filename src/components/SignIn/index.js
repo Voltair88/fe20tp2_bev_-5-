@@ -5,14 +5,64 @@ import { SignUpLink } from '../SignUp';
 import { PasswordForgetLink } from '../PasswordForget';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
+import styled from "styled-components";
+
+const Input = styled.input`
+    justify-content: center;
+    justify-content: row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 20%;
+    border: 2px solid #aaa;
+    border-radius: 4px;
+    margin: 0.6em auto;
+    outline: none;
+    padding: 8px;
+    box-sizing: border-box;
+    transition: 0.3s;
+    
+
+    &:focus{
+      border-color: #50c818;
+      box-shadow: 0 0 8px; 0 #50c818;
+    }
+`;
+
+const Content = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  height: 92vh;
+`;
+
+
+const MyButton = styled.button`
+    appearance: none;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    padding: 20px 40px;
+    border-radius: 4px;
+    color: #50c818;
+
+`;
+    
+
 
 const SignInPage = () => (
-    <div>
+    <Content>
         <h1>SignIn</h1>
         <SignInForm />
         <SignUpLink />
         <PasswordForgetLink />
-    </div>
+    </Content>
 );
 
 const INITIAL_STATE = {
@@ -53,23 +103,24 @@ class SignInFormBase extends Component {
         const isInvalid = password === '' || email === '';
         return ( 
             <form onSubmit={this.onSubmit}>
-                <input
+                
+                <Input
                     name="email"
                     value={email}
                     onChange={this.onChange}
                     type="text"
                     placeholder="Email Address"
                 />
-                <input
+                <Input
                     name="password"
                     value={password}
                     onChange={this.onChange}
                     type="password"
                     placeholder="Password"
                 />
-                <button disabled={isInvalid} type="submit">
+                <MyButton disabled={isInvalid} type="submit">
                 Sign In
-                </button>
+                </MyButton>
                 {error && <p>{error.message}</p>}
             </form>
          );
