@@ -55,8 +55,8 @@ const HomePage = ({ scorers }) => {
           <Content>
             <h1>Home</h1>
             <p>The Home Page is accessible by every signed in user.</p>
-            <ScorersList scorers={scorers} />
-            <BarChart />
+            {/* <ScorersList scorers={scorers} /> */}
+            <BarChart scorers={scorers} />
 
             {/* <Messages /> */}
           </Content>
@@ -281,8 +281,7 @@ const ScorersList = ({ scorers }) => {
         ))}
       </ul>
 
-      {scorers.map(item => goals.push(item.numberOfGoals))}   {/* Set data to array to display in chart */}
-      {scorers.map(item => player.push(item.player.name))}
+
 
 
     </div>
@@ -290,7 +289,10 @@ const ScorersList = ({ scorers }) => {
 };
 
 
-const BarChart = () => {
+const BarChart = ({ scorers }) => {
+
+  { scorers.map(item => goals.push(item.numberOfGoals)) } {/* Set data to array to display in chart */ }
+  { scorers.map(item => player.push(item.player.name)) }
   return (
     <ChartContainer>
       <Bar
