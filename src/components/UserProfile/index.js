@@ -6,6 +6,8 @@ function UserProfile(props) {
 
 
     /* const [authUser, setAuthUser] = useState(''); */
+    const [image, setImage] = useState(null);
+
 
 
     const players = [
@@ -27,6 +29,15 @@ function UserProfile(props) {
         /* console.log(authUser != '' ? "WWW" : authUser) */
 
     }
+    const handleChange = e => {
+        if (e.target.files[0]) {
+            setImage(e.target.files[0]);
+        }
+    }
+
+    const handleUpload = () => {
+        console.log("image: ", image)
+    }
 
 
 
@@ -36,7 +47,8 @@ function UserProfile(props) {
             {(authUser) => (
                 <div>
                     <h1>This is user profile page</h1>
-                    <input type="file" />
+                    <input type="file" onChange={handleChange} />
+                    <button onClick={handleUpload} > Upload </button>
                     <p>{"Auth user: " + authUser.uid}</p>
                     <Dropdown placeholder={'Choose your favorite team'} dataSet={teams} dropdownId="TEAMS" />
                     <Dropdown placeholder={'Choose your favorite player'} dataSet={players} dropdownId="PLAYERS" />
