@@ -4,11 +4,15 @@ import { withFirebase } from "../Firebase";
 
 import Player from "../Player";
 import styled from "styled-components";
-import { Bar, Line } from 'react-chartjs-2';
+import { Bar, Line } from "react-chartjs-2";
 
-import { Background, ChartContainer, Blur, HomeMain, Content } from '../StyledCom';
-
-
+import {
+  Background,
+  ChartContainer,
+  Blur,
+  HomeMain,
+  Content,
+} from "../StyledCom";
 
 const HomePage = ({ scorers }) => {
   return (
@@ -45,7 +49,8 @@ class MessagesBase extends Component {
   };
 
   onCreateMessage = (event, authUser) => {
-    this.props.firebase.messages().push({     /* messages = () => this.db.ref("messages"); Pathum */
+    this.props.firebase.messages().push({
+      /* messages = () => this.db.ref("messages"); Pathum */
       text: this.state.text,
       userId: authUser.uid,
       createdAt: this.props.firebase.serverValue.TIMESTAMP,
@@ -233,8 +238,6 @@ const player = [];
 const ScorersList = ({ scorers }) => {
   return (
     <div>
-
-
       <ul>
         {scorers.map((item, index) => (
           <li key={index}>
@@ -243,19 +246,20 @@ const ScorersList = ({ scorers }) => {
           </li>
         ))}
       </ul>
-
-
-
-
     </div>
   );
 };
 
-
 const BarChart = ({ scorers }) => {
-
-  { scorers.map(item => goals.push(item.numberOfGoals)) } {/* Set data to array to display in chart */ }
-  { scorers.map(item => player.push(item.player.name)) }
+  {
+    scorers.map((item) => goals.push(item.numberOfGoals));
+  }
+  {
+    /* Set data to array to display in chart */
+  }
+  {
+    scorers.map((item) => player.push(item.player.name));
+  }
   return (
     <ChartContainer>
       <Bar
@@ -263,8 +267,8 @@ const BarChart = ({ scorers }) => {
           labels: player,
           datasets: [
             {
-              label: 'Goals',
-              data: (goals.length) <= 0 ? '' : goals,
+              label: "Goals",
+              data: goals.length <= 0 ? "" : goals,
 
               backgroundColor: [
                 "#f38b4a",
@@ -278,8 +282,8 @@ const BarChart = ({ scorers }) => {
                 "#ff8397",
                 "#6970d5",
               ],
-            }
-          ]
+            },
+          ],
         }}
         height={500}
         width={50}
@@ -290,18 +294,15 @@ const BarChart = ({ scorers }) => {
               {
                 ticks: {
                   beginAtZero: true,
-                }
-              }
-            ]
-          }
+                },
+              },
+            ],
+          },
         }}
-
       />
     </ChartContainer>
-  )
-}
-
-
+  );
+};
 
 const condition = (authUser) => !!authUser;
 export default withAuthorization(condition)(HomePage);
