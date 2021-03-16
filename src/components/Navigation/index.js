@@ -1,13 +1,13 @@
-import { Link } from "react-router-dom";
 import { AuthUserContext } from "../Session";
 import * as ROUTES from "../../constants/routes";
 import * as ROLES from "../../constants/roles";
 import SignOutButton from "../SignOut";
 
-import styled from "styled-components";
 import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+<<<<<<< HEAD
+import { Navbar, Ul, NavLink, HamMenu } from "../StyledCom";
+=======
 
 const Navbar = styled.div`
   width: 100%;
@@ -62,6 +62,7 @@ const HamMenu = styled(FontAwesomeIcon)`
     margin-left: -1rem;
   }
 `;
+>>>>>>> 68099ef20f2b4fb6c9f844daeb71db641ed16a8d
 
 const Navigation = () => {
   return (
@@ -79,31 +80,41 @@ const Navigation = () => {
   );
 };
 
-const NavigationAuth = ({ authUser }) => (
-  <Ul>
-    <HamMenu icon={faBars} />
-    <li>
-      <NavLink to={ROUTES.LANDING}>Landing</NavLink>
-    </li>
-    <li>
-      <NavLink to={ROUTES.HOME}>Home</NavLink>
-    </li>
-    <li>
-      <NavLink to={ROUTES.ACCOUNT}>Account</NavLink>
-    </li>
-    {!!authUser.roles[ROLES.ADMIN] && (
+const MenuToggle = () => {
+  const [showMenu, setShowMenu] = useState(false);
+  if (showMenu) {
+  }
+
+  return <HamMenu icon={faBars} onClick={() => setShowMenu(!showMenu)} />;
+};
+
+const NavigationAuth = ({ authUser }) => {
+  return (
+    <Ul>
+      <MenuToggle />
       <li>
-        <NavLink to={ROUTES.ADMIN}>Admin</NavLink>
+        <NavLink to={ROUTES.LANDING}>Landing</NavLink>
       </li>
-    )}
-    <li>
-      <SignOutButton />
-    </li>
-  </Ul>
-);
+      <li>
+        <NavLink to={ROUTES.HOME}>Home</NavLink>
+      </li>
+      <li>
+        <NavLink to={ROUTES.ACCOUNT}>Account</NavLink>
+      </li>
+      {!!authUser.roles[ROLES.ADMIN] && (
+        <li>
+          <NavLink to={ROUTES.ADMIN}>Admin</NavLink>
+        </li>
+      )}
+      <li>
+        <SignOutButton />
+      </li>
+    </Ul>
+  );
+};
 const NavigationNonAuth = () => (
   <Ul>
-    <HamMenu icon={faBars} />
+    <MenuToggle />
     <li>
       <NavLink to={ROUTES.LANDING}>Landing</NavLink>
     </li>

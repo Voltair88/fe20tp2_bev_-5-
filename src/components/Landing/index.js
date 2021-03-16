@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+import { Main, Content, H1, P } from "../StyledCom";
+=======
 import styled from "styled-components";
 
 const Background = styled.main`
@@ -51,6 +54,7 @@ const P = styled.p`
     padding: 0 1rem;
   }
 `;
+>>>>>>> 68099ef20f2b4fb6c9f844daeb71db641ed16a8d
 
 const Landing = () => {
   return (
