@@ -7,52 +7,7 @@ import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 import styled from "styled-components";
 
-const Input = styled.input`
-    justify-content: center;
-    justify-content: row;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    width: 20%;
-    border: 2px solid #aaa;
-    border-radius: 4px;
-    margin: 0.6em auto;
-    outline: none;
-    padding: 8px;
-    box-sizing: border-box;
-    transition: 0.3s;
-    
-
-    &:focus{
-      border-color: #50c818;
-      box-shadow: 0 0 8px; 0 #50c818;
-    }
-`;
-
-const Content = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  flex-direction: column;
-  height: 92vh;
-`;
-
-
-const MyButton = styled.button`
-    appearance: none;
-    background: none;
-    border: none;
-    outline: none;
-    cursor: pointer;
-
-    padding: 20px 40px;
-    border-radius: 4px;
-    color: #50c818;
-
-`;
+import { Content, Input, MyButton } from '../StyledCom';
     
 
 

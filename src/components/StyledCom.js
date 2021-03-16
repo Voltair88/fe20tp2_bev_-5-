@@ -99,3 +99,83 @@ export const P = styled.p`
     padding: 0 1rem;
   }
 `;
+
+export const Background = styled.main`
+  background-color: #e8e8e8;
+  background-image: url("https://images.unsplash.com/photo-1459865264687-595d652de67e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+`;
+
+
+export const Input = styled.input`
+    justify-content: center;
+    justify-content: row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 20%;
+    border: 2px solid #aaa;
+    border-radius: 4px;
+    margin: 0.6em auto;
+    outline: none;
+    padding: 8px;
+    box-sizing: border-box;
+    transition: 0.3s;
+    
+
+    &:focus{
+      border-color: #50c818;
+      box-shadow: 0 0 8px; 0 #50c818;
+    }
+    @media screen and (max-width: 1024px) {
+        width: 40%;
+    }
+
+
+    @media screen and (max-width: 768px) {
+        width: 50%;
+    }
+`;
+
+
+export const MyButton = styled.button`
+    appearance: none;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    padding: 20px 40px;
+    border-radius: 4px;
+    color: #50c818;
+
+`;
+
+
+
+export const Blur = styled.main`
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  height: auto;
+  width: 100%;
+`;
+
+export const HomeMain = styled.main`
+  box-sizing: border-box;
+  display: flex;
+  font-family: "Poppins", sans-serif;
+  width: 100%;
+  height: 92vh;
+`;
+
+
+export const ChartContainer = styled.div`
+  height: 500px;
+  width: 600px;
+  position: absolute;
+  left: 10px;
+  top: 40px;
+`
