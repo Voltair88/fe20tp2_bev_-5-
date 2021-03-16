@@ -37,7 +37,7 @@ const App = () => {
           <PasswordForgetPage />
         </Route>
         <Route path={ROUTES.HOME}>
-          <HomePage teams={teamsData} />
+          <HomePage scorers={scorersData} teams={teamsData} />
         </Route>
         <Route path={ROUTES.ACCOUNT}>
           <AccountPage />

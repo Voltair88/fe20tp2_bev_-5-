@@ -5,39 +5,15 @@ import { withFirebase } from "../Firebase";
 import Player from "../Player";
 import { TeamItem } from "../Team";
 import styled from "styled-components";
+import { Bar, Line } from "react-chartjs-2";
 
-const Background = styled.main`
-  background-color: #e8e8e8;
-  background-image: url("https://images.unsplash.com/photo-1459865264687-595d652de67e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-`;
-
-const Blur = styled.main`
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
-  height: auto;
-  width: 100%;
-`;
-
-const Main = styled.main`
-  box-sizing: border-box;
-  display: flex;
-  font-family: "Poppins", sans-serif;
-  width: 100%;
-  height: 92vh;
-`;
-
-const Content = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  flex-direction: column;
-  height: 92vh;
-`;
+import {
+  Background,
+  ChartContainer,
+  Blur,
+  HomeMain,
+  Content,
+} from "../StyledCom";
 
 const StyledList = styled.div`
   list-style-type: none;
@@ -51,28 +27,32 @@ const StyledList = styled.div`
     box-sizing: border-box;
     flex-grow: 1;
     width: 33.33%;
-    padding: 0.8em 1.2em;
+    padding: 0.05em 0.5em;
     overflow: hidden; // Or flex might break
     list-style: none;
-    span img {
-      width: 100%;
-      height: auto;
+      img {
+        width: 100%;
+        height: auto;
+      }
     }
   }
 `;
 
-const HomePage = ({ teams }) => {
+const HomePage = ({ teams, scorers }) => {
   return (
     <Background>
       <Blur>
-        <Main>
+        <HomeMain>
           <Content>
             <h1>Home</h1>
             <p>The Home Page is accessible by every signed in user.</p>
+            <BarChart scorers={scorers} />
             <List arr={teams} />
+            {/* <ScorersList scorers={scorers} /> */}
+
             {/* <Messages /> */}
           </Content>
-        </Main>
+        </HomeMain>
       </Blur>
     </Background>
   );
@@ -85,6 +65,63 @@ const List = ({ arr }) => {
         <TeamItem key={item.id} team={item} />
       ))}
     </StyledList>
+  );
+};
+
+const goals = [];
+const player = [];
+
+const BarChart = ({ scorers }) => {
+  {
+    scorers.map((item) => goals.push(item.numberOfGoals));
+  }
+  {
+    /* Set data to array to display in chart */
+  }
+  {
+    scorers.map((item) => player.push(item.player.name));
+  }
+  return (
+    <ChartContainer>
+      <Bar
+        data={{
+          labels: player,
+          datasets: [
+            {
+              label: "Goals",
+              data: goals.length <= 0 ? "" : goals,
+
+              backgroundColor: [
+                "#f38b4a",
+                "#56d798",
+                "#ff8397",
+                "#6970d5",
+                "#f38b4a",
+                "#56d798",
+                "#f38b4a",
+                "#56d798",
+                "#ff8397",
+                "#6970d5",
+              ],
+            },
+          ],
+        }}
+        height={500}
+        width={50}
+        options={{
+          maintainAspectRatio: false,
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  beginAtZero: true,
+                },
+              },
+            ],
+          },
+        }}
+      />
+    </ChartContainer>
   );
 };
 
