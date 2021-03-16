@@ -64,7 +64,7 @@ export const Content = styled.div`
   justify-content: center;
   text-align: center;
   flex-direction: column;
-  height: 92vh;
+  height: auto;
 `;
 
 export const H1 = styled.h1`
@@ -86,62 +86,54 @@ export const P = styled.p`
   }
 `;
 
-
 export const Background = styled.main`
   background-color: #e8e8e8;
-  background-image: url("https://images.unsplash.com/photo-1556056504-5c7696c4c28d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2083&q=80");
+  //background-image: url("https://images.unsplash.com/photo-1556056504-5c7696c4c28d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2083&q=80");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 `;
 
-
 export const Input = styled.input`
-    justify-content: center;
-    justify-content: row;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    width: 20%;
-    border: 2px solid #aaa;
-    border-radius: 4px;
-    margin: 0.6em auto;
-    outline: none;
-    padding: 8px;
-    box-sizing: border-box;
-    transition: 0.3s;
-    
+  justify-content: center;
+  justify-content: row;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 20%;
+  border: 2px solid #aaa;
+  border-radius: 4px;
+  margin: 0.6em auto;
+  outline: none;
+  padding: 8px;
+  box-sizing: border-box;
+  transition: 0.3s;
 
-    &:focus{
-      border-color: #50c818;
-      box-shadow: 0 0 8px 0 #50c818;
-    }
-    @media screen and (max-width: 1024px) {
-        width: 40%;
-    }
+  &:focus {
+    border-color: #50c818;
+    box-shadow: 0 0 8px 0 #50c818;
+  }
+  @media screen and (max-width: 1024px) {
+    width: 40%;
+  }
 
-
-    @media screen and (max-width: 768px) {
-        width: 50%;
-    }
+  @media screen and (max-width: 768px) {
+    width: 50%;
+  }
 `;
-
 
 export const MyButton = styled.button`
-    appearance: none;
-    background: none;
-    border: none;
-    outline: none;
-    cursor: pointer;
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
 
-    padding: 20px 40px;
-    border-radius: 4px;
-    color: #50c818;
-
+  padding: 20px 40px;
+  border-radius: 4px;
+  color: #50c818;
 `;
-
-
 
 export const Blur = styled.main`
   -webkit-backdrop-filter: blur(4px);
@@ -155,14 +147,10 @@ export const HomeMain = styled.main`
   display: flex;
   font-family: "Poppins", sans-serif;
   width: 100%;
-  height: 92vh;
+  height: auto;
 `;
-
 
 export const ChartContainer = styled.div`
   height: 500px;
   width: 600px;
-  position: absolute;
-  left: 10px;
-  top: 40px;
-`
+`;

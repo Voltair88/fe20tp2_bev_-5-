@@ -3478,7 +3478,7 @@ export const CL_TEAMS_DATA = {
     name: "UEFA Champions League",
     code: "CL",
     plan: "TIER_ONE",
-    lastUpdated: "2021-03-10T02:05:05Z",
+    lastUpdated: "2021-03-11T17:00:03Z",
   },
   season: {
     id: 642,
@@ -4994,7 +4994,6 @@ export const CL_TEAMS_DATA = {
     },
   ],
 };
-
 export const CL_MATCH_DATA = {
   count: 165,
   filters: {},
