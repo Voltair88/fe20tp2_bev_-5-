@@ -28,49 +28,7 @@ function UserProfile(props) {
 
     }
 
-    function onSaveProfile(authUser) {
 
-
-
-
-        console.log("On change save")
-        /* console.log(authUser.uid) */
-        props.firebase.user(authUser.uid).set({
-            fav_player: "RONA",
-            fav_team: "LK"
-            /* uid: authUser.uid */
-        });
-
-    }
-
-
-
-
-    /* this.props.firebase.message(message.uid).set({
-        ...messageSnapshot,
-        text,
-      }); */
-
-    /* messages = () => this.db.ref("messages"); Pathum */
-
-    /*  onCreateMessage = (event, authUser) => {
-         this.props.firebase.messages().push({    
-           text: this.state.text,
-           userId: authUser.uid,
-           createdAt: this.props.firebase.serverValue.TIMESTAMP,
-         });
-         this.setState({ text: "" });
-         event.preventDefault();
-       }; */
-
-    /* onEditMessage = (message, text) => {
-      const { uid, ...messageSnapshot } = message;
-      this.props.firebase.message(message.uid).set({
-        ...messageSnapshot,
-        text,
-        editedAt: this.props.firebase.serverValue.TIMESTAMP,
-      });
-    }; */
 
     return (
 
@@ -84,21 +42,7 @@ function UserProfile(props) {
                     <Dropdown placeholder={'Choose your favorite player'} dataSet={players} dropdownId="PLAYERS" />
 
 
-
-                    <select
-                    /* value={this.state.selectValue}
-                    onChange={this.handleChange} */
-                    >
-                        <option value="Orange">Orange</option>
-                        <option value="Radish">Radish</option>
-                        <option value="Cherry">Cherry</option>
-                    </select>
-
-                    {/* {console.log(state)} */}
-
                     <button onClick={onChangePassword}>Change password</button>
-                    <button onClick={() => onSaveProfile(authUser)}>Save</button>
-                    {/* {console.log(authUser)} */}
                 </div>
             )}
         </AuthUserContext.Consumer>

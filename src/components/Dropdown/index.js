@@ -2,11 +2,7 @@ import React, { useState, useContext } from "react";
 import Select from "react-select";
 import { AuthUserContext, withAuthentication } from "../Session";
 
-const options = [
-    { value: 'zlatan', label: 'Zlatan' },
-    { value: 'messi', label: 'Messi' },
-    { value: 'ronaldo', label: 'Ronaldo' },
-];
+
 
 function Dropdown(props) {
 
