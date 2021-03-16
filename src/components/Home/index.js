@@ -1,11 +1,8 @@
 import { AuthUserContext, withAuthorization } from "../Session";
 import React, { Component } from "react";
 import { withFirebase } from "../Firebase";
-
 import Player from "../Player";
-import styled from "styled-components";
-import { Bar, Line } from 'react-chartjs-2';
-
+import { Bar } from 'react-chartjs-2';
 import { Background, ChartContainer, Blur, HomeMain, Content } from '../StyledCom';
 
 

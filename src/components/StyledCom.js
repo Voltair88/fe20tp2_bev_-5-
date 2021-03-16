@@ -52,9 +52,7 @@ export const Main = styled.main`
   font-family: "Poppins", sans-serif;
   width: 100%;
   height: 92vh;
-  background-image: url("https://images.unsplash.com/photo-1556056504-5c7696c4c28d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2083&q=80");
-  background-size: fixed;
-  background-position: center;
+
 `;
 
 export const Content = styled.div`
