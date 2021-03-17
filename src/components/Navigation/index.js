@@ -2,7 +2,7 @@ import { AuthUserContext } from "../Session";
 import * as ROUTES from "../../constants/routes";
 import * as ROLES from "../../constants/roles";
 import SignOutButton from "../SignOut";
-
+import { Burger } from "./Burger.js";
 import React, { useState } from "react";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Navbar, Ul, NavLink, HamMenu } from "../StyledCom";
@@ -19,22 +19,14 @@ const Navigation = () => {
           )
         }
       </AuthUserContext.Consumer>
+      <Burger />
     </Navbar>
   );
-};
-
-const MenuToggle = () => {
-  const [showMenu, setShowMenu] = useState(false);
-  if (showMenu) {
-  }
-
-  return <HamMenu icon={faBars} onClick={() => setShowMenu(!showMenu)} />;
 };
 
 const NavigationAuth = ({ authUser }) => {
   return (
     <Ul>
-      <MenuToggle />
       <li>
         <NavLink to={ROUTES.LANDING}>Landing</NavLink>
       </li>
@@ -57,7 +49,6 @@ const NavigationAuth = ({ authUser }) => {
 };
 const NavigationNonAuth = () => (
   <Ul>
-    <MenuToggle />
     <li>
       <NavLink to={ROUTES.LANDING}>Landing</NavLink>
     </li>

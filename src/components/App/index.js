@@ -9,12 +9,15 @@ import PasswordForgetPage from "../PasswordForget";
 import HomePage from "../Home";
 import AccountPage from "../Account";
 import AdminPage from "../Admin";
-import { SCORERS_DATA } from "../../data.js";
+import { TeamPage } from "../Team";
+import { SCORERS_DATA, CL_TEAMS_DATA, TEAM_DATA } from "../../data.js";
 
 import * as ROUTES from "../../constants/routes";
 
 const App = () => {
   const [scorersData, setScorersData] = useState(SCORERS_DATA.scorers);
+  const [teamsData, setTeamsData] = useState(CL_TEAMS_DATA.teams);
+  const [teamData, setTeamData] = useState(TEAM_DATA);
 
   return (
     <Router>
@@ -34,13 +37,16 @@ const App = () => {
           <PasswordForgetPage />
         </Route>
         <Route path={ROUTES.HOME}>
-          <HomePage scorers={scorersData} />
+          <HomePage scorers={scorersData} teams={teamsData} />
         </Route>
         <Route path={ROUTES.ACCOUNT}>
           <AccountPage />
         </Route>
         <Route path={ROUTES.ADMIN}>
           <AdminPage />
+        </Route>
+        <Route>
+          <TeamPage team={teamData} />
         </Route>
       </Switch>
       {/*     <Route exact path={ROUTES.LANDING} component={LandingPage} />
