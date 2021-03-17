@@ -6,7 +6,7 @@ import Player from "../Player";
 import styled from "styled-components";
 import { Bar, Line } from 'react-chartjs-2';
 
-import { Background, ChartContainer, Blur, HomeMain, Content } from '../StyledCom';
+import { Background, ChartContainer, Blur, HomeMain, ContentHome } from '../StyledCom';
 
 
 
@@ -15,12 +15,12 @@ const HomePage = ({ scorers }) => {
     <Background>
       <Blur>
         <HomeMain>
-          <Content>
+          <ContentHome>
             {/* <ScorersList scorers={scorers} /> */}
             {<BarChart scorers={scorers} />}
 
             {/* <Messages /> */}
-          </Content>
+          </ContentHome>
         </HomeMain>
       </Blur>
     </Background>

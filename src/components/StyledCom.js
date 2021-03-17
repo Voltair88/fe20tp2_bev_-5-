@@ -166,3 +166,6 @@ export const ChartContainer = styled.div`
   left: 10px;
   top: 40px;
 `
+export const ContentHome = styled.div`
+  height: 1000vh;
+`;
