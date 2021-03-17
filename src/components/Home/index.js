@@ -6,6 +6,8 @@ import { TeamItem } from "../Team";
 import styled from "styled-components";
 import { Bar, Line } from "react-chartjs-2";
 
+import { getTeamsGoalDiff } from "../../functions";
+import { SEASON_DATA } from "../../data";
 import {
   Background,
   ChartContainer,
@@ -29,11 +31,11 @@ const StyledList = styled.div`
     padding: 0.05em 0.5em;
     overflow: hidden; // Or flex might break
     list-style: none;
-      img {
-        width: 100%;
-        height: auto;
-      }
+    img {
+      width: 100%;
+      height: auto;
     }
+  }
 `;
 
 const HomePage = ({ teams, scorers }) => {
@@ -70,15 +72,13 @@ const goals = [];
 const player = [];
 
 const BarChart = ({ scorers }) => {
-  {
-    scorers.map((item) => goals.push(item.numberOfGoals));
-  }
-  {
-    /* Set data to array to display in chart */
-  }
-  {
-    scorers.map((item) => player.push(item.player.name));
-  }
+  console.log(getTeamsGoalDiff(SEASON_DATA));
+  //skriv om utan push
+  scorers.map((item) => goals.push(item.numberOfGoals));
+
+  /* Set data to array to display in chart */
+
+  scorers.map((item) => player.push(item.player.name));
   return (
     <ChartContainer>
       <Bar
