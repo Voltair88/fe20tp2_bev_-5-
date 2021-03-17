@@ -156,7 +156,7 @@ export const ChartContainer = styled.div`
   top: 40px;
 `;
 
-export const outButton = styled.button`
+export const OutButton = styled.button`
 font-weight: 500;
 font-family: "Poppins", sans-serif;
 text-transform: uppercase;

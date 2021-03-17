@@ -1,13 +1,14 @@
 import React from "react";
 import { withFirebase } from "../Firebase";
 import styled from "styled-components";
+import { OutButton } from './StyledCom';
 
 
 
 const SignOutButton = ({ firebase }) => (
-  <outButton type="button" onClick={firebase.doSignOut}>
+  <OutButton type="button" onClick={firebase.doSignOut}>
     Sign Out
-  </outButton>
+  </OutButton>
 );
 
 export default withFirebase(SignOutButton);
