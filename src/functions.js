@@ -26,4 +26,14 @@ export function getTeamsGoalDiff(data) {
 
 // GROUP_A: {'FC Bayern': 5, 'Atletico': 10}
 
-//Match linje: Matchday x: { 'team_name': goa }
+//Match linje: { 'name' : matchday: [1,3,4...] goalDif: [-1, 2, -3...] }
+export function getMatchGoalDiff(data) {
+  let output = data.matches
+    .filter((item) => item.status === "FINISHED")
+    .filter((item) => item.stage === "GROUP_STAGE")
+    .map((item) => {
+      return item.matchday;
+      //return Date.parse(item.lastUpdated);
+    });
+  console.log(output);
+}
