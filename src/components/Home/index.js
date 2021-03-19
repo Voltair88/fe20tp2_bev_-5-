@@ -72,13 +72,16 @@ const goals = [];
 const player = [];
 
 const BarChart = ({ scorers }) => {
-  console.log(getTeamsGoalDiff(SEASON_DATA));
-  //skriv om utan push
-  scorers.map((item) => goals.push(item.numberOfGoals));
 
-  /* Set data to array to display in chart */
-
-  scorers.map((item) => player.push(item.player.name));
+  {
+    scorers.map((item) => goals.push(item.numberOfGoals));
+  }
+  {
+    /* Set data to array to display in chart */
+  }
+  {
+    scorers.map((item) => player.push(item.player.name));
+  }
   return (
     <ChartContainer>
       <Bar

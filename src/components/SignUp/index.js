@@ -4,6 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 import * as ROLES from '../../constants/roles';
+import ProfileImage from '../../img/prf_img.png'
 
 const SignUpPage = () => (
   <div>
@@ -19,6 +20,7 @@ const INITIAL_STATE = {
   passwordTwo: '',
   isAdmin: false,
   error: null,
+  image: ProfileImage
 };
 
 class SignUpFormBase extends Component {
@@ -29,7 +31,7 @@ class SignUpFormBase extends Component {
   }
 
   onSubmit = event => {
-    const { username, email, passwordOne, isAdmin } = this.state;
+    const { username, email, passwordOne, isAdmin, image } = this.state;
 
     const roles = {};
 
@@ -41,6 +43,9 @@ class SignUpFormBase extends Component {
       .doCreateUserWithEmailAndPassword(email, passwordOne)
       .then(authUser => {
         // Create a user in your Firebase realtime database
+        this.props.firebase
+        .profileImage(authUser.user.uid)
+        .put(image)
         this.props.firebase
           .user(authUser.user.uid)
           .set({
