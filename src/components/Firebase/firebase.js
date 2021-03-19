@@ -1,6 +1,7 @@
 import app from "firebase/app";
 import "firebase/auth";
 import "firebase/database";
+import "firebase/storage"
 
 const config = {
   apiKey: "AIzaSyBBuiXCzsZar09GIMVJhgtbXz-wQrofELk",
@@ -19,17 +20,10 @@ class Firebase {
     this.serverValue = app.database.ServerValue;
     this.auth = app.auth();
     this.db = app.database();
+    this.st = app.storage();
 
-
-    /* let ref = this.db.ref('profile')
-    let data = {
-      fav_player: "PathumNew",
-      fav_team: "SL",
-      uid: "testUid"
-    }
-
-    ref.push(data); */
   }
+
 
 
 
@@ -65,12 +59,18 @@ class Firebase {
               email: authUser.email,
               ...dbUser,
             };
+
+
             next(authUser);
           });
+
       } else {
         fallback();
       }
     });
+
+
+
 
   // *** User API ***
   user = (uid) => this.db.ref(`users/${uid}`);
@@ -81,8 +81,11 @@ class Firebase {
   messages = () => this.db.ref("messages");
 
 
-  // *** Profile API ****
-  profile = (uid) => this.db.ref(`profile/${uid}`);
+  // *** Profile image API ****
+  /* profileImage = (uid) => this.db.ref(`users/${uid}/profile.jpg`); */
+  profileImage = (uid) => this.st.ref(`users/${uid}/profileImage`);
+  /* getProfileImage = () => this.st.ref(`users/${uid}/profileImage`); */
+  /* profileImage = () => this.db.ref(); */
   /* profile = (uid) => this.db.ref(`profile/${uid}`); */
 
 }

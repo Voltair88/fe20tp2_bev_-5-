@@ -72,6 +72,7 @@ const goals = [];
 const player = [];
 
 const BarChart = ({ scorers }) => {
+
   {
     scorers.map((item) => goals.push(item.numberOfGoals));
   }
