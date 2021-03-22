@@ -3,10 +3,10 @@ import { useState, useEffect } from "react";
 import * as ROUTES from "../../constants/routes";
 import { Link } from "react-router-dom";
 import { requestOptions, SEASON_DATA } from "../../data.js";
-import { getTeamsGoalDiff } from "../../functions.js";
+import { getTeamStats } from "../../functions.js";
 
 export const TeamPage = ({ team }) => {
-  const [standingData, setStandingData] = useState(SEASON_DATA);
+  const [standingData, setStandingData] = useState();
 
   /*   useEffect(() => {
     fetch(
@@ -17,6 +17,7 @@ export const TeamPage = ({ team }) => {
       .then((json) => setStandingData(json));
   }, []); */
 
+  console.log(getTeamStats(SEASON_DATA, team.id));
   return (
     <article>
       <figure>

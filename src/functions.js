@@ -21,34 +21,20 @@ export function getTeamsGoalDiff(data) {
   console.log(flatDataValues);
 }
 
-export const getTeamStats = (data) => {
-  let output = data.standings
-    .filter((item) => item.type === "TOTAL")
-    .map((item) => {
-      return { [item.group]: item.table };
-      //console.log(item.group);
-      //console.log(item.table);
-    });
-
-  console.log(output);
-};
-
 //team = {34: 'FC Bayern'}
 //team[id] // "FC Bayern"
 
 // GROUP_A: {'FC Bayern': 5, 'Atletico': 10}
+//returns a single object corresponding to team id based on standings data
+export const getTeamStats = (data, teamId) => {
+  let tables = data.standings
+    .filter((item) => item.type === "TOTAL")
+    .map((item) => {
+      return item.table;
+    });
+  let mergedTables = [].concat.apply([], tables);
+  let idTeam = mergedTables.find((item) => item.team.id === teamId);
+  return idTeam;
+};
 
 //Match linje: { 'name' : matchday: [1,3,4...] goalDif: [-1, 2, -3...] }
-export function getMatchGoalDiff(data) {
-  let output = data.matches
-    .filter((item) => item.status === "FINISHED")
-    .filter((item) => item.stage === "GROUP_STAGE")
-    .filter((item) => item.score.winner === "HOME_TEAM")
-    .map((item) => {
-      return item;
-      //return Date.parse(item.lastUpdated);
-    });
-  output.map((item) => {
-    return Object.assign(item);
-  });
-}

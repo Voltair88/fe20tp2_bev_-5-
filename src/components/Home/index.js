@@ -6,7 +6,7 @@ import { TeamItem } from "../Team";
 import styled from "styled-components";
 import { Bar, Line } from "react-chartjs-2";
 
-import { getTeamsGoalDiff, getMatchGoalDiff } from "../../functions";
+import { getTeamsGoalDiff } from "../../functions";
 import { SEASON_DATA, CL_MATCH_DATA } from "../../data";
 import {
   Background,
@@ -59,7 +59,6 @@ const HomePage = ({ teams, scorers }) => {
 };
 
 const List = ({ arr }) => {
-  console.log(getMatchGoalDiff(CL_MATCH_DATA));
   return (
     <StyledList>
       {arr.map((item) => (
