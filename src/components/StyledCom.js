@@ -131,6 +131,8 @@ export const MyButton = styled.button`
   padding: 20px 40px;
   border-radius: 4px;
   color: #50c818;
+
+  font-size: 15px;
 `;
 
 export const Blur = styled.main`
