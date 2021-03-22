@@ -4,12 +4,15 @@ import { Link, withRouter } from 'react-router-dom';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 import * as ROLES from '../../constants/roles';
+import ProfileImage from '../../img/prf_img.png'
+
+import { Input, Content, MyButton } from '../StyledCom';
 
 const SignUpPage = () => (
-  <div>
+  <Content>
     <h1>SignUp</h1>
     <SignUpForm />
-  </div>
+    </Content>
 );
 
 const INITIAL_STATE = {
@@ -19,6 +22,7 @@ const INITIAL_STATE = {
   passwordTwo: '',
   isAdmin: false,
   error: null,
+  image: ProfileImage
 };
 
 class SignUpFormBase extends Component {
@@ -29,7 +33,7 @@ class SignUpFormBase extends Component {
   }
 
   onSubmit = event => {
-    const { username, email, passwordOne, isAdmin } = this.state;
+    const { username, email, passwordOne, isAdmin, image } = this.state;
 
     const roles = {};
 
@@ -41,6 +45,9 @@ class SignUpFormBase extends Component {
       .doCreateUserWithEmailAndPassword(email, passwordOne)
       .then(authUser => {
         // Create a user in your Firebase realtime database
+        this.props.firebase
+        .profileImage(authUser.user.uid)
+        .put(image)
         this.props.firebase
           .user(authUser.user.uid)
           .set({
@@ -89,34 +96,37 @@ class SignUpFormBase extends Component {
 
     return (
       <form onSubmit={this.onSubmit}>
-        <input
+        <Content>
+        <Input
           name="username"
           value={username}
           onChange={this.onChange}
           type="text"
           placeholder="Full Name"
         />
-        <input
+        
+        <Input
           name="email"
           value={email}
           onChange={this.onChange}
           type="text"
           placeholder="Email Address"
         />
-        <input
+        <Input
           name="passwordOne"
           value={passwordOne}
           onChange={this.onChange}
           type="password"
           placeholder="Password"
         />
-        <input
+        <Input
           name="passwordTwo"
           value={passwordTwo}
           onChange={this.onChange}
           type="password"
           placeholder="Confirm Password"
         />
+        </Content>
         <label>
         Admin:
         <input
@@ -126,9 +136,10 @@ class SignUpFormBase extends Component {
           onChange={this.onChangeCheckbox}
           />
         </label>
-        <button disabled={isInvalid} type="submit">
+        <MyButton disabled={isInvalid} type="submit">
           Sign Up
-        </button>
+        </MyButton>
+        
 
         {error && <p>{error.message}</p>}
       </form>
