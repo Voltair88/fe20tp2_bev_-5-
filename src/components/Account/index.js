@@ -4,6 +4,7 @@ import PasswordChangeForm from "../PasswordChange";
 import { AuthUserContext, withAuthorization } from "../Session";
 import UserProfile from "../UserProfile";
 
+
 const AccountPage = () => (
   <AuthUserContext.Consumer>
     {(authUser) => (

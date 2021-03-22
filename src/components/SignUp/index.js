@@ -19,8 +19,7 @@ const INITIAL_STATE = {
   passwordOne: '',
   passwordTwo: '',
   isAdmin: false,
-  error: null,
-  image: ProfileImage
+  error: null
 };
 
 class SignUpFormBase extends Component {
@@ -31,9 +30,11 @@ class SignUpFormBase extends Component {
   }
 
   onSubmit = event => {
-    const { username, email, passwordOne, isAdmin, image } = this.state;
+    const { username, email, passwordOne, isAdmin } = this.state;
 
+    
     const roles = {};
+let uid;
 
     if (isAdmin) {
     roles[ROLES.ADMIN] = ROLES.ADMIN;
@@ -44,15 +45,15 @@ class SignUpFormBase extends Component {
       .then(authUser => {
         // Create a user in your Firebase realtime database
         this.props.firebase
-        .profileImage(authUser.user.uid)
-        .put(image)
-        this.props.firebase
           .user(authUser.user.uid)
           .set({
             username,
             email,
             roles,
           })
+          this.props.firebase.profileImage(authUser.user.uid)
+          .child('image.jpg')
+          .put(ProfileImage)
           .then(() => {
             this.setState({ ...INITIAL_STATE });
             this.props.history.push(ROUTES.HOME);
@@ -60,12 +61,32 @@ class SignUpFormBase extends Component {
           .catch(error => {
             this.setState({ error });
           });
+
+          uid = authUser.user.uid;
+
       })
       .catch(error => {
         this.setState({ error });
       });
 
+
+
+      this.props.firebase.profileImage(uid).put(ProfileImage);
+
+
+
+
+
+
+
+
+
+
+
     event.preventDefault();
+
+
+    
   };
 
   onChange = event => {

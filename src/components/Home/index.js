@@ -1,5 +1,5 @@
 import { AuthUserContext, withAuthorization } from "../Session";
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import { withFirebase } from "../Firebase";
 
 import Player from "../Player";
@@ -68,20 +68,29 @@ const List = ({ arr }) => {
   );
 };
 
+
 const goals = [];
 const player = [];
 
 const BarChart = ({ scorers }) => {
 
-  {
-    scorers.map((item) => goals.push(item.numberOfGoals));
-  }
-  {
-    /* Set data to array to display in chart */
-  }
-  {
-    scorers.map((item) => player.push(item.player.name));
-  }
+
+  useEffect(() => {
+
+
+
+    {
+      scorers.map((item) => goals.push(item.numberOfGoals));
+    }
+    {
+      /* Set data to array to display in chart */
+    }
+    {
+      scorers.map((item) => player.push(item.player.name));
+    }
+  }, [])
+
+
   return (
     <ChartContainer>
       <Bar
@@ -124,6 +133,7 @@ const BarChart = ({ scorers }) => {
       />
     </ChartContainer>
   );
+
 };
 
 const condition = (authUser) => !!authUser;
