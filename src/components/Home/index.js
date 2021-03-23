@@ -6,8 +6,8 @@ import { TeamItem } from "../Team";
 import styled from "styled-components";
 import { Bar, Line } from "react-chartjs-2";
 
-import { getTeamsGoalDiff } from "../../functions";
-import { SEASON_DATA } from "../../data";
+import { getTeamsGoalDiff, getMatchGoalDiff } from "../../functions";
+import { SEASON_DATA, CL_MATCH_DATA } from "../../data";
 import {
   Background,
   ChartContainer,
@@ -59,6 +59,7 @@ const HomePage = ({ teams, scorers }) => {
 };
 
 const List = ({ arr }) => {
+  console.log(getMatchGoalDiff(CL_MATCH_DATA));
   return (
     <StyledList>
       {arr.map((item) => (
@@ -68,20 +69,15 @@ const List = ({ arr }) => {
   );
 };
 
-const goals = [];
-const player = [];
+/* const goals = [];
+const player = []; */
 
 const BarChart = ({ scorers }) => {
+  const goals = scorers.map((item) => item.numberOfGoals);
 
-  {
-    scorers.map((item) => goals.push(item.numberOfGoals));
-  }
-  {
-    /* Set data to array to display in chart */
-  }
-  {
-    scorers.map((item) => player.push(item.player.name));
-  }
+  /* Set data to array to display in chart */
+
+  const player = scorers.map((item) => item.player.name);
   return (
     <ChartContainer>
       <Bar

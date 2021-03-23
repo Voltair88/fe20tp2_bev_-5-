@@ -1,3 +1,12 @@
+const myHeaders = new Headers();
+myHeaders.append("X-Auth-Token", "ce4fa54216be4547961c562eb837b64b");
+
+export const requestOptions = {
+  method: "GET",
+  headers: myHeaders,
+  redirect: "follow",
+};
+
 export const LEAGUES_DATA = {
   count: 152,
   filters: {},
@@ -17728,6 +17737,9 @@ export const PLAYER_DATA = {
   shirtNumber: null,
   lastUpdated: "2020-09-07T21:25:55Z",
 };
+
+export const STANDINGS_DATA =
+  "http://api.football-data.org/v2/competitions/2001/standings";
 
 export const SEASON_DATA = {
   filters: {},
