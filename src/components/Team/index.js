@@ -8,16 +8,18 @@ import { getTeamStats } from "../../functions.js";
 export const TeamPage = ({ team }) => {
   const [standingData, setStandingData] = useState();
 
-  /*   useEffect(() => {
+  useEffect(() => {
     fetch(
       "http://api.football-data.org/v2/competitions/2001/standings",
       requestOptions
     )
       .then((response) => response.json())
-      .then((json) => setStandingData(json));
-  }, []); */
+      .then((json) => {
+        setStandingData(getTeamStats(json, team.id));
+      });
+  }, []);
 
-  console.log(getTeamStats(SEASON_DATA, team.id));
+  //console.log(getTeamStats(SEASON_DATA, team.id));
   return (
     <article>
       <figure>
@@ -26,11 +28,6 @@ export const TeamPage = ({ team }) => {
       <h3>{team.name}</h3>
       <div>
         <h4>Leagues</h4>
-        <ul>
-          {team.activeCompetitions.map((item) => (
-            <li key={item.id}>{item.name}</li>
-          ))}
-        </ul>
       </div>
       <div>
         <h4>Players</h4>
