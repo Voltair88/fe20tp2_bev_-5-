@@ -5,17 +5,36 @@ import ProfileImage from '../../img/prf_img.png'
 import { LEAGUES_DATA } from '../../data.js'
 import { PLAYER_DATA } from '../../data.js'
 import styled from 'styled-components';
+import PasswordChangeForm from "../PasswordChange";
 
 
 
 const Container = styled.div`
     display:flex;
-    flex-direction: column;
-    align-items: center;
+    /* flex-direction: column; */
+    /* align-items: center; */
+    justify-content: center;
+
+    /* & > div{
+        background-color: bisque;
+        width: 400px;
+    } */
 
 `
 
+const UserComp = styled.div`
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    width: 50%;
+    /* background-color: darkviolet; */
+`
+
 const ImageUpload = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
     & > input{
         visibility:hidden;
         width:0;
@@ -36,7 +55,7 @@ function UserProfile(props) {
 
     const [player_array, setPlayer_array] = useState([]);
     const [team_array, setTeam_array] = useState([]);
-
+    const [changePassword, setChangePassword] = useState(false);
 
     useEffect(() => {
         setUid(props.user.uid)
@@ -45,8 +64,6 @@ function UserProfile(props) {
         //Read LEAGUES_DATA from data.js and choose only id and team name from that data and store in an array
         let teamArr = [];
         for (let key of Object.keys(LEAGUES_DATA.competitions)) {
-            console.log(LEAGUES_DATA.competitions[key].id, LEAGUES_DATA.competitions[key].name)
-
             teamArr.push({ value: LEAGUES_DATA.competitions[key].id, label: LEAGUES_DATA.competitions[key].name })
         }
         setTeam_array(teamArr);
@@ -86,9 +103,10 @@ function UserProfile(props) {
 
 
     function onChangePassword() {
-        console.log("On change Password")
-
-
+        setChangePassword(true);
+    }
+    function onCancel() {
+        setChangePassword(false);
     }
     const handleChange = e => {
         if (e.target.files[0]) {
@@ -183,21 +201,23 @@ function UserProfile(props) {
         <AuthUserContext.Consumer>
             {(authUser) => (
                 <Container>
-                    {/* <h1>This is user profile page</h1> */}
-                    <ImageUpload>
-                        <label htmlFor="file-input">
-                            <img src={url} alt="user profile image" />
-                        </label>
-                        <input id="file-input" type="file" onChange={handleChange} />
-                        <br />
-                        <button onClick={handleUpload} > Upload </button>
-                    </ImageUpload>
-                    {/* <p>{"Auth user: " + authUser.uid}</p> */}
-                    <Dropdown placeholder={'Choose your favorite team'} dataSet={team_array} dropdownId="TEAMS" uid={props.user.uid} favorite={fav_team} />
-                    <Dropdown placeholder={'Choose your favorite player'} dataSet={player_array} dropdownId="PLAYERS" uid={props.user.uid} favorite={fav_player} />
+                    <UserComp>
+                        <ImageUpload>
+                            <label htmlFor="file-input">
+                                <img src={url} alt="user profile image" />
+                            </label>
+                            <input id="file-input" type="file" onChange={handleChange} />
+                            <br />
+                            <button onClick={handleUpload} > Upload </button>
+                        </ImageUpload>
+                        <Dropdown placeholder={'Choose your favorite team'} dataSet={team_array} dropdownId="TEAMS" uid={props.user.uid} favorite={fav_team} />
+                        <Dropdown placeholder={'Choose your favorite player'} dataSet={players} dropdownId="PLAYERS" uid={props.user.uid} favorite={fav_player} />
 
-                    <br />
-                    <button onClick={onChangePassword}>Change password</button>
+
+                        <br />
+                        {changePassword ? <PasswordChangeForm /> : ''}
+                        {changePassword ? (<button onClick={onCancel}>Cancel</button>) : (<button onClick={onChangePassword}>Change password</button>)}
+                    </UserComp>
                 </Container>
             )}
         </AuthUserContext.Consumer>
