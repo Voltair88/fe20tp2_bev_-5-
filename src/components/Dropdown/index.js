@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Select from "react-select";
 import { AuthUserContext, withAuthentication } from "../Session";
 
@@ -7,33 +7,23 @@ import { AuthUserContext, withAuthentication } from "../Session";
 function Dropdown(props) {
 
     const [selectedOption, setSelectedOption] = useState(null);
-    const [uid, setUid] = useState('');
-
-
-
 
     function handleChange(selectedOption) {
         setSelectedOption(selectedOption)
-        /* console.log(props.dropdownId)
-        console.log(selectedOption) */
-        /* props.firebase.user(uid).set({
-            fav_player: selectedOption.value,
-            fav_team: "LK"
-        }); */
 
         /* Update db fields when onChanged dropdown */
         if (props.dropdownId === "TEAMS") {
-            props.firebase.user(uid).update({
-                fav_team: selectedOption.value
+            props.firebase.user(props.uid).update({
+                fav_team_id: selectedOption.value,
+                fav_team_name: selectedOption.label
             });
         } else if (props.dropdownId === "PLAYERS") {
-            props.firebase.user(uid).update({
-                fav_player: selectedOption.value
+            props.firebase.user(props.uid).update({
+                fav_player_id: selectedOption.value,
+                fav_player_name: selectedOption.label,
             });
         }
 
-        /* console.log(props.firebase.user(uid).fav_player)
-        console.log(props.firebase.user(uid).fav_team) */
     }
 
 
@@ -46,8 +36,9 @@ function Dropdown(props) {
                         defaultValue={selectedOption}
                         onChange={handleChange}
                         options={props.dataSet}
+                        placeholder={props.favorite != null ? props.favorite : ''}
+
                     />
-                    {setUid(authUser.uid)}
                 </div>
 
             )}
