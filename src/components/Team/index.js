@@ -4,9 +4,11 @@ import * as ROUTES from "../../constants/routes";
 import { Link } from "react-router-dom";
 import { requestOptions, SEASON_DATA } from "../../data.js";
 import { getTeamStats } from "../../functions.js";
+import { PieChart } from "../Charts";
 
 export const TeamPage = ({ team }) => {
   const [standingData, setStandingData] = useState();
+  const [pieData, setPieData] = useState();
 
   useEffect(() => {
     fetch(
@@ -18,8 +20,6 @@ export const TeamPage = ({ team }) => {
         setStandingData(getTeamStats(json, team.id));
       });
   }, []);
-
-  //console.log(getTeamStats(SEASON_DATA, team.id));
   return (
     <article>
       <figure>
@@ -27,7 +27,25 @@ export const TeamPage = ({ team }) => {
       </figure>
       <h3>{team.name}</h3>
       <div>
-        <h4>Leagues</h4>
+        <h4>Season Performance</h4>
+        <PieChart
+          data={
+            standingData &&
+            (({ won, draw, lost }) => ({ won, draw, lost }))(standingData)
+          }
+        >
+          Wins/Losses
+        </PieChart>
+        <PieChart
+          data={
+            standingData &&
+            (({ goalsFor, goalsAgainst }) => ({ goalsFor, goalsAgainst }))(
+              standingData
+            )
+          }
+        >
+          Goals
+        </PieChart>
       </div>
       <div>
         <h4>Players</h4>
