@@ -11,8 +11,8 @@ const AccountPage = () => (
         <h1>Account: {authUser.email}</h1>
         <PasswordForgetForm />
         <PasswordChangeForm />
-        <UserProfile />
-        {console.log(authUser.uid)}
+        <UserProfile user={authUser} />
+        {/* {console.log(props.firebase.profileImage(uid).getDownloadURL())} */}
       </div>
     )}
   </AuthUserContext.Consumer>
