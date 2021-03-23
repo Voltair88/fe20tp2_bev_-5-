@@ -14,11 +14,13 @@ function Dropdown(props) {
         /* Update db fields when onChanged dropdown */
         if (props.dropdownId === "TEAMS") {
             props.firebase.user(props.uid).update({
-                fav_team: selectedOption.value
+                fav_team_id: selectedOption.value,
+                fav_team_name: selectedOption.label
             });
         } else if (props.dropdownId === "PLAYERS") {
             props.firebase.user(props.uid).update({
-                fav_player: selectedOption.value
+                fav_player_id: selectedOption.value,
+                fav_player_name: selectedOption.label,
             });
         }
 

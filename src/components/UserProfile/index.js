@@ -2,7 +2,26 @@ import React, { useState, useEffect } from 'react'
 import Dropdown from '../Dropdown'
 import { AuthUserContext, withAuthentication } from "../Session";
 import ProfileImage from '../../img/prf_img.png'
-import { TEAM_DATA } from '../../data.js'
+import { LEAGUES_DATA } from '../../data.js'
+import { PLAYER_DATA } from '../../data.js'
+import styled from 'styled-components';
+
+
+
+const Container = styled.div`
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
+`
+
+const ImageUpload = styled.div`
+    & > input{
+        visibility:hidden;
+        width:0;
+        height:0;
+    }
+`
 
 
 function UserProfile(props) {
@@ -15,10 +34,39 @@ function UserProfile(props) {
     const [fav_player, setFav_player] = useState(null);
     const [fav_team, setFav_team] = useState(null);
 
+    const [player_array, setPlayer_array] = useState([]);
+    const [team_array, setTeam_array] = useState([]);
+
 
     useEffect(() => {
         setUid(props.user.uid)
         bindData(props.user.uid);
+
+        //Read LEAGUES_DATA from data.js and choose only id and team name from that data and store in an array
+        let teamArr = [];
+        for (let key of Object.keys(LEAGUES_DATA.competitions)) {
+            console.log(LEAGUES_DATA.competitions[key].id, LEAGUES_DATA.competitions[key].name)
+
+            teamArr.push({ value: LEAGUES_DATA.competitions[key].id, label: LEAGUES_DATA.competitions[key].name })
+        }
+        setTeam_array(teamArr);
+        //End LEAGUES_DATA team
+
+
+        //Read PLAYER_DATA from data.js and choose only id and player name from that data and store in an array
+        /* let playerArr = [];
+        for (let key of Object.keys(PLAYER_DATA)) {
+            console.log(PLAYER_DATA[key].id, PLAYER_DATA[key].name)
+
+            playerArr.push({ value: PLAYER_DATA[key].id, label: PLAYER_DATA[key].name })
+        }
+        setPlayer_array(playerArr); */
+        //End LEAGUES_DATA team
+
+        console.log(PLAYER_DATA)
+
+
+
     }, [])
 
 
@@ -39,13 +87,18 @@ function UserProfile(props) {
 
     function onChangePassword() {
         console.log("On change Password")
-        console.log(TEAM_DATA)
+
 
     }
     const handleChange = e => {
         if (e.target.files[0]) {
             setImage(e.target.files[0]);
+
         }
+
+        handleUpload();
+
+
     }
 
     const handleUpload = () => {
@@ -111,8 +164,8 @@ function UserProfile(props) {
         props.firebase.user(uid).get().then(function (snapshot) {
             if (snapshot.exists()) {
 
-                setFav_player(snapshot.val().fav_player);
-                setFav_team(snapshot.val().fav_team);
+                setFav_player(snapshot.val().fav_player_name);
+                setFav_team(snapshot.val().fav_team_name);
             }
             else {
                 console.log("No data available");
@@ -129,17 +182,23 @@ function UserProfile(props) {
 
         <AuthUserContext.Consumer>
             {(authUser) => (
-                <div>
-                    <h1>This is user profile page</h1>
-                    <img src={url} alt="user profile image" />
-                    <input type="file" onChange={handleChange} />
-                    <button onClick={handleUpload} > Upload </button>
-                    <p>{"Auth user: " + authUser.uid}</p>
-                    <Dropdown placeholder={'Choose your favorite team'} dataSet={teams} dropdownId="TEAMS" uid={props.user.uid} favorite={fav_team} />
-                    <Dropdown placeholder={'Choose your favorite player'} dataSet={players} dropdownId="PLAYERS" uid={props.user.uid} favorite={fav_player} />
+                <Container>
+                    {/* <h1>This is user profile page</h1> */}
+                    <ImageUpload>
+                        <label htmlFor="file-input">
+                            <img src={url} alt="user profile image" />
+                        </label>
+                        <input id="file-input" type="file" onChange={handleChange} />
+                        <br />
+                        <button onClick={handleUpload} > Upload </button>
+                    </ImageUpload>
+                    {/* <p>{"Auth user: " + authUser.uid}</p> */}
+                    <Dropdown placeholder={'Choose your favorite team'} dataSet={team_array} dropdownId="TEAMS" uid={props.user.uid} favorite={fav_team} />
+                    <Dropdown placeholder={'Choose your favorite player'} dataSet={player_array} dropdownId="PLAYERS" uid={props.user.uid} favorite={fav_player} />
 
+                    <br />
                     <button onClick={onChangePassword}>Change password</button>
-                </div>
+                </Container>
             )}
         </AuthUserContext.Consumer>
     )
