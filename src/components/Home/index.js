@@ -66,8 +66,8 @@ const List = ({ arr }) => {
   );
 };
 
-/* const goals = [];
-const player = []; */
+//const goals = [];
+//const player = [];
 
 const BarChart = ({ scorers }) => {
   const goals = scorers.map((item) => item.numberOfGoals);
