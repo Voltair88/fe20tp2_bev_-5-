@@ -5,8 +5,6 @@ import Player from "../Player";
 import { TeamItem } from "../Team";
 import styled from "styled-components";
 import { Bar, Line } from "react-chartjs-2";
-
-import { getTeamsGoalDiff } from "../../functions";
 import { SEASON_DATA, CL_MATCH_DATA } from "../../data";
 import {
   Background,
@@ -68,41 +66,15 @@ const List = ({ arr }) => {
   );
 };
 
-<<<<<<< HEAD
 /* const goals = [];
 const player = []; */
-=======
-
-const goals = [];
-const player = [];
->>>>>>> pathum
 
 const BarChart = ({ scorers }) => {
   const goals = scorers.map((item) => item.numberOfGoals);
 
-<<<<<<< HEAD
   /* Set data to array to display in chart */
 
   const player = scorers.map((item) => item.player.name);
-=======
-
-  useEffect(() => {
-
-
-
-    {
-      scorers.map((item) => goals.push(item.numberOfGoals));
-    }
-    {
-      /* Set data to array to display in chart */
-    }
-    {
-      scorers.map((item) => player.push(item.player.name));
-    }
-  }, [])
-
-
->>>>>>> pathum
   return (
     <ChartContainer>
       <Bar
@@ -145,7 +117,6 @@ const BarChart = ({ scorers }) => {
       />
     </ChartContainer>
   );
-
 };
 
 const condition = (authUser) => !!authUser;

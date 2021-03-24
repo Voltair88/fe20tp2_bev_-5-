@@ -21,6 +21,18 @@ export function getTeamsGoalDiff(data) {
   console.log(flatDataValues);
 }
 
+export const getMatchStats = (data, teamID) => {
+  let matchTable = data.matches
+    .filter((item) => item.status === "FINISHED")
+    .filter((item) => [item.homeTeam.id, item.awayTeam.id].includes(teamID))
+    .map((item) => {
+      console.log(Date.parse(item.utcDate.substr(0, 10)));
+      return item;
+    });
+
+  return matchTable;
+};
+
 //team = {34: 'FC Bayern'}
 //team[id] // "FC Bayern"
 

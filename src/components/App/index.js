@@ -10,7 +10,13 @@ import HomePage from "../Home";
 import AccountPage from "../Account";
 import AdminPage from "../Admin";
 import { TeamPage } from "../Team";
-import { SCORERS_DATA, CL_TEAMS_DATA, TEAM_DATA } from "../../data.js";
+import {
+  SCORERS_DATA,
+  CL_TEAMS_DATA,
+  TEAM_DATA,
+  CL_MATCH_DATA,
+} from "../../data.js";
+import { getMatchStats } from "../../functions.js";
 
 import * as ROUTES from "../../constants/routes";
 
@@ -18,7 +24,9 @@ const App = () => {
   const [scorersData, setScorersData] = useState(SCORERS_DATA.scorers);
   const [teamsData, setTeamsData] = useState(CL_TEAMS_DATA.teams);
   const [teamData, setTeamData] = useState(TEAM_DATA);
+  const [matchesData, setMatchesData] = useState(CL_MATCH_DATA);
 
+  console.log(getMatchStats(matchesData, 4));
   return (
     <Router>
       <Navigation />
