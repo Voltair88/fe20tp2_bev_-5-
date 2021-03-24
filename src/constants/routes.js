@@ -10,3 +10,6 @@ export const TEAM = "/team";
 export const PLAYER = "/player";
 export const MATCH = "/match";
 export const LEAGUE = "/league";
+
+export const CHANGE_EMAIL = "/change-email";
+export const CHANGE_PASSWORD = "/change-password";
