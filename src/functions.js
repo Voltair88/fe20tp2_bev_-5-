@@ -33,7 +33,7 @@ export const buildAllMatchStats = (data) => {
   let teamIDArr = Array(9999)
     .fill()
     .map((x, i) => i);
-  //
+  // https://stackoverflow.com/a/6299743/12683933
 
   let result = teamIDArr.map((teamID) => {
     let teamName = "";
