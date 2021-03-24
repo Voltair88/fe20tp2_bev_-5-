@@ -16,7 +16,7 @@ import {
   TEAM_DATA,
   CL_MATCH_DATA,
 } from "../../data.js";
-import { getMatchStats } from "../../functions.js";
+import { getMatchStats, buildAllMatchStats } from "../../functions.js";
 
 import * as ROUTES from "../../constants/routes";
 
@@ -26,7 +26,7 @@ const App = () => {
   const [teamData, setTeamData] = useState(TEAM_DATA);
   const [matchesData, setMatchesData] = useState(CL_MATCH_DATA);
 
-  console.log(getMatchStats(matchesData, 4));
+  console.log(buildAllMatchStats(matchesData));
   return (
     <Router>
       <Navigation />
