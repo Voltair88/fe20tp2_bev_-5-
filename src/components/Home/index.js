@@ -68,41 +68,16 @@ const List = ({ arr }) => {
   );
 };
 
-<<<<<<< HEAD
-/* const goals = [];
-const player = []; */
-=======
-
-const goals = [];
-const player = [];
->>>>>>> pathum
+//const goals = [];
+//const player = [];
 
 const BarChart = ({ scorers }) => {
   const goals = scorers.map((item) => item.numberOfGoals);
 
-<<<<<<< HEAD
   /* Set data to array to display in chart */
 
   const player = scorers.map((item) => item.player.name);
-=======
 
-  useEffect(() => {
-
-
-
-    {
-      scorers.map((item) => goals.push(item.numberOfGoals));
-    }
-    {
-      /* Set data to array to display in chart */
-    }
-    {
-      scorers.map((item) => player.push(item.player.name));
-    }
-  }, [])
-
-
->>>>>>> pathum
   return (
     <ChartContainer>
       <Bar
