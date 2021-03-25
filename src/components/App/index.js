@@ -13,6 +13,8 @@ import { TeamPage } from "../Team";
 import { SCORERS_DATA, CL_TEAMS_DATA, TEAM_DATA } from "../../data.js";
 
 import * as ROUTES from "../../constants/routes";
+import ChangeEmail from "../ChangeEmail";
+import ChangePassword from "../ChangePassword";
 
 const App = () => {
   const [scorersData, setScorersData] = useState(SCORERS_DATA.scorers);
@@ -44,6 +46,12 @@ const App = () => {
         </Route>
         <Route path={ROUTES.ADMIN}>
           <AdminPage />
+        </Route>
+        <Route exact path ={ROUTES.CHANGE_EMAIL}>
+          <ChangeEmail/>
+        </Route>
+        <Route exact path ={ROUTES.CHANGE_PASSWORD}>
+          <ChangePassword/>
         </Route>
         <Route>
           <TeamPage team={teamData} />
