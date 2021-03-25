@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { compose } from "recompose";
 import { Switch, Route, Link } from "react-router-dom";
 import { withFirebase } from "../Firebase";
 import { withAuthorization } from "../Session";
@@ -183,4 +182,4 @@ const condition = (authUser) => authUser && !!authUser.roles[ROLES.ADMIN];
 const UserList = withFirebase(UserListBase);
 const UserItem = withFirebase(UserItemBase);
 
-export default compose(withAuthorization(condition), withFirebase)(AdminPage);
+export default withFirebase(withAuthorization(condition)(AdminPage));

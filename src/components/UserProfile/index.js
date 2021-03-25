@@ -1,34 +1,31 @@
-import React, { useState, useEffect } from 'react'
-import Dropdown from '../Dropdown'
+import React, { useState, useEffect } from "react";
+import Dropdown from "../Dropdown";
 import { AuthUserContext, withAuthentication } from "../Session";
-import ProfileImage from '../../img/prf_img.png'
-import { LEAGUES_DATA } from '../../data.js'
-import { PLAYER_DATA } from '../../data.js'
-import styled from 'styled-components';
+import ProfileImage from "../../img/prf_img.png";
+import { LEAGUES_DATA } from "../../data.js";
+import { PLAYER_DATA } from "../../data.js";
+import styled from "styled-components";
 import PasswordChangeForm from "../PasswordChange";
 
-
-
 const Container = styled.div`
-    display:flex;
-    /* flex-direction: column; */
-    /* align-items: center; */
-    justify-content: center;
+  display: flex;
+  /* flex-direction: column; */
+  /* align-items: center; */
+  justify-content: center;
 
-    /* & > div{
+  /* & > div{
         background-color: bisque;
         width: 400px;
     } */
-
-`
+`;
 
 const UserComp = styled.div`
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    width: 50%;
-    /* background-color: darkviolet; */
-`
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  width: 50%;
+  /* background-color: darkviolet; */
+`;
 
 const ImageUpload = styled.div`
 display: flex;
@@ -54,6 +51,7 @@ function UserProfile(props) {
     const [image, setImage] = useState(null);
     const [uid, setUid] = useState();
     const [url, setUrl] = useState(ProfileImage);
+    const [progress, setProgress] = useState(0);
 
     const [fav_player, setFav_player] = useState(null);
     const [fav_team, setFav_team] = useState(null);
@@ -63,28 +61,19 @@ function UserProfile(props) {
     const [changePassword, setChangePassword] = useState(false);
 
     useEffect(() => {
-        setUid(props.user.uid)
+        setUid(props.user.uid);
         bindData(props.user.uid);
 
         //Read LEAGUES_DATA from data.js and choose only id and team name from that data and store in an array
         let teamArr = [];
         for (let key of Object.keys(LEAGUES_DATA.competitions)) {
-            teamArr.push({ value: LEAGUES_DATA.competitions[key].id, label: LEAGUES_DATA.competitions[key].name })
+            teamArr.push({
+                value: LEAGUES_DATA.competitions[key].id,
+                label: LEAGUES_DATA.competitions[key].name,
+            });
         }
         setTeam_array(teamArr);
         //End LEAGUES_DATA team
-
-
-        //Read PLAYER_DATA from data.js and choose only id and player name from that data and store in an array
-        /* let playerArr = [];
-        for (let key of Object.keys(PLAYER_DATA)) {
-            console.log(PLAYER_DATA[key].id, PLAYER_DATA[key].name)
-
-            playerArr.push({ value: PLAYER_DATA[key].id, label: PLAYER_DATA[key].name })
-        }
-        setPlayer_array(playerArr); */
-        //End LEAGUES_DATA team
-
 
 
     }, [])
@@ -198,9 +187,6 @@ function UserProfile(props) {
             )}
         </AuthUserContext.Consumer>
     )
-
 }
 
-
 export default withAuthentication(UserProfile);
-

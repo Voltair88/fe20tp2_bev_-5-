@@ -1,7 +1,4 @@
-import styled from "styled-components";
-
 import {Background, Main, Blur, Content, H1, P} from '../StyledCom';
-
 
 
 const Landing = () => {

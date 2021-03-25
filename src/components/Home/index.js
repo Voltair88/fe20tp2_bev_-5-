@@ -1,12 +1,12 @@
 import { AuthUserContext, withAuthorization } from "../Session";
 import React, { Component, useEffect } from "react";
 import { withFirebase } from "../Firebase";
-
 import Player from "../Player";
 import { TeamItem } from "../Team";
 import styled from "styled-components";
-import { Bar, Line } from "react-chartjs-2";
-
+import { LineChart } from "../Charts";
+import { HorizontalBar } from "react-chartjs-2";
+import { SEASON_DATA, CL_MATCH_DATA } from "../../data";
 import {
   Background,
   ChartContainer,
@@ -30,15 +30,14 @@ const StyledList = styled.div`
     padding: 0.05em 0.5em;
     overflow: hidden; // Or flex might break
     list-style: none;
-      img {
-        width: 100%;
-        height: auto;
-      }
+    img {
+      width: 100%;
+      height: auto;
     }
   }
 `;
 
-const HomePage = ({ teams, scorers }) => {
+const HomePage = ({ teams, scorers, matches }) => {
   return (
     <Background>
       <Blur>
@@ -46,11 +45,9 @@ const HomePage = ({ teams, scorers }) => {
           <Content>
             <h1>Home</h1>
             <p>The Home Page is accessible by every signed in user.</p>
-            <BarChart scorers={scorers} />
+            {/* <BarChart scorers={scorers} /> */}
+            <LineChart />
             <List arr={teams} />
-            {/* <ScorersList scorers={scorers} /> */}
-
-            {/* <Messages /> */}
           </Content>
         </HomeMain>
       </Blur>
@@ -68,32 +65,18 @@ const List = ({ arr }) => {
   );
 };
 
-
-const goals = [];
-const player = [];
+//const goals = [];
+//const player = [];
 
 const BarChart = ({ scorers }) => {
+  const goals = scorers.map((item) => item.numberOfGoals);
 
+  /* Set data to array to display in chart */
 
-  useEffect(() => {
-
-
-
-    {
-      scorers.map((item) => goals.push(item.numberOfGoals));
-    }
-    {
-      /* Set data to array to display in chart */
-    }
-    {
-      scorers.map((item) => player.push(item.player.name));
-    }
-  }, [])
-
-
+  const player = scorers.map((item) => item.player.name);
   return (
     <ChartContainer>
-      <Bar
+      <HorizontalBar
         data={{
           labels: player,
           datasets: [
@@ -133,7 +116,6 @@ const BarChart = ({ scorers }) => {
       />
     </ChartContainer>
   );
-
 };
 
 const condition = (authUser) => !!authUser;

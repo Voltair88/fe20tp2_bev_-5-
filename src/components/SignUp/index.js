@@ -7,11 +7,13 @@ import * as ROLES from '../../constants/roles';
 import ProfileImage from '../../img/prf_img.png'
 import { faUpload } from '@fortawesome/free-solid-svg-icons';
 
+import { Input, Content, MyButton } from '../StyledCom';
+
 const SignUpPage = () => (
-  <div>
+  <Content>
     <h1>SignUp</h1>
     <SignUpForm />
-  </div>
+    </Content>
 );
 
 const INITIAL_STATE = {
@@ -108,34 +110,37 @@ class SignUpFormBase extends Component {
 
     return (
       <form onSubmit={this.onSubmit}>
-        <input
+        <Content>
+        <Input
           name="username"
           value={username}
           onChange={this.onChange}
           type="text"
           placeholder="Full Name"
         />
-        <input
+        
+        <Input
           name="email"
           value={email}
           onChange={this.onChange}
           type="text"
           placeholder="Email Address"
         />
-        <input
+        <Input
           name="passwordOne"
           value={passwordOne}
           onChange={this.onChange}
           type="password"
           placeholder="Password"
         />
-        <input
+        <Input
           name="passwordTwo"
           value={passwordTwo}
           onChange={this.onChange}
           type="password"
           placeholder="Confirm Password"
         />
+        </Content>
         <label>
         Admin:
         <input
@@ -145,9 +150,10 @@ class SignUpFormBase extends Component {
           onChange={this.onChangeCheckbox}
           />
         </label>
-        <button disabled={isInvalid} type="submit">
+        <MyButton disabled={isInvalid} type="submit">
           Sign Up
-        </button>
+        </MyButton>
+        
 
         {error && <p>{error.message}</p>}
       </form>

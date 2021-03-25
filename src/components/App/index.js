@@ -10,15 +10,26 @@ import HomePage from "../Home";
 import AccountPage from "../Account";
 import AdminPage from "../Admin";
 import { TeamPage } from "../Team";
-import { SCORERS_DATA, CL_TEAMS_DATA, TEAM_DATA } from "../../data.js";
+import {
+  SCORERS_DATA,
+  CL_TEAMS_DATA,
+  TEAM_DATA,
+  CL_MATCH_DATA,
+  SEASON_DATA,
+} from "../../data.js";
+import { getMatchStats, buildAllMatchStats } from "../../functions.js";
 
 import * as ROUTES from "../../constants/routes";
+import ChangeEmail from "../ChangeEmail";
+import ChangePassword from "../ChangePassword";
 
 const App = () => {
   const [scorersData, setScorersData] = useState(SCORERS_DATA.scorers);
   const [teamsData, setTeamsData] = useState(CL_TEAMS_DATA.teams);
   const [teamData, setTeamData] = useState(TEAM_DATA);
-
+  const [matchesData, setMatchesData] = useState(
+    buildAllMatchStats(CL_MATCH_DATA)
+  );
   return (
     <Router>
       <Navigation />
@@ -34,16 +45,27 @@ const App = () => {
           <SignInPage />
         </Route>
         <Route path={ROUTES.PASSWORD_FORGET}>
+          §
           <PasswordForgetPage />
         </Route>
         <Route path={ROUTES.HOME}>
-          <HomePage scorers={scorersData} teams={teamsData} />
+          <HomePage
+            matches={matchesData}
+            scorers={scorersData}
+            teams={teamsData}
+          />
         </Route>
         <Route path={ROUTES.ACCOUNT}>
           <AccountPage />
         </Route>
         <Route path={ROUTES.ADMIN}>
           <AdminPage />
+        </Route>
+        <Route exact path ={ROUTES.CHANGE_EMAIL}>
+          <ChangeEmail/>
+        </Route>
+        <Route exact path ={ROUTES.CHANGE_PASSWORD}>
+          <ChangePassword/>
         </Route>
         <Route>
           <TeamPage team={teamData} />

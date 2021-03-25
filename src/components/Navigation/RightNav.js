@@ -7,8 +7,8 @@ const Ul = styled.ul`
   display: flex;
   flex-flow: row nowrap;
   .Navlink {
+    color:rgba(0,0,0,0);
     padding: 1px 20px;
-    color: #fff;
     text-decoration: none;
     border-radius: 5px;
   }
@@ -32,7 +32,7 @@ const Ul = styled.ul`
     .Navlink {
         text-decoration: none; 
         border-radius: 8px ;
-
+        color: white;
     }
   }`;
 
