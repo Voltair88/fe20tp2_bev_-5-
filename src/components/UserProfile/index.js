@@ -40,6 +40,12 @@ justify-content: center;
         width:0;
         height:0;
     }
+    img{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
 `
 
 
