@@ -52,7 +52,6 @@ const Main = styled.main`
   font-family: "Poppins", sans-serif;
   width: 100%;
   height: 92vh;
-
 `;
 
 const Content = styled.div`
@@ -152,28 +151,70 @@ const HomeMain = styled.main`
 const ChartContainer = styled.div`
   height: 500px;
   width: 600px;
-  position: absolute;
-  left: 10px;
-  top: 40px;
 `;
 
 const OutButton = styled.button`
-font-weight: 500;
-font-family: "Poppins", sans-serif;
-text-transform: uppercase;
-color: white;
-padding: 0.3rem 0.6rem;
-font-size: 1.1rem;
-border: 2px solid white;
-background: none;
-border-radius: 6px;
-cursor: pointer;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  font-size: 1.1rem;
+  border: 2px solid white;
+  background: none;
+  border-radius: 6px;
+  cursor: pointer;
 
-&:hover {
-  border-color: black;
-  color: black;
-  transition: 0.3s ease-in-out;
-}
+  &:hover {
+    border-color: black;
+    color: black;
+    transition: 0.3s ease-in-out;
+  }
+`;
+
+const MainBlock = styled.main`
+  height: 92vh;
+`;
+
+const Wrapper = styled.div`
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  & > hr {
+    border: none;
+  }
+
+  & > p {
+    width: 20%;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    margin: -0.5rem 0 0.8rem 0;
+  }
+`;
+
+const Button = styled.button`
+  width: 20%;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  color: Black;
+  padding: 0.3rem 0.6rem;
+  font-size: 1rem;
+  border: 2px solid black;
+  background: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 1rem;
+
+  &:hover {
+    border-color: black;
+    color: white;
+    background: black;
+    transition: 0.3s ease-in-out;
+  }
 `;
 
 export {
@@ -190,5 +231,8 @@ export {
   Main,
   NavLink,
   Ul,
-  Navbar
-} 
+  Navbar,
+  Button,
+  Wrapper,
+  MainBlock,
+};
