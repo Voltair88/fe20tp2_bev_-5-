@@ -4,8 +4,9 @@ import { withFirebase } from "../Firebase";
 import Player from "../Player";
 import { TeamItem } from "../Team";
 import styled from "styled-components";
-import { Bar } from "react-chartjs-2";
 import { LineChart } from "../Charts";
+import { HorizontalBar } from "react-chartjs-2";
+import { SEASON_DATA, CL_MATCH_DATA } from "../../data";
 import {
   Background,
   ChartContainer,
@@ -75,7 +76,7 @@ const BarChart = ({ scorers }) => {
   const player = scorers.map((item) => item.player.name);
   return (
     <ChartContainer>
-      <Bar
+      <HorizontalBar
         data={{
           labels: player,
           datasets: [
