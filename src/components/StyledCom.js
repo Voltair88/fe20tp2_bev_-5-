@@ -52,7 +52,6 @@ const Main = styled.main`
   font-family: "Poppins", sans-serif;
   width: 100%;
   height: 92vh;
-
 `;
 
 const Content = styled.div`
@@ -152,28 +151,25 @@ const HomeMain = styled.main`
 const ChartContainer = styled.div`
   height: 500px;
   width: 600px;
-  position: absolute;
-  left: 10px;
-  top: 40px;
 `;
 
 const OutButton = styled.button`
-font-weight: 500;
-font-family: "Poppins", sans-serif;
-text-transform: uppercase;
-color: white;
-padding: 0.3rem 0.6rem;
-font-size: 1.1rem;
-border: 2px solid white;
-background: none;
-border-radius: 6px;
-cursor: pointer;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  font-size: 1.1rem;
+  border: 2px solid white;
+  background: none;
+  border-radius: 6px;
+  cursor: pointer;
 
-&:hover {
-  border-color: black;
-  color: black;
-  transition: 0.3s ease-in-out;
-}
+  &:hover {
+    border-color: black;
+    color: black;
+    transition: 0.3s ease-in-out;
+  }
 `;
 
 export {
@@ -190,5 +186,5 @@ export {
   Main,
   NavLink,
   Ul,
-  Navbar
-} 
+  Navbar,
+};
