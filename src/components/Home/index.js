@@ -4,7 +4,7 @@ import { withFirebase } from "../Firebase";
 import Player from "../Player";
 import { TeamItem } from "../Team";
 import styled from "styled-components";
-import { Bar, Line } from "react-chartjs-2";
+import { HorizontalBar } from "react-chartjs-2";
 
 import { getTeamsGoalDiff } from "../../functions";
 import { SEASON_DATA, CL_MATCH_DATA } from "../../data";
@@ -80,7 +80,7 @@ const BarChart = ({ scorers }) => {
 
   return (
     <ChartContainer>
-      <Bar
+      <HorizontalBar
         data={{
           labels: player,
           datasets: [
@@ -120,7 +120,6 @@ const BarChart = ({ scorers }) => {
       />
     </ChartContainer>
   );
-
 };
 
 const condition = (authUser) => !!authUser;
