@@ -48,7 +48,6 @@ function UserProfile(props) {
     const [image, setImage] = useState(null);
     const [uid, setUid] = useState();
     const [url, setUrl] = useState(ProfileImage);
-    const [progress, setProgress] = useState(0);
 
     const [fav_player, setFav_player] = useState(null);
     const [fav_team, setFav_team] = useState(null);
@@ -80,8 +79,6 @@ function UserProfile(props) {
         setPlayer_array(playerArr); */
         //End LEAGUES_DATA team
 
-        console.log(PLAYER_DATA)
-
 
 
     }, [])
@@ -111,40 +108,18 @@ function UserProfile(props) {
     const handleChange = e => {
         if (e.target.files[0]) {
             setImage(e.target.files[0]);
-
+            handleUpload(e.target.files[0]);
         }
-
-        handleUpload();
-
 
     }
 
-    const handleUpload = () => {
+    const handleUpload = (file) => {
 
-        /* props.firebase.profileImage(uid).put(image).then(function () {
-            console.log('successfull')
-        }.catch(error => {
-            console.log(error.message)
-        },
-            () => props.firebase.profileImage(uid)
-                .child(`users/${uid}/profileImage`)
-                .getDownloadURL()
-                .then(url => {
-                    console.log(url)
-                    console.log("INSIDE")
-                })
-        ) */
-
-
-
-        const uploadTask = props.firebase.profileImage(uid).put(image);
+        const uploadTask = props.firebase.profileImage(uid).put(file);
         uploadTask.on(
             "state_changed",
             snapshot => {
-                const progress = Math.round(
-                    (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-                );
-                setProgress(progress);
+                console.log("uploaded image")
             },
             error => {
                 console.log(error);
@@ -155,26 +130,21 @@ function UserProfile(props) {
                     .getDownloadURL()
                     .then(url => {
                         setUrl(url);
-                        console.log(url)
                     });
             }
         );
 
-
-
-
-
     }
 
     const bindData = (uid) => {
-        (
-            props.firebase.profileImage(uid)
-                .getDownloadURL()
-                .then(url => {
-                    setUrl(url);
-                }).catch(error => console.log("Don't have a profile image", error))
-        ) ? console.log("Profile image found")
-            : setUrl(ProfileImage);
+
+        //Bind profile image
+        props.firebase.profileImage(uid)
+            .getDownloadURL()
+            .then(url => {
+                setUrl(url);
+            }).catch(error => console.log("Don't have a profile image", error))
+
 
 
 
@@ -208,7 +178,7 @@ function UserProfile(props) {
                             </label>
                             <input id="file-input" type="file" onChange={handleChange} />
                             <br />
-                            <button onClick={handleUpload} > Upload </button>
+                            {/* <button onClick={handleUpload} > Upload </button> */}
                         </ImageUpload>
                         <Dropdown placeholder={'Choose your favorite team'} dataSet={team_array} dropdownId="TEAMS" uid={props.user.uid} favorite={fav_team} />
                         <Dropdown placeholder={'Choose your favorite player'} dataSet={players} dropdownId="PLAYERS" uid={props.user.uid} favorite={fav_player} />

@@ -5,6 +5,7 @@ import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 import * as ROLES from '../../constants/roles';
 import ProfileImage from '../../img/prf_img.png'
+import { faUpload } from '@fortawesome/free-solid-svg-icons';
 
 const SignUpPage = () => (
   <div>
@@ -29,12 +30,14 @@ class SignUpFormBase extends Component {
     this.state = { ...INITIAL_STATE };
   }
 
+
+
+
   onSubmit = event => {
     const { username, email, passwordOne, isAdmin } = this.state;
 
     
     const roles = {};
-let uid;
 
     if (isAdmin) {
     roles[ROLES.ADMIN] = ROLES.ADMIN;
@@ -51,9 +54,6 @@ let uid;
             email,
             roles,
           })
-          this.props.firebase.profileImage(authUser.user.uid)
-          .child('image.jpg')
-          .put(ProfileImage)
           .then(() => {
             this.setState({ ...INITIAL_STATE });
             this.props.history.push(ROUTES.HOME);
@@ -62,7 +62,13 @@ let uid;
             this.setState({ error });
           });
 
-          uid = authUser.user.uid;
+          //Save default profile image when user sign up, It is Base64 type image and use putString() method to save Base64 images
+          this.props.firebase
+          .profileImage(authUser.user.uid)
+          .putString(ProfileImage,'data_url', {contentType:'image/png'})
+          .catch(error => {
+            console.log("Error saving default profile img")
+          })
 
       })
       .catch(error => {
@@ -70,24 +76,11 @@ let uid;
       });
 
 
-
-      this.props.firebase.profileImage(uid).put(ProfileImage);
-
-
-
-
-
-
-
-
-
-
-
     event.preventDefault();
 
-
-    
   };
+
+ 
 
   onChange = event => {
     this.setState({ [event.target.name]: event.target.value });
