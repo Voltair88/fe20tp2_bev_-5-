@@ -46,7 +46,7 @@ const HomePage = ({ teams, scorers, matches }) => {
             <h1>Home</h1>
             <p>The Home Page is accessible by every signed in user.</p>
             {/* <BarChart scorers={scorers} /> */}
-            <LineChart />
+            <LineChart data={matches} />
             <List arr={teams} />
           </Content>
         </HomeMain>

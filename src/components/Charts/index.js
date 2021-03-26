@@ -31,16 +31,29 @@ export const LineChart = ({ data, children }) => {
   if (!data) {
     return null;
   }
-
-  const labels = Object.keys(data);
-  const dataSets = Object.values(data).map((item) => {
-    Object.assign(...item);
+  let matchdays = Object.values(data).map((item) => {
+    return item.map(({ matchday }) => matchday);
   });
-  console.log(dataSets);
+
+  let datasets = Object.values(data).map((item) => {
+    let data = item.map(({ goalDiff }) => goalDiff);
+    let label = item[0].team.name;
+    let datasetKeyProvider = item[0].team.id;
+
+    return { data, label, datasetKeyProvider };
+  });
+  console.log(datasets);
+  let labels = [...new Set([].concat.apply([], matchdays))];
+  console.log(datasets);
   return (
     <div>
       {children && <h5>{children}</h5>}
-      <Line data={{}} />
+      <Line
+        data={{
+          labels: labels,
+          datasets: datasets,
+        }}
+      />
     </div>
   );
 };

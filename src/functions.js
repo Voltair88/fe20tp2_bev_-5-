@@ -37,9 +37,9 @@ export const buildAllMatchStats = (data) => {
 
   let result = teamIDArr.map((teamID) => {
     let teamName = "";
-    let teamObject = data.matches.find((item) =>
-      [item.homeTeam.id, item.awayTeam.id].includes(teamID)
-    );
+    let teamObject = data.matches
+      .filter((item) => item.matchday !== null)
+      .find((item) => [item.homeTeam.id, item.awayTeam.id].includes(teamID));
     if (!teamObject) {
       // team not found
       return {};
@@ -57,11 +57,13 @@ export const buildAllMatchStats = (data) => {
 
 export const getMatchStats = (data, teamID) => {
   let matchTable = data.matches
+    .filter((item) => item.matchday !== null)
     .filter((item) => [item.homeTeam.id, item.awayTeam.id].includes(teamID))
     .map((item) => {
-      let { utcDate, score, homeTeam, awayTeam } = item;
+      let { matchday, score, homeTeam, awayTeam } = item;
       let goalDiff = 0;
       let team = {};
+      //let matchDate = utcDate.substr(0, 10);
       //console.log(Date.parse(item.utcDate.substr(0, 10)));
       // {goalDiff: 4, (pos om FC Munchen vann)
       // utcDate: '2020-08-08T13:00:00Z',
@@ -78,7 +80,7 @@ export const getMatchStats = (data, teamID) => {
         team = { ...awayTeam };
       }
 
-      return { goalDiff, utcDate, team };
+      return { goalDiff, matchday, team };
     });
 
   return matchTable;
