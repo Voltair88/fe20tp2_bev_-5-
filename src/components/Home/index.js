@@ -4,9 +4,12 @@ import { withFirebase } from "../Firebase";
 import Player from "../Player";
 import { TeamItem } from "../Team";
 import styled from "styled-components";
-import { LineChart } from "../Charts";
+import { LineChart, PieChart, Test, LineChartNew } from "../Charts";
 import { HorizontalBar } from "react-chartjs-2";
 import { SEASON_DATA, CL_MATCH_DATA } from "../../data";
+
+
+
 import {
   Background,
   ChartContainer,
@@ -38,6 +41,7 @@ const StyledList = styled.div`
 `;
 
 const HomePage = ({ teams, scorers, matches }) => {
+  /* console.log(matches) */
   return (
     <Background>
       <Blur>
@@ -46,7 +50,7 @@ const HomePage = ({ teams, scorers, matches }) => {
             <h1>Home</h1>
             <p>The Home Page is accessible by every signed in user.</p>
             {/* <BarChart scorers={scorers} /> */}
-            <LineChart />
+            <LineChartNew data={matches} />
             <List arr={teams} />
           </Content>
         </HomeMain>
