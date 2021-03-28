@@ -4,8 +4,6 @@ import PasswordChangeForm from "../PasswordChange";
 import { AuthUserContext, withAuthorization } from "../Session";
 import UserProfile from "../UserProfile";
 
-
-
 import * as ROUTES from "../../constants/routes";
 import { ChangeButton } from "../StyledCom";
 
