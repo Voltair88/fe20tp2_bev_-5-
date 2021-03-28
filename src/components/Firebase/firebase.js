@@ -82,11 +82,6 @@ class Firebase {
 
 
   // *** Profile image API ****
-  /* profileImage = (uid) => this.db.ref(`users/${uid}/profile.jpg`); */
   profileImage = (uid) => this.st.ref(`users/${uid}/profileImage`);
-  /* getProfileImage = () => this.st.ref(`users/${uid}/profileImage`); */
-  /* profileImage = () => this.db.ref(); */
-  /* profile = (uid) => this.db.ref(`profile/${uid}`); */
-
 }
 export default Firebase;

@@ -12,12 +12,12 @@ const AccountPage = () => (
   <AuthUserContext.Consumer>
     {(authUser) => (
       <div>
-        <h1>Account: {authUser.email}</h1>
-        <PasswordForgetForm />
-        <PasswordChangeForm />
+        {/* <h1>{authUser.username}</h1> */}
+        {/* <PasswordForgetForm />
+        <PasswordChangeForm /> */}
         <Link to={ROUTES.CHANGE_PASSWORD}>Change Password</Link>
-        <br/>
-        <Link to={ROUTES.CHANGE_EMAIL}>Change Email</Link>
+        {/* <br />
+        <Link to={ROUTES.CHANGE_EMAIL}>Change Email</Link> */}
         <UserProfile user={authUser} />
         {/* {console.log(props.firebase.profileImage(uid).getDownloadURL())} */}
       </div>
