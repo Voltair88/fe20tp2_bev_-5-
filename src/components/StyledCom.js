@@ -288,6 +288,28 @@ const Button = styled.button`
 
 `;
 
+const ChangeButton = styled(Link)`
+  font-family: "Poppins", sans-serif;
+  display:flex;
+  width:10%;
+  flex-direction:column;
+  text-align:center;
+  margin: auto;
+  margin-top: 1rem;
+  padding:0.3rem;
+  text-decoration: none;
+  border:1.5px black solid;
+  color: black;
+  border-radius:6px;
+
+  &:hover {
+  border-color: black;
+  color: white;
+  background: black;
+  transition: 0.3s ease-in-out;
+}
+`;
+
 export {
   OutButton,
   ChartContainer,
@@ -306,5 +328,6 @@ export {
   Button,
   Wrapper,
   MainBlock,
-  InputForReset
+  InputForReset,
+  ChangeButton
 } 
