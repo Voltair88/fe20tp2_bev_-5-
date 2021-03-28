@@ -6,6 +6,7 @@ import { LEAGUES_DATA } from "../../data.js";
 import { PLAYER_DATA } from "../../data.js";
 import styled from "styled-components";
 import PasswordChangeForm from "../PasswordChange";
+import Pencil from "../../img/pencil.png"
 
 const Container = styled.div`
   display: flex;
@@ -24,7 +25,22 @@ const UserComp = styled.div`
   flex-direction: column;
   /* align-items: center; */
   width: 50%;
-  /* background-color: darkviolet; */
+  .username-input{
+      /* background-color: red; */
+      font-size: x-large;
+      width: 50%;
+      align-self: center;
+      text-align: center;
+      border: none;
+      background-image: url(../../img/pencil.png);
+    background-position: 7px 7px;
+    background-repeat: no-repeat;
+  }
+  span{
+    position: absolute;
+    top: 2px;
+    right: 2px;
+  }
 `;
 
 const ImageUpload = styled.div`
@@ -60,9 +76,12 @@ function UserProfile(props) {
     const [team_array, setTeam_array] = useState([]);
     const [changePassword, setChangePassword] = useState(false);
 
+    const [userName, setUserName] = useState();
+
     useEffect(() => {
         setUid(props.user.uid);
         bindData(props.user.uid);
+        setUserName(props.user.username);
 
         //Read LEAGUES_DATA from data.js and choose only id and team name from that data and store in an array
         let teamArr = [];
@@ -101,11 +120,22 @@ function UserProfile(props) {
         setChangePassword(false);
     }
     const handleChange = e => {
+        console.log(e.target)
         if (e.target.files[0]) {
             setImage(e.target.files[0]);
             handleUpload(e.target.files[0]);
         }
+    }
 
+    const handleChangeUserName = e => {
+
+
+        //Update the firebase db username when change the username
+        props.firebase.user(props.user.uid).update({
+            username: e.target.value
+        });
+
+        setUserName(e.target.value)
     }
 
     const handleUpload = (file) => {
@@ -175,13 +205,15 @@ function UserProfile(props) {
                             <br />
                             {/* <button onClick={handleUpload} > Upload </button> */}
                         </ImageUpload>
+                        <input className="username-input" type="text" value={userName} onChange={handleChangeUserName} />
+
                         <Dropdown placeholder={'Choose your favorite team'} dataSet={team_array} dropdownId="TEAMS" uid={props.user.uid} favorite={fav_team} />
                         <Dropdown placeholder={'Choose your favorite player'} dataSet={players} dropdownId="PLAYERS" uid={props.user.uid} favorite={fav_player} />
 
 
-                        <br />
+                        {/*  <br />
                         {changePassword ? <PasswordChangeForm /> : ''}
-                        {changePassword ? (<button onClick={onCancel}>Cancel</button>) : (<button onClick={onChangePassword}>Change password</button>)}
+                        {changePassword ? (<button onClick={onCancel}>Cancel</button>) : (<button onClick={onChangePassword}>Change password</button>)} */}
                     </UserComp>
                 </Container>
             )}
