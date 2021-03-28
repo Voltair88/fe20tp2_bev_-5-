@@ -3,7 +3,7 @@ import Dropdown from "../Dropdown";
 import { AuthUserContext, withAuthentication } from "../Session";
 import ProfileImage from "../../img/prf_img.png";
 import { LEAGUES_DATA } from "../../data.js";
-import { PLAYER_DATA } from "../../data.js";
+import { TEAM_DATA } from "../../data.js";
 import styled from "styled-components";
 import PasswordChangeForm from "../PasswordChange";
 import Pencil from "../../img/pencil.png"
@@ -93,6 +93,17 @@ function UserProfile(props) {
         }
         setTeam_array(teamArr);
         //End LEAGUES_DATA team
+
+
+        let player_array = [];
+        for (let key of Object.keys(TEAM_DATA.squad)) {
+            player_array.push({
+                value: TEAM_DATA.squad[key].id,
+                label: TEAM_DATA.squad[key].name,
+            });
+        }
+        setPlayer_array(player_array);
+
 
 
     }, [])
@@ -208,7 +219,7 @@ function UserProfile(props) {
                         <input className="username-input" type="text" value={userName} onChange={handleChangeUserName} />
 
                         <Dropdown placeholder={'Choose your favorite team'} dataSet={team_array} dropdownId="TEAMS" uid={props.user.uid} favorite={fav_team} />
-                        <Dropdown placeholder={'Choose your favorite player'} dataSet={players} dropdownId="PLAYERS" uid={props.user.uid} favorite={fav_player} />
+                        <Dropdown placeholder={'Choose your favorite player'} dataSet={player_array} dropdownId="PLAYERS" uid={props.user.uid} favorite={fav_player} />
 
 
                         {/*  <br />
