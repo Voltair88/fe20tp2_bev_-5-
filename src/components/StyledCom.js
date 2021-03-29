@@ -176,7 +176,7 @@ const MainBlock = styled.main`
   height: 92vh;
 `;
 
-const Wrapper = styled.div`
+const Wrapper = styled.form`
   height: 100%;
   width: 100%;
   display: flex;
@@ -189,15 +189,65 @@ const Wrapper = styled.div`
   }
 
   & > p {
-    width: 20%;
+    width: 30%;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     margin: -0.5rem 0 0.8rem 0;
+    transition: 0.3s;
+    @media screen and (min-width: 769px) and (max-width: 1024px) {
+      width: 50%;
+      font-size: 1.3rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 50%;
+      font-size: 0.9rem;
+      margin: -0.2rem 0 0.3rem 0;
+    }
+    @media screen and (max-width: 414px) {
+      width: 70%;
+      font-size: 0.9rem;
+      margin: -0.2rem 0 0.3rem 0;
+    }
+  }
+`;
+
+const InputForReset = styled.input`
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  width: 30%;
+  height: 5vh;
+  border: 2px solid #aaa;
+  border-radius: 4px;
+  margin: 0.6em auto;
+  outline: none;
+  padding: 8px;
+  box-sizing: border-box;
+  transition: 0.3s;
+  font-size: 1rem;
+
+  &:focus {
+    border-color: #50c818;
+    box-shadow: 0 0 8px 0 #50c818;
+  }
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    width: 50%;
+    font-size: 1.5rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 50%;
+  }
+  @media screen and (max-width: 414px) {
+    width: 70%;
+    height: 7vh;
   }
 `;
 
 const Button = styled.button`
-  width: 20%;
+  width: 30%;
   font-weight: 500;
   font-family: "Poppins", sans-serif;
   color: Black;
@@ -208,6 +258,42 @@ const Button = styled.button`
   border-radius: 6px;
   cursor: pointer;
   margin: 1rem;
+  transition: 0.3s;
+
+  &:hover {
+    border-color: black;
+    color: white;
+    background: black;
+    transition: 0.3s ease-in-out;
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    width: 50%;
+    font-size: 1.5rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 50%;
+  }
+
+  @media screen and (max-width: 414px) {
+    width: 70%;
+  }
+`;
+
+const ChangeButton = styled(Link)`
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  width: 10%;
+  flex-direction: column;
+  text-align: center;
+  margin: auto;
+  margin-top: 1rem;
+  padding: 0.3rem;
+  text-decoration: none;
+  border: 1.5px black solid;
+  color: black;
+  border-radius: 6px;
 
   &:hover {
     border-color: black;
@@ -235,4 +321,6 @@ export {
   Button,
   Wrapper,
   MainBlock,
+  InputForReset,
+  ChangeButton,
 };

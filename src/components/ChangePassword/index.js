@@ -1,19 +1,69 @@
-import React from "react";
-import {Input, Button, Wrapper, MainBlock } from '../StyledCom';
+import React, { Component } from "react";
+import { withFirebase } from "../Firebase";
+import { Button, Wrapper, MainBlock, InputForReset } from "../StyledCom";
 
-const ChangePassword = () => {
-    return ( 
-    <MainBlock>   
-    <Wrapper>
-    <Input type="password" name="CurrentPassword" placeholder="Current Password"/>
-    <p>Forgot your password? Click here to reset</p>
-    <Input type="text" name="NewPassword" placeholder="New Password"/>
-    <Input type="text" name="RepeatNewPassword" placeholder="Repeat New Password"/>   
-    <Button>Update Password</Button>
-    
-    </Wrapper> 
-    </MainBlock> 
+const INITIAL_STATE = {
+  passwordOne: "",
+  passwordTwo: "",
+  error: null,
+};
+
+class ChangePassword extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { ...INITIAL_STATE };
+  }
+  onSubmit = (event) => {
+    const { passwordOne } = this.state;
+
+    this.props.firebase
+      .doPasswordUpdate(passwordOne)
+      .then(() => {
+        this.setState({ ...INITIAL_STATE });
+      })
+      .catch((error) => {
+        this.setState({ error });
+      });
+    event.preventDefault();
+  };
+  onChange = (event) => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
+
+  render() {
+    const { passwordOne, passwordTwo, error } = this.state;
+    const isInvalid = passwordOne !== passwordTwo || passwordOne === "";
+    return (
+      <MainBlock>
+        <Wrapper onSubmit={this.onSubmit}>
+          <InputForReset
+            type="password"
+            name="CurrentPassword"
+            placeholder="Current Password"
+          />
+          <p>Forgot your password? Click here to reset</p>
+          <InputForReset
+            name="passwordOne"
+            value={passwordOne}
+            onChange={this.onChange}
+            type="password"
+            placeholder="New Password"
+          />
+          <InputForReset
+            name="passwordTwo"
+            value={passwordTwo}
+            onChange={this.onChange}
+            type="password"
+            placeholder="Confirm New Password"
+          />
+          <Button disabled={isInvalid} type="submit">
+            Update Password
+          </Button>
+          {error && <p>{error.message}</p>}
+        </Wrapper>
+      </MainBlock>
     );
+  }
 }
- 
-export default ChangePassword ;
+
+export default withFirebase(ChangePassword);
