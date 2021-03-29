@@ -301,6 +301,11 @@ const ChangeButton = styled(Link)`
     background: black;
     transition: 0.3s ease-in-out;
   }
+
+  @media screen and (max-width: 768px) {
+    font-size: 11px;
+  }
+
 `;
 
 
