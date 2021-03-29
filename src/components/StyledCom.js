@@ -281,6 +281,42 @@ const Button = styled.button`
   }
 `;
 
+const CancelButton = styled(Link)`
+  width: 30%;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  color: red;
+  padding: 0.3rem 0rem;
+  font-size: 1rem;
+  border: 2px solid black;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 1rem;
+  transition: 0.3s;
+
+  &:hover {
+    border-color: black;
+    color: red;
+    background: black;
+    transition: 0.3s ease-in-out;
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    width: 50%;
+    font-size: 1.5rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 50%;
+  }
+
+  @media screen and (max-width: 414px) {
+    width: 70%;
+  }
+`;
+
 const ChangeButton = styled(Link)`
   font-family: "Poppins", sans-serif;
   display: flex;
@@ -323,4 +359,5 @@ export {
   MainBlock,
   InputForReset,
   ChangeButton,
+  CancelButton,
 };
