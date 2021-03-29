@@ -344,7 +344,21 @@ justify-content: center;
         border-radius: 50%;
         object-fit: cover;
     }
-`
+`;
+
+
+const Container = styled.div`
+  display: flex;
+  /* flex-direction: column; */
+  /* align-items: center; */
+  justify-content: center;
+
+  /* & > div{
+        background-color: bisque;
+        width: 400px;
+    } */
+`;
+
 
 export {
   OutButton,
@@ -368,4 +382,5 @@ export {
   ChangeButton,
   ImageUpload,
   UserComp,
+  Container,
 };

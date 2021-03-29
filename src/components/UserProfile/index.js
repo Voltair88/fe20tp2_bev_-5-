@@ -7,19 +7,7 @@ import { TEAM_DATA } from "../../data.js";
 import styled from "styled-components";
 import PasswordChangeForm from "../PasswordChange";
 import Pencil from "../../img/pencil.png";
-import { UserComp, ImageUpload } from '../StyledCom';
-
-const Container = styled.div`
-  display: flex;
-  /* flex-direction: column; */
-  /* align-items: center; */
-  justify-content: center;
-
-  /* & > div{
-        background-color: bisque;
-        width: 400px;
-    } */
-`;
+import { Container, UserComp, ImageUpload } from '../StyledCom';
 
 
 
