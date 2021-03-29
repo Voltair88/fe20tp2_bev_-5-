@@ -281,6 +281,8 @@ const Button = styled.button`
   }
 `;
 
+//button for change email & password on userprofile page
+
 const ChangeButton = styled(Link)`
   font-family: "Poppins", sans-serif;
   display: flex;
@@ -309,7 +311,7 @@ const ChangeButton = styled(Link)`
 `;
 
 
-
+// user profile page
 const UserComp = styled.div`
   display: flex;
   flex-direction: column;
@@ -363,7 +365,7 @@ const Container = styled.div`
         width: 400px;
     } */
 `;
-
+//end user profile page.
 
 export {
   OutButton,
