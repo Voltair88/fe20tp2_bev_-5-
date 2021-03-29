@@ -4,10 +4,10 @@ import { withFirebase } from "../Firebase";
 import Player from "../Player";
 import { TeamItem } from "../Team";
 import styled from "styled-components";
-import { Bar, Line } from "react-chartjs-2";
-
-import { getTeamsGoalDiff } from "../../functions";
+import { LineChart, PieChart, Test, LineChartNew } from "../Charts";
+import { HorizontalBar } from "react-chartjs-2";
 import { SEASON_DATA, CL_MATCH_DATA } from "../../data";
+
 import {
   Background,
   ChartContainer,
@@ -38,7 +38,8 @@ const StyledList = styled.div`
   }
 `;
 
-const HomePage = ({ teams, scorers }) => {
+const HomePage = ({ teams, scorers, matches }) => {
+  /* console.log(matches) */
   return (
     <Background>
       <Blur>
@@ -46,11 +47,9 @@ const HomePage = ({ teams, scorers }) => {
           <Content>
             <h1>Home</h1>
             <p>The Home Page is accessible by every signed in user.</p>
-            <BarChart scorers={scorers} />
+            {/* <BarChart scorers={scorers} /> */}
+            <LineChart data={matches} />
             <List arr={teams} />
-            {/* <ScorersList scorers={scorers} /> */}
-
-            {/* <Messages /> */}
           </Content>
         </HomeMain>
       </Blur>
@@ -77,10 +76,9 @@ const BarChart = ({ scorers }) => {
   /* Set data to array to display in chart */
 
   const player = scorers.map((item) => item.player.name);
-
   return (
     <ChartContainer>
-      <Bar
+      <HorizontalBar
         data={{
           labels: player,
           datasets: [
@@ -120,7 +118,6 @@ const BarChart = ({ scorers }) => {
       />
     </ChartContainer>
   );
-
 };
 
 const condition = (authUser) => !!authUser;

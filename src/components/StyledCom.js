@@ -151,9 +151,6 @@ const HomeMain = styled.main`
 const ChartContainer = styled.div`
   height: 500px;
   width: 600px;
-  position: absolute;
-  left: 10px;
-  top: 40px;
 `;
 
 const OutButton = styled.button`
