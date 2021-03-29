@@ -11,9 +11,6 @@ const AccountPage = () => (
   <AuthUserContext.Consumer>
     {(authUser) => (
       <div>
-        <h1>Account: {authUser.email}</h1>
-        <PasswordForgetForm />
-        <PasswordChangeForm />
         <UserProfile user={authUser} />
         <ChangeButton to={ROUTES.CHANGE_PASSWORD}>Change Password</ChangeButton>
         <ChangeButton to={ROUTES.CHANGE_EMAIL}>Change Email</ChangeButton>
