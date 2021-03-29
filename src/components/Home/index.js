@@ -8,8 +8,6 @@ import { LineChart, PieChart, Test, LineChartNew } from "../Charts";
 import { HorizontalBar } from "react-chartjs-2";
 import { SEASON_DATA, CL_MATCH_DATA } from "../../data";
 
-
-
 import {
   Background,
   ChartContainer,
@@ -50,11 +48,7 @@ const HomePage = ({ teams, scorers, matches }) => {
             <h1>Home</h1>
             <p>The Home Page is accessible by every signed in user.</p>
             {/* <BarChart scorers={scorers} /> */}
-<<<<<<< HEAD
             <LineChart data={matches} />
-=======
-            <LineChartNew data={matches} />
->>>>>>> pathum
             <List arr={teams} />
           </Content>
         </HomeMain>
