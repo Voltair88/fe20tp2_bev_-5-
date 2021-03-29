@@ -29,7 +29,7 @@ import { useTheme } from "../../theme/useTheme";
 
 // 2: Create a cotainer
 const Container = styled.div`
-  margin: 5px auto 5px auto;
+  /* margin: 5px auto 5px auto; */
 `;
 
 const App = () => {
