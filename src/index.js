@@ -4,9 +4,20 @@ import "./index.css";
 import App from "./components/App";
 import Firebase, { FirebaseContext } from "./components/Firebase";
 
+import * as themes from './theme/schema.json';
+import { setToLS } from './utils/storage';
+
+const Index = () => {
+  setToLS('all-themes', themes.default);
+  return(
+    <App />
+  )
+}
+
 ReactDOM.render(
   <FirebaseContext.Provider value={new Firebase()}>
-    <App />
+     <Index />
+    
   </FirebaseContext.Provider>,
   document.getElementById("root")
 );

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { withAuthentication } from "../Session";
 import Navigation from "../Navigation";
@@ -22,6 +22,15 @@ import { getMatchStats, buildAllMatchStats } from "../../functions.js";
 import * as ROUTES from "../../constants/routes";
 import ChangeEmail from "../ChangeEmail";
 import ChangePassword from "../ChangePassword";
+import styled, { ThemeProvider } from "styled-components";
+import WebFont from "webfontloader";
+import { GlobalStyles } from "../../theme/GlobalStyles";
+import { useTheme } from "../../theme/useTheme";
+
+// 2: Create a cotainer
+const Container = styled.div`
+  margin: 5px auto 5px auto;
+`;
 
 const App = () => {
   const [scorersData, setScorersData] = useState(SCORERS_DATA.scorers);
@@ -30,54 +39,67 @@ const App = () => {
   const [matchesData, setMatchesData] = useState(
     buildAllMatchStats(CL_MATCH_DATA)
   );
+  const { theme, themeLoaded, getFonts } = useTheme();
+  const [selectedTheme, setSelectedTheme] = useState(theme);
+
+  useEffect(() => {
+    setSelectedTheme(theme);
+  }, [themeLoaded]);
+
+  // 4: Load all the fonts
+  useEffect(() => {
+    WebFont.load({
+      google: {
+        families: getFonts(),
+      },
+    });
+  });
+
   return (
     <Router>
-      <Navigation />
-
-      <Switch>
-        <Route exact path={ROUTES.LANDING}>
-          <LandingPage />
-        </Route>
-        <Route path={ROUTES.SIGN_UP}>
-          <SignUpPage />
-        </Route>
-        <Route path={ROUTES.SIGN_IN}>
-          <SignInPage />
-        </Route>
-        <Route path={ROUTES.PASSWORD_FORGET}>
-          §
-          <PasswordForgetPage />
-        </Route>
-        <Route path={ROUTES.HOME}>
-          <HomePage
-            matches={matchesData}
-            scorers={scorersData}
-            teams={teamsData}
-          />
-        </Route>
-        <Route path={ROUTES.ACCOUNT}>
-          <AccountPage />
-        </Route>
-        <Route path={ROUTES.ADMIN}>
-          <AdminPage />
-        </Route>
-        <Route exact path ={ROUTES.CHANGE_EMAIL}>
-          <ChangeEmail/>
-        </Route>
-        <Route exact path ={ROUTES.CHANGE_PASSWORD}>
-          <ChangePassword/>
-        </Route>
-        <Route>
-          <TeamPage team={teamData} />
-        </Route>
-      </Switch>
-      {/*     <Route exact path={ROUTES.LANDING} component={LandingPage} />
-    <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
-    <Route path={ROUTES.SIGN_IN} component={SignInPage} />
-    <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} />
-    <Route path={ROUTES.HOME} component={HomePage} />
-    <Route path={ROUTES.ACCOUNT} component={AccountPage} />
-    <Route path={ROUTES.ADMIN} component={AdminPage} /> */}
+      <ThemeProvider theme={selectedTheme}>
+        <GlobalStyles />
+        <Container style={{ fontFamily: selectedTheme.font }}>
+          <Navigation />
+          <Switch>
+            <Route exact path={ROUTES.LANDING}>
+              <LandingPage />
+            </Route>
+            <Route path={ROUTES.SIGN_UP}>
+              <SignUpPage />
+            </Route>
+            <Route path={ROUTES.SIGN_IN}>
+              <SignInPage />
+            </Route>
+            <Route path={ROUTES.PASSWORD_FORGET}>
+              §
+              <PasswordForgetPage />
+            </Route>
+            <Route path={ROUTES.HOME}>
+              <HomePage
+                matches={matchesData}
+                scorers={scorersData}
+                teams={teamsData}
+              />
+            </Route>
+            <Route path={ROUTES.ACCOUNT}>
+              <AccountPage />
+            </Route>
+            <Route path={ROUTES.ADMIN}>
+              <AdminPage />
+            </Route>
+            <Route exact path={ROUTES.CHANGE_EMAIL}>
+              <ChangeEmail />
+            </Route>
+            <Route exact path={ROUTES.CHANGE_PASSWORD}>
+              <ChangePassword />
+            </Route>
+            <Route>
+              <TeamPage team={teamData} />
+            </Route>
+          </Switch>
+        </Container>
+      </ThemeProvider>
     </Router>
   );
 };
