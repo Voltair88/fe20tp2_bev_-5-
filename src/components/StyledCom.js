@@ -303,6 +303,49 @@ const ChangeButton = styled(Link)`
   }
 `;
 
+
+
+const UserComp = styled.div`
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  width: 50%;
+  .username-input{
+      /* background-color: red; */
+      font-size: x-large;
+      width: 50%;
+      align-self: center;
+      text-align: center;
+      border: none;
+      background-image: url(../../img/pencil.png);
+    background-position: 7px 7px;
+    background-repeat: no-repeat;
+  }
+  span{
+    position: absolute;
+    top: 2px;
+    right: 2px;
+  }
+`;
+
+const ImageUpload = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+    & > input{
+        visibility:hidden;
+        width:0;
+        height:0;
+    }
+    img{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+`
+
 export {
   OutButton,
   ChartContainer,
@@ -323,4 +366,6 @@ export {
   MainBlock,
   InputForReset,
   ChangeButton,
+  ImageUpload,
+  UserComp,
 };
