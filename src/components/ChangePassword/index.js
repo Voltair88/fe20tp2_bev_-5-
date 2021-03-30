@@ -1,6 +1,14 @@
 import React, { Component } from "react";
 import { withFirebase } from "../Firebase";
-import { Button, Wrapper, MainBlock, InputForReset } from "../StyledCom";
+import {
+  Button,
+  Wrapper,
+  MainBlock,
+  InputForReset,
+  CancelButton,
+} from "../StyledCom";
+
+import * as ROUTES from "../../constants/routes";
 
 const INITIAL_STATE = {
   passwordOne: "",
@@ -59,6 +67,7 @@ class ChangePassword extends Component {
           <Button disabled={isInvalid} type="submit">
             Update Password
           </Button>
+          <CancelButton to={ROUTES.ACCOUNT}>Cancel</CancelButton>
           {error && <p>{error.message}</p>}
         </Wrapper>
       </MainBlock>
