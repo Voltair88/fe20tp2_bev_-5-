@@ -3,9 +3,11 @@ import React, { Component, useEffect } from "react";
 import { withFirebase } from "../Firebase";
 import Player from "../Player";
 import { TeamItem } from "../Team";
+import MatchFeed from "../MatchFeed";
 import styled from "styled-components";
 import { LineChart, PieChart, Test, LineChartNew } from "../Charts";
 import { HorizontalBar } from "react-chartjs-2";
+import { getMatchStats, buildAllMatchStats } from "../API/functions.js";
 import { SEASON_DATA, CL_MATCH_DATA } from "../../data";
 
 import {
@@ -48,8 +50,9 @@ const HomePage = ({ teams, scorers, matches }) => {
             <h1>Home</h1>
             <p>The Home Page is accessible by every signed in user.</p>
             {/* <BarChart scorers={scorers} /> */}
-            <LineChart data={matches} />
-            <List arr={teams} />
+            <LineChart data={buildAllMatchStats(matches)} />
+            <MatchFeed matches={matches.matches} />
+            {/* <List arr={teams} /> */}
           </Content>
         </HomeMain>
       </Blur>

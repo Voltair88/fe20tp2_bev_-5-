@@ -17,7 +17,6 @@ import {
   CL_MATCH_DATA,
   SEASON_DATA,
 } from "../../data.js";
-import { getMatchStats, buildAllMatchStats } from "../../functions.js";
 
 import * as ROUTES from "../../constants/routes";
 import ChangeEmail from "../ChangeEmail";
@@ -27,9 +26,7 @@ const App = () => {
   const [scorersData, setScorersData] = useState(SCORERS_DATA.scorers);
   const [teamsData, setTeamsData] = useState(CL_TEAMS_DATA.teams);
   const [teamData, setTeamData] = useState(TEAM_DATA);
-  const [matchesData, setMatchesData] = useState(
-    buildAllMatchStats(CL_MATCH_DATA)
-  );
+  const [matchesData, setMatchesData] = useState(CL_MATCH_DATA);
   return (
     <Router>
       <Navigation />
@@ -61,11 +58,11 @@ const App = () => {
         <Route path={ROUTES.ADMIN}>
           <AdminPage />
         </Route>
-        <Route exact path ={ROUTES.CHANGE_EMAIL}>
-          <ChangeEmail/>
+        <Route exact path={ROUTES.CHANGE_EMAIL}>
+          <ChangeEmail />
         </Route>
-        <Route exact path ={ROUTES.CHANGE_PASSWORD}>
-          <ChangePassword/>
+        <Route exact path={ROUTES.CHANGE_PASSWORD}>
+          <ChangePassword />
         </Route>
         <Route>
           <TeamPage team={teamData} />
