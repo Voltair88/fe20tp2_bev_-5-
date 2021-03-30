@@ -7,6 +7,7 @@ export const requestOptions = {
   redirect: "follow",
 };
 
+//all leagues available in my api
 export const LEAGUES_DATA = {
   count: 152,
   filters: {},
@@ -3475,6 +3476,7 @@ export const LEAGUES_DATA = {
   ],
 };
 
+//all teams in champions league
 export const CL_TEAMS_DATA = {
   count: 79,
   filters: {},
@@ -5003,6 +5005,8 @@ export const CL_TEAMS_DATA = {
     },
   ],
 };
+
+//all matches in this season of champions league
 export const CL_MATCH_DATA = {
   count: 165,
   filters: {},
@@ -17338,6 +17342,7 @@ export const CL_MATCH_DATA = {
   ],
 };
 
+//example team data for FC Barcelona
 export const TEAM_DATA = {
   id: 81,
   area: {
@@ -17725,6 +17730,7 @@ export const TEAM_DATA = {
   lastUpdated: "2021-02-08T10:15:43Z",
 };
 
+//player data for lionel messi
 export const PLAYER_DATA = {
   id: 3218,
   name: "Lionel Messi",
@@ -17738,9 +17744,11 @@ export const PLAYER_DATA = {
   lastUpdated: "2020-09-07T21:25:55Z",
 };
 
+//standing data api url
 export const STANDINGS_DATA =
   "http://api.football-data.org/v2/competitions/2001/standings";
 
+//season standings data for champions league
 export const SEASON_DATA = {
   filters: {},
   competition: {
@@ -19565,6 +19573,7 @@ export const SEASON_DATA = {
   ],
 };
 
+//champions league top scorers data
 export const SCORERS_DATA = {
   count: 10,
   filters: {
