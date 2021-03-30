@@ -419,4 +419,7 @@ export {
   InputForReset,
   ChangeButton,
   CancelButton,
+  Container,
+  ImageUpload,
+  UserComp,
 };
