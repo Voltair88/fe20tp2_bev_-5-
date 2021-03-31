@@ -7,6 +7,7 @@ import { getTeamStats } from "../../functions.js";
 import { PieChart } from "../Charts";
 
 export const TeamPage = ({ team }) => {
+  //export const TeamPage = ({ match }) => {
   const [standingData, setStandingData] = useState();
   const [pieData, setPieData] = useState();
 
@@ -69,7 +70,7 @@ export const TeamItem = ({ team }) => {
       </span>
       <span>{team.name}</span>
       <span>
-        <Link to={ROUTES.TEAM}>Details</Link>
+        <Link to={`${ROUTES.TEAM}/${team.id}`}>Details</Link>
       </span>
     </>
   );

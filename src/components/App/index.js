@@ -10,6 +10,7 @@ import HomePage from "../Home";
 import AccountPage from "../Account";
 import AdminPage from "../Admin";
 import { TeamPage } from "../Team";
+import { NewTeamPage } from "../NewTeam";
 import {
   SCORERS_DATA,
   CL_TEAMS_DATA,
@@ -30,6 +31,7 @@ const App = () => {
   const [matchesData, setMatchesData] = useState(
     buildAllMatchStats(CL_MATCH_DATA)
   );
+  console.log(teamsData.find(team => team.id === 4))
   return (
     <Router>
       <Navigation />
@@ -61,12 +63,15 @@ const App = () => {
         <Route path={ROUTES.ADMIN}>
           <AdminPage />
         </Route>
-        <Route exact path ={ROUTES.CHANGE_EMAIL}>
-          <ChangeEmail/>
+        <Route exact path={ROUTES.CHANGE_EMAIL}>
+          <ChangeEmail />
         </Route>
-        <Route exact path ={ROUTES.CHANGE_PASSWORD}>
-          <ChangePassword/>
+        <Route exact path={ROUTES.CHANGE_PASSWORD}>
+          <ChangePassword />
         </Route>
+        {/* <Route exact path={ROUTES.TEAM_DETAIL}>
+          <NewTeamPage />
+        </Route> */}
         <Route>
           <TeamPage team={teamData} />
         </Route>
