@@ -6,7 +6,6 @@ import { CL_TEAMS_DATA } from "../../data.js";
 import { TEAM_DATA } from "../../data.js";
 import styled from "styled-components";
 import PasswordChangeForm from "../PasswordChange";
-<<<<<<< HEAD
 import Pencil from "../../img/pencil.png"
 import SnackbarComponent from "../SnackbarComponent";
 import EditIcon from '@material-ui/icons/Edit';
@@ -19,49 +18,26 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 
 
 
-
-
 const Container = styled.div`
   display: flex;
-  /* flex-direction: column; */
-  /* align-items: center; */
   justify-content: center;
-
-  /* & > div{
-        background-color: bisque;
-        width: 400px;
-    } */
 `;
 
 const UserComp = styled.div`
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   width: 50%;
   .username-input{
-      /* background-color: red; */
       font-size: x-large;
-      /* width: 50%; */
       align-self: center;
       text-align: center;
       border: none;
-      /* background-color: yellow; */
   }
 `;
 
 const UserName = styled.div`
-/* background-color: greenyellow; */
-align-self: center;
-position: relative;
-/* background-color: greenyellow; */
-
-span{
-    /* position: absolute;
-    top: 5px;
-    left: 0px; */
-    /* z-index: -10; */
-    /* background-color: red; */
-}
+    align-self: center;
+    position: relative;
 
 `
 
@@ -82,11 +58,9 @@ justify-content: center;
         object-fit: cover;
     }
 `
-=======
-import Pencil from "../../img/pencil.png";
-import { Container, UserComp, ImageUpload } from '../StyledCom';
 
->>>>>>> 5a153ccb6ad50f7e6f78037b04e3acee529c6599
+
+
 
 
 function UserProfile(props) {
@@ -94,7 +68,6 @@ function UserProfile(props) {
     const [image, setImage] = useState(null);
     const [uid, setUid] = useState();
     const [url, setUrl] = useState(ProfileImage);
-    const [progress, setProgress] = useState(0);
 
     const [fav_player, setFav_player] = useState(null);
     const [fav_team, setFav_team] = useState(null);
@@ -115,12 +88,6 @@ function UserProfile(props) {
         setMessage(message);
         setSeverity(type);
     }
-
-
-
-
-
-
 
 
 
@@ -150,23 +117,7 @@ function UserProfile(props) {
         }
         setPlayer_array(player_array);
 
-
-
     }, [])
-
-
-
-    /* const players = [
-        { value: 'zlatan', label: 'Zlatan' },
-        { value: 'messi', label: 'Messi' },
-        { value: 'ronaldo', label: 'Ronaldo' },
-    ];
-    const teams = [
-        { value: 'sl', label: 'SL' },
-        { value: 'sw', label: 'SW' },
-        { value: 'rr', label: 'Rr' },
-    ]; */
-
 
 
 
@@ -257,19 +208,11 @@ function UserProfile(props) {
                             </label>
                             <input id="file-input" type="file" onChange={handleChange} />
                             <br />
-                            {/* <button onClick={handleUpload} > Upload </button> */}
                         </ImageUpload>
 
                         <UserName>
 
                             <TextField id="user-input" className="username-input" type="text" value={userName} onChange={handleChangeUserName}
-                                /* InputProps={{
-                                    startAdornment: (
-                                        <InputAdornment position="start">
-                                            <EditIcon />
-                                        </InputAdornment>
-                                    ),
-                                }} */
                                 inputProps={{ style: { textAlign: 'center', fontSize: '1.5em' } }}
                             />
                         </UserName>

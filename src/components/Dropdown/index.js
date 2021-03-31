@@ -59,7 +59,6 @@ function Dropdown(props) {
                         <SnackbarComponent key={new Date()} severity={severity} message={message} clearSnackbar={clearSnackbar} /> : null
                     }
 
-                    {console.log("Message:" + message)}
                 </div>
 
             )}

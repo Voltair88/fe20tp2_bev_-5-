@@ -21,10 +21,6 @@ function SnackbarComponent(props) {
     const classes = useStyles();
     const [open, setOpen] = useState(true);
 
-    /* const handleClick = () => {
-        setOpen(true);
-    }; */
-
     const handleClose = (event, reason) => {
         if (reason === 'clickaway') {
             return;
@@ -33,20 +29,13 @@ function SnackbarComponent(props) {
         setOpen(false);
     };
 
-    console.log("Props Msg" + props.message)
-
     return (
-        <>
-            {/* <Button variant="outlined" onClick={handleClick}>
-                Open success snackbar
-                </Button> */}
-            <Snackbar open={open} autoHideDuration={2000} onClose={handleClose} >
-                <Alert onClose={handleClose} severity={props.severity}>
-                    {props.message}
-                </Alert>
-            </Snackbar>
 
-        </>
+        <Snackbar open={open} autoHideDuration={2000} onClose={handleClose} >
+            <Alert onClose={handleClose} severity={props.severity}>
+                {props.message}
+            </Alert>
+        </Snackbar>
     )
 }
 
