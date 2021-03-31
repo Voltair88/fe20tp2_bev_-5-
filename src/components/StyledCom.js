@@ -281,6 +281,42 @@ const Button = styled.button`
   }
 `;
 
+const CancelButton = styled(Link)`
+  width: 30%;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  color: red;
+  padding: 0.3rem 0rem;
+  font-size: 1rem;
+  border: 2px solid black;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 1rem;
+  transition: 0.3s;
+
+  &:hover {
+    border-color: black;
+    color: red;
+    background: black;
+    transition: 0.3s ease-in-out;
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    width: 50%;
+    font-size: 1.5rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 50%;
+  }
+
+  @media screen and (max-width: 414px) {
+    width: 70%;
+  }
+`;
+
 const ChangeButton = styled(Link)`
   font-family: "Poppins", sans-serif;
   display: flex;
@@ -301,7 +337,66 @@ const ChangeButton = styled(Link)`
     background: black;
     transition: 0.3s ease-in-out;
   }
+
+  @media screen and (max-width: 768px) {
+    font-size: 11px;
+  }
 `;
+
+// user profile page
+const UserComp = styled.div`
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  width: 50%;
+  .username-input {
+    /* background-color: red; */
+    font-size: x-large;
+    width: 50%;
+    align-self: center;
+    text-align: center;
+    border: none;
+    background-image: url(../../img/pencil.png);
+    background-position: 7px 7px;
+    background-repeat: no-repeat;
+  }
+  span {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+  }
+`;
+
+const ImageUpload = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  & > input {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+  img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+`;
+
+const Container = styled.div`
+  display: flex;
+  /* flex-direction: column; */
+  /* align-items: center; */
+  justify-content: center;
+
+  /* & > div{
+        background-color: bisque;
+        width: 400px;
+    } */
+`;
+//end user profile page.
 
 export {
   OutButton,
@@ -323,4 +418,8 @@ export {
   MainBlock,
   InputForReset,
   ChangeButton,
+  CancelButton,
+  Container,
+  ImageUpload,
+  UserComp,
 };

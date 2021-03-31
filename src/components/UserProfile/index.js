@@ -6,6 +6,7 @@ import { CL_TEAMS_DATA } from "../../data.js";
 import { TEAM_DATA } from "../../data.js";
 import styled from "styled-components";
 import PasswordChangeForm from "../PasswordChange";
+<<<<<<< HEAD
 import Pencil from "../../img/pencil.png"
 import SnackbarComponent from "../SnackbarComponent";
 import EditIcon from '@material-ui/icons/Edit';
@@ -81,6 +82,11 @@ justify-content: center;
         object-fit: cover;
     }
 `
+=======
+import Pencil from "../../img/pencil.png";
+import { Container, UserComp, ImageUpload } from '../StyledCom';
+
+>>>>>>> 5a153ccb6ad50f7e6f78037b04e3acee529c6599
 
 
 function UserProfile(props) {
