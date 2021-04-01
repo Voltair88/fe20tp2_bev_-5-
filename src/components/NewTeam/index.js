@@ -5,8 +5,9 @@ import { Link } from "react-router-dom";
 import { requestOptions, SEASON_DATA } from "../../data.js";
 import { getTeamStats } from "../API/functions.js";
 import { PieChart } from "../Charts";
+import { withRouter } from "react-router-dom";
 
-export const TeamPage = ({ team }) => {
+export const NewTeamPage = ({ match }) => {
   //export const TeamPage = ({ match }) => {
   const [standingData, setStandingData] = useState();
   const [pieData, setPieData] = useState();
@@ -18,15 +19,13 @@ export const TeamPage = ({ team }) => {
     )
       .then((response) => response.json())
       .then((json) => {
-        setStandingData(getTeamStats(json, team.id));
+        setStandingData(getTeamStats(json, match.params.id));
       });
   }, []);
   return (
     <article>
-      <figure>
-        <img src={team.crestUrl} alt="team crest" />
-      </figure>
-      <h3>{team.name}</h3>
+      <figure>{/* <img src={team.crestUrl} alt="team crest" /> */}</figure>
+      <h3>{/*team.name*/}</h3>
       <div>
         <h4>Season Performance</h4>
         <PieChart
@@ -50,13 +49,13 @@ export const TeamPage = ({ team }) => {
       </div>
       <div>
         <h4>Players</h4>
-        {team.squad
-          .filter((staff) => staff.role === "PLAYER")
-          .map((item) => (
-            <li key={item.id}>
-              <Player player={item} />
-            </li>
-          ))}
+        {/*team.squad
+                    .filter((staff) => staff.role === "PLAYER")
+                    .map((item) => (
+                        <li key={item.id}>
+                            <Player player={item} />
+                        </li>
+                    ))*/}
       </div>
     </article>
   );

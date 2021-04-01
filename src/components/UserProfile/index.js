@@ -2,12 +2,64 @@ import React, { useState, useEffect } from "react";
 import Dropdown from "../Dropdown";
 import { AuthUserContext, withAuthentication } from "../Session";
 import ProfileImage from "../../img/prf_img.png";
-import { LEAGUES_DATA } from "../../data.js";
+import { CL_TEAMS_DATA } from "../../data.js";
 import { TEAM_DATA } from "../../data.js";
 import styled from "styled-components";
 import PasswordChangeForm from "../PasswordChange";
-import Pencil from "../../img/pencil.png";
-import { Container, UserComp, ImageUpload } from '../StyledCom';
+import Pencil from "../../img/pencil.png"
+import SnackbarComponent from "../SnackbarComponent";
+import EditIcon from '@material-ui/icons/Edit';
+import TextField from '@material-ui/core/TextField';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+
+
+
+
+
+
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+const UserComp = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  .username-input{
+      font-size: x-large;
+      align-self: center;
+      text-align: center;
+      border: none;
+  }
+`;
+
+const UserName = styled.div`
+    align-self: center;
+    position: relative;
+
+`
+
+const ImageUpload = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+    & > input{
+        visibility:hidden;
+        width:0;
+        height:0;
+    }
+    img{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+`
+
+
 
 
 
@@ -16,32 +68,44 @@ function UserProfile(props) {
     const [image, setImage] = useState(null);
     const [uid, setUid] = useState();
     const [url, setUrl] = useState(ProfileImage);
-    const [progress, setProgress] = useState(0);
 
     const [fav_player, setFav_player] = useState(null);
     const [fav_team, setFav_team] = useState(null);
 
     const [player_array, setPlayer_array] = useState([]);
     const [team_array, setTeam_array] = useState([]);
-    const [changePassword, setChangePassword] = useState(false);
 
     const [userName, setUserName] = useState();
+
+
+
+
+    //Used to display messages in snackbar
+    const [message, setMessage] = useState('');
+    const [severity, setSeverity] = useState('');
+
+    const handleSnackbar = (message, type) => {
+        setMessage(message);
+        setSeverity(type);
+    }
+
+
 
     useEffect(() => {
         setUid(props.user.uid);
         bindData(props.user.uid);
         setUserName(props.user.username);
 
-        //Read LEAGUES_DATA from data.js and choose only id and team name from that data and store in an array
+        //Read CL_TEAMS_DATA from data.js and choose only id and team name from that data and store in an array
         let teamArr = [];
-        for (let key of Object.keys(LEAGUES_DATA.competitions)) {
+        for (let key of Object.keys(CL_TEAMS_DATA.teams)) {
             teamArr.push({
-                value: LEAGUES_DATA.competitions[key].id,
-                label: LEAGUES_DATA.competitions[key].name,
+                value: CL_TEAMS_DATA.teams[key].id,
+                label: CL_TEAMS_DATA.teams[key].name,
             });
         }
         setTeam_array(teamArr);
-        //End LEAGUES_DATA team
+        //End CL_TEAMS_DATA team
 
 
         let player_array = [];
@@ -53,34 +117,12 @@ function UserProfile(props) {
         }
         setPlayer_array(player_array);
 
-
-
     }, [])
 
 
 
-    const players = [
-        { value: 'zlatan', label: 'Zlatan' },
-        { value: 'messi', label: 'Messi' },
-        { value: 'ronaldo', label: 'Ronaldo' },
-    ];
-    const teams = [
-        { value: 'sl', label: 'SL' },
-        { value: 'sw', label: 'SW' },
-        { value: 'rr', label: 'Rr' },
-    ];
 
-
-
-
-    function onChangePassword() {
-        setChangePassword(true);
-    }
-    function onCancel() {
-        setChangePassword(false);
-    }
     const handleChange = e => {
-        console.log(e.target)
         if (e.target.files[0]) {
             setImage(e.target.files[0]);
             handleUpload(e.target.files[0]);
@@ -93,7 +135,7 @@ function UserProfile(props) {
         //Update the firebase db username when change the username
         props.firebase.user(props.user.uid).update({
             username: e.target.value
-        });
+        }).catch(error => console.log("Couldn't change username", error));
 
         setUserName(e.target.value)
     }
@@ -104,7 +146,8 @@ function UserProfile(props) {
         uploadTask.on(
             "state_changed",
             snapshot => {
-                console.log("uploaded image")
+                handleSnackbar("Successfully uploaded the image!", "success")
+
             },
             error => {
                 console.log(error);
@@ -139,6 +182,8 @@ function UserProfile(props) {
 
                 setFav_player(snapshot.val().fav_player_name);
                 setFav_team(snapshot.val().fav_team_name);
+                setUserName(snapshot.val().username);
+
             }
             else {
                 console.log("No data available");
@@ -163,17 +208,24 @@ function UserProfile(props) {
                             </label>
                             <input id="file-input" type="file" onChange={handleChange} />
                             <br />
-                            {/* <button onClick={handleUpload} > Upload </button> */}
                         </ImageUpload>
-                        <input className="username-input" type="text" value={userName} onChange={handleChangeUserName} />
+
+                        <UserName>
+
+                            <TextField id="user-input" className="username-input" type="text" value={userName} onChange={handleChangeUserName}
+                                inputProps={{ style: { textAlign: 'center', fontSize: '1.5em' } }}
+                            />
+                        </UserName>
 
                         <Dropdown placeholder={'Choose your favorite team'} dataSet={team_array} dropdownId="TEAMS" uid={props.user.uid} favorite={fav_team} />
                         <Dropdown placeholder={'Choose your favorite player'} dataSet={player_array} dropdownId="PLAYERS" uid={props.user.uid} favorite={fav_player} />
 
+                        {
+                            message != '' ?
+                                <SnackbarComponent severity={severity} message={message} /> : null
+                        }
 
-                        {/*  <br />
-                        {changePassword ? <PasswordChangeForm /> : ''}
-                        {changePassword ? (<button onClick={onCancel}>Cancel</button>) : (<button onClick={onChangePassword}>Change password</button>)} */}
+
                     </UserComp>
                 </Container>
             )}
@@ -182,3 +234,6 @@ function UserProfile(props) {
 }
 
 export default withAuthentication(UserProfile);
+
+
+

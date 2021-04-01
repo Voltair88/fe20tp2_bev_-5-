@@ -19,7 +19,6 @@ import {
 } from "../StyledCom";
 
 const StyledList = styled.div`
-  list-style-type: none;
   display: flex;
   flex-wrap: wrap;
   max-height: 100%;
