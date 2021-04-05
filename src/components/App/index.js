@@ -31,7 +31,7 @@ const App = () => {
   const [matchesData, setMatchesData] = useState(
     buildAllMatchStats(CL_MATCH_DATA)
   );
-  console.log(teamsData.find(team => team.id === 4))
+  /* console.log(teamsData.find(team => team.id === 4)) */
   return (
     <Router>
       <Navigation />

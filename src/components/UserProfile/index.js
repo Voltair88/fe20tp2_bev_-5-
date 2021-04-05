@@ -12,6 +12,7 @@ import EditIcon from '@material-ui/icons/Edit';
 import TextField from '@material-ui/core/TextField';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import AccountCircle from '@material-ui/icons/AccountCircle';
+import PlayerChart from "../PlayerChart";
 
 
 
@@ -84,11 +85,15 @@ function UserProfile(props) {
     const [message, setMessage] = useState('');
     const [severity, setSeverity] = useState('');
 
-    const handleSnackbar = (message, type) => {
+    const handleSnackbar = (message, severity) => {
         setMessage(message);
-        setSeverity(type);
+        setSeverity(severity);
     }
 
+    const clearSnackbar = () => {
+        setMessage('');
+        setSeverity('');
+    }
 
 
     useEffect(() => {
@@ -133,9 +138,14 @@ function UserProfile(props) {
 
 
         //Update the firebase db username when change the username
-        props.firebase.user(props.user.uid).update({
+        if (props.firebase.user(props.user.uid).update({
             username: e.target.value
-        }).catch(error => console.log("Couldn't change username", error));
+        })) {
+            handleSnackbar("Successfully changed the username", "success");
+        } else {
+            handleSnackbar("Couldn't change the username", "error");
+        }
+
 
         setUserName(e.target.value)
     }
@@ -147,10 +157,9 @@ function UserProfile(props) {
             "state_changed",
             snapshot => {
                 handleSnackbar("Successfully uploaded the image!", "success")
-
             },
             error => {
-                console.log(error);
+                handleSnackbar("Couldn't upload the image", "error");
             }
             ,
             () => {
@@ -171,7 +180,7 @@ function UserProfile(props) {
             .getDownloadURL()
             .then(url => {
                 setUrl(url);
-            }).catch(error => console.log("Don't have a profile image", error))
+            }).catch(error => handleSnackbar("Don't have a profile image", "error"))
 
 
 
@@ -186,10 +195,10 @@ function UserProfile(props) {
 
             }
             else {
-                console.log("No data available");
+                handleSnackbar("No data available", "error");
             }
         }).catch(function (error) {
-            console.error(error);
+            handleSnackbar("Something went wrong, try again", "error");;
         });
 
     }
@@ -220,13 +229,13 @@ function UserProfile(props) {
                         <Dropdown placeholder={'Choose your favorite team'} dataSet={team_array} dropdownId="TEAMS" uid={props.user.uid} favorite={fav_team} />
                         <Dropdown placeholder={'Choose your favorite player'} dataSet={player_array} dropdownId="PLAYERS" uid={props.user.uid} favorite={fav_player} />
 
-                        {
-                            message != '' ?
-                                <SnackbarComponent severity={severity} message={message} /> : null
+                        {message !== '' ?
+                            <SnackbarComponent severity={severity} message={message} clearSnackbar={clearSnackbar} /> : null
                         }
-
-
                     </UserComp>
+
+                    {/* <PlayerChart /> */}
+
                 </Container>
             )}
         </AuthUserContext.Consumer>
