@@ -30,8 +30,6 @@ const HomePage = ({ teams, scorers, matches }) => {
             <p>The Home Page is accessible by every signed in user.</p>
             {/* <BarChart scorers={scorers} /> */}
             <LineChart data={buildAllMatchStats(matches)} />
-            <h1>Top 20 scoreres</h1>
-            <Top20Scorers />
             <MatchFeed matches={matches.matches} />
             <TeamList arr={teams} />
           </Content>
