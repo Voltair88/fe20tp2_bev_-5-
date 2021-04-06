@@ -6,7 +6,7 @@ export const PieChart = ({ data, children }) => {
   }
   const labels = Object.keys(data);
   const values = Object.values(data);
-  console.log(Object)
+  console.log(Object);
 
   return (
     <div>
@@ -44,9 +44,8 @@ export const LineChart = ({ data, children }) => {
 
     return { data, label, datasetKeyProvider };
   });
-  console.log(datasets);
+
   let labels = [...new Set([].concat.apply([], matchdays))];
-  console.log(datasets);
   return (
     <div>
       {children && <h5>{children}</h5>}
@@ -60,24 +59,22 @@ export const LineChart = ({ data, children }) => {
   );
 };
 
-
 export const LineChartNew = (props) => {
-
   if (!props.data) {
     /* return null; */
   }
 
-  console.log(props.data)
+  console.log(props.data);
   //Read LEAGUES_DATA from data.js and choose only id and team name from that data and store in an array
   let teamArr = [];
   for (let key of Object.keys(props.data)) {
     teamArr.push({
       name: props.data,
-      value: props.data[key]
+      value: props.data[key],
       /* label: LEAGUES_DATA.competitions[key].name, */
     });
 
-    console.log(teamArr)
+    console.log(teamArr);
     teamArr = [];
   }
 
@@ -91,5 +88,4 @@ export const LineChartNew = (props) => {
       <div>Nothis toosds</div>
     </>
   );
-}
-
+};
