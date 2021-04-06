@@ -41,8 +41,6 @@ const StyledList = styled.div`
 const HomePage = ({ teams, scorers, matches }) => {
   /* console.log(matches) */
   return (
-    <Background>
-      <Blur>
         <HomeMain>
           <Content>
             <h1>Home</h1>
@@ -52,8 +50,6 @@ const HomePage = ({ teams, scorers, matches }) => {
             <List arr={teams} />
           </Content>
         </HomeMain>
-      </Blur>
-    </Background>
   );
 };
 

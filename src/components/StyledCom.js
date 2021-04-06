@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 //Styling for Navigation
 const Navbar = styled.div`
+  background-color: white;
   width: 100%;
   height: 8vh;
 `;
@@ -83,14 +84,6 @@ const P = styled.p`
   }
 `;
 
-const Background = styled.main`
-  background-color: #e8e8e8;
-  //background-image: url("https://images.unsplash.com/photo-1556056504-5c7696c4c28d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2083&q=80");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-`;
-
 const Input = styled.input`
   justify-content: center;
   justify-content: row;
@@ -134,12 +127,6 @@ const MyButton = styled.button`
   font-size: 15px;
 `;
 
-const Blur = styled.main`
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
-  height: auto;
-  width: 100%;
-`;
 const HomeMain = styled.main`
   box-sizing: border-box;
   display: flex;
@@ -307,10 +294,8 @@ export {
   OutButton,
   ChartContainer,
   HomeMain,
-  Blur,
   MyButton,
   Input,
-  Background,
   P,
   H1,
   Content,
