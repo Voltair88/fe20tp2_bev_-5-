@@ -9,6 +9,7 @@ import { LineChart, PieChart, Test, LineChartNew } from "../Charts";
 import { HorizontalBar } from "react-chartjs-2";
 import { getMatchStats, buildAllMatchStats } from "../API/functions.js";
 import { SEASON_DATA, CL_MATCH_DATA } from "../../data";
+import Top20Scorers from "../Top20Scorers";
 
 import {
   Background,
@@ -29,6 +30,8 @@ const HomePage = ({ teams, scorers, matches }) => {
             <p>The Home Page is accessible by every signed in user.</p>
             {/* <BarChart scorers={scorers} /> */}
             <LineChart data={buildAllMatchStats(matches)} />
+            <h1>Top 20 scoreres</h1>
+            <Top20Scorers />
             <MatchFeed matches={matches.matches} />
             <TeamList arr={teams} />
           </Content>

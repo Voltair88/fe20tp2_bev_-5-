@@ -16,8 +16,8 @@ const AccountPage = () => (
         <ChangeButton to={ROUTES.CHANGE_PASSWORD}>Change Password</ChangeButton>
         <ChangeButton to={ROUTES.CHANGE_EMAIL}>Change Email</ChangeButton>
 
-        <h1>Top 20 scoreres</h1>
-        <Top20Scorers />
+        {/* <h1>Top 20 scoreres</h1>
+        <Top20Scorers /> */}
       </div>
     )}
   </AuthUserContext.Consumer>
