@@ -1,48 +1,36 @@
 import { useEffect, useState } from 'react'
-
 import { TOP_SCORERS } from "../../topScorers.js";
 import { ALL_LEAGUES_2020 } from "../../allLeagues2020";
-import { Pie, Line, Bar } from "react-chartjs-2";
-import { PieChart } from '../Charts/index.js';
+import { Bar } from "react-chartjs-2";
 import Dropdown from "../Dropdown";
 import styled from "styled-components";
-import Grid from '@material-ui/core/Grid';
 
 
 const Container = styled.div`
-    display: flex;/* 
-    justify-content: center;
-    flex-direction: column;
-    width: 80%;
-    align-items: center;
-    background-color: aliceblue; */
-    /* background-color: aliceblue; */
-    /* flex-direction: column; */
+    display: flex;
 `
 
 const LeftSection = styled.div`
     display: flex;
-    background-color: whitesmoke;
     flex: 1;
+    margin: 0 50px;
 `
 const RightSection = styled.div`
     display: flex;
-    /* background-color: aqua; */
     flex: 2;
     flex-direction: column;
     width: 500px;
     align-items: center;
-
-    .league-dropdown{
-    }
-
-    border-right: 100px;
+    margin: 0 100px;
 `
 
+const DropdownContainer = styled.div`
+    width: 500px;
+    margin-bottom: 50px;
+`
+
+
 const StyledPlayerList = styled.div`
-    /* display: flex;
-    flex-direction: row; */
-    list-style-type: none;
 
 
     img{
@@ -62,17 +50,18 @@ const StyledPlayerList = styled.div`
         border-collapse: collapse;
         width: 100%;  
         table-layout: fixed;
+        font-size: smaller;
     }
 
     th{
       background-color: rgb(153, 255, 153,0.2) ;
       text-align: center;
+      border: 1px solid #ddd;
     }
     td{
-        text-align: left;
+        text-align: center;
         border: 1px solid #ddd;
         padding: 4px;
-        background-color:cornsilk;
     }
 
 `
@@ -137,16 +126,17 @@ function Top20Scorers() {
 
     return (
         <Container>
-            {/* <h1>Top scoreres</h1> */}
             {/* <Dropdown placeholder={'Choose your favorite team'} dataSet={team_array} dropdownId="TEAMS" uid={props.user.uid} favorite={fav_team} /> */}
             <LeftSection>
-                {/* <h1>This is left</h1> */}
                 <Top20List />
 
             </LeftSection>
 
             <RightSection>
-                <Dropdown placeholder={'Choose a league'} dataSet={leagues_arr} className="league-dropdown" />
+                <DropdownContainer>
+                    <Dropdown placeholder={'Choose a league'} dataSet={leagues_arr} />
+                </DropdownContainer>
+
                 <Bar
                     data={{
                         labels: player_name_arr,
@@ -228,33 +218,32 @@ const Top20List = () => {
     return (
         <StyledPlayerList>
             <table>
-
-                <tr>
-                    <th>Rank</th>
-                    {/* <th>Name</th>
-                    <th>Player</th>
-                    <th>Team name</th>
-                    <th>Team logo</th>
-                    <th>Position</th> */}
-                </tr>
-                {TOP_SCORERS.map((item, index) => (
-
-
-
+                <thead>
                     <tr>
-                        <li>
+                        <th>Rank</th>
+                        <th>Name</th>
+                        <th>Player</th>
+                        <th>Team</th>
+                        <th>Team logo</th>
+                        <th>Position</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {TOP_SCORERS.map((item, index) => (
+
+
+                        <tr key={index}>
                             <td>{index + 1}</td>
                             <td>{item.player.name}</td>
                             <td><img src={item.player.photo} alt="player photo" /></td>
                             <td>{item.statistics[0].team.name}</td>
                             <td><img src={item.statistics[0].team.logo} alt="team logo" /></td>
                             <td>{item.statistics[0].games.position}</td>
-                        </li>
-                    </tr>
+                        </tr>
 
 
-
-                ))}
+                    ))}
+                </tbody>
             </table>
         </StyledPlayerList>
     );
