@@ -6,11 +6,12 @@ import { requestOptions, SEASON_DATA } from "../../data.js";
 import { getTeamStats } from "../API/functions.js";
 import { PieChart } from "../Charts";
 
+//change the props to only recieve team id
 export const TeamPage = ({ team }) => {
   //export const TeamPage = ({ match }) => {
   const [standingData, setStandingData] = useState();
   const [pieData, setPieData] = useState();
-
+  //Create another fetch() to get the team data using http://api.football-data.org/v2/teams/{ID from props}
   useEffect(() => {
     fetch(
       "http://api.football-data.org/v2/competitions/2001/standings",
@@ -21,6 +22,7 @@ export const TeamPage = ({ team }) => {
         setStandingData(getTeamStats(json, team.id));
       });
   }, []);
+  //use fetched data to render squad, name and logo of team
   return (
     <article>
       <figure>
