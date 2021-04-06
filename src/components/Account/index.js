@@ -7,7 +7,8 @@ import UserProfile from "../UserProfile";
 
 import * as ROUTES from "../../constants/routes";
 import { ChangeButton } from "../StyledCom";
-
+/* import Top20Scorers from "../Top20Scorers";
+ */
 const AccountPage = () => (
   <AuthUserContext.Consumer>
     {(authUser) => (

@@ -7,7 +7,8 @@ import styled from "styled-components";
 import { LineChart, PieChart, Test, LineChartNew } from "../Charts";
 import { HorizontalBar } from "react-chartjs-2";
 import { SEASON_DATA, CL_MATCH_DATA } from "../../data";
-
+/* import Top20Scorers from "../Top20Scorers";
+ */
 import {
   Background,
   ChartContainer,
