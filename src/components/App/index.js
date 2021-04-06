@@ -28,14 +28,22 @@ import { getMatchStats, buildAllMatchStats } from "../../functions.js";
 import * as ROUTES from "../../constants/routes";
 import ChangeEmail from "../ChangeEmail";
 import ChangePassword from "../ChangePassword";
-
+import ChangeTheme from '../ChangeTheme';
 
 const Container = styled.div`
-  margin: 5px auto 5px auto;
+
 `;
 
 
-export function Theme() {
+
+
+function App() {
+  const [scorersData, setScorersData] = useState(SCORERS_DATA.scorers);
+  const [teamsData, setTeamsData] = useState(CL_TEAMS_DATA.teams);
+  const [teamData, setTeamData] = useState(TEAM_DATA);
+  const [matchesData, setMatchesData] = useState(
+    buildAllMatchStats(CL_MATCH_DATA)
+  );
   const {theme, themeLoaded, getFonts} = useTheme();
   const [selectedTheme, setSelectedTheme] = useState(theme);
   const [showDialog, setShowDialog] = useState(false);
@@ -63,60 +71,15 @@ export function Theme() {
     setNewTheme(newTheme);
   }
 
+
   return (
     <>
     {
       themeLoaded && <ThemeProvider theme={ selectedTheme }>
         <GlobalStyles/>
         <Container style={{fontFamily: selectedTheme.font}}>
-          <h1>Theming System</h1>
-          <p>
-            Hey, There! It's great when the control is with you. The theming system
-            helps you in building a theme of your choice and apply it to test live. Why
-            wait? Just give it a try.
-          </p>
-          <button className="btn" onClick={ manageDialog }>Create a Theme</button>
-          <Dialog 
-            header="Create a Theme"
-            body={ <CreateThemeContent create={ createTheme }/> }
-            open={ showDialog } 
-            callback = { manageDialog }/>
-          <ThemeSelector setter={ setSelectedTheme } newTheme={ newTheme }/>
-        </Container>
-      </ThemeProvider>
-    }
-    </>
-  );
-}
 
-function App() {
-  const [scorersData, setScorersData] = useState(SCORERS_DATA.scorers);
-  const [teamsData, setTeamsData] = useState(CL_TEAMS_DATA.teams);
-  const [teamData, setTeamData] = useState(TEAM_DATA);
-  const [matchesData, setMatchesData] = useState(
-    buildAllMatchStats(CL_MATCH_DATA)
-  );
-  const { theme, themeLoaded, getFonts } = useTheme();
-  const [selectedTheme, setSelectedTheme] = useState(theme);
-
-  useEffect(() => {
-    setSelectedTheme(theme);
-  }, [themeLoaded]);
-
-  useEffect(() => {
-    WebFont.load({
-      google: {
-        families: getFonts(),
-      },
-    });
-  });
-
-  return (
     <Router>
-      <ThemeProvider theme={ selectedTheme }>
-                <GlobalStyles />
-        <Container style={{ fontFamily: selectedTheme.font }}>
-        <ThemeSelector setter={ setSelectedTheme } />
           <Navigation />
           <Switch>
             <Route exact path={ROUTES.LANDING}>
@@ -151,13 +114,18 @@ function App() {
             <Route exact path={ROUTES.CHANGE_PASSWORD}>
               <ChangePassword />
             </Route>
+            <Route exact path={ROUTES.CHANGE_THEME}>
+              <ChangeTheme />
+            </Route>
             <Route>
               <TeamPage team={teamData} />
             </Route>
           </Switch>
-        </Container>
-      </ThemeProvider>
     </Router>
+    </Container>
+    </ThemeProvider>
+    }
+    </>
   );
 };
 export default withAuthentication(App);
@@ -224,10 +192,6 @@ function App() {
 
   return (
     <Router>
-      <ThemeProvider theme={ selectedTheme }>
-                <GlobalStyles />
-        <Container style={{ fontFamily: selectedTheme.font }}>
-        <ThemeSelector setter={ setSelectedTheme } />
           <Navigation />
           <Switch>
             <Route exact path={ROUTES.LANDING}>
@@ -266,8 +230,6 @@ function App() {
               <TeamPage team={teamData} />
             </Route>
           </Switch>
-        </Container>
-      </ThemeProvider>
     </Router>
   );
 };
