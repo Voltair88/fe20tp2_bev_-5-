@@ -18,7 +18,6 @@ import {
   CL_MATCH_DATA,
   SEASON_DATA,
 } from "../../data.js";
-import { getMatchStats, buildAllMatchStats } from "../../functions.js";
 
 import * as ROUTES from "../../constants/routes";
 import ChangeEmail from "../ChangeEmail";
@@ -28,10 +27,9 @@ const App = () => {
   const [scorersData, setScorersData] = useState(SCORERS_DATA.scorers);
   const [teamsData, setTeamsData] = useState(CL_TEAMS_DATA.teams);
   const [teamData, setTeamData] = useState(TEAM_DATA);
-  const [matchesData, setMatchesData] = useState(
-    buildAllMatchStats(CL_MATCH_DATA)
-  );
-  console.log(teamsData.find(team => team.id === 4))
+  const [matchesData, setMatchesData] = useState(CL_MATCH_DATA);
+
+  console.log(teamsData.find((team) => team.id === 4));
   return (
     <Router>
       <Navigation />
