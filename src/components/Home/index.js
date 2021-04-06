@@ -2,7 +2,7 @@ import { AuthUserContext, withAuthorization } from "../Session";
 import React, { Component, useEffect } from "react";
 import { withFirebase } from "../Firebase";
 import Player from "../Player";
-import { TeamItem } from "../Team";
+import { TeamList } from "../Team";
 import MatchFeed from "../MatchFeed";
 import styled from "styled-components";
 import { LineChart, PieChart, Test, LineChartNew } from "../Charts";
@@ -18,27 +18,6 @@ import {
   Content,
 } from "../StyledCom";
 
-const StyledList = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  max-height: 100%;
-  max-width: 80%;
-  span {
-    text-align: center;
-    vertical-align: middle;
-    box-sizing: border-box;
-    flex-grow: 1;
-    width: 33.33%;
-    padding: 0.05em 0.5em;
-    overflow: hidden; // Or flex might break
-    list-style: none;
-    img {
-      width: 100%;
-      height: auto;
-    }
-  }
-`;
-
 const HomePage = ({ teams, scorers, matches }) => {
   /* console.log(matches) */
   return (
@@ -51,21 +30,11 @@ const HomePage = ({ teams, scorers, matches }) => {
             {/* <BarChart scorers={scorers} /> */}
             <LineChart data={buildAllMatchStats(matches)} />
             <MatchFeed matches={matches.matches} />
-            {/* <List arr={teams} /> */}
+            <TeamList arr={teams} />
           </Content>
         </HomeMain>
       </Blur>
     </Background>
-  );
-};
-
-const List = ({ arr }) => {
-  return (
-    <StyledList>
-      {arr.map((item) => (
-        <TeamItem key={item.id} team={item} />
-      ))}
-    </StyledList>
   );
 };
 

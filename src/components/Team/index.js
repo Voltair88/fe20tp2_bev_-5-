@@ -5,6 +5,28 @@ import { Link } from "react-router-dom";
 import { requestOptions, SEASON_DATA } from "../../data.js";
 import { getTeamStats } from "../API/functions.js";
 import { PieChart } from "../Charts";
+import styled from "styled-components";
+
+const StyledTeamList = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 100%;
+  max-width: 80%;
+  span {
+    text-align: center;
+    vertical-align: middle;
+    box-sizing: border-box;
+    flex-grow: 1;
+    width: 33.33%;
+    padding: 0.05em 0.5em;
+    overflow: hidden; // Or flex might break
+    list-style: none;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+`;
 
 //change the props to only recieve team id
 export const TeamPage = ({ team }) => {
@@ -75,5 +97,15 @@ export const TeamItem = ({ team }) => {
         <Link to={`${ROUTES.TEAM}/${team.id}`}>Details</Link>
       </span>
     </>
+  );
+};
+
+export const TeamList = ({ arr }) => {
+  return (
+    <StyledTeamList>
+      {arr.map((item) => (
+        <TeamItem key={item.id} team={item} />
+      ))}
+    </StyledTeamList>
   );
 };
