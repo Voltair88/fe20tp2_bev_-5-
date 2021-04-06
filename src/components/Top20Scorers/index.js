@@ -6,6 +6,7 @@ import { Pie, Line, Bar } from "react-chartjs-2";
 import { PieChart } from '../Charts/index.js';
 import Dropdown from "../Dropdown";
 import styled from "styled-components";
+import Grid from '@material-ui/core/Grid';
 
 
 const Container = styled.div`
@@ -39,13 +40,14 @@ const RightSection = styled.div`
 `
 
 const StyledPlayerList = styled.div`
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: row; */
     list-style-type: none;
 
+
     img{
-        width: 70px;
-        height: 70px;
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
         object-fit: cover;
         transition: 1s;
@@ -54,6 +56,23 @@ const StyledPlayerList = styled.div`
         width: 100px;
         height: 100px;
         transition: 1s;
+    }
+
+    table{
+        border-collapse: collapse;
+        width: 100%;  
+        table-layout: fixed;
+    }
+
+    th{
+      background-color: rgb(153, 255, 153,0.2) ;
+      text-align: center;
+    }
+    td{
+        text-align: left;
+        border: 1px solid #ddd;
+        padding: 4px;
+        background-color:cornsilk;
     }
 
 `
@@ -208,14 +227,35 @@ export default Top20Scorers;
 const Top20List = () => {
     return (
         <StyledPlayerList>
+            <table>
 
-            {TOP_SCORERS.map((item) => (
-                <li>{item.player.name}  <img src={item.player.photo} alt="player photo" /> {/* {item.statistics.team.name} */} <img src={item.statistics[0].team.logo} alt="team logo" />
+                <tr>
+                    <th>Rank</th>
+                    {/* <th>Name</th>
+                    <th>Player</th>
+                    <th>Team name</th>
+                    <th>Team logo</th>
+                    <th>Position</th> */}
+                </tr>
+                {TOP_SCORERS.map((item, index) => (
 
-                    {/* {item.statistics.games.position} */}
 
-                </li>
-            ))}
+
+                    <tr>
+                        <li>
+                            <td>{index + 1}</td>
+                            <td>{item.player.name}</td>
+                            <td><img src={item.player.photo} alt="player photo" /></td>
+                            <td>{item.statistics[0].team.name}</td>
+                            <td><img src={item.statistics[0].team.logo} alt="team logo" /></td>
+                            <td>{item.statistics[0].games.position}</td>
+                        </li>
+                    </tr>
+
+
+
+                ))}
+            </table>
         </StyledPlayerList>
     );
 };
