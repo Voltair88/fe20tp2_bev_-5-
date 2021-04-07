@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { TOP_SCORERS } from "../../topScorers.js";
+import { TOP_SCORERS } from "../../top20Scorers.js";
 import { ALL_LEAGUES_2020 } from "../../allLeagues2020";
 import { Bar } from "react-chartjs-2";
 import Dropdown from "../Dropdown";
