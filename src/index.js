@@ -5,10 +5,10 @@ import App from "./components/App";
 import Firebase, { FirebaseContext } from "./components/Firebase";
 
 import * as themes from './theme/schema.json';
-import { setToLS } from './utils/storage';
+import { setTols } from './utils/storage';
 
 const Index = () => {
-  setToLS('all-themes', themes.default);
+  setTols('all-themes', themes.default);
   return(
     <App />
   )

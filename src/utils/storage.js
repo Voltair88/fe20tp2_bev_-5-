@@ -1,7 +1,11 @@
 
 
-export const setToLS = (key, value) => {
+export const setTols = (key,value) => {
     window.localStorage.setItem(key, JSON.stringify(value));
+    //Update the firebase db Theme when change the Theme
+    /* props.firebase.user(props.user.uid).update({
+        theme: value
+    }); */
 }
 
 export const getFromLS = key => {
@@ -11,3 +15,4 @@ export const getFromLS = key => {
         return JSON.parse(value);
     }
 }
+

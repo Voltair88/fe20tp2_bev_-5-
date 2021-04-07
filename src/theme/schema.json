@@ -4,15 +4,15 @@
           "id": "T_001",
           "name": "Light",
           "colors": {
-              "header": "#002b24",
+              "header": "teal",
               "body": "#FFFFFF",
-              "text": "#000000",
+              "text": "black",
               "button": {
-                  "text": "#FFFFFF",
-                  "background": "#000000"
+                  "text": "teal",
+                  "background": "teal"
               },
               "link": {
-                  "text": "teal",
+                  "text": "red",
                   "opacity": 1
               }
           },
@@ -25,7 +25,7 @@
               "body": "#000000",
               "text": "#FFFFFF",
               "button": {
-                  "text": "#000000",
+                  "text": "white",
                   "background": "#FFFFFF"
               },
               "link": {

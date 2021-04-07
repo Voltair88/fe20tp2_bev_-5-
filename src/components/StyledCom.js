@@ -16,12 +16,14 @@ const Ul = styled.ul`
   justify-content: flex-end;
   align-items: center;
   list-style: none;
-  background: rgb(32, 224, 63);
+  border-bottom: 2px solid;
+  border-color: white;
+/*   background: rgb(32, 224, 63);
   background: linear-gradient(
     0deg,
     rgba(32, 224, 63, 1) 0%,
     rgba(31, 119, 22, 1) 100%
-  );
+  ); */
   height: 100%;
   font-size: 1.2rem;
   & > li {
@@ -279,8 +281,8 @@ const ChangeButton = styled(Link)`
   padding: 0.3rem;
   text-decoration: none;
   border: 1.5px black solid;
-  color: black;
-  border-radius: 6px;
+/*   color: black;
+ */  border-radius: 6px;
 
   &:hover {
     border-color: black;
