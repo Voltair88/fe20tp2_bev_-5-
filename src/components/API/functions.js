@@ -124,13 +124,17 @@ export const getMatchStats = (data, teamID) => {
 // GROUP_A: {'FC Bayern': 5, 'Atletico': 10}
 //returns a single object corresponding to team id based on standings data
 export const getTeamStats = (data, teamId) => {
+  console.log(`data: ${data}, teamID:${teamId}`);
   let tables = data.standings
     .filter((item) => item.type === "TOTAL")
     .map((item) => {
       return item.table;
     });
+
   let mergedTables = [].concat.apply([], tables);
-  let idTeam = mergedTables.find((item) => item.team.id === teamId);
+
+  let idTeam = mergedTables.find((item) => item.team.id === Number(teamId));
+  //console.log(idTeam);
   return idTeam;
 };
 

@@ -29,15 +29,11 @@ const App = () => {
   const [teamData, setTeamData] = useState(TEAM_DATA);
   const [matchesData, setMatchesData] = useState(CL_MATCH_DATA);
 
-  console.log(teamsData.find((team) => team.id === 4));
   return (
     <Router>
       <Navigation />
 
       <Switch>
-        <Route exact path={ROUTES.LANDING}>
-          <LandingPage />
-        </Route>
         <Route path={ROUTES.SIGN_UP}>
           <SignUpPage />
         </Route>
@@ -45,7 +41,6 @@ const App = () => {
           <SignInPage />
         </Route>
         <Route path={ROUTES.PASSWORD_FORGET}>
-          §
           <PasswordForgetPage />
         </Route>
         <Route path={ROUTES.HOME}>
@@ -61,26 +56,22 @@ const App = () => {
         <Route path={ROUTES.ADMIN}>
           <AdminPage />
         </Route>
-        <Route exact path={ROUTES.CHANGE_EMAIL}>
+        <Route path={ROUTES.CHANGE_EMAIL}>
           <ChangeEmail />
         </Route>
-        <Route exact path={ROUTES.CHANGE_PASSWORD}>
+        <Route path={ROUTES.CHANGE_PASSWORD}>
           <ChangePassword />
         </Route>
-        {/* <Route exact path={ROUTES.TEAM_DETAIL}>
-          <NewTeamPage />
-        </Route> */}
-        <Route>
+        <Route path={ROUTES.TEAM_DETAIL}>
           <TeamPage team={teamData} />
         </Route>
+        <Route path={ROUTES.LANDING}>
+          <LandingPage />
+        </Route>
+        {/* <Route>
+          <TeamPage team={teamData.id} />
+        </Route> */}
       </Switch>
-      {/*     <Route exact path={ROUTES.LANDING} component={LandingPage} />
-    <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
-    <Route path={ROUTES.SIGN_IN} component={SignInPage} />
-    <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} />
-    <Route path={ROUTES.HOME} component={HomePage} />
-    <Route path={ROUTES.ACCOUNT} component={AccountPage} />
-    <Route path={ROUTES.ADMIN} component={AdminPage} /> */}
     </Router>
   );
 };
