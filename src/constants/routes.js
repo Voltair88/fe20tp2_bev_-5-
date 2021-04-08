@@ -7,6 +7,7 @@ export const ADMIN = "/admin";
 export const ADMIN_DETAILS = "/admin/:id";
 export const PASSWORD_FORGET = "/pw-forget";
 export const TEAM = "/team";
+export const TEAM_DETAIL = "/team/:id"
 export const PLAYER = "/player";
 export const MATCH = "/match";
 export const LEAGUE = "/league";

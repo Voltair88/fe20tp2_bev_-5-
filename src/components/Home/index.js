@@ -2,11 +2,14 @@ import { AuthUserContext, withAuthorization } from "../Session";
 import React, { Component, useEffect } from "react";
 import { withFirebase } from "../Firebase";
 import Player from "../Player";
-import { TeamItem } from "../Team";
+import { TeamList } from "../Team";
+import MatchFeed from "../MatchFeed";
 import styled from "styled-components";
 import { LineChart, PieChart, Test, LineChartNew } from "../Charts";
 import { HorizontalBar } from "react-chartjs-2";
+import { getMatchStats, buildAllMatchStats } from "../API/functions.js";
 import { SEASON_DATA, CL_MATCH_DATA } from "../../data";
+import Top20Scorers from "../Top20Scorers";
 
 import {
   Background,
@@ -15,28 +18,6 @@ import {
   HomeMain,
   Content,
 } from "../StyledCom";
-
-const StyledList = styled.div`
-  list-style-type: none;
-  display: flex;
-  flex-wrap: wrap;
-  max-height: 100%;
-  max-width: 80%;
-  span {
-    text-align: center;
-    vertical-align: middle;
-    box-sizing: border-box;
-    flex-grow: 1;
-    width: 33.33%;
-    padding: 0.05em 0.5em;
-    overflow: hidden; // Or flex might break
-    list-style: none;
-    img {
-      width: 100%;
-      height: auto;
-    }
-  }
-`;
 
 const HomePage = ({ teams, scorers, matches }) => {
   /* console.log(matches) */
@@ -48,22 +29,13 @@ const HomePage = ({ teams, scorers, matches }) => {
             <h1>Home</h1>
             <p>The Home Page is accessible by every signed in user.</p>
             {/* <BarChart scorers={scorers} /> */}
-            <LineChart data={matches} />
-            <List arr={teams} />
+            <LineChart data={buildAllMatchStats(matches)} />
+            <MatchFeed matches={matches.matches} />
+            <TeamList arr={teams} />
           </Content>
         </HomeMain>
       </Blur>
     </Background>
-  );
-};
-
-const List = ({ arr }) => {
-  return (
-    <StyledList>
-      {arr.map((item) => (
-        <TeamItem key={item.id} team={item} />
-      ))}
-    </StyledList>
   );
 };
 
