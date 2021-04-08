@@ -124,7 +124,7 @@ export const getMatchStats = (data, teamID) => {
 // GROUP_A: {'FC Bayern': 5, 'Atletico': 10}
 //returns a single object corresponding to team id based on standings data
 export const getTeamStats = (data, teamId) => {
-  console.log(`data: ${data}, teamID:${teamId}`);
+  //console.log(`data: ${data}, teamID:${teamId}`);
   let tables = data.standings
     .filter((item) => item.type === "TOTAL")
     .map((item) => {

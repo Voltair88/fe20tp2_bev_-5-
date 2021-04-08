@@ -36,7 +36,6 @@ export const TeamPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   //Create another fetch() to get the team data using http://api.football-data.org/v2/teams/{ID from props}
   let { id } = useParams();
-  console.log(id);
   useEffect(() => {
     fetch(`http://api.football-data.org/v2/teams/${id}`, requestOptions)
       .then((response) => response.json())
@@ -47,8 +46,8 @@ export const TeamPage = () => {
           requestOptions
         )
           .then((response) => response.json())
-          .then((json) => {
-            setStandingData(getTeamStats(json, id));
+          .then((data) => {
+            setStandingData(getTeamStats(data, id));
           });
       });
   }, []);
@@ -59,10 +58,11 @@ export const TeamPage = () => {
 };
 
 const TeamDetail = (team, standings) => {
-  console.log(team);
+  console.log(standings);
+  //console.log(standings);
   return (
     <article>
-      <figure>
+      {/*   <figure>
         <img src={team.crestUrl} alt="team crest" />
       </figure>
       <h3>{team.name}</h3>
@@ -96,7 +96,7 @@ const TeamDetail = (team, standings) => {
               <Player player={item} />
             </li>
           ))}
-      </div>
+      </div> */}
     </article>
   );
 };
