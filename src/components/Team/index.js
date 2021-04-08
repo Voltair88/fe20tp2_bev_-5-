@@ -37,7 +37,7 @@ export const TeamPage = () => {
   //Create another fetch() to get the team data using http://api.football-data.org/v2/teams/{ID from props}
   let { id } = useParams();
   useEffect(() => {
-    fetch(`http://api.football-data.org/v2/teams/${id}`, requestOptions)
+    fetch(`http://api.football-data.org/v2/teams/${Number(id)}`, requestOptions)
       .then((response) => response.json())
       .then((json) => {
         setTeam(json);
@@ -58,29 +58,29 @@ export const TeamPage = () => {
 };
 
 const TeamDetail = (team, standings) => {
+  console.log(team);
   console.log(standings);
-  //console.log(standings);
   return (
     <article>
-      {/*   <figure>
-        <img src={team.crestUrl} alt="team crest" />
+      <figure>
+        <img src={team.team.crestUrl} alt="team crest" />
       </figure>
-      <h3>{team.name}</h3>
+      <h3>{team.team.name}</h3>
       <div>
         <h4>Season Performance</h4>
         <PieChart
           data={
-            standings &&
-            (({ won, draw, lost }) => ({ won, draw, lost }))(standings)
+            team.standings &&
+            (({ won, draw, lost }) => ({ won, draw, lost }))(team.standings)
           }
         >
           Wins/Losses
         </PieChart>
         <PieChart
           data={
-            standings &&
+            team.standings &&
             (({ goalsFor, goalsAgainst }) => ({ goalsFor, goalsAgainst }))(
-              standings
+              team.standings
             )
           }
         >
@@ -89,14 +89,14 @@ const TeamDetail = (team, standings) => {
       </div>
       <div>
         <h4>Players</h4>
-        {team.squad
+        {team.team.squad
           .filter((staff) => staff.role === "PLAYER")
           .map((item) => (
             <li key={item.id}>
               <Player player={item} />
             </li>
           ))}
-      </div> */}
+      </div>
     </article>
   );
 };

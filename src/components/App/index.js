@@ -63,7 +63,7 @@ const App = () => {
           <ChangePassword />
         </Route>
         <Route path={ROUTES.TEAM_DETAIL}>
-          <TeamPage team={teamData} />
+          <TeamPage />
         </Route>
         <Route path={ROUTES.LANDING}>
           <LandingPage />
