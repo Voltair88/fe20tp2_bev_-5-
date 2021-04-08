@@ -35,8 +35,10 @@ export const TeamPage = () => {
   const [standingData, setStandingData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   //Create another fetch() to get the team data using http://api.football-data.org/v2/teams/{ID from props}
+  //gets id from route url
   let { id } = useParams();
   useEffect(() => {
+    //uses route to create a function call for a specific team.
     fetch(`http://api.football-data.org/v2/teams/${Number(id)}`, requestOptions)
       .then((response) => response.json())
       .then((json) => {
