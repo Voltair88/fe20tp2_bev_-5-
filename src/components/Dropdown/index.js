@@ -39,6 +39,8 @@ function Dropdown(props) {
                 fav_player_id: selectedOption.value,
                 fav_player_name: selectedOption.label,
             }) ? handleSnackbar("Successfully saved the player..!", "success") : handleSnackbar("Couldn't save the player..!", "error")
+        } else if (props.dropdownId === "TOP_20") {
+            props.onChange(selectedOption);
         }
 
     }

@@ -78,19 +78,70 @@ function Top20Scorers() {
     const [yellow_card, setYellowCard] = useState([])
     const [yellow_red_card, setRedYellowCard] = useState([])
 
+    const [leagueId, setLeagueId] = useState([39]);  //Set default id to 39 (Premier League)
+    const [topScorersArr, setTopScorersArr] = useState([]);
+
+    const eventhandler = (selectedLeague) => {
+        console.log(selectedLeague.value)
+        if (!!selectedLeague) {
+            setLeagueId(selectedLeague.value)
+        }
+    }
+
+
+
+
+
     useEffect(() => {
-        console.log(TOP_SCORERS)
 
 
-        if (TOP_SCORERS.length !== 0) {
 
-            const players_arr = TOP_SCORERS.map((item) => item.player.name);
-            const goals_arr = TOP_SCORERS.map((item) => item.statistics[0].goals.total);
-            const shots_arr = TOP_SCORERS.map((item) => item.statistics[0].shots.total);
-            const img_arr = TOP_SCORERS.map((item) => item.player.photo);
-            const red_card = TOP_SCORERS.map((item) => item.statistics[0].cards.red);
-            const yellow_card = TOP_SCORERS.map((item) => item.statistics[0].cards.yellow);
-            const yellow_red_card = TOP_SCORERS.map((item) => item.statistics[0].cards.yellowred);
+
+        /* console.log(TOP_SCORERS) */
+        //Ex. leagues that have Top 20 scoreres
+        //UEFA Europa League  : 3
+        console.log(leagueId)
+        console.log("Inside useeffect")
+        //Fetch top 20 players from API when user select a league from dropdown
+        if (leagueId && leagueId !== 39) {   //Check leagueId has a value and it is not the default value
+            console.log("Inside fetch")
+
+            console.log(leagueId)
+            fetch(`https://api-football-v1.p.rapidapi.com/v3/players/topscorers?league=${leagueId}&season=2020`, {
+                "method": "GET",
+                "headers": {
+                    "x-rapidapi-key": "d9ad56e7d3mshf09eb906ca38e7ap162eacjsne5fdd08c2007",
+                    "x-rapidapi-host": "api-football-v1.p.rapidapi.com"
+                }
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    if (data.response.length > 0) {
+                        setTopScorersArr(data.response);  //Store fetched data in the state
+                        console.log(data.response)
+                    } else {
+                        setTopScorersArr(TOP_SCORERS); //If a league don't have Top 20 scorers,set the top20 to default league 
+                        console.log("Sorry, Not found top 20 for this league");
+                    }
+                })
+                .catch(err => {
+                    console.error(err);
+                });
+
+        }
+
+
+        if (topScorersArr.length !== 0 && topScorersArr !== undefined) {
+
+            /* console.log(topScorersArr) */
+
+            const players_arr = topScorersArr.map((item) => item.player.name);
+            const goals_arr = topScorersArr.map((item) => item.statistics[0].goals.total);
+            const shots_arr = topScorersArr.map((item) => item.statistics[0].shots.total);
+            const img_arr = topScorersArr.map((item) => item.player.photo);
+            const red_card = topScorersArr.map((item) => item.statistics[0].cards.red);
+            const yellow_card = topScorersArr.map((item) => item.statistics[0].cards.yellow);
+            const yellow_red_card = topScorersArr.map((item) => item.statistics[0].cards.yellowred);
 
             /* console.log(TOP_SCORERS) */
             setPlayersArr(players_arr)
@@ -121,22 +172,20 @@ function Top20Scorers() {
         }
         setLeaguesArr(legueArr);
 
-    }, []);
+    }, [leagueId]);
 
 
     return (
         <Container>
             {/* <Dropdown placeholder={'Choose your favorite team'} dataSet={team_array} dropdownId="TEAMS" uid={props.user.uid} favorite={fav_team} /> */}
             <LeftSection>
-                <Top20List />
-
+                <Top20List topScorersArr={topScorersArr} />
             </LeftSection>
 
             <RightSection>
                 <DropdownContainer>
-                    <Dropdown placeholder={'Choose a league'} dataSet={leagues_arr} />
+                    <Dropdown placeholder={'Choose a league'} dataSet={leagues_arr} dropdownId="TOP_20" onChange={eventhandler} />
                 </DropdownContainer>
-
                 <Bar
                     data={{
                         labels: player_name_arr,
@@ -214,7 +263,7 @@ function Top20Scorers() {
 
 export default Top20Scorers;
 
-const Top20List = () => {
+const Top20List = (props) => {
     return (
         <StyledPlayerList>
             <table>
@@ -229,8 +278,12 @@ const Top20List = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {TOP_SCORERS.map((item, index) => (
+                    {console.log(props.topScorersArr)}
+                    {/* {console.log(TOP_SCORERS)} */}
 
+                    {/* {console.log("Inside map")} */}
+
+                    {props.topScorersArr.map((item, index) => (
 
                         <tr key={index}>
                             <td>{index + 1}</td>

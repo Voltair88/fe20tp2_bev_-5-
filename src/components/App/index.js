@@ -29,7 +29,7 @@ const App = () => {
   const [teamData, setTeamData] = useState(TEAM_DATA);
   const [matchesData, setMatchesData] = useState(CL_MATCH_DATA);
 
-  console.log(teamsData.find((team) => team.id === 4));
+  /* console.log(teamsData.find((team) => team.id === 4)); */
   return (
     <Router>
       <Navigation />
