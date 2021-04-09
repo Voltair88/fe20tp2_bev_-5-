@@ -1,7 +1,7 @@
 import app from "firebase/app";
 import "firebase/auth";
 import "firebase/database";
-import "firebase/storage"
+import "firebase/storage";
 
 const config = {
   apiKey: "AIzaSyBBuiXCzsZar09GIMVJhgtbXz-wQrofELk",
@@ -21,11 +21,7 @@ class Firebase {
     this.auth = app.auth();
     this.db = app.database();
     this.st = app.storage();
-
   }
-
-
-
 
   //*** Auth API ***/
   doCreateUserWithEmailAndPassword = (email, password) =>
@@ -60,17 +56,12 @@ class Firebase {
               ...dbUser,
             };
 
-
             next(authUser);
           });
-
       } else {
         fallback();
       }
     });
-
-
-
 
   // *** User API ***
   user = (uid) => this.db.ref(`users/${uid}`);
@@ -79,7 +70,6 @@ class Firebase {
   // *** Message API ***
   message = (uid) => this.db.ref(`messages/${uid}`);
   messages = () => this.db.ref("messages");
-
 
   // *** Profile image API ****
   profileImage = (uid) => this.st.ref(`users/${uid}/profileImage`);

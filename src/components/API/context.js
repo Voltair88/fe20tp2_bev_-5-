@@ -5,6 +5,6 @@ import { createContext } from "react";
 //set app league by getting it from user
 //default league id is 2001
 
-const LeagueContext = createContext(null);
+export const LeagueContext = createContext(null);
 
-const MatchesContext = createContext(null);
+export const MatchesContext = createContext(null);
