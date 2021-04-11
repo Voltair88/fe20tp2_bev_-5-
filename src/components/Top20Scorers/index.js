@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { TOP_SCORERS } from "../../top20Scorers.js";
 import { ALL_LEAGUES_2020 } from "../../allLeagues2020";
 import { Bar } from "react-chartjs-2";
 import Dropdown from "../Dropdown";
 import styled from "styled-components";
+import { AuthUserContext, withAuthentication } from "../Session";
 
 
 const Container = styled.div`
@@ -66,7 +67,12 @@ const StyledPlayerList = styled.div`
 
 `
 
-function Top20Scorers() {
+function Top20Scorers(props) {
+
+    const user = React.useContext(AuthUserContext);
+
+    const DEFAULT_LEAGUE = 39;
+
 
     const [player_name_arr, setPlayersArr] = useState([]);
     const [goals_arr, setGoalsArr] = useState([])
@@ -78,8 +84,12 @@ function Top20Scorers() {
     const [yellow_card, setYellowCard] = useState([])
     const [yellow_red_card, setRedYellowCard] = useState([])
 
-    const [leagueId, setLeagueId] = useState([39]);  //Set default id to 39 (Premier League)
+    const [leagueId, setLeagueId] = useState([DEFAULT_LEAGUE]);  //Set default id to 39 (Premier League)
     const [topScorersArr, setTopScorersArr] = useState([]);
+
+    const [fav_league, setFav_league] = useState(null)
+
+
 
     const eventhandler = (selectedLeague) => {
         console.log(selectedLeague.value)
@@ -95,6 +105,21 @@ function Top20Scorers() {
     useEffect(() => {
 
 
+        //Read data from firebase and bind data to league dropdown
+        props.firebase.user(user.uid).get().then(function (snapshot) {
+            if (snapshot.exists()) {
+                setFav_league(snapshot.val().fav_league_name);
+                console.log("Inside get" + snapshot.val().fav_league_name)
+            }
+            else {
+                /* handleSnackbar("No data available", "error"); */
+                console.log("no data")
+            }
+            console.log(fav_league)
+
+        }).catch(function (error) {
+            /* handleSnackbar("Something went wrong, try again", "error"); */
+        });
 
 
         /* console.log(TOP_SCORERS) */
@@ -103,11 +128,11 @@ function Top20Scorers() {
         console.log(leagueId)
         console.log("Inside useeffect")
         //Fetch top 20 players from API when user select a league from dropdown
-        if (leagueId && leagueId !== 39) {   //Check leagueId has a value and it is not the default value
+        if (leagueId && leagueId !== DEFAULT_LEAGUE) {   //Check leagueId has a value and it is not the default value
             console.log("Inside fetch")
 
             console.log(leagueId)
-            /* fetch(`https://api-football-v1.p.rapidapi.com/v3/players/topscorers?league=${leagueId}&season=2020`, {
+            fetch(`https://api-football-v1.p.rapidapi.com/v3/players/topscorers?league=${leagueId}&season=2020`, {
                 "method": "GET",
                 "headers": {
                     "x-rapidapi-key": "d9ad56e7d3mshf09eb906ca38e7ap162eacjsne5fdd08c2007",
@@ -126,7 +151,7 @@ function Top20Scorers() {
                 })
                 .catch(err => {
                     console.error(err);
-                }); */
+                });
 
         }
 
@@ -177,14 +202,13 @@ function Top20Scorers() {
 
     return (
         <Container>
-            {/* <Dropdown placeholder={'Choose your favorite team'} dataSet={team_array} dropdownId="TEAMS" uid={props.user.uid} favorite={fav_team} /> */}
             <LeftSection>
                 <Top20List topScorersArr={topScorersArr} />
             </LeftSection>
 
             <RightSection>
                 <DropdownContainer>
-                    <Dropdown placeholder={'Choose a league'} dataSet={leagues_arr} dropdownId="TOP_20" onChange={eventhandler} />
+                    <Dropdown placeholder={'Choose a league'} dataSet={leagues_arr} dropdownId="TOP_20" onChange={eventhandler} favorite={fav_league} />
                 </DropdownContainer>
 
                 <Chart player_name_arr={player_name_arr} goals_arr={goals_arr} shots_arr={shots_arr} red_card={red_card} yellow_card={yellow_card}
@@ -196,7 +220,7 @@ function Top20Scorers() {
     )
 }
 
-export default Top20Scorers;
+export default withAuthentication(Top20Scorers);
 
 const Top20List = (props) => {
     return (

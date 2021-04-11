@@ -43,6 +43,13 @@ const NavLink = styled(Link)`
     color: black;
     transition: 0.3s ease-in-out;
   }
+
+  img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
 `;
 //Styling for Landingpage
 
