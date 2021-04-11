@@ -32,6 +32,9 @@ function Dropdown(props) {
 
         /* Update db fields when onChanged dropdown */
         if (props.dropdownId === "TEAMS") {
+            if (props.onChange) {
+                props.onChange(selectedOption, 'TEAMS');   //Call back function to parent that send state
+            }
             props.firebase.user(user.uid).update({
                 fav_team_id: selectedOption.value,
                 fav_team_name: selectedOption.label
@@ -50,10 +53,16 @@ function Dropdown(props) {
             props.firebase.user(user.uid).update({
                 fav_league_id: selectedOption.value,
                 fav_league_name: selectedOption.label,
-            }) ? handleSnackbar("Successfully saved the favorite league..!", "success") : handleSnackbar("Couldn't save the player..!", "error")
+            }) ? handleSnackbar("Successfully saved the favorite league..!", "success") : handleSnackbar("Couldn't save the league..!", "error")
 
         } else if (props.dropdownId === "COMPETITION") {
-
+            if (props.onChange) {
+                props.onChange(selectedOption, 'COMPETITION');   //Call back function to parent that send state
+            }
+            props.firebase.user(user.uid).update({
+                fav_competition_id: selectedOption.value,
+                fav_competition_name: selectedOption.label,
+            }) ? handleSnackbar("Successfully saved the favorite competition..!", "success") : handleSnackbar("Couldn't save the competition..!", "error")
         }
 
     }
