@@ -7,6 +7,9 @@ import SnackbarComponent from "../SnackbarComponent";
 
 function Dropdown(props) {
 
+    const user = React.useContext(AuthUserContext);
+
+
     const [selectedOption, setSelectedOption] = useState(null);
 
     //Used to display messages in snackbar
@@ -29,18 +32,28 @@ function Dropdown(props) {
 
         /* Update db fields when onChanged dropdown */
         if (props.dropdownId === "TEAMS") {
-            props.firebase.user(props.uid).update({
+            props.firebase.user(user.uid).update({
                 fav_team_id: selectedOption.value,
                 fav_team_name: selectedOption.label
             }) ? handleSnackbar("Successfully saved the team..!", "success") : handleSnackbar("Couldn't save the team..!", "error")
 
         } else if (props.dropdownId === "PLAYERS") {
-            props.firebase.user(props.uid).update({
+            props.firebase.user(user.uid).update({
                 fav_player_id: selectedOption.value,
                 fav_player_name: selectedOption.label,
             }) ? handleSnackbar("Successfully saved the player..!", "success") : handleSnackbar("Couldn't save the player..!", "error")
+
         } else if (props.dropdownId === "TOP_20") {
-            props.onChange(selectedOption);
+            if (props.onChange) {
+                props.onChange(selectedOption);   //Call back function to parent that send state
+            }
+            props.firebase.user(user.uid).update({
+                fav_league_id: selectedOption.value,
+                fav_league_name: selectedOption.label,
+            }) ? handleSnackbar("Successfully saved the favorite league..!", "success") : handleSnackbar("Couldn't save the player..!", "error")
+
+        } else if (props.dropdownId === "COMPETITION") {
+
         }
 
     }
@@ -55,7 +68,7 @@ function Dropdown(props) {
                         defaultValue={selectedOption}
                         onChange={handleChange}
                         options={props.dataSet}
-                        placeholder={props.favorite != null ? props.favorite : ''}
+                        placeholder={props.favorite != null ? props.favorite : ''}  //Set saved value to dropdown as placeholder
                     />
                     {message != '' ?
                         <SnackbarComponent key={new Date()} severity={severity} message={message} clearSnackbar={clearSnackbar} /> : null

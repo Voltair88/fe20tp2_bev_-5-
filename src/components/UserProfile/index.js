@@ -66,10 +66,14 @@ justify-content: center;
 
 function UserProfile(props) {
 
+    const user = React.useContext(AuthUserContext);
+    console.log(user)
+
     const [image, setImage] = useState(null);
     const [uid, setUid] = useState();
     const [url, setUrl] = useState(ProfileImage);
 
+    const [fav_competition, setFav_competition] = useState(null);
     const [fav_player, setFav_player] = useState(null);
     const [fav_team, setFav_team] = useState(null);
 
@@ -97,9 +101,9 @@ function UserProfile(props) {
 
 
     useEffect(() => {
-        setUid(props.user.uid);
-        bindData(props.user.uid);
-        setUserName(props.user.username);
+        setUid(user.uid);
+        bindData(user.uid);
+        setUserName(user.username);
 
         //Read CL_TEAMS_DATA from data.js and choose only id and team name from that data and store in an array
         let teamArr = [];
@@ -189,6 +193,7 @@ function UserProfile(props) {
         props.firebase.user(uid).get().then(function (snapshot) {
             if (snapshot.exists()) {
 
+                setFav_competition(snapshot.val().fav_competition_name);
                 setFav_player(snapshot.val().fav_player_name);
                 setFav_team(snapshot.val().fav_team_name);
                 setUserName(snapshot.val().username);
@@ -207,38 +212,37 @@ function UserProfile(props) {
 
     return (
 
-        <AuthUserContext.Consumer>
-            {(authUser) => (
-                <Container>
-                    <UserComp>
-                        <ImageUpload>
-                            <label htmlFor="file-input">
-                                <img src={url} alt="user profile image" />
-                            </label>
-                            <input id="file-input" type="file" onChange={handleChange} />
-                            <br />
-                        </ImageUpload>
 
-                        <UserName>
+        <Container>
+            <UserComp>
+                <ImageUpload>
+                    <label htmlFor="file-input">
+                        <img src={url} alt="user profile image" />
+                    </label>
+                    <input id="file-input" type="file" onChange={handleChange} />
+                    <br />
+                </ImageUpload>
 
-                            <TextField id="user-input" className="username-input" type="text" value={userName} onChange={handleChangeUserName}
-                                inputProps={{ style: { textAlign: 'center', fontSize: '1.5em' } }}
-                            />
-                        </UserName>
+                <UserName>
 
-                        <Dropdown placeholder={'Choose your favorite team'} dataSet={team_array} dropdownId="TEAMS" uid={props.user.uid} favorite={fav_team} />
-                        <Dropdown placeholder={'Choose your favorite player'} dataSet={player_array} dropdownId="PLAYERS" uid={props.user.uid} favorite={fav_player} />
+                    <TextField id="user-input" className="username-input" type="text" value={userName} onChange={handleChangeUserName}
+                        inputProps={{ style: { textAlign: 'center', fontSize: '1.5em' } }}
+                    />
+                </UserName>
 
-                        {message !== '' ?
-                            <SnackbarComponent severity={severity} message={message} clearSnackbar={clearSnackbar} /> : null
-                        }
-                    </UserComp>
+                <Dropdown placeholder={'Choose your favorite competition'} /* dataSet={team_array} */ dropdownId="COMPETITION" favorite={fav_competition} />
+                <Dropdown placeholder={'Choose your favorite team'} dataSet={team_array} dropdownId="TEAMS" favorite={fav_team} />
+                <Dropdown placeholder={'Choose your favorite player'} dataSet={player_array} dropdownId="PLAYERS" favorite={fav_player} />
 
-                    {/* <PlayerChart /> */}
+                {message !== '' ?
+                    <SnackbarComponent severity={severity} message={message} clearSnackbar={clearSnackbar} /> : null
+                }
+            </UserComp>
 
-                </Container>
-            )}
-        </AuthUserContext.Consumer>
+            {/* <PlayerChart /> */}
+
+        </Container>
+
     )
 }
 

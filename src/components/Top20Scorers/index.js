@@ -107,7 +107,7 @@ function Top20Scorers() {
             console.log("Inside fetch")
 
             console.log(leagueId)
-            fetch(`https://api-football-v1.p.rapidapi.com/v3/players/topscorers?league=${leagueId}&season=2020`, {
+            /* fetch(`https://api-football-v1.p.rapidapi.com/v3/players/topscorers?league=${leagueId}&season=2020`, {
                 "method": "GET",
                 "headers": {
                     "x-rapidapi-key": "d9ad56e7d3mshf09eb906ca38e7ap162eacjsne5fdd08c2007",
@@ -126,7 +126,7 @@ function Top20Scorers() {
                 })
                 .catch(err => {
                     console.error(err);
-                });
+                }); */
 
         }
 
@@ -186,74 +186,9 @@ function Top20Scorers() {
                 <DropdownContainer>
                     <Dropdown placeholder={'Choose a league'} dataSet={leagues_arr} dropdownId="TOP_20" onChange={eventhandler} />
                 </DropdownContainer>
-                <Bar
-                    data={{
-                        labels: player_name_arr,
-                        datasets: [
-                            {
-                                label: 'Total goals',
-                                data: goals_arr,
-                                backgroundColor: '#4AB19D',
-                                borderColor: '#344E5C',
-                                barThickness: 'flex',
-                                borderWidth: 1,
-                            },
-                            {
-                                label: 'Total shots',
-                                data: shots_arr,
-                                backgroundColor: 'rgb(179, 198, 255, 0.1)',
-                                borderColor: '	rgb(179, 179, 255)',
-                                barThickness: 'flex',
-                                borderWidth: 1,
-                            },
-                            {
-                                label: "Red Cards",
-                                data: red_card,
-                                backgroundColor: '#EE4540',
-                                borderColor: 'rgb(255, 99, 132)',
-                                barThickness: 'flex',
-                                borderWidth: 1,
-                            },
-                            {
-                                label: "Yellow Cards",
-                                data: yellow_card,
-                                backgroundColor: "#ffff00",
-                                borderColor: "#EFC958",
-                                barThickness: 'flex',
-                                borderWidth: 1,
-                            },
-                            {
-                                label: "Yellow Red Cards",
-                                data: yellow_red_card,
-                                backgroundColor: "#EFC958",
-                                borderColor: "#EF3D59",
-                                barThickness: 'flex',
-                                borderWidth: 1,
-                            }
 
-
-                        ]
-
-                    }}
-                    options={{
-                        maintainAspectRatio: true,
-                        scales: {
-                            xAxes: [{
-                                stacked: true
-                            }],
-                            yAxes: [
-                                {
-                                    ticks: {
-                                        beginAtZero: true,
-                                    },
-                                    stacked: true
-                                }
-                            ]
-                        },
-
-
-
-                    }}
+                <Chart player_name_arr={player_name_arr} goals_arr={goals_arr} shots_arr={shots_arr} red_card={red_card} yellow_card={yellow_card}
+                    yellow_red_card={yellow_red_card}
                 />
             </RightSection>
 
@@ -279,9 +214,6 @@ const Top20List = (props) => {
                 </thead>
                 <tbody>
                     {console.log(props.topScorersArr)}
-                    {/* {console.log(TOP_SCORERS)} */}
-
-                    {/* {console.log("Inside map")} */}
 
                     {props.topScorersArr.map((item, index) => (
 
@@ -301,5 +233,80 @@ const Top20List = (props) => {
         </StyledPlayerList>
     );
 };
+
+const Chart = (props) => {
+    { console.log(props.player_name_arr) }
+    return (
+        <Bar
+            data={{
+                labels: props.player_name_arr,
+                datasets: [
+                    {
+                        label: 'Total goals',
+                        data: props.goals_arr,
+                        backgroundColor: '#4AB19D',
+                        borderColor: '#344E5C',
+                        barThickness: 'flex',
+                        borderWidth: 1,
+                    },
+                    {
+                        label: 'Total shots',
+                        data: props.shots_arr,
+                        backgroundColor: 'rgb(179, 198, 255, 0.1)',
+                        borderColor: '	rgb(179, 179, 255)',
+                        barThickness: 'flex',
+                        borderWidth: 1,
+                    },
+                    {
+                        label: "Red Cards",
+                        data: props.red_card,
+                        backgroundColor: '#EE4540',
+                        borderColor: 'rgb(255, 99, 132)',
+                        barThickness: 'flex',
+                        borderWidth: 1,
+                    },
+                    {
+                        label: "Yellow Cards",
+                        data: props.yellow_card,
+                        backgroundColor: "#ffff00",
+                        borderColor: "#EFC958",
+                        barThickness: 'flex',
+                        borderWidth: 1,
+                    },
+                    {
+                        label: "Yellow Red Cards",
+                        data: props.yellow_red_card,
+                        backgroundColor: "#EFC958",
+                        borderColor: "#EF3D59",
+                        barThickness: 'flex',
+                        borderWidth: 1,
+                    }
+
+
+                ]
+
+            }}
+            options={{
+                maintainAspectRatio: true,
+                scales: {
+                    xAxes: [{
+                        stacked: true
+                    }],
+                    yAxes: [
+                        {
+                            ticks: {
+                                beginAtZero: true,
+                            },
+                            stacked: true
+                        }
+                    ]
+                },
+
+
+
+            }}
+        />
+    )
+}
 
 /*  TOP_SCORERS.map((item) => item.player.name) */
