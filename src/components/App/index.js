@@ -46,6 +46,7 @@ const App = () => {
       .then((json) => setTeamsData(json));
   }, []);
 
+  /* console.log(teamsData.find((team) => team.id === 4)); */
   return (
     <Router>
       <MatchesContext.Provider value={matchesData}>
