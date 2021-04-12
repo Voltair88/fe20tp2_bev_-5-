@@ -49,6 +49,7 @@ export const TeamPage = () => {
         )
           .then((response) => response.json())
           .then((data) => {
+            console.log(data);
             setStandingData(getTeamStats(data, id));
           });
       });
