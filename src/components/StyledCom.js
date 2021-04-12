@@ -18,12 +18,6 @@ const Ul = styled.ul`
   list-style: none;
   border-bottom: 2px solid;
   border-color: white;
-/*   background: rgb(32, 224, 63);
-  background: linear-gradient(
-    0deg,
-    rgba(32, 224, 63, 1) 0%,
-    rgba(31, 119, 22, 1) 100%
-  ); */
   height: 100%;
   font-size: 1.2rem;
   & > li {
@@ -38,7 +32,6 @@ const Ul = styled.ul`
 const NavLink = styled(Link)`
   text-decoration: none;
   text-transform: uppercase;
-  color: white;
   font-weight: 500;
   font-family: "Poppins", sans-serif;
 

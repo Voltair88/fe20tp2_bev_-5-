@@ -32,7 +32,10 @@ export const GlobalStyles = createGlobalStyle`
     margin-top: 5px;
     cursor: pointer;
     background-color: #1064EA;
-    color: #FFFFFF;
+    color: white;
     font-family: ${({ theme }) => theme.font};
   }
+  Ul li {
+    color: ${({ theme }) => theme.colors.link.text};
+  }   
 `;

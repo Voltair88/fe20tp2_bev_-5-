@@ -31,6 +31,9 @@
               "link": {
                   "text": "teal",
                   "opacity": 1
+              },
+              "Ul": {
+                  "text": "teal"
               }
           },
           "font": "Roboto"
