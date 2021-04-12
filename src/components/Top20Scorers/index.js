@@ -73,33 +73,18 @@ function Top20Scorers(props) {
 
     const DEFAULT_LEAGUE = 39;
 
-
-    const [player_name_arr, setPlayersArr] = useState([]);
-    const [goals_arr, setGoalsArr] = useState([])
-    const [shots_arr, setShotsArr] = useState([])
-    const [img_arr, setImgArr] = useState([])
     const [leagues_arr, setLeaguesArr] = useState([])
-
-    const [red_card, setRedCard] = useState([])
-    const [yellow_card, setYellowCard] = useState([])
-    const [yellow_red_card, setRedYellowCard] = useState([])
 
     const [leagueId, setLeagueId] = useState([DEFAULT_LEAGUE]);  //Set default id to 39 (Premier League)
     const [topScorersArr, setTopScorersArr] = useState([]);
-
     const [fav_league, setFav_league] = useState(null)
 
 
-
     const eventhandler = (selectedLeague) => {
-        console.log(selectedLeague.value)
         if (!!selectedLeague) {
             setLeagueId(selectedLeague.value)
         }
     }
-
-
-
 
 
     useEffect(() => {
@@ -110,6 +95,13 @@ function Top20Scorers(props) {
             if (snapshot.exists()) {
                 setFav_league(snapshot.val().fav_league_name);
                 console.log("Inside get" + snapshot.val().fav_league_name)
+
+                //Read the database value for Favorite league id and if there is a saved favorite league, set it as the League Id to fetch data on load,
+                //Otherwise fetch data according to DEFAULT_LEAGUE = 39
+                if (!!snapshot.val().fav_league_id) {
+                    setLeagueId(snapshot.val().fav_league_id)
+                }
+
             }
             else {
                 /* handleSnackbar("No data available", "error"); */
@@ -128,7 +120,7 @@ function Top20Scorers(props) {
         console.log(leagueId)
         console.log("Inside useeffect")
         //Fetch top 20 players from API when user select a league from dropdown
-        if (leagueId && leagueId !== DEFAULT_LEAGUE) {   //Check leagueId has a value and it is not the default value
+        if (leagueId > -1 && leagueId !== DEFAULT_LEAGUE) {   //Check leagueId has a value and it is not the default value
             console.log("Inside fetch")
 
             console.log(leagueId)
@@ -153,30 +145,6 @@ function Top20Scorers(props) {
                     console.error(err);
                 });
 
-        }
-
-
-        if (topScorersArr.length !== 0 && topScorersArr !== undefined) {
-
-            /* console.log(topScorersArr) */
-
-            const players_arr = topScorersArr.map((item) => item.player.name);
-            const goals_arr = topScorersArr.map((item) => item.statistics[0].goals.total);
-            const shots_arr = topScorersArr.map((item) => item.statistics[0].shots.total);
-            const img_arr = topScorersArr.map((item) => item.player.photo);
-            const red_card = topScorersArr.map((item) => item.statistics[0].cards.red);
-            const yellow_card = topScorersArr.map((item) => item.statistics[0].cards.yellow);
-            const yellow_red_card = topScorersArr.map((item) => item.statistics[0].cards.yellowred);
-
-            /* console.log(TOP_SCORERS) */
-            setPlayersArr(players_arr)
-            setGoalsArr(goals_arr)
-            setShotsArr(shots_arr)
-            setImgArr(img_arr)
-
-            setRedCard(red_card)
-            setYellowCard(yellow_card)
-            setRedYellowCard(yellow_red_card)
         }
 
 
@@ -211,9 +179,7 @@ function Top20Scorers(props) {
                     <Dropdown placeholder={'Choose a league'} dataSet={leagues_arr} dropdownId="TOP_20" onChange={eventhandler} favorite={fav_league} />
                 </DropdownContainer>
 
-                <Chart player_name_arr={player_name_arr} goals_arr={goals_arr} shots_arr={shots_arr} red_card={red_card} yellow_card={yellow_card}
-                    yellow_red_card={yellow_red_card}
-                />
+                <Chart topScorersArr={topScorersArr} />
             </RightSection>
 
         </Container>
@@ -237,7 +203,6 @@ const Top20List = (props) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {console.log(props.topScorersArr)}
 
                     {props.topScorersArr.map((item, index) => (
 
@@ -259,15 +224,53 @@ const Top20List = (props) => {
 };
 
 const Chart = (props) => {
-    { console.log(props.player_name_arr) }
+    { console.log(props.topScorersArr) }
+
+    const [player_name_arr, setPlayersArr] = useState([]);
+    const [goals_arr, setGoalsArr] = useState([])
+    const [shots_arr, setShotsArr] = useState([])
+    const [img_arr, setImgArr] = useState([])
+
+    const [red_card, setRedCard] = useState([])
+    const [yellow_card, setYellowCard] = useState([])
+    const [yellow_red_card, setRedYellowCard] = useState([])
+
+    useEffect(() => {
+
+
+        if (props.topScorersArr !== undefined && props.topScorersArr.length > 0) {
+
+            console.log("Inside top chart scorers")
+            const players_arr = props.topScorersArr.map((item) => item.player.name);
+            const no_of_goals_arr = props.topScorersArr.map((item) => item.statistics[0].goals.total);
+            const no_of_shots_arr = props.topScorersArr.map((item) => item.statistics[0].shots.total);
+            const imges_arr = props.topScorersArr.map((item) => item.player.photo);
+            const no_of_red_card = props.topScorersArr.map((item) => item.statistics[0].cards.red);
+            const no_of_yellow_card = props.topScorersArr.map((item) => item.statistics[0].cards.yellow);
+            const no_of_red_yellow_card = props.topScorersArr.map((item) => item.statistics[0].cards.yellowred);
+
+
+            setPlayersArr(players_arr)
+            setGoalsArr(no_of_goals_arr)
+            setShotsArr(no_of_shots_arr)
+            setImgArr(imges_arr)
+
+            setRedCard(no_of_red_card)
+            setYellowCard(no_of_yellow_card)
+            setRedYellowCard(no_of_red_yellow_card)
+        }
+
+    }, [props.topScorersArr]);
+
+
     return (
         <Bar
             data={{
-                labels: props.player_name_arr,
+                labels: player_name_arr,
                 datasets: [
                     {
                         label: 'Total goals',
-                        data: props.goals_arr,
+                        data: goals_arr,
                         backgroundColor: '#4AB19D',
                         borderColor: '#344E5C',
                         barThickness: 'flex',
@@ -275,7 +278,7 @@ const Chart = (props) => {
                     },
                     {
                         label: 'Total shots',
-                        data: props.shots_arr,
+                        data: shots_arr,
                         backgroundColor: 'rgb(179, 198, 255, 0.1)',
                         borderColor: '	rgb(179, 179, 255)',
                         barThickness: 'flex',
@@ -283,7 +286,7 @@ const Chart = (props) => {
                     },
                     {
                         label: "Red Cards",
-                        data: props.red_card,
+                        data: red_card,
                         backgroundColor: '#EE4540',
                         borderColor: 'rgb(255, 99, 132)',
                         barThickness: 'flex',
@@ -291,7 +294,7 @@ const Chart = (props) => {
                     },
                     {
                         label: "Yellow Cards",
-                        data: props.yellow_card,
+                        data: yellow_card,
                         backgroundColor: "#ffff00",
                         borderColor: "#EFC958",
                         barThickness: 'flex',
@@ -299,7 +302,7 @@ const Chart = (props) => {
                     },
                     {
                         label: "Yellow Red Cards",
-                        data: props.yellow_red_card,
+                        data: yellow_red_card,
                         backgroundColor: "#EFC958",
                         borderColor: "#EF3D59",
                         barThickness: 'flex',

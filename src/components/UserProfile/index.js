@@ -69,7 +69,7 @@ function UserProfile(props) {
     const user = React.useContext(AuthUserContext);
 
     const [image, setImage] = useState(null);
-    const [uid, setUid] = useState();
+    const [uid, setUid] = useState(null);
     const [url, setUrl] = useState(ProfileImage);
 
     const [fav_competition, setFav_competition] = useState(null);
