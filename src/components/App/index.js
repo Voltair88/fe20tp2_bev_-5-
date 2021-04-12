@@ -3,9 +3,6 @@ import styled, { ThemeProvider } from "styled-components";
 import WebFont from 'webfontloader';
 import { GlobalStyles } from '../../theme/GlobalStyles';
 import {useTheme} from '../../theme/useTheme';
-import ThemeSelector from '../ThemeSelector';
-import Dialog from '../../Dialog';
-import CreateThemeContent from '../../CreateThemeContent';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { withAuthentication } from "../Session";
 import Navigation from "../Navigation";
@@ -45,10 +42,7 @@ function App() {
     buildAllMatchStats(CL_MATCH_DATA)
   );
   const {theme, themeLoaded, getFonts} = useTheme();
-  const [selectedTheme, setSelectedTheme] = useState(theme);
-  const [showDialog, setShowDialog] = useState(false);
-  const [newTheme, setNewTheme] = useState();
-  
+  const [selectedTheme, setSelectedTheme] = useState(theme);  
  useEffect(() => {
     WebFont.load({
       google: {
@@ -60,16 +54,6 @@ function App() {
   useEffect(() => {
     setSelectedTheme(theme);
   }, [themeLoaded]);
-
-  const manageDialog = () => {
-    setShowDialog(!showDialog);
-  }
-
-  const createTheme = newTheme => {
-    console.log(newTheme);
-    setShowDialog(false);
-    setNewTheme(newTheme);
-  }
 
 
   return (
