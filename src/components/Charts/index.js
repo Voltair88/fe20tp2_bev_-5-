@@ -12,7 +12,7 @@ export const PieChart = ({ data, children }) => {
     <div>
       <h1>Pie chart</h1>
       {children && <h5>{children}</h5>}
-      {/* <Pie
+      <Pie
         data={{
           datasets: [
             {
@@ -24,7 +24,7 @@ export const PieChart = ({ data, children }) => {
           // These labels appear in the legend and in the tooltips when hovering different arcs
           labels: labels,
         }}
-      /> */}
+      />
     </div>
   );
 };
