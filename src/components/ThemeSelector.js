@@ -4,6 +4,7 @@ import _ from "lodash"; // https://css-tricks.com/theming-and-theme-switching-wi
 import { useTheme } from "../theme/useTheme";
 import { getFromLS } from "../utils/storage";
 import { AuthUserContext, withAuthentication } from "./Session";
+import { SCHEMA } from "./Schema"
 
 const ThemedButton = styled.button`
   border: 0;
@@ -38,25 +39,29 @@ const Header = styled.h2`
 `;
 
 const ThemeSelector = (props) => {
+  const authUser = useContext(AuthUserContext);
   const themesFromStore = getFromLS("all-themes");
   const [data, setData] = useState(themesFromStore.data);
+  /* const [data, setData] = useState(authUser.theme); */
   const [themes, setThemes] = useState([]);
-  //const [uid, setUid] = useState([]);
   const { setMode } = useTheme();
-  const authUser = useContext(AuthUserContext);
+  
   const themeSwitcher = (selectedTheme) => {
-    /* console.log(selectedTheme);
-    console.log("UID"+props.user); */
+
     setMode(selectedTheme);
     props.setter(selectedTheme);
 
-    //Update the firebase db Theme when change the Theme
-    props.firebase.user(authUser.uid).update(
-      /* props.firebase.user(props.user.uid).update */ {
-        /* theme: selectedTheme.data.id  */
-        theme: { name: "matias", id: 3434}
-      }
-    );
+    if (props.firebase.user(authUser.uid).update({
+      theme: { name: selectedTheme.name, 
+                  id: selectedTheme.id
+        }
+    })) {
+      console.log("Successfully updated theme");
+    } else {
+        console.log("Error updating theme");
+    }
+
+
   };
   console.log(props);
 
@@ -75,8 +80,14 @@ const ThemeSelector = (props) => {
   };
 
   const ThemeCard = (props) => {
+    /* {console.log(props.theme.name)} */
+    console.log(SCHEMA.data)
+    if(!!props.theme.name){
+      /* SCHEMA.map=>() */
+      /* console.log(SCHEMA.data) */
+    }
     return (
-      <Wrapper
+       <Wrapper
         style={{
           backgroundColor: `${data[_.camelCase(props.theme.name)].colors.body}`,
           color: `${data[_.camelCase(props.theme.name)].colors.text}`,
@@ -96,7 +107,7 @@ const ThemeSelector = (props) => {
         >
           {props.theme.name}
         </ThemedButton>
-      </Wrapper>
+      </Wrapper> 
     );
   };
 
@@ -104,7 +115,6 @@ const ThemeSelector = (props) => {
     <AuthUserContext.Consumer>
       {(authUser) => (
         <div>
-            {console.log(authUser)}
           <Header>Select a Theme from below</Header>
           <Container>
             {themes.length > 0 &&
