@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import RightNav from './RightNav';
-import { StyledBurger } from 'styled-components';
+import { StyledBurger } from '../StyledCom';
 
 
 
