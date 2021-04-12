@@ -2,6 +2,7 @@ import app from "firebase/app";
 import "firebase/auth";
 import "firebase/database";
 import "firebase/storage";
+import * as LEAGUES from "../../constants/leagues";
 
 const config = {
   apiKey: "AIzaSyBBuiXCzsZar09GIMVJhgtbXz-wQrofELk",
@@ -46,6 +47,9 @@ class Firebase {
           .then((snapshot) => {
             const dbUser = snapshot.val();
             // default empty roles
+            if (!dbUser.league) {
+              dbUser.league = LEAGUES.CL;
+            }
             if (!dbUser.roles) {
               dbUser.roles = {};
             }
