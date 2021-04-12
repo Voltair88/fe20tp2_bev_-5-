@@ -61,6 +61,7 @@ const ThemeSelector = (props) => {
         console.log("Error updating theme");
     }
 
+    window.location.reload();
 
   };
   console.log(props);
@@ -79,12 +80,11 @@ const ThemeSelector = (props) => {
     setData(updated);
   };
 
+  const refreshPage = ()=>{
+ }
+
   const ThemeCard = (props) => {
-    /* {console.log(props.theme.name)} */
-    console.log(SCHEMA.data)
     if(!!props.theme.name){
-      /* SCHEMA.map=>() */
-      /* console.log(SCHEMA.data) */
     }
     return (
        <Wrapper
@@ -96,7 +96,7 @@ const ThemeSelector = (props) => {
       >
         <span>Click on the button to set this theme</span>
         <ThemedButton
-          onClick={(theme) => themeSwitcher(props.theme)}
+          onClick={(theme) => themeSwitcher(props.theme)} 
           style={{
             backgroundColor: `${
               data[_.camelCase(props.theme.name)].colors.button.background
