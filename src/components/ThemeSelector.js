@@ -4,7 +4,6 @@ import _ from "lodash"; // https://css-tricks.com/theming-and-theme-switching-wi
 import { useTheme } from "../theme/useTheme";
 import { getFromLS } from "../utils/storage";
 import { AuthUserContext, withAuthentication } from "./Session";
-import { SCHEMA } from "./Schema"
 
 const ThemedButton = styled.button`
   border: 0;
