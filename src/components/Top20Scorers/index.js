@@ -71,7 +71,12 @@ function Top20Scorers(props) {
 
     const user = React.useContext(AuthUserContext);
 
-    const DEFAULT_LEAGUE = 39;
+    if(!!user){
+        console.log(user.league)
+    }
+    
+
+    const DEFAULT_LEAGUE = 39;  //Premier League
 
     const [leagues_arr, setLeaguesArr] = useState([])
 
@@ -94,7 +99,6 @@ function Top20Scorers(props) {
         props.firebase.user(user.uid).get().then(function (snapshot) {
             if (snapshot.exists()) {
                 setFav_league(snapshot.val().fav_league_name);
-                console.log("Inside get" + snapshot.val().fav_league_name)
 
                 //Read the database value for Favorite league id and if there is a saved favorite league, set it as the League Id to fetch data on load,
                 //Otherwise fetch data according to DEFAULT_LEAGUE = 39
@@ -107,23 +111,15 @@ function Top20Scorers(props) {
                 /* handleSnackbar("No data available", "error"); */
                 console.log("no data")
             }
-            console.log(fav_league)
 
         }).catch(function (error) {
             /* handleSnackbar("Something went wrong, try again", "error"); */
         });
 
-
-        /* console.log(TOP_SCORERS) */
-        //Ex. leagues that have Top 20 scoreres
-        //UEFA Europa League  : 3
-        console.log(leagueId)
-        console.log("Inside useeffect")
         //Fetch top 20 players from API when user select a league from dropdown
         if (leagueId > -1 && leagueId !== DEFAULT_LEAGUE) {   //Check leagueId has a value and it is not the default value
-            console.log("Inside fetch")
 
-            console.log(leagueId)
+            /* console.log(leagueId)
             fetch(`https://api-football-v1.p.rapidapi.com/v3/players/topscorers?league=${leagueId}&season=2020`, {
                 "method": "GET",
                 "headers": {
@@ -144,7 +140,7 @@ function Top20Scorers(props) {
                 .catch(err => {
                     console.error(err);
                 });
-
+ */
         }
 
 
@@ -224,7 +220,6 @@ const Top20List = (props) => {
 };
 
 const Chart = (props) => {
-    { console.log(props.topScorersArr) }
 
     const [player_name_arr, setPlayersArr] = useState([]);
     const [goals_arr, setGoalsArr] = useState([])
@@ -240,7 +235,6 @@ const Chart = (props) => {
 
         if (props.topScorersArr !== undefined && props.topScorersArr.length > 0) {
 
-            console.log("Inside top chart scorers")
             const players_arr = props.topScorersArr.map((item) => item.player.name);
             const no_of_goals_arr = props.topScorersArr.map((item) => item.statistics[0].goals.total);
             const no_of_shots_arr = props.topScorersArr.map((item) => item.statistics[0].shots.total);
@@ -279,7 +273,7 @@ const Chart = (props) => {
                     {
                         label: 'Total shots',
                         data: shots_arr,
-                        backgroundColor: 'rgb(179, 198, 255, 0.1)',
+                        backgroundColor: 'rgba(196, 229, 56,0.5)',
                         borderColor: '	rgb(179, 179, 255)',
                         barThickness: 'flex',
                         borderWidth: 1,
