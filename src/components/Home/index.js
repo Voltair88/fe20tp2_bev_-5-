@@ -1,14 +1,21 @@
 import { AuthUserContext, withAuthorization } from "../Session";
-import React, { Component, useEffect } from "react";
+import React, { Component, useEffect, useContext } from "react";
 import { withFirebase } from "../Firebase";
 import Player from "../Player";
-import { TeamItem } from "../Team";
+import { TeamList } from "../Team";
+import MatchFeed from "../MatchFeed";
 import styled from "styled-components";
 import { LineChart, PieChart, Test, LineChartNew } from "../Charts";
 import { HorizontalBar } from "react-chartjs-2";
+import { buildAllMatchStats, MatchesContext } from "../API";
 import { SEASON_DATA, CL_MATCH_DATA } from "../../data";
+<<<<<<< HEAD
 /* import Top20Scorers from "../Top20Scorers";
  */
+=======
+import Top20Scorers from "../Top20Scorers";
+
+>>>>>>> main
 import {
   Background,
   ChartContainer,
@@ -17,50 +24,28 @@ import {
   Content,
 } from "../StyledCom";
 
-const StyledList = styled.div`
-  list-style-type: none;
-  display: flex;
-  flex-wrap: wrap;
-  max-height: 100%;
-  max-width: 80%;
-  span {
-    text-align: center;
-    vertical-align: middle;
-    box-sizing: border-box;
-    flex-grow: 1;
-    width: 33.33%;
-    padding: 0.05em 0.5em;
-    overflow: hidden; // Or flex might break
-    list-style: none;
-    img {
-      width: 100%;
-      height: auto;
-    }
-  }
-`;
-
-const HomePage = ({ teams, scorers, matches }) => {
+const HomePage = ({ teams, scorers }) => {
   /* console.log(matches) */
+  const matches = useContext(MatchesContext);
   return (
         <HomeMain>
           <Content>
             <h1>Home</h1>
             <p>The Home Page is accessible by every signed in user.</p>
             {/* <BarChart scorers={scorers} /> */}
-            <LineChart data={matches} />
-            <List arr={teams} />
+            {matches ? (
+              <LineChart data={buildAllMatchStats(matches)} />
+            ) : (
+              <p>loading...</p>
+            )}
+            {matches ? (
+              <MatchFeed matches={matches.matches} />
+            ) : (
+              <p>loading...</p>
+            )}
+            {teams ? <TeamList arr={teams} /> : <p>loading...</p>}
           </Content>
         </HomeMain>
-  );
-};
-
-const List = ({ arr }) => {
-  return (
-    <StyledList>
-      {arr.map((item) => (
-        <TeamItem key={item.id} team={item} />
-      ))}
-    </StyledList>
   );
 };
 

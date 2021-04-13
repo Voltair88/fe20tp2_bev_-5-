@@ -1,4 +1,4 @@
-import { AuthUserContext } from "../Session";
+import { AuthUserContext, withAuthentication } from "../Session";
 import * as ROUTES from "../../constants/routes";
 import * as ROLES from "../../constants/roles";
 import SignOutButton from "../SignOut";
@@ -6,14 +6,27 @@ import { Burger } from "./Burger.js";
 import React, { useState } from "react";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Navbar, Ul, NavLink, HamMenu } from "../StyledCom";
+import ProfileImage from "../../img/prf_img.png";
 
-const Navigation = () => {
+const Navigation = (props) => {
+  const user = React.useContext(AuthUserContext);
+
+  const [url, setUrl] = useState(ProfileImage);
+
+  /*   if (!!user.uid){
+    props.firebase.profileImage(user.uid)
+    .getDownloadURL()
+    .then(url => {
+      setUrl(url);
+    });
+  } */
+
   return (
     <Navbar>
       <AuthUserContext.Consumer>
         {(authUser) =>
           authUser ? (
-            <NavigationAuth authUser={authUser} />
+            <NavigationAuth authUser={authUser} url={url} />
           ) : (
             <NavigationNonAuth />
           )
@@ -24,7 +37,7 @@ const Navigation = () => {
   );
 };
 
-const NavigationAuth = ({ authUser }) => {
+const NavigationAuth = ({ authUser, url }) => {
   return (
     <Ul>
       <li>
@@ -33,9 +46,7 @@ const NavigationAuth = ({ authUser }) => {
       <li>
         <NavLink to={ROUTES.HOME}>Home</NavLink>
       </li>
-      <li>
-        <NavLink to={ROUTES.ACCOUNT}>Account</NavLink>
-      </li>
+      <NavLink to={ROUTES.ACCOUNT}>Account</NavLink>
       {!!authUser.roles[ROLES.ADMIN] && (
         <li>
           <NavLink to={ROUTES.ADMIN}>Admin</NavLink>
@@ -44,6 +55,12 @@ const NavigationAuth = ({ authUser }) => {
       <li>
         <SignOutButton />
       </li>
+      {/*  <li>
+        <NavLink to={ROUTES.ACCOUNT}>
+          {" "}
+           <img src={url} alt="" /> Account
+        </NavLink>
+      </li> */}
     </Ul>
   );
 };
@@ -58,4 +75,4 @@ const NavigationNonAuth = () => (
   </Ul>
 );
 
-export default Navigation;
+export default withAuthentication(Navigation);

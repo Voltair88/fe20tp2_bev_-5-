@@ -37,6 +37,13 @@ const NavLink = styled(Link)`
     color: black;
     transition: 0.3s ease-in-out;
   }
+
+  img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
 `;
 //Styling for Landingpage
 
@@ -256,6 +263,42 @@ const Button = styled.button`
   }
 `;
 
+const CancelButton = styled(Link)`
+  width: 30%;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  color: red;
+  padding: 0.3rem 0rem;
+  font-size: 1rem;
+  border: 2px solid black;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 1rem;
+  transition: 0.3s;
+
+  &:hover {
+    border-color: black;
+    color: red;
+    background: black;
+    transition: 0.3s ease-in-out;
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    width: 50%;
+    font-size: 1.5rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 50%;
+  }
+
+  @media screen and (max-width: 414px) {
+    width: 70%;
+  }
+`;
+
 const ChangeButton = styled(Link)`
   display: flex;
   width: 10%;
@@ -275,7 +318,139 @@ const ChangeButton = styled(Link)`
     background: black;
     transition: 0.3s ease-in-out;
   }
+
+  @media screen and (max-width: 768px) {
+    font-size: 11px;
+  }
 `;
+
+// user profile page
+const UserComp = styled.div`
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  width: 50%;
+  .username-input {
+    /* background-color: red; */
+    font-size: x-large;
+    width: 50%;
+    align-self: center;
+    text-align: center;
+    border: none;
+    background-image: url(../../img/pencil.png);
+    background-position: 7px 7px;
+    background-repeat: no-repeat;
+  }
+  span {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+  }
+`;
+
+const ImageUpload = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  & > input {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+  img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+`;
+
+const Container = styled.div`
+  display: flex;
+  /* flex-direction: column; */
+  /* align-items: center; */
+  justify-content: center;
+
+  /* & > div{
+        background-color: bisque;
+        width: 400px;
+    } */
+`;
+
+//end user profile page.
+
+//burger
+
+const StyledBurger = styled.div`
+  width: 2rem;
+  height: 2rem;
+  position: fixed;
+  top: 15px;
+  left: 20px;
+  z-index: 20;
+  display: none;
+  
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: column nowrap;
+  }
+  div {
+    width: 2rem;
+    height: 0.25rem;
+    background-color: ${({ open }) => open ? '#ccc' : '#fff'};
+    border-radius: 10px;
+    transform-origin: 1px;
+    transition: all 0.3s linear;
+    &:nth-child(1) {
+      transform: ${({ open }) => open ? 'rotate(45deg)' : 'rotate(0)'};
+    }
+    &:nth-child(2) {
+      transform: ${({ open }) => open ? 'translateX(100%)' : 'translateX(0)'};
+      opacity: ${({ open }) => open ? 0 : 1};
+    }
+    &:nth-child(3) {
+      transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
+    }
+  }
+`;
+
+const NewUl = styled.ul`
+  display: flex;
+  flex-flow: row nowrap;
+  .Navlink {
+    color:rgba(0,0,0,0);
+    padding: 1px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  @media (max-width: 768px) {
+    margin-top: 0px;
+    flex-flow: column nowrap;
+    background-color: #0D2538;
+    position: fixed;
+    transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
+    z-index: 1 ;
+    top: 0;
+    right: -10;
+    width: 150px;
+    padding-bottom: 20px;
+    padding-top: 3.5rem;
+    padding-inline-start: 10px;
+    border-radius: 0px 0px 5px ;
+    transition: transform 0.3s ease-in-out;
+    font-size: 1.2em;
+    line-height: 1.7em;
+    .Navlink {
+        text-decoration: none; 
+        border-radius: 8px ;
+        color: white;
+    }
+  }`;
+
+
+
 
 export {
   OutButton,
@@ -295,4 +470,10 @@ export {
   MainBlock,
   InputForReset,
   ChangeButton,
+  CancelButton,
+  Container,
+  ImageUpload,
+  UserComp,
+  StyledBurger,
+  NewUl
 };
