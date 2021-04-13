@@ -14,11 +14,13 @@ const Navigation = (props) => {
 
   const [url, setUrl] = useState(ProfileImage);
 
-  props.firebase.profileImage(user.uid)
+/*   if (!!user.uid){
+    props.firebase.profileImage(user.uid)
     .getDownloadURL()
     .then(url => {
       setUrl(url);
     });
+  } */
 
 
   return (
@@ -55,7 +57,7 @@ const NavigationAuth = ({ authUser, url }) => {
         <SignOutButton />
       </li>
       <li>
-        <NavLink to={ROUTES.ACCOUNT}>  <img src={url} alt="" />      {/* Account */}</NavLink>
+        <NavLink to={ROUTES.ACCOUNT}>  {/* <img src={url} alt="" /> */}      {/* Account */}</NavLink>
       </li>
     </Ul>
   );
