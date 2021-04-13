@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
 //Styling for Navigation
@@ -33,7 +32,6 @@ const NavLink = styled(Link)`
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 500;
-  font-family: "Poppins", sans-serif;
 
   &:hover {
     color: black;
@@ -45,7 +43,6 @@ const NavLink = styled(Link)`
 const Main = styled.main`
   box-sizing: border-box;
   display: flex;
-  font-family: "Poppins", sans-serif;
   width: 100%;
   height: 92vh;
 `;
@@ -125,7 +122,6 @@ const MyButton = styled.button`
 const HomeMain = styled.main`
   box-sizing: border-box;
   display: flex;
-  font-family: "Poppins", sans-serif;
   width: 100%;
   height: auto;
 `;
@@ -137,7 +133,6 @@ const ChartContainer = styled.div`
 
 const OutButton = styled.button`
   font-weight: 500;
-  font-family: "Poppins", sans-serif;
   text-transform: uppercase;
   color: white;
   padding: 0.3rem 0.6rem;
@@ -172,7 +167,6 @@ const Wrapper = styled.form`
 
   & > p {
     width: 30%;
-    font-family: "Poppins", sans-serif;
     font-weight: 500;
     margin: -0.5rem 0 0.8rem 0;
     transition: 0.3s;
@@ -231,7 +225,6 @@ const InputForReset = styled.input`
 const Button = styled.button`
   width: 30%;
   font-weight: 500;
-  font-family: "Poppins", sans-serif;
   color: Black;
   padding: 0.3rem 0.6rem;
   font-size: 1rem;
@@ -264,7 +257,6 @@ const Button = styled.button`
 `;
 
 const ChangeButton = styled(Link)`
-  font-family: "Poppins", sans-serif;
   display: flex;
   width: 10%;
   flex-direction: column;

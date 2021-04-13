@@ -8,8 +8,8 @@
               "body": "#FFFFFF",
               "text": "black",
               "button": {
-                  "text": "teal",
-                  "background": "teal"
+                  "text": "",
+                  "background": "red"
               },
               "link": {
                   "text": "red",
@@ -26,17 +26,17 @@
               "text": "#FFFFFF",
               "button": {
                   "text": "white",
-                  "background": "#FFFFFF"
+                  "background": "red"
               },
               "link": {
                   "text": "teal",
                   "opacity": 1
               },
               "Ul": {
-                  "text": "teal"
+                  "text": "red"
               }
           },
-          "font": "Roboto"
+          "font": "Open Sans"
       },
       "material" : {
           "id": "T_003",
