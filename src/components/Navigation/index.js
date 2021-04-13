@@ -9,19 +9,17 @@ import { Navbar, Ul, NavLink, HamMenu } from "../StyledCom";
 import ProfileImage from "../../img/prf_img.png";
 
 const Navigation = (props) => {
-
   const user = React.useContext(AuthUserContext);
 
   const [url, setUrl] = useState(ProfileImage);
 
-/*   if (!!user.uid){
+  /*   if (!!user.uid){
     props.firebase.profileImage(user.uid)
     .getDownloadURL()
     .then(url => {
       setUrl(url);
     });
   } */
-
 
   return (
     <Navbar>
@@ -48,6 +46,7 @@ const NavigationAuth = ({ authUser, url }) => {
       <li>
         <NavLink to={ROUTES.HOME}>Home</NavLink>
       </li>
+      <NavLink to={ROUTES.ACCOUNT}>Account</NavLink>
       {!!authUser.roles[ROLES.ADMIN] && (
         <li>
           <NavLink to={ROUTES.ADMIN}>Admin</NavLink>
@@ -56,9 +55,12 @@ const NavigationAuth = ({ authUser, url }) => {
       <li>
         <SignOutButton />
       </li>
-      <li>
-        <NavLink to={ROUTES.ACCOUNT}>  {/* <img src={url} alt="" /> */}      {/* Account */}</NavLink>
-      </li>
+      {/*  <li>
+        <NavLink to={ROUTES.ACCOUNT}>
+          {" "}
+           <img src={url} alt="" /> Account
+        </NavLink>
+      </li> */}
     </Ul>
   );
 };
