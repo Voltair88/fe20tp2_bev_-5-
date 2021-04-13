@@ -1,5 +1,5 @@
 import Player from "../Player";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom"; // https://reactrouter.com/web/api/Hooks/useparams
 import * as ROUTES from "../../constants/routes";
 import { Link } from "react-router-dom";
@@ -7,6 +7,7 @@ import { requestOptions, SEASON_DATA } from "../../data.js";
 import { getTeamStats } from "../API";
 import { PieChart } from "../Charts";
 import styled from "styled-components";
+import { LeagueContext } from "../API";
 
 const StyledTeamList = styled.div`
   display: flex;
@@ -33,7 +34,8 @@ const StyledTeamList = styled.div`
 export const TeamPage = () => {
   const [team, setTeam] = useState(null);
   const [standingData, setStandingData] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const League = useContext(LeagueContext);
+
   //Create another fetch() to get the team data using http://api.football-data.org/v2/teams/{ID from props}
   //gets id from route url
   let { id } = useParams();
@@ -44,7 +46,7 @@ export const TeamPage = () => {
       .then((json) => {
         setTeam(json);
         fetch(
-          "http://api.football-data.org/v2/competitions/2001/standings",
+          `http://api.football-data.org/v2/competitions/${League}/standings`,
           requestOptions
         )
           .then((response) => response.json())
