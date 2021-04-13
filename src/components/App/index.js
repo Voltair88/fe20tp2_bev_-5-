@@ -35,14 +35,18 @@ const App = () => {
 
   useEffect(() => {
     fetch(
-      `http://api.football-data.org/v2/competitions/${user.league}/matches`,
+      `http://api.football-data.org/v2/competitions/${
+        user ? user.league : 2001
+      }/matches`,
       requestOptions
     )
       .then((response) => response.json())
       .then((json) => setMatchesData(json));
 
     fetch(
-      `http://api.football-data.org/v2/competitions/${user.league}/teams`,
+      `http://api.football-data.org/v2/competitions/${
+        user ? user.league : 2001
+      }/teams`,
       requestOptions
     )
       .then((response) => response.json())
@@ -52,7 +56,7 @@ const App = () => {
   /* console.log(teamsData.find((team) => team.id === 4)); */
   return (
     <Router>
-      <LeagueContext.Provider value={user.league}>
+      <LeagueContext.Provider value={user && user.league}>
         <MatchesContext.Provider value={matchesData}>
           <Navigation />
           <Switch>
