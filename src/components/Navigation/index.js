@@ -14,11 +14,16 @@ const Navigation = (props) => {
 
   const [url, setUrl] = useState(ProfileImage);
 
-  props.firebase.profileImage(user.uid)
+  console.log("user"+user)
+
+  if(!!user.uid){
+    props.firebase.profileImage(user.uid)
     .getDownloadURL()
     .then(url => {
       setUrl(url);
     });
+  }
+  
 
 
   return (
