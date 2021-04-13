@@ -9,13 +9,8 @@ import { LineChart, PieChart, Test, LineChartNew } from "../Charts";
 import { HorizontalBar } from "react-chartjs-2";
 import { buildAllMatchStats, MatchesContext } from "../API";
 import { SEASON_DATA, CL_MATCH_DATA } from "../../data";
-<<<<<<< HEAD
-/* import Top20Scorers from "../Top20Scorers";
- */
-=======
 import Top20Scorers from "../Top20Scorers";
 
->>>>>>> main
 import {
   Background,
   ChartContainer,

@@ -1,18 +1,10 @@
-<<<<<<< HEAD
-import { useEffect, useState } from 'react'
-import { TOP_SCORERS } from "../Top20Scorers/index";
-=======
 import React, { useEffect, useState } from 'react'
 import { TOP_SCORERS } from "../../top20Scorers.js";
->>>>>>> main
 import { ALL_LEAGUES_2020 } from "../../allLeagues2020";
 import { Bar } from "react-chartjs-2";
 import Dropdown from "../Dropdown";
 import styled from "styled-components";
-<<<<<<< HEAD
-=======
 import { AuthUserContext, withAuthentication } from "../Session";
->>>>>>> main
 
 
 const Container = styled.div`
@@ -33,10 +25,6 @@ const RightSection = styled.div`
     margin: 0 100px;
 `
 
-<<<<<<< HEAD
-
-=======
->>>>>>> main
 const DropdownContainer = styled.div`
     width: 500px;
     margin-bottom: 50px;
@@ -79,43 +67,6 @@ const StyledPlayerList = styled.div`
 
 `
 
-<<<<<<< HEAD
-function Top20Scorers() {``
-
-    const [player_name_arr, setPlayersArr] = useState([]);
-    const [goals_arr, setGoalsArr] = useState([])
-    const [shots_arr, setShotsArr] = useState([])
-    const [img_arr, setImgArr] = useState([])
-    const [leagues_arr, setLeaguesArr] = useState([])
-
-    const [red_card, setRedCard] = useState([])
-    const [yellow_card, setYellowCard] = useState([])
-    const [yellow_red_card, setRedYellowCard] = useState([])
-
-    useEffect(() => {
-/*         console.log(TOP_SCORERS)
- */
-
-        if (TOP_SCORERS.length !== 0) {
-
-            const players_arr = TOP_SCORERS.map((item) => item.player.name);
-            const goals_arr = TOP_SCORERS.map((item) => item.statistics[0].goals.total);
-            const shots_arr = TOP_SCORERS.map((item) => item.statistics[0].shots.total);
-            const img_arr = TOP_SCORERS.map((item) => item.player.photo);
-            const red_card = TOP_SCORERS.map((item) => item.statistics[0].cards.red);
-            const yellow_card = TOP_SCORERS.map((item) => item.statistics[0].cards.yellow);
-            const yellow_red_card = TOP_SCORERS.map((item) => item.statistics[0].cards.yellowred);
-
-            /* console.log(TOP_SCORERS) */
-            setPlayersArr(players_arr)
-            setGoalsArr(goals_arr)
-            setShotsArr(shots_arr)
-            setImgArr(img_arr)
-
-            setRedCard(red_card)
-            setYellowCard(yellow_card)
-            setRedYellowCard(yellow_red_card)
-=======
 function Top20Scorers(props) {
 
     const user = React.useContext(AuthUserContext);
@@ -194,7 +145,6 @@ function Top20Scorers(props) {
                     console.error(err);
                 });
 
->>>>>>> main
         }
 
 
@@ -215,122 +165,30 @@ function Top20Scorers(props) {
         }
         setLeaguesArr(legueArr);
 
-<<<<<<< HEAD
-    }, []);
-=======
     }, [leagueId]);
->>>>>>> main
 
 
     return (
         <Container>
-<<<<<<< HEAD
-            {/* <Dropdown placeholder={'Choose your favorite team'} dataSet={team_array} dropdownId="TEAMS" uid={props.user.uid} favorite={fav_team} /> */}
-            <LeftSection>
-                <Top20List />
-
-=======
             <LeftSection>
                 <Top20List topScorersArr={topScorersArr} />
->>>>>>> main
             </LeftSection>
 
             <RightSection>
                 <DropdownContainer>
-<<<<<<< HEAD
-                    <Dropdown placeholder={'Choose a league'} dataSet={leagues_arr} />
-                </DropdownContainer>
-
-                <Bar
-                    data={{
-                        labels: player_name_arr,
-                        datasets: [
-                            {
-                                label: 'Total goals',
-                                data: goals_arr,
-                                backgroundColor: '#4AB19D',
-                                borderColor: '#344E5C',
-                                barThickness: 'flex',
-                                borderWidth: 1,
-                            },
-                            {
-                                label: 'Total shots',
-                                data: shots_arr,
-                                backgroundColor: 'rgb(179, 198, 255, 0.1)',
-                                borderColor: '	rgb(179, 179, 255)',
-                                barThickness: 'flex',
-                                borderWidth: 1,
-                            },
-                            {
-                                label: "Red Cards",
-                                data: red_card,
-                                backgroundColor: '#EE4540',
-                                borderColor: 'rgb(255, 99, 132)',
-                                barThickness: 'flex',
-                                borderWidth: 1,
-                            },
-                            {
-                                label: "Yellow Cards",
-                                data: yellow_card,
-                                backgroundColor: "#ffff00",
-                                borderColor: "#EFC958",
-                                barThickness: 'flex',
-                                borderWidth: 1,
-                            },
-                            {
-                                label: "Yellow Red Cards",
-                                data: yellow_red_card,
-                                backgroundColor: "#EFC958",
-                                borderColor: "#EF3D59",
-                                barThickness: 'flex',
-                                borderWidth: 1,
-                            }
-
-
-                        ]
-
-                    }}
-                    options={{
-                        maintainAspectRatio: true,
-                        scales: {
-                            xAxes: [{
-                                stacked: true
-                            }],
-                            yAxes: [
-                                {
-                                    ticks: {
-                                        beginAtZero: true,
-                                    },
-                                    stacked: true
-                                }
-                            ]
-                        },
-
-
-
-                    }}
-                />
-=======
                     <Dropdown placeholder={'Choose a league'} dataSet={leagues_arr} dropdownId="TOP_20" onChange={eventhandler} favorite={fav_league} />
                 </DropdownContainer>
 
                 <Chart topScorersArr={topScorersArr} />
->>>>>>> main
             </RightSection>
 
         </Container>
     )
 }
 
-<<<<<<< HEAD
-export default Top20Scorers;
-
-const Top20List = () => {
-=======
 export default withAuthentication(Top20Scorers);
 
 const Top20List = (props) => {
->>>>>>> main
     return (
         <StyledPlayerList>
             <table>
@@ -345,13 +203,8 @@ const Top20List = (props) => {
                     </tr>
                 </thead>
                 <tbody>
-<<<<<<< HEAD
-                    {TOP_SCORERS.map((item, index) => (
-
-=======
 
                     {props.topScorersArr.map((item, index) => (
->>>>>>> main
 
                         <tr key={index}>
                             <td>{index + 1}</td>
@@ -370,8 +223,6 @@ const Top20List = (props) => {
     );
 };
 
-<<<<<<< HEAD
-=======
 const Chart = (props) => {
     { console.log(props.topScorersArr) }
 
@@ -485,5 +336,4 @@ const Chart = (props) => {
     )
 }
 
->>>>>>> main
 /*  TOP_SCORERS.map((item) => item.player.name) */

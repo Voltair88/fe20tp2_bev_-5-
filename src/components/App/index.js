@@ -1,12 +1,8 @@
-<<<<<<< HEAD
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import styled, { ThemeProvider } from "styled-components";
 import WebFont from 'webfontloader';
 import { GlobalStyles } from '../../theme/GlobalStyles';
 import {useTheme} from '../../theme/useTheme';
-=======
-import React, { useState, useEffect, useContext } from "react";
->>>>>>> main
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { withAuthentication } from "../Session";
 import Navigation from "../Navigation";
@@ -27,12 +23,9 @@ import {
   CL_MATCH_DATA,
   SEASON_DATA,
 } from "../../data.js";
-<<<<<<< HEAD
-import { getMatchStats, buildAllMatchStats } from "../../functions.js";
-=======
+import { getMatchStats, buildAllMatchStats } from "../API/functions";
 import { MatchesContext, LeagueContext } from "../API";
 import { AuthUserContext } from "../Session";
->>>>>>> main
 import * as ROUTES from "../../constants/routes";
 import ChangeEmail from "../ChangeEmail";
 import ChangePassword from "../ChangePassword";
@@ -49,7 +42,6 @@ function App() {
   const [scorersData, setScorersData] = useState(SCORERS_DATA.scorers);
   const [teamsData, setTeamsData] = useState();
   const [teamData, setTeamData] = useState(TEAM_DATA);
-<<<<<<< HEAD
   const [matchesData, setMatchesData] = useState(
     buildAllMatchStats(CL_MATCH_DATA)
   );
@@ -67,9 +59,6 @@ function App() {
     setSelectedTheme(theme);
   }, [themeLoaded]);
 
-
-=======
-  const [matchesData, setMatchesData] = useState();
 
   const user = useContext(AuthUserContext);
 
@@ -94,7 +83,6 @@ function App() {
   }, []);
 
   /* console.log(teamsData.find((team) => team.id === 4)); */
->>>>>>> main
   return (
     <>
     {
@@ -103,18 +91,10 @@ function App() {
         <Container style={{fontFamily: selectedTheme.font}}>
 
     <Router>
-<<<<<<< HEAD
-          <Navigation />
-          <Switch>
-            <Route exact path={ROUTES.LANDING}>
-              <LandingPage />
-            </Route>
-=======
       <LeagueContext.Provider value={user && user.league}>
         <MatchesContext.Provider value={matchesData}>
           <Navigation />
           <Switch>
->>>>>>> main
             <Route path={ROUTES.SIGN_UP}>
               <SignUpPage />
             </Route>
@@ -126,37 +106,19 @@ function App() {
             </Route>
             <Route path={ROUTES.HOME}>
               <HomePage
-<<<<<<< HEAD
-                matches={matchesData}
-                scorers={scorersData}
-                teams={teamsData}
-=======
                 scorers={scorersData}
                 teams={teamsData && teamsData.teams}
->>>>>>> main
               />
             </Route>
             <Route path={ROUTES.ACCOUNT}>
               <AccountPage />
             </Route>
+            <Route path={ROUTES.CHANGE_THEME}>
+              <ChangeTheme />
+            </Route>
             <Route path={ROUTES.ADMIN}>
               <AdminPage />
             </Route>
-<<<<<<< HEAD
-            <Route exact path={ROUTES.CHANGE_EMAIL}>
-              <ChangeEmail />
-            </Route>
-            <Route exact path={ROUTES.CHANGE_PASSWORD}>
-              <ChangePassword />
-            </Route>
-            <Route exact path={ROUTES.CHANGE_THEME}>
-              <ChangeTheme />
-            </Route>
-            <Route>
-              <TeamPage team={teamData} />
-            </Route>
-          </Switch>
-=======
             <Route path={ROUTES.CHANGE_EMAIL}>
               <ChangeEmail />
             </Route>
@@ -175,7 +137,6 @@ function App() {
           </Switch>
         </MatchesContext.Provider>
       </LeagueContext.Provider>
->>>>>>> main
     </Router>
     </Container>
     </ThemeProvider>
