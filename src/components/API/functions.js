@@ -52,6 +52,7 @@ export const buildAllMatchStats = (data) => {
     const teamStats = getMatchStats(data, teamID);
     return { [teamName]: [...teamStats] };
   });
+
   return Object.assign(...result);
 };
 
@@ -85,44 +86,7 @@ export const getMatchStats = (data, teamID) => {
 
   return matchTable;
 };
-/* export const getAllMatchStats = (data) => {
-  let matchTable = data.matches.reduce((acc, cur) => {
-    acc[homeTeam.name];
-    acc[awayTeam.name];
-    return acc;
-  }, {}); */
-/* 
-    .map((item) => {
-      let { utcDate, score, homeTeam, awayTeam } = item;
-      let goalDiff = 0;
-      let team = {};
-      //console.log(Date.parse(item.utcDate.substr(0, 10)));
-      // {goalDiff: 4, (pos om FC Munchen vann)
-      // utcDate: '2020-08-08T13:00:00Z',
-      // team: {name: 'FC Munchen', id: 42 } }
-      // beroende på om vårt lag spelade hemma eller borta
-      // vet vi om goalDiff = homeTeam - awayTeam eller tvärtom
-      if (homeTeam.id === teamID) {
-        // vårt lag spelade HEMMA
-        goalDiff = score.fullTime.homeTeam - score.fullTime.awayTeam;
-        team = { ...homeTeam };
-      } else {
-        //vårt lag spelade borta
-        goalDiff = score.fullTime.awayTeam - score.fullTime.homeTeam;
-        team = { ...awayTeam };
-      }
 
-      return { goalDiff, utcDate, team };
-    });
-*/
-/*   return matchTable;
-}; */
-
-//team = {34: 'FC Bayern'}
-//team[id] // "FC Bayern"
-
-// GROUP_A: {'FC Bayern': 5, 'Atletico': 10}
-//returns a single object corresponding to team id based on standings data
 export const getTeamStats = (data, teamId) => {
   //console.log(`data: ${data}, teamID:${teamId}`);
   let tables = data.standings

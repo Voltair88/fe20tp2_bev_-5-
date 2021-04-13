@@ -5,9 +5,10 @@ import * as ROUTES from "../../constants/routes";
 import { Link } from "react-router-dom";
 import { requestOptions, SEASON_DATA } from "../../data.js";
 import { getTeamStats } from "../API";
-import { PieChart } from "../Charts";
+import { PieChart, LineChart } from "../Charts";
 import styled from "styled-components";
-import { LeagueContext } from "../API";
+import { LeagueContext, MatchesContext } from "../API";
+import MatchFeed from "../MatchFeed";
 
 const StyledTeamList = styled.div`
   display: flex;
@@ -31,10 +32,11 @@ const StyledTeamList = styled.div`
 `;
 
 //change the props to only recieve team id
-export const TeamPage = () => {
+const TeamPage = () => {
   const [team, setTeam] = useState(null);
   const [standingData, setStandingData] = useState(null);
   const League = useContext(LeagueContext);
+  const matches = MatchesContext;
 
   //Create another fetch() to get the team data using http://api.football-data.org/v2/teams/{ID from props}
   //gets id from route url
@@ -62,30 +64,30 @@ export const TeamPage = () => {
   //use fetched data to render squad, name and logo of team
 };
 
-const TeamDetail = (team, standings) => {
-  console.log(team);
-  console.log(standings);
+const TeamDetail = ({ team, standings }) => {
+  //console.log(team);
+  //console.log(standings);
   return (
     <article>
       <figure>
-        <img src={team.team.crestUrl} alt="team crest" />
+        <img src={team.crestUrl} alt="team crest" />
       </figure>
-      <h3>{team.team.name}</h3>
+      <h3>{team.name}</h3>
       <div>
         <h4>Season Performance</h4>
         <PieChart
           data={
-            team.standings &&
-            (({ won, draw, lost }) => ({ won, draw, lost }))(team.standings)
+            standings &&
+            (({ won, draw, lost }) => ({ won, draw, lost }))(standings)
           }
         >
           Wins/Losses
         </PieChart>
         <PieChart
           data={
-            team.standings &&
+            standings &&
             (({ goalsFor, goalsAgainst }) => ({ goalsFor, goalsAgainst }))(
-              team.standings
+              standings
             )
           }
         >
@@ -94,7 +96,7 @@ const TeamDetail = (team, standings) => {
       </div>
       <div>
         <h4>Players</h4>
-        {team.team.squad
+        {team.squad
           .filter((staff) => staff.role === "PLAYER")
           .map((item) => (
             <li key={item.id}>
@@ -129,3 +131,4 @@ export const TeamList = ({ arr }) => {
     </StyledTeamList>
   );
 };
+export default TeamPage;

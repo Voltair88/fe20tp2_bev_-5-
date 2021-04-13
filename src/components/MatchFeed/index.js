@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+import * as ROUTES from "../../constants/routes";
 
 const MatchFeedContainer = styled.div`
   display: flex;
@@ -56,11 +58,18 @@ const MatchItem = ({ match }) => {
         {match.score.fullTime.awayTeam ? match.score.fullTime.awayTeam : 0}
       </span>
       <span>{match.awayTeam.name}</span>
+      <span>
+        <Link to={`${ROUTES.TEAM}/${match.id}`}>Details</Link>
+      </span>
     </StyledMatchItem>
   );
 };
 
 const MatchFeed = ({ matches }) => {
+  if (!matches) {
+    return null;
+  }
+
   return (
     <MatchFeedContainer>
       <h3>Match Feed</h3>
