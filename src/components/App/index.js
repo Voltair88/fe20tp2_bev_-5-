@@ -54,7 +54,7 @@ const App = () => {
       .then((json) => setTeamsData(json));
   }, [user]);
 
-  /* console.log(teamsData.find((team) => team.id === 4)); */
+  console.log(matchesData);
   return (
     <Router>
       <LeagueContext.Provider value={user && user.league}>
@@ -97,9 +97,6 @@ const App = () => {
             <Route path={ROUTES.LANDING}>
               <LandingPage />
             </Route>
-            {/* <Route>
-          <TeamPage team={teamData.id} />
-        </Route> */}
           </Switch>
         </MatchesContext.Provider>
       </LeagueContext.Provider>

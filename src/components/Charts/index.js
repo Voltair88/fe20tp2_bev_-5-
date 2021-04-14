@@ -6,7 +6,6 @@ export const PieChart = ({ data, children }) => {
   }
   const labels = Object.keys(data);
   const values = Object.values(data);
-  console.log(Object);
 
   return (
     <div>
