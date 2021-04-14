@@ -4,7 +4,7 @@ const MatchFeedContainer = styled.div`
   display: flex;
   flex-direction: column;
   max-height: 100%;
-  max-width: 80%;
+  max-width: 100%;
 `;
 
 const MatchFeedList = styled.div`
@@ -29,12 +29,17 @@ const StyledMatchItem = styled.div`
   overflow: hidden; // Or flex might break
   list-style: none;
   span {
+    width: 20%;
     padding: 1em;
     box-sizing: border-box;
     flex-grow: 1;
   }
   span:first-child {
     width: 100%;
+  }
+  span:nth-child(2),
+  span:nth-child(6) {
+    line-height: 112px;
   }
   span:nth-child(3),
   span:nth-child(4),

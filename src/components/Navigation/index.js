@@ -5,7 +5,7 @@ import SignOutButton from "../SignOut";
 import { Burger } from "./Burger.js";
 import React, { useState } from "react";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { Navbar, Ul, NavLink, HamMenu } from "../StyledCom";
+import { Navbar, Ul, NavLink, BurgerContainer } from "../StyledCom";
 import ProfileImage from "../../img/prf_img.png";
 
 const Navigation = (props) => {

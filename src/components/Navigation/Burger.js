@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import RightNav from './RightNav';
-import { StyledBurger } from '../StyledCom';
-
-
+import React, { useState } from "react";
+import styled from "styled-components";
+import RightNav from "./RightNav";
+import { StyledBurger } from "../StyledCom";
 
 export const Burger = () => {
-  const [open, setOpen] = useState(false)
-  
+  const [open, setOpen] = useState(false);
+
   return (
     <>
       <StyledBurger open={open} onClick={() => setOpen(!open)}>
@@ -15,7 +13,7 @@ export const Burger = () => {
         <div />
         <div />
       </StyledBurger>
-      <RightNav open={open}/>
+      <RightNav open={open} />
     </>
-  )
-}
+  );
+};
