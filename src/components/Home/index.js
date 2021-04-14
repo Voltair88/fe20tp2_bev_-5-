@@ -24,8 +24,6 @@ const HomePage = ({ teams, scorers }) => {
   const matches = useContext(MatchesContext);
 
   return (
-    <Background>
-      <Blur>
         <HomeMain>
           <Content>
             <h1>Home</h1>
@@ -44,8 +42,6 @@ const HomePage = ({ teams, scorers }) => {
             {teams ? <TeamList arr={teams} /> : <p>loading...</p>}
           </Content>
         </HomeMain>
-      </Blur>
-    </Background>
   );
 };
 

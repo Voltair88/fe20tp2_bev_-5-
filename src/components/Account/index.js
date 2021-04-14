@@ -1,6 +1,7 @@
 import React from "react";
 import { PasswordForgetForm } from "../PasswordForget";
 import PasswordChangeForm from "../PasswordChange";
+import { ChangeTheme } from "../ChangeTheme";
 import { AuthUserContext, withAuthorization } from "../Session";
 import UserProfile from "../UserProfile";
 
@@ -15,9 +16,9 @@ const AccountPage = () => (
         <UserProfile user={authUser} />
         <ChangeButton to={ROUTES.CHANGE_PASSWORD}>Change Password</ChangeButton>
         <ChangeButton to={ROUTES.CHANGE_EMAIL}>Change Email</ChangeButton>
+        <ChangeButton to={ROUTES.CHANGE_THEME}>Change theme </ChangeButton>
 
-        {/* <h1>Top 20 scoreres</h1>
-        <Top20Scorers /> */}
+        {/* {console.log(props.firebase.profileImage(uid).getDownloadURL())} */}
       </div>
     )}
   </AuthUserContext.Consumer>
