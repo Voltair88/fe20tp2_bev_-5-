@@ -9,7 +9,8 @@ import PasswordForgetPage from "../PasswordForget";
 import HomePage from "../Home";
 import AccountPage from "../Account";
 import AdminPage from "../Admin";
-import { TeamPage } from "../Team";
+import TeamPage from "../Team";
+import MatchPage from "../Match";
 import { NewTeamPage } from "../NewTeam";
 import {
   requestOptions,
@@ -51,13 +52,13 @@ const App = () => {
     )
       .then((response) => response.json())
       .then((json) => setTeamsData(json));
-  }, []);
+  }, [user]);
 
   /* console.log(teamsData.find((team) => team.id === 4)); */
   return (
     <Router>
       <LeagueContext.Provider value={user && user.league}>
-        <MatchesContext.Provider value={matchesData}>
+        <MatchesContext.Provider value={matchesData && matchesData}>
           <Navigation />
           <Switch>
             <Route path={ROUTES.SIGN_UP}>
@@ -89,6 +90,9 @@ const App = () => {
             </Route>
             <Route path={ROUTES.TEAM_DETAIL}>
               <TeamPage />
+            </Route>
+            <Route path={ROUTES.MATCH_DETAIL}>
+              <MatchPage />
             </Route>
             <Route path={ROUTES.LANDING}>
               <LandingPage />

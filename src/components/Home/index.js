@@ -22,6 +22,7 @@ import {
 const HomePage = ({ teams, scorers }) => {
   /* console.log(matches) */
   const matches = useContext(MatchesContext);
+
   return (
     <Background>
       <Blur>
