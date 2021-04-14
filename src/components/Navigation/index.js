@@ -3,7 +3,7 @@ import * as ROUTES from "../../constants/routes";
 import * as ROLES from "../../constants/roles";
 import SignOutButton from "../SignOut";
 import { Burger } from "./Burger.js";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Navbar, Ul, NavLink, HamMenu } from "../StyledCom";
 import ProfileImage from "../../img/prf_img.png";
@@ -14,16 +14,20 @@ const Navigation = (props) => {
 
   const [url, setUrl] = useState(ProfileImage);
 
-  console.log("user"+user)
+  /*  useEffect(() => {
+     console.log("user" + user)
+ 
+     if (!!user.uid) {
+       props.firebase.profileImage(user.uid)
+         .getDownloadURL()
+         .then(url => {
+           setUrl(url);
+         });
+     }
+   }, []); */
 
-  if(!!user.uid){
-    props.firebase.profileImage(user.uid)
-    .getDownloadURL()
-    .then(url => {
-      setUrl(url);
-    });
-  }
-  
+
+
 
 
   return (
@@ -60,7 +64,7 @@ const NavigationAuth = ({ authUser, url }) => {
         <SignOutButton />
       </li>
       <li>
-        <NavLink to={ROUTES.ACCOUNT}>  <img src={url} alt="" />      {/* Account */}</NavLink>
+        <NavLink to={ROUTES.ACCOUNT}> {/*  <img src={url} alt="" /> */}      Account</NavLink>
       </li>
     </Ul>
   );

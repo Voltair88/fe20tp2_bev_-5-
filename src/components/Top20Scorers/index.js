@@ -6,22 +6,94 @@ import { TOP_20_CHAMPIONS_LEAGUE } from '../../UEFAChampionsLeagueTop20';
 import { TOP_20_PREMIER_LEAGUE } from '../../PremierLeagueTop20';
 
 
+const size = {
+    mobileS: '320px',
+    mobileM: '375px',
+    mobileL: '425px',
+    tablet: '768px',
+    laptop: '1024px',
+    laptopL: '1440px',
+    desktop: '2560px'
+}
+
+export const device = {
+    mobileS: `(max-width: ${size.mobileS})`,
+    mobileM: `(max-width: ${size.mobileM})`,
+    mobileL: `(max-width: ${size.mobileL})`,
+    tablet: `(max-width: ${size.tablet})`,
+    laptop: `(max-width: ${size.laptop})`,
+    laptopL: `(max-width: ${size.laptopL})`,
+    desktop: `(max-width: ${size.desktop})`,
+    desktopL: `(max-width: ${size.desktop})`
+};
+
+
 const Container = styled.div`
     display: flex;
+    overflow-x: hidden;
+    /* @media (max-width: 768px) {
+    flex-direction: column;
+  } */
+
+  @media ${device.laptop} { 
+    flex-direction: column;
+  }
+
+
+  /* background-color: yellowgreen; */
 `
 
 const LeftSection = styled.div`
     display: flex;
+    /* align-items: center;
+    justify-content: center; */
     flex: 1;
-    margin: 0 50px;
+    /* margin: 0 50px; */
+    /* width: 40vw; */
+    /* background-color: azure; */
+    /* align-self: center; */
+
+    
 `
 const RightSection = styled.div`
+/* background-color: aquamarine; */
     display: flex;
-    flex: 2;
+    flex: 1;
     flex-direction: column;
-    width: 500px;
-    align-items: center;
-    margin: 0 100px;
+    height: 80vh;
+    /* align-items: center; */
+    /* align-self: center; */
+    
+    /* margin: 0 100px; */
+
+    @media ${device.laptop} { 
+        width: 100%;
+        height: 80vh;
+        
+    }
+    @media ${device.mobileL} { 
+        width: 100%;
+        height: 50vh;
+    }
+    @media ${device.mobileS} { 
+        width: 100%;
+        height: 50vh;
+    }
+
+
+    /* @media screen and (min-width: 769px) and (max-width: 1024px) {
+    width: 50%;
+    font-size: 1.5rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 50%;
+  }
+
+  @media screen and (max-width: 414px) {
+    width: 70%;
+  } */
+
 `
 
 
@@ -45,7 +117,7 @@ const StyledPlayerList = styled.div`
     table{
         border-collapse: collapse;
         width: 100%;  
-        table-layout: fixed;
+        table-layout: auto;
         font-size: smaller;
     }
 
@@ -231,7 +303,8 @@ const Chart = (props) => {
 
             }}
             options={{
-                maintainAspectRatio: true,
+                responsive: true,
+                maintainAspectRatio: false,
                 scales: {
                     xAxes: [{
                         stacked: true
