@@ -58,7 +58,7 @@ const App = () => {
   return (
     <Router>
       <LeagueContext.Provider value={user && user.league}>
-        <MatchesContext.Provider value={matchesData && matchesData.matches}>
+        <MatchesContext.Provider value={matchesData && matchesData}>
           <Navigation />
           <Switch>
             <Route path={ROUTES.SIGN_UP}>

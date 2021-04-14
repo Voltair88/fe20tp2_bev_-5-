@@ -59,7 +59,7 @@ const MatchItem = ({ match }) => {
       </span>
       <span>{match.awayTeam.name}</span>
       <span>
-        <Link to={`${ROUTES.TEAM}/${match.id}`}>Details</Link>
+        <Link to={`${ROUTES.MATCH}/${match.id}`}>Details</Link>
       </span>
     </StyledMatchItem>
   );
