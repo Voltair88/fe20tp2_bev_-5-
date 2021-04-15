@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import * as ROUTES from "../../constants/routes";
 import { Link } from "react-router-dom";
 import { requestOptions, SEASON_DATA } from "../../data.js";
-import { getTeamStats } from "../API/functions.js";
+import { getTeamStats } from "../API";
 import { PieChart } from "../Charts";
 import { withRouter } from "react-router-dom";
 

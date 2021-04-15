@@ -1,5 +1,5 @@
 import { AuthUserContext, withAuthorization } from "../Session";
-import React, { Component, useEffect } from "react";
+import React, { Component, useEffect, useContext } from "react";
 import { withFirebase } from "../Firebase";
 import Player from "../Player";
 import { TeamList } from "../Team";
@@ -7,7 +7,7 @@ import MatchFeed from "../MatchFeed";
 import styled from "styled-components";
 import { LineChart, PieChart, Test, LineChartNew } from "../Charts";
 import { HorizontalBar } from "react-chartjs-2";
-import { getMatchStats, buildAllMatchStats } from "../API/functions.js";
+import { buildAllMatchStats, MatchesContext } from "../API";
 import { SEASON_DATA, CL_MATCH_DATA } from "../../data";
 import Top20Scorers from "../Top20Scorers";
 
@@ -19,25 +19,29 @@ import {
   Content,
 } from "../StyledCom";
 
-const HomePage = ({ teams, scorers, matches }) => {
+const HomePage = ({ teams, scorers }) => {
   /* console.log(matches) */
+  const matches = useContext(MatchesContext);
+
   return (
-    <Background>
-      <Blur>
         <HomeMain>
           <Content>
             <h1>Home</h1>
             <p>The Home Page is accessible by every signed in user.</p>
             {/* <BarChart scorers={scorers} /> */}
-            <LineChart data={buildAllMatchStats(matches)} />
-            <h1>Top 20 scoreres</h1>
-            <Top20Scorers />
-            <MatchFeed matches={matches.matches} />
-            <TeamList arr={teams} />
+            {matches ? (
+              <LineChart data={buildAllMatchStats(matches)} />
+            ) : (
+              <p>loading...</p>
+            )}
+            {matches ? (
+              <MatchFeed matches={matches.matches} />
+            ) : (
+              <p>loading...</p>
+            )}
+            {teams ? <TeamList arr={teams} /> : <p>loading...</p>}
           </Content>
         </HomeMain>
-      </Blur>
-    </Background>
   );
 };
 

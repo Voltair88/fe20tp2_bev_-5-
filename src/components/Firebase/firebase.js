@@ -1,7 +1,8 @@
 import app from "firebase/app";
 import "firebase/auth";
 import "firebase/database";
-import "firebase/storage"
+import "firebase/storage";
+import * as LEAGUES from "../../constants/leagues";
 
 const config = {
   apiKey: "AIzaSyBBuiXCzsZar09GIMVJhgtbXz-wQrofELk",
@@ -21,11 +22,7 @@ class Firebase {
     this.auth = app.auth();
     this.db = app.database();
     this.st = app.storage();
-
   }
-
-
-
 
   //*** Auth API ***/
   doCreateUserWithEmailAndPassword = (email, password) =>
@@ -50,6 +47,9 @@ class Firebase {
           .then((snapshot) => {
             const dbUser = snapshot.val();
             // default empty roles
+            if (!dbUser.league) {
+              dbUser.league = LEAGUES.CL;
+            }
             if (!dbUser.roles) {
               dbUser.roles = {};
             }
@@ -60,17 +60,12 @@ class Firebase {
               ...dbUser,
             };
 
-
             next(authUser);
           });
-
       } else {
         fallback();
       }
     });
-
-
-
 
   // *** User API ***
   user = (uid) => this.db.ref(`users/${uid}`);
@@ -79,7 +74,6 @@ class Firebase {
   // *** Message API ***
   message = (uid) => this.db.ref(`messages/${uid}`);
   messages = () => this.db.ref("messages");
-
 
   // *** Profile image API ****
   profileImage = (uid) => this.st.ref(`users/${uid}/profileImage`);

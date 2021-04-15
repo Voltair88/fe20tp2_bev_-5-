@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
 //Styling for Navigation
 const Navbar = styled.div`
+  background-color: white;
   width: 100%;
   height: 8vh;
 `;
@@ -15,12 +15,8 @@ const Ul = styled.ul`
   justify-content: flex-end;
   align-items: center;
   list-style: none;
-  background: rgb(32, 224, 63);
-  background: linear-gradient(
-    0deg,
-    rgba(32, 224, 63, 1) 0%,
-    rgba(31, 119, 22, 1) 100%
-  );
+  border-bottom: 2px solid;
+  border-color: white;
   height: 100%;
   font-size: 1.2rem;
   & > li {
@@ -35,9 +31,7 @@ const Ul = styled.ul`
 const NavLink = styled(Link)`
   text-decoration: none;
   text-transform: uppercase;
-  color: white;
   font-weight: 500;
-  font-family: "Poppins", sans-serif;
 
   &:hover {
     color: black;
@@ -56,7 +50,6 @@ const NavLink = styled(Link)`
 const Main = styled.main`
   box-sizing: border-box;
   display: flex;
-  font-family: "Poppins", sans-serif;
   width: 100%;
   height: 92vh;
 `;
@@ -88,14 +81,6 @@ const P = styled.p`
     font-size: 1.2rem;
     padding: 0 1rem;
   }
-`;
-
-const Background = styled.main`
-  background-color: #e8e8e8;
-  //background-image: url("https://images.unsplash.com/photo-1556056504-5c7696c4c28d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2083&q=80");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 `;
 
 const Input = styled.input`
@@ -141,16 +126,9 @@ const MyButton = styled.button`
   font-size: 15px;
 `;
 
-const Blur = styled.main`
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
-  height: auto;
-  width: 100%;
-`;
 const HomeMain = styled.main`
   box-sizing: border-box;
   display: flex;
-  font-family: "Poppins", sans-serif;
   width: 100%;
   height: auto;
 `;
@@ -162,7 +140,6 @@ const ChartContainer = styled.div`
 
 const OutButton = styled.button`
   font-weight: 500;
-  font-family: "Poppins", sans-serif;
   text-transform: uppercase;
   color: white;
   padding: 0.3rem 0.6rem;
@@ -197,7 +174,6 @@ const Wrapper = styled.form`
 
   & > p {
     width: 30%;
-    font-family: "Poppins", sans-serif;
     font-weight: 500;
     margin: -0.5rem 0 0.8rem 0;
     transition: 0.3s;
@@ -256,7 +232,6 @@ const InputForReset = styled.input`
 const Button = styled.button`
   width: 30%;
   font-weight: 500;
-  font-family: "Poppins", sans-serif;
   color: Black;
   padding: 0.3rem 0.6rem;
   font-size: 1rem;
@@ -325,7 +300,6 @@ const CancelButton = styled(Link)`
 `;
 
 const ChangeButton = styled(Link)`
-  font-family: "Poppins", sans-serif;
   display: flex;
   width: 10%;
   flex-direction: column;
@@ -335,8 +309,8 @@ const ChangeButton = styled(Link)`
   padding: 0.3rem;
   text-decoration: none;
   border: 1.5px black solid;
-  color: black;
-  border-radius: 6px;
+/*   color: black;
+ */  border-radius: 6px;
 
   &:hover {
     border-color: black;
@@ -403,16 +377,87 @@ const Container = styled.div`
         width: 400px;
     } */
 `;
+
 //end user profile page.
+
+//burger
+
+const StyledBurger = styled.div`
+  width: 2rem;
+  height: 2rem;
+  position: fixed;
+  top: 15px;
+  left: 20px;
+  z-index: 20;
+  display: none;
+  
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: column nowrap;
+  }
+  div {
+    width: 2rem;
+    height: 0.25rem;
+    background-color: ${({ open }) => open ? '#ccc' : '#fff'};
+    border-radius: 10px;
+    transform-origin: 1px;
+    transition: all 0.3s linear;
+    &:nth-child(1) {
+      transform: ${({ open }) => open ? 'rotate(45deg)' : 'rotate(0)'};
+    }
+    &:nth-child(2) {
+      transform: ${({ open }) => open ? 'translateX(100%)' : 'translateX(0)'};
+      opacity: ${({ open }) => open ? 0 : 1};
+    }
+    &:nth-child(3) {
+      transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
+    }
+  }
+`;
+
+const NewUl = styled.ul`
+  display: flex;
+  flex-flow: row nowrap;
+  .Navlink {
+    color:rgba(0,0,0,0);
+    padding: 1px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  @media (max-width: 768px) {
+    margin-top: 0px;
+    flex-flow: column nowrap;
+    background-color: #0D2538;
+    position: fixed;
+    transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
+    z-index: 1 ;
+    top: 0;
+    right: -10;
+    width: 150px;
+    padding-bottom: 20px;
+    padding-top: 3.5rem;
+    padding-inline-start: 10px;
+    border-radius: 0px 0px 5px ;
+    transition: transform 0.3s ease-in-out;
+    font-size: 1.2em;
+    line-height: 1.7em;
+    .Navlink {
+        text-decoration: none; 
+        border-radius: 8px ;
+        color: white;
+    }
+  }`;
+
+
+
 
 export {
   OutButton,
   ChartContainer,
   HomeMain,
-  Blur,
   MyButton,
   Input,
-  Background,
   P,
   H1,
   Content,
@@ -429,4 +474,6 @@ export {
   Container,
   ImageUpload,
   UserComp,
+  StyledBurger,
+  NewUl
 };

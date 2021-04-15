@@ -1,3 +1,4 @@
+//Update the firebase db username when change the username
 import React, { useState, useEffect } from "react";
 import Dropdown from "../Dropdown";
 import { AuthUserContext, withAuthentication } from "../Session";

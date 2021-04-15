@@ -1,11 +1,14 @@
 import Player from "../Player";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { useParams } from "react-router-dom"; // https://reactrouter.com/web/api/Hooks/useparams
 import * as ROUTES from "../../constants/routes";
 import { Link } from "react-router-dom";
 import { requestOptions, SEASON_DATA } from "../../data.js";
-import { getTeamStats } from "../API/functions.js";
-import { PieChart } from "../Charts";
+import { getTeamStats } from "../API";
+import { PieChart, LineChart } from "../Charts";
 import styled from "styled-components";
+import { LeagueContext, MatchesContext } from "../API";
+import MatchFeed from "../MatchFeed";
 
 const StyledTeamList = styled.div`
   display: flex;
@@ -29,22 +32,40 @@ const StyledTeamList = styled.div`
 `;
 
 //change the props to only recieve team id
-export const TeamPage = ({ team }) => {
-  //export const TeamPage = ({ match }) => {
-  const [standingData, setStandingData] = useState();
-  const [pieData, setPieData] = useState();
+const TeamPage = () => {
+  const [team, setTeam] = useState(null);
+  const [standingData, setStandingData] = useState(null);
+  const League = useContext(LeagueContext);
+  const matches = MatchesContext;
+
   //Create another fetch() to get the team data using http://api.football-data.org/v2/teams/{ID from props}
+  //gets id from route url
+  let { id } = useParams();
   useEffect(() => {
-    fetch(
-      "http://api.football-data.org/v2/competitions/2001/standings",
-      requestOptions
-    )
+    //uses route to create a function call for a specific team.
+    fetch(`http://api.football-data.org/v2/teams/${Number(id)}`, requestOptions)
       .then((response) => response.json())
       .then((json) => {
-        setStandingData(getTeamStats(json, team.id));
+        setTeam(json);
+        fetch(
+          `http://api.football-data.org/v2/competitions/${League}/standings`,
+          requestOptions
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            setStandingData(getTeamStats(data, id));
+          });
       });
   }, []);
+  return team && standingData ? (
+    <TeamDetail standings={standingData} team={team} />
+  ) : null;
   //use fetched data to render squad, name and logo of team
+};
+
+const TeamDetail = ({ team, standings }) => {
+  //console.log(team);
+  //console.log(standings);
   return (
     <article>
       <figure>
@@ -55,17 +76,17 @@ export const TeamPage = ({ team }) => {
         <h4>Season Performance</h4>
         <PieChart
           data={
-            standingData &&
-            (({ won, draw, lost }) => ({ won, draw, lost }))(standingData)
+            standings &&
+            (({ won, draw, lost }) => ({ won, draw, lost }))(standings)
           }
         >
           Wins/Losses
         </PieChart>
         <PieChart
           data={
-            standingData &&
+            standings &&
             (({ goalsFor, goalsAgainst }) => ({ goalsFor, goalsAgainst }))(
-              standingData
+              standings
             )
           }
         >
@@ -109,3 +130,4 @@ export const TeamList = ({ arr }) => {
     </StyledTeamList>
   );
 };
+export default TeamPage;

@@ -1,28 +1,29 @@
-import React, { Component } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import React, { Component } from "react";
+import { Link, withRouter } from "react-router-dom";
 
-import { withFirebase } from '../Firebase';
-import * as ROUTES from '../../constants/routes';
-import * as ROLES from '../../constants/roles';
-import ProfileImage from '../../img/prf_img.png'
-import { faUpload } from '@fortawesome/free-solid-svg-icons';
+import { withFirebase } from "../Firebase";
+import * as ROUTES from "../../constants/routes";
+import * as ROLES from "../../constants/roles";
+import * as LEAGUES from "../../constants/leagues";
+import ProfileImage from "../../img/prf_img.png";
+import { faUpload } from "@fortawesome/free-solid-svg-icons";
 
-import { Input, Content, MyButton } from '../StyledCom';
+import { Input, Content, MyButton } from "../StyledCom";
 
 const SignUpPage = () => (
   <Content>
     <h1>SignUp</h1>
     <SignUpForm />
-    </Content>
+  </Content>
 );
 
 const INITIAL_STATE = {
-  username: '',
-  email: '',
-  passwordOne: '',
-  passwordTwo: '',
+  username: "",
+  email: "",
+  passwordOne: "",
+  passwordTwo: "",
   isAdmin: false,
-  error: null
+  error: null,
 };
 
 class SignUpFormBase extends Component {
@@ -32,22 +33,20 @@ class SignUpFormBase extends Component {
     this.state = { ...INITIAL_STATE };
   }
 
-
-
-
-  onSubmit = event => {
+  onSubmit = (event) => {
     const { username, email, passwordOne, isAdmin } = this.state;
 
-    
+    const league = LEAGUES.CL;
+
     const roles = {};
 
     if (isAdmin) {
-    roles[ROLES.ADMIN] = ROLES.ADMIN;
+      roles[ROLES.ADMIN] = ROLES.ADMIN;
     }
 
     this.props.firebase
       .doCreateUserWithEmailAndPassword(email, passwordOne)
-      .then(authUser => {
+      .then((authUser) => {
         // Create a user in your Firebase realtime database
         this.props.firebase
           .user(authUser.user.uid)
@@ -55,42 +54,38 @@ class SignUpFormBase extends Component {
             username,
             email,
             roles,
+            league,
           })
           .then(() => {
             this.setState({ ...INITIAL_STATE });
             this.props.history.push(ROUTES.HOME);
           })
-          .catch(error => {
+          .catch((error) => {
             this.setState({ error });
           });
 
-          //Save default profile image when user sign up, It is Base64 type image and use putString() method to save Base64 images
-          this.props.firebase
+        //Save default profile image when user sign up, It is Base64 type image and use putString() method to save Base64 images
+        this.props.firebase
           .profileImage(authUser.user.uid)
-          .putString(ProfileImage,'data_url', {contentType:'image/png'})
-          .catch(error => {
-            console.log("Error saving default profile img")
-          })
-
+          .putString(ProfileImage, "data_url", { contentType: "image/png" })
+          .catch((error) => {
+            console.log("Error saving default profile img");
+          });
       })
-      .catch(error => {
+      .catch((error) => {
         this.setState({ error });
       });
 
-
     event.preventDefault();
-
   };
 
- 
-
-  onChange = event => {
+  onChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  onChangeCheckbox = event => {
+  onChangeCheckbox = (event) => {
     this.setState({ [event.target.name]: event.target.checked });
-    };
+  };
 
   render() {
     const {
@@ -104,56 +99,55 @@ class SignUpFormBase extends Component {
 
     const isInvalid =
       passwordOne !== passwordTwo ||
-      passwordOne === '' ||
-      email === '' ||
-      username === '';
+      passwordOne === "" ||
+      email === "" ||
+      username === "";
 
     return (
       <form onSubmit={this.onSubmit}>
         <Content>
-        <Input
-          name="username"
-          value={username}
-          onChange={this.onChange}
-          type="text"
-          placeholder="Full Name"
-        />
-        
-        <Input
-          name="email"
-          value={email}
-          onChange={this.onChange}
-          type="text"
-          placeholder="Email Address"
-        />
-        <Input
-          name="passwordOne"
-          value={passwordOne}
-          onChange={this.onChange}
-          type="password"
-          placeholder="Password"
-        />
-        <Input
-          name="passwordTwo"
-          value={passwordTwo}
-          onChange={this.onChange}
-          type="password"
-          placeholder="Confirm Password"
-        />
+          <Input
+            name="username"
+            value={username}
+            onChange={this.onChange}
+            type="text"
+            placeholder="Full Name"
+          />
+
+          <Input
+            name="email"
+            value={email}
+            onChange={this.onChange}
+            type="text"
+            placeholder="Email Address"
+          />
+          <Input
+            name="passwordOne"
+            value={passwordOne}
+            onChange={this.onChange}
+            type="password"
+            placeholder="Password"
+          />
+          <Input
+            name="passwordTwo"
+            value={passwordTwo}
+            onChange={this.onChange}
+            type="password"
+            placeholder="Confirm Password"
+          />
         </Content>
         <label>
-        Admin:
-        <input
-          name="isAdmin"
-          type="checkbox"
-          checked={isAdmin}
-          onChange={this.onChangeCheckbox}
+          Admin:
+          <input
+            name="isAdmin"
+            type="checkbox"
+            checked={isAdmin}
+            onChange={this.onChangeCheckbox}
           />
         </label>
         <MyButton disabled={isInvalid} type="submit">
           Sign Up
         </MyButton>
-        
 
         {error && <p>{error.message}</p>}
       </form>
