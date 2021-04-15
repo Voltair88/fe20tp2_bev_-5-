@@ -74,8 +74,6 @@ function App() {
       .then((response) => response.json())
       .then((json) => setTeamsData(json));
   }, [user]);
-
-  console.log(matchesData);
   return (
     <>
       {themeLoaded && (

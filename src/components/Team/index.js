@@ -39,7 +39,6 @@ const TeamPage = () => {
   const [standingData, setStandingData] = useState(null);
   const League = useContext(LeagueContext);
   const matches = useContext(MatchesContext);
-  //console.log(getMatchStats(matches, id));
 
   //Create another fetch() to get the team data using http://api.football-data.org/v2/teams/{ID from props}
 
@@ -59,15 +58,17 @@ const TeamPage = () => {
           });
       });
   }, []);
-  return team && standingData ? (
-    <TeamDetail standings={standingData} team={team} />
+  return team && matches ? (
+    <TeamDetail matches={matches} standings={standingData} team={team} />
   ) : null;
   //use fetched data to render squad, name and logo of team
 };
 
-const TeamDetail = ({ team, standings }) => {
+const TeamDetail = ({ team, standings, matches }) => {
   //console.log(team);
   //console.log(standings);
+  let lineData = buildAllMatchStats(matches)[team.name];
+  console.log(lineData);
   return (
     <article>
       <figure>
@@ -76,6 +77,7 @@ const TeamDetail = ({ team, standings }) => {
       <h3>{team.name}</h3>
       <div>
         <h4>Season Performance</h4>
+        {/* <LineChart data={lineData && lineData} /> */}
         <PieChart
           data={
             standings &&
