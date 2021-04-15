@@ -24,24 +24,27 @@ const HomePage = ({ teams, scorers }) => {
   const matches = useContext(MatchesContext);
 
   return (
-        <HomeMain>
-          <Content>
-            <h1>Home</h1>
-            <p>The Home Page is accessible by every signed in user.</p>
-            {/* <BarChart scorers={scorers} /> */}
-            {matches ? (
-              <LineChart data={buildAllMatchStats(matches)} />
-            ) : (
-              <p>loading...</p>
-            )}
-            {matches ? (
-              <MatchFeed matches={matches.matches} />
-            ) : (
-              <p>loading...</p>
-            )}
-            {teams ? <TeamList arr={teams} /> : <p>loading...</p>}
-          </Content>
-        </HomeMain>
+    <HomeMain>
+      <Content>
+        <h1>Home</h1>
+        <p>The Home Page is accessible by every signed in user.</p>
+        {/* <BarChart scorers={scorers} /> */}
+        {matches ? (
+          <LineChart data={buildAllMatchStats(matches)} />
+        ) : (
+          <p>loading...</p>
+        )}
+
+        <Top20Scorers />
+
+        {matches ? (
+          <MatchFeed matches={matches.matches} />
+        ) : (
+          <p>loading...</p>
+        )}
+        {teams ? <TeamList arr={teams} /> : <p>loading...</p>}
+      </Content>
+    </HomeMain>
   );
 };
 
