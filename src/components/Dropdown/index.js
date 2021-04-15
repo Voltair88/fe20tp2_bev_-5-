@@ -46,48 +46,24 @@ function Dropdown(props) {
                 fav_player_name: selectedOption.label,
             }) ? handleSnackbar("Successfully saved the player..!", "success") : handleSnackbar("Couldn't save the player..!", "error")
 
-        } else if (props.dropdownId === "TOP_20") {
-            if (props.onChange) {
-                props.onChange(selectedOption);   //Call back function to parent that send state
-            }
-            props.firebase.user(user.uid).update({
-                fav_league_id: selectedOption.value,
-                fav_league_name: selectedOption.label,
-            }) ? handleSnackbar("Successfully saved the favorite league..!", "success") : handleSnackbar("Couldn't save the league..!", "error")
-
-        } else if (props.dropdownId === "COMPETITION") {
-            if (props.onChange) {
-                props.onChange(selectedOption, 'COMPETITION');   //Call back function to parent that send state
-            }
-            props.firebase.user(user.uid).update({
-                fav_competition_id: selectedOption.value,
-                fav_competition_name: selectedOption.label,
-            }) ? handleSnackbar("Successfully saved the favorite competition..!", "success") : handleSnackbar("Couldn't save the competition..!", "error")
         }
 
     }
 
-
     return (
-        <AuthUserContext.Consumer>
-            {(authUser) => (
-                <div>
-                    <p>{props.placeholder}</p>
-                    <Select
-                        defaultValue={selectedOption}
-                        onChange={handleChange}
-                        options={props.dataSet}
-                        placeholder={props.favorite != null ? props.favorite : ''}  //Set saved value to dropdown as placeholder
-                    />
-                    {message != '' ?
-                        <SnackbarComponent key={new Date()} severity={severity} message={message} clearSnackbar={clearSnackbar} /> : null
-                    }
-
-                </div>
-
-            )}
-        </AuthUserContext.Consumer>
-    );
+        <div>
+            <p>{props.placeholder}</p>
+            <Select
+                defaultValue={selectedOption}
+                onChange={handleChange}
+                options={props.dataSet}
+                placeholder={props.favorite != null ? props.favorite : ''}  //Set saved value to dropdown as placeholder
+            />
+            {message != '' ?
+                <SnackbarComponent key={new Date()} severity={severity} message={message} clearSnackbar={clearSnackbar} /> : null
+            }
+        </div>
+    )
 }
 
 

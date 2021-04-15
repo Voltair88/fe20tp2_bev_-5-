@@ -1,34 +1,100 @@
 import React, { useEffect, useState } from 'react'
-import { TOP_SCORERS } from "../../top20Scorers.js";
-import { ALL_LEAGUES_2020 } from "../../allLeagues2020";
 import { Bar } from "react-chartjs-2";
-import Dropdown from "../Dropdown";
 import styled from "styled-components";
 import { AuthUserContext, withAuthentication } from "../Session";
+import { TOP_20_CHAMPIONS_LEAGUE } from '../../UEFAChampionsLeagueTop20';
+import { TOP_20_PREMIER_LEAGUE } from '../../PremierLeagueTop20';
+
+
+const size = {
+    mobileS: '320px',
+    mobileM: '375px',
+    mobileL: '425px',
+    tablet: '768px',
+    laptop: '1024px',
+    laptopL: '1440px',
+    desktop: '2560px'
+}
+
+export const device = {
+    mobileS: `(max-width: ${size.mobileS})`,
+    mobileM: `(max-width: ${size.mobileM})`,
+    mobileL: `(max-width: ${size.mobileL})`,
+    tablet: `(max-width: ${size.tablet})`,
+    laptop: `(max-width: ${size.laptop})`,
+    laptopL: `(max-width: ${size.laptopL})`,
+    desktop: `(max-width: ${size.desktop})`,
+    desktopL: `(max-width: ${size.desktop})`
+};
 
 
 const Container = styled.div`
     display: flex;
+    /* overflow-x: hidden; */
+    /* @media (max-width: 768px) {
+    flex-direction: column;
+  } */
+
+  /* width: 100vw; */
+
+  @media ${device.laptop} { 
+    flex-direction: column;
+  }
+
+
+  background-color: whitesmoke;
 `
 
 const LeftSection = styled.div`
     display: flex;
+    /* align-items: center;
+    justify-content: center; */
     flex: 1;
-    margin: 0 50px;
+    /* margin: 0 50px; */
+    /* width: 40vw; */
+    
 `
 const RightSection = styled.div`
+background-color: aquamarine;
     display: flex;
-    flex: 2;
+    flex: 1;
     flex-direction: column;
-    width: 500px;
-    align-items: center;
-    margin: 0 100px;
+    height: 80vh;
+    /* align-items: center; */
+    /* align-self: center; */
+    
+    /* margin: 0 100px; */
+
+    @media ${device.laptop} { 
+        width: 100%;
+        height: 80vh;
+        
+    }
+    @media ${device.mobileL} { 
+        width: 100%;
+        height: 50vh;
+    }
+    @media ${device.mobileS} { 
+        width: 100%;
+        height: 50vh;
+    }
+
+
+    /* @media screen and (min-width: 769px) and (max-width: 1024px) {
+    width: 50%;
+    font-size: 1.5rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 50%;
+  }
+
+  @media screen and (max-width: 414px) {
+    width: 70%;
+  } */
+
 `
 
-const DropdownContainer = styled.div`
-    width: 500px;
-    margin-bottom: 50px;
-`
 
 
 const StyledPlayerList = styled.div`
@@ -49,122 +115,73 @@ const StyledPlayerList = styled.div`
 
     table{
         border-collapse: collapse;
-        width: 100%;  
+        width: 90%;  
         table-layout: fixed;
         font-size: smaller;
+        margin: 0 auto;
     }
 
     th{
-      background-color: rgb(153, 255, 153,0.2) ;
+      /* background-color: rgb(153, 255, 153,0.2) ; */
+      background-color: rgb(32, 224, 63) ;
       text-align: center;
-      border: 1px solid #ddd;
+      border: 0.5px solid #ddd;
     }
     td{
         text-align: center;
-        border: 1px solid #ddd;
-        padding: 4px;
+        border: 0.5px solid #ddd;
+        padding: 3px;
+        overflow: hidden; 
+        text-overflow: ellipsis; 
+        word-wrap: break-word;
     }
+    th:nth-child(1) { 
+        width: 10%; 
+    }
+
+    @media ${device.tablet} { 
+        table{
+            font-size: x-small; 
+        }
+        img{
+            width:25px;
+            height:25px;
+        }
+        img:hover{
+        width: 50px;
+        height: 50px;
+    }
+    }
+
 
 `
 
-function Top20Scorers(props) {
+function Top20Scorers() {
 
     const user = React.useContext(AuthUserContext);
 
-    const DEFAULT_LEAGUE = 39;
+    /* const DEFAULT_LEAGUE = 39;   *///Premier League
+    const PREMIER_LEAGUE_ID = 2021;   //Premier league id that admin used to set for a specific user
+    const CHAMPIONS_LEAGUE_ID = 2001;   //Champions league id that admin used to set for a specific user
 
-    const [leagues_arr, setLeaguesArr] = useState([])
-
-    const [leagueId, setLeagueId] = useState([DEFAULT_LEAGUE]);  //Set default id to 39 (Premier League)
+    const [leagueId, setLeagueId] = useState([null]);  //Set default id to 39 (Premier League)
     const [topScorersArr, setTopScorersArr] = useState([]);
-    const [fav_league, setFav_league] = useState(null)
-
-
-    const eventhandler = (selectedLeague) => {
-        if (!!selectedLeague) {
-            setLeagueId(selectedLeague.value)
-        }
-    }
 
 
     useEffect(() => {
 
-
-        //Read data from firebase and bind data to league dropdown
-        props.firebase.user(user.uid).get().then(function (snapshot) {
-            if (snapshot.exists()) {
-                setFav_league(snapshot.val().fav_league_name);
-                console.log("Inside get" + snapshot.val().fav_league_name)
-
-                //Read the database value for Favorite league id and if there is a saved favorite league, set it as the League Id to fetch data on load,
-                //Otherwise fetch data according to DEFAULT_LEAGUE = 39
-                if (!!snapshot.val().fav_league_id) {
-                    setLeagueId(snapshot.val().fav_league_id)
-                }
-
-            }
-            else {
-                /* handleSnackbar("No data available", "error"); */
-                console.log("no data")
-            }
-            console.log(fav_league)
-
-        }).catch(function (error) {
-            /* handleSnackbar("Something went wrong, try again", "error"); */
-        });
-
-
-        /* console.log(TOP_SCORERS) */
-        //Ex. leagues that have Top 20 scoreres
-        //UEFA Europa League  : 3
-        console.log(leagueId)
-        console.log("Inside useeffect")
-        //Fetch top 20 players from API when user select a league from dropdown
-        if (leagueId > -1 && leagueId !== DEFAULT_LEAGUE) {   //Check leagueId has a value and it is not the default value
-            console.log("Inside fetch")
-
-            console.log(leagueId)
-            fetch(`https://api-football-v1.p.rapidapi.com/v3/players/topscorers?league=${leagueId}&season=2020`, {
-                "method": "GET",
-                "headers": {
-                    "x-rapidapi-key": "d9ad56e7d3mshf09eb906ca38e7ap162eacjsne5fdd08c2007",
-                    "x-rapidapi-host": "api-football-v1.p.rapidapi.com"
-                }
-            })
-                .then((response) => response.json())
-                .then((data) => {
-                    if (data.response.length > 0) {
-                        setTopScorersArr(data.response);  //Store fetched data in the state
-                        console.log(data.response)
-                    } else {
-                        setTopScorersArr(TOP_SCORERS); //If a league don't have Top 20 scorers,set the top20 to default league 
-                        console.log("Sorry, Not found top 20 for this league");
-                    }
-                })
-                .catch(err => {
-                    console.error(err);
-                });
-
+        if (!!user) {
+            setLeagueId(user.league)  //set the league id that read from the firebase db
         }
 
-
-        //Set data to league dropdown
-        let legueArr = [];
-
-        if (ALL_LEAGUES_2020.length > 0) {
-            ALL_LEAGUES_2020.map((item) => {
-                legueArr.push({
-                    value: item.league.id,
-                    label: item.league.name,
-                }
-                )
+        //As our grupp 5 account has reached the maximum quota for RapidAPI, saved the fetched data in two separate .js files to avoid get blocked on this API subscription
+        if (!!leagueId) {
+            if (leagueId === PREMIER_LEAGUE_ID) {  //f user has the id 2021 as the league id in firebase,load the top 20 premier league data from PremierLeagueTop20.js
+                setTopScorersArr(TOP_20_PREMIER_LEAGUE[0].response);
+            } else if (leagueId === CHAMPIONS_LEAGUE_ID) { //if user has the id 2001 as the league id in firebase,load the top 20 champions league data from UEFAChampionsLeagueTop20.js
+                setTopScorersArr(TOP_20_CHAMPIONS_LEAGUE[0].response);
             }
-            )
-        } else {
-            console.log("Empty")
         }
-        setLeaguesArr(legueArr);
-
     }, [leagueId]);
 
 
@@ -175,10 +192,6 @@ function Top20Scorers(props) {
             </LeftSection>
 
             <RightSection>
-                <DropdownContainer>
-                    <Dropdown placeholder={'Choose a league'} dataSet={leagues_arr} dropdownId="TOP_20" onChange={eventhandler} favorite={fav_league} />
-                </DropdownContainer>
-
                 <Chart topScorersArr={topScorersArr} />
             </RightSection>
 
@@ -186,7 +199,7 @@ function Top20Scorers(props) {
     )
 }
 
-export default withAuthentication(Top20Scorers);
+export default Top20Scorers;
 
 const Top20List = (props) => {
     return (
@@ -224,7 +237,6 @@ const Top20List = (props) => {
 };
 
 const Chart = (props) => {
-    { console.log(props.topScorersArr) }
 
     const [player_name_arr, setPlayersArr] = useState([]);
     const [goals_arr, setGoalsArr] = useState([])
@@ -240,7 +252,6 @@ const Chart = (props) => {
 
         if (props.topScorersArr !== undefined && props.topScorersArr.length > 0) {
 
-            console.log("Inside top chart scorers")
             const players_arr = props.topScorersArr.map((item) => item.player.name);
             const no_of_goals_arr = props.topScorersArr.map((item) => item.statistics[0].goals.total);
             const no_of_shots_arr = props.topScorersArr.map((item) => item.statistics[0].shots.total);
@@ -279,7 +290,7 @@ const Chart = (props) => {
                     {
                         label: 'Total shots',
                         data: shots_arr,
-                        backgroundColor: 'rgb(179, 198, 255, 0.1)',
+                        backgroundColor: 'rgba(196, 229, 56,0.5)',
                         borderColor: '	rgb(179, 179, 255)',
                         barThickness: 'flex',
                         borderWidth: 1,
@@ -314,7 +325,8 @@ const Chart = (props) => {
 
             }}
             options={{
-                maintainAspectRatio: true,
+                responsive: true,
+                maintainAspectRatio: false,
                 scales: {
                     xAxes: [{
                         stacked: true
@@ -335,5 +347,3 @@ const Chart = (props) => {
         />
     )
 }
-
-/*  TOP_SCORERS.map((item) => item.player.name) */
