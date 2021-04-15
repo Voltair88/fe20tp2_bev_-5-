@@ -7,7 +7,7 @@ import { requestOptions, SEASON_DATA } from "../../data.js";
 import { getTeamStats } from "../API";
 import { PieChart, LineChart } from "../Charts";
 import styled from "styled-components";
-import { LeagueContext, MatchesContext } from "../API";
+import { LeagueContext, MatchesContext, buildAllMatchStats } from "../API";
 import MatchFeed from "../MatchFeed";
 
 const StyledTeamList = styled.div`
@@ -33,14 +33,16 @@ const StyledTeamList = styled.div`
 
 //change the props to only recieve team id
 const TeamPage = () => {
+  //gets id from route url
+  let { id } = useParams();
   const [team, setTeam] = useState(null);
   const [standingData, setStandingData] = useState(null);
   const League = useContext(LeagueContext);
-  const matches = MatchesContext;
+  const matches = useContext(MatchesContext);
+  //console.log(getMatchStats(matches, id));
 
   //Create another fetch() to get the team data using http://api.football-data.org/v2/teams/{ID from props}
-  //gets id from route url
-  let { id } = useParams();
+
   useEffect(() => {
     //uses route to create a function call for a specific team.
     fetch(`http://api.football-data.org/v2/teams/${Number(id)}`, requestOptions)
