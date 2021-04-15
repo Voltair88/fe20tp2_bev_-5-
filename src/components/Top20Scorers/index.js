@@ -30,17 +30,19 @@ export const device = {
 
 const Container = styled.div`
     display: flex;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     /* @media (max-width: 768px) {
     flex-direction: column;
   } */
+
+  /* width: 100vw; */
 
   @media ${device.laptop} { 
     flex-direction: column;
   }
 
 
-  /* background-color: yellowgreen; */
+  background-color: whitesmoke;
 `
 
 const LeftSection = styled.div`
@@ -50,13 +52,10 @@ const LeftSection = styled.div`
     flex: 1;
     /* margin: 0 50px; */
     /* width: 40vw; */
-    /* background-color: azure; */
-    /* align-self: center; */
-
     
 `
 const RightSection = styled.div`
-/* background-color: aquamarine; */
+background-color: aquamarine;
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -116,21 +115,44 @@ const StyledPlayerList = styled.div`
 
     table{
         border-collapse: collapse;
-        width: 100%;  
-        table-layout: auto;
+        width: 90%;  
+        table-layout: fixed;
         font-size: smaller;
+        margin: 0 auto;
     }
 
     th{
-      background-color: rgb(153, 255, 153,0.2) ;
+      /* background-color: rgb(153, 255, 153,0.2) ; */
+      background-color: rgb(32, 224, 63) ;
       text-align: center;
-      border: 1px solid #ddd;
+      border: 0.5px solid #ddd;
     }
     td{
         text-align: center;
-        border: 1px solid #ddd;
-        padding: 4px;
+        border: 0.5px solid #ddd;
+        padding: 3px;
+        overflow: hidden; 
+        text-overflow: ellipsis; 
+        word-wrap: break-word;
     }
+    th:nth-child(1) { 
+        width: 10%; 
+    }
+
+    @media ${device.tablet} { 
+        table{
+            font-size: x-small; 
+        }
+        img{
+            width:25px;
+            height:25px;
+        }
+        img:hover{
+        width: 50px;
+        height: 50px;
+    }
+    }
+
 
 `
 
