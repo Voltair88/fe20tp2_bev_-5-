@@ -16,6 +16,15 @@ const MatchFeedContainer = styled.div`
     border-bottom: 1.9px solid black;
     border-top: 1.9px solid black;
   }
+
+  @media only screen and (max-width: 540px) {
+    h3 {
+      font-size: 1.4rem;
+      margin-top: 1rem;
+      padding: 0.5rem 0rem;
+      width: 60%;
+    }
+  }
 `;
 
 const MatchFeedList = styled.div`
@@ -28,6 +37,14 @@ const MatchFeedList = styled.div`
     width: 80%;
     margin: 0 auto;
     padding: 4%;
+  }
+
+  @media only screen and (max-width: 540px) {
+    h4 {
+      font-size: 1.2rem;
+      width: 60%;
+      padding-top: 3%;
+    }
   }
 `;
 
@@ -43,6 +60,7 @@ const StyledMatchItem = styled.div`
   overflow: hidden; // Or flex might break
   list-style: none;
   border-bottom: solid 1px black;
+
   span {
     width: 20%;
     padding: 1em;
@@ -77,6 +95,49 @@ const StyledMatchItem = styled.div`
     &:hover {
       color: red;
       transition: 0.3s ease-in-out;
+    }
+  }
+
+  @media only screen and (max-width: 540px) {
+    width: 95%;
+    height: 25vh;
+    padding: 0.3rem 0rem 0rem 0rem;
+
+    span {
+      width: 19%;
+      padding: 0.2rem 0.1rem;
+    }
+
+    span:first-child {
+      font-size: 1rem;
+    }
+
+    span:nth-child(2),
+    span:nth-child(6) {
+      font-size: 1.1rem;
+      width: 35%;
+    }
+    span:nth-child(3),
+    span:nth-child(5) {
+      font-weight: 600;
+    }
+    span:nth-child(3),
+    span:nth-child(4),
+    span:nth-child(5) {
+      width: 5%;
+      font-size: 1rem;
+    }
+    span:nth-child(2),
+    span:nth-child(3),
+    span:nth-child(4),
+    span:nth-child(5),
+    span:nth-child(5) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    span a {
+      font-size: 1rem;
     }
   }
 `;
