@@ -3,30 +3,20 @@ import * as ROUTES from "../../constants/routes";
 import * as ROLES from "../../constants/roles";
 import SignOutButton from "../SignOut";
 import { Burger } from "./Burger.js";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Navbar, Ul, NavLink, HamMenu } from "../StyledCom";
-import ProfileImage from "../../img/prf_img.png";
 
 const Navigation = (props) => {
-  const user = React.useContext(AuthUserContext);
 
-  const [url, setUrl] = useState(ProfileImage);
 
-  /*   if (!!user.uid){
-    props.firebase.profileImage(user.uid)
-    .getDownloadURL()
-    .then(url => {
-      setUrl(url);
-    });
-  } */
 
   return (
     <Navbar>
       <AuthUserContext.Consumer>
         {(authUser) =>
           authUser ? (
-            <NavigationAuth authUser={authUser} url={url} />
+            <NavigationAuth authUser={authUser} />
           ) : (
             <NavigationNonAuth />
           )
@@ -37,7 +27,7 @@ const Navigation = (props) => {
   );
 };
 
-const NavigationAuth = ({ authUser, url }) => {
+const NavigationAuth = ({ authUser }) => {
   return (
     <Ul>
       <li>
@@ -55,13 +45,10 @@ const NavigationAuth = ({ authUser, url }) => {
       <li>
         <SignOutButton />
       </li>
-      {/*  <li>
-        <NavLink to={ROUTES.ACCOUNT}>
-          {" "}
-           <img src={url} alt="" /> Account
-        </NavLink>
-      </li> */}
-    </Ul>
+      <li>
+        <NavLink to={ROUTES.ACCOUNT}> Account</NavLink>
+      </li>
+    </Ul >
   );
 };
 const NavigationNonAuth = () => (
