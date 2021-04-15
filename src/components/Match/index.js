@@ -1,13 +1,9 @@
-import Player from "../Player";
 import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom"; // https://reactrouter.com/web/api/Hooks/useparams
-import * as ROUTES from "../../constants/routes";
-import { Link } from "react-router-dom";
+
 import { requestOptions, SEASON_DATA } from "../../data.js";
-import { getTeamStats } from "../API";
 import { PieChart, LineChart } from "../Charts";
 import styled from "styled-components";
-import { LeagueContext, MatchesContext } from "../API";
 
 const MatchPage = () => {
   let { id } = useParams();
@@ -22,12 +18,38 @@ const MatchPage = () => {
       .then((json) => setMatch(json));
   }, []);
 
-  return <MatchDetail match={match} />;
+  return <MatchDetail data={match && match} />;
 };
 
-const MatchDetail = ({ match }) => {
+const MatchDetail = ({ data }) => {
+  if (!data) {
+    return <p>Loading...</p>;
+  }
+  const { match, head2head } = data;
   console.log(match);
-  return <div></div>;
+  console.log(head2head);
+  return (
+    <div>
+      <div>
+        <h3>{match.homeTeam.name}</h3>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+      <div>
+        <h3>{match.awayTeam.name}</h3>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+  );
 };
 
 export default MatchPage;
