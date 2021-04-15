@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext } from "react";
 import styled, { ThemeProvider } from "styled-components";
-import WebFont from 'webfontloader';
-import { GlobalStyles } from '../../theme/GlobalStyles';
-import {useTheme} from '../../theme/useTheme';
+import WebFont from "webfontloader";
+import { GlobalStyles } from "../../theme/GlobalStyles";
+import { useTheme } from "../../theme/useTheme";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { withAuthentication } from "../Session";
 import Navigation from "../Navigation";
@@ -30,36 +30,28 @@ import { AuthUserContext } from "../Session";
 import * as ROUTES from "../../constants/routes";
 import ChangeEmail from "../ChangeEmail";
 import ChangePassword from "../ChangePassword";
-import ChangeTheme from '../ChangeTheme';
+import ChangeTheme from "../ChangeTheme";
 
-const Container = styled.div`
-
-`;
-
-
-
+const Container = styled.div``;
 
 function App() {
   const [scorersData, setScorersData] = useState(SCORERS_DATA.scorers);
-  const [teamsData, setTeamsData] = useState();
+  const [teamsData, setTeamsData] = useState(null);
   const [teamData, setTeamData] = useState(TEAM_DATA);
-  const [matchesData, setMatchesData] = useState(
-    buildAllMatchStats(CL_MATCH_DATA)
-  );
-  const {theme, themeLoaded, getFonts} = useTheme();
-  const [selectedTheme, setSelectedTheme] = useState(theme);  
- useEffect(() => {
+  const [matchesData, setMatchesData] = useState(null);
+  const { theme, themeLoaded, getFonts } = useTheme();
+  const [selectedTheme, setSelectedTheme] = useState(theme);
+  useEffect(() => {
     WebFont.load({
       google: {
-        families: getFonts()
-      }
+        families: getFonts(),
+      },
     });
   });
 
   useEffect(() => {
     setSelectedTheme(theme);
   }, [themeLoaded]);
-
 
   const user = useContext(AuthUserContext);
 
@@ -86,70 +78,65 @@ function App() {
   console.log(matchesData);
   return (
     <>
-    {
-      themeLoaded && <ThemeProvider theme={ selectedTheme }>
-        <GlobalStyles/>
-        <Container style={{fontFamily: selectedTheme.font}}>
-
-    <Router>
-      <LeagueContext.Provider value={user && user.league}>
-        <MatchesContext.Provider value={matchesData && matchesData}>
-          <Navigation />
-          <Switch>
-            <Route path={ROUTES.SIGN_UP}>
-              <SignUpPage />
-            </Route>
-            <Route path={ROUTES.SIGN_IN}>
-              <SignInPage />
-            </Route>
-            <Route path={ROUTES.PASSWORD_FORGET}>
-              <PasswordForgetPage />
-            </Route>
-            <Route path={ROUTES.HOME}>
-              <HomePage
-                scorers={scorersData}
-                teams={teamsData && teamsData.teams}
-              />
-            </Route>
-            <Route path={ROUTES.ACCOUNT}>
-              <AccountPage />
-            </Route>
-            <Route path={ROUTES.CHANGE_THEME}>
-              <ChangeTheme />
-            </Route>
-            <Route path={ROUTES.ADMIN}>
-              <AdminPage />
-            </Route>
-            <Route path={ROUTES.CHANGE_EMAIL}>
-              <ChangeEmail />
-            </Route>
-            <Route path={ROUTES.CHANGE_PASSWORD}>
-              <ChangePassword />
-            </Route>
-            <Route path={ROUTES.TEAM_DETAIL}>
-              <TeamPage />
-            </Route>
-            <Route path={ROUTES.MATCH_DETAIL}>
-              <MatchPage />
-            </Route>
-            <Route path={ROUTES.LANDING}>
-              <LandingPage />
-            </Route>
-          </Switch>
-        </MatchesContext.Provider>
-      </LeagueContext.Provider>
-    </Router>
-    </Container>
-    </ThemeProvider>
-    }
+      {themeLoaded && (
+        <ThemeProvider theme={selectedTheme}>
+          <GlobalStyles />
+          <Container style={{ fontFamily: selectedTheme.font }}>
+            <Router>
+              <LeagueContext.Provider value={user && user.league}>
+                <MatchesContext.Provider value={matchesData && matchesData}>
+                  <Navigation />
+                  <Switch>
+                    <Route path={ROUTES.SIGN_UP}>
+                      <SignUpPage />
+                    </Route>
+                    <Route path={ROUTES.SIGN_IN}>
+                      <SignInPage />
+                    </Route>
+                    <Route path={ROUTES.PASSWORD_FORGET}>
+                      <PasswordForgetPage />
+                    </Route>
+                    <Route path={ROUTES.HOME}>
+                      <HomePage
+                        scorers={scorersData}
+                        teams={teamsData && teamsData.teams}
+                      />
+                    </Route>
+                    <Route path={ROUTES.ACCOUNT}>
+                      <AccountPage />
+                    </Route>
+                    <Route path={ROUTES.CHANGE_THEME}>
+                      <ChangeTheme />
+                    </Route>
+                    <Route path={ROUTES.ADMIN}>
+                      <AdminPage />
+                    </Route>
+                    <Route path={ROUTES.CHANGE_EMAIL}>
+                      <ChangeEmail />
+                    </Route>
+                    <Route path={ROUTES.CHANGE_PASSWORD}>
+                      <ChangePassword />
+                    </Route>
+                    <Route path={ROUTES.TEAM_DETAIL}>
+                      <TeamPage />
+                    </Route>
+                    <Route path={ROUTES.MATCH_DETAIL}>
+                      <MatchPage />
+                    </Route>
+                    <Route path={ROUTES.LANDING}>
+                      <LandingPage />
+                    </Route>
+                  </Switch>
+                </MatchesContext.Provider>
+              </LeagueContext.Provider>
+            </Router>
+          </Container>
+        </ThemeProvider>
+      )}
     </>
   );
-};
+}
 export default withAuthentication(App);
-
-
-
-
 
 /* import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
