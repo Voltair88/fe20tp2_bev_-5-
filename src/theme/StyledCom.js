@@ -4,9 +4,6 @@ import { Link } from "react-router-dom";
 //Styling for Navigation
 const Navbar = styled.div`
   background: ${({ theme }) => theme.colors.header};
-  background: ${({ theme }) => theme.colors.header2};
-  background: ${({ theme }) => theme.colors.header3};
-  background: ${({ theme }) => theme.colors.header4};
   width: 100%;
   height: 8vh;
 `;

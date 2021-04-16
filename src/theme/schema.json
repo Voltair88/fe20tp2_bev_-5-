@@ -4,13 +4,10 @@
           "id": "T_001",
           "name": "Light",
           "colors": {
-              "header": "rgb(32,224,63);",
-              "header2": "linear-gradient(180deg, rgba(32,224,63,1) 32%, rgba(193,255,187,1) 70%);",
-              "header3": "-webkit-linear-gradient(180deg, rgba(32,224,63,1) 44%, rgba(193,255,187,1) 79%);",
-              "header4": "linear-gradient(180deg, rgba(32,224,63,1) 44%, rgba(193,255,187,1) 79%);",
+              "header": "rgb(9, 130, 82)",
               "body": "white",
               "text": "black",
-              "hover": "green",
+              "hover": "white",
               "button": {
                   "text": "white",
                   "background": "black"
@@ -29,9 +26,10 @@
           "id": "T_002",
           "name": "Dark",
           "colors": {
+              "header": "rgb(70, 9, 130)",
               "body": "black",
               "text": "white",
-              "hover": "green",
+              "hover": "black",
               "button": {
                   "text": "white",
                   "background": "black"
