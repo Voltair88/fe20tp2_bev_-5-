@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 
 //Styling for Navigation
 const Navbar = styled.div`
-  background-color: white;
+  background: ${({ theme }) => theme.colors.header};
+  background: ${({ theme }) => theme.colors.header2};
+  background: ${({ theme }) => theme.colors.header3};
+  background: ${({ theme }) => theme.colors.header4};
   width: 100%;
   height: 8vh;
 `;
@@ -17,7 +20,7 @@ const Ul = styled.ul`
   align-items: center;
   list-style: none;
   border-bottom: 2px solid;
-  border-color: white;
+  border-color: ${({ theme }) => theme.colors.text};
   height: 100%;
   font-size: 1.2rem;
   & > li {
@@ -35,7 +38,7 @@ const NavLink = styled(Link)`
   font-weight: 500;
 
   &:hover {
-    color: black;
+    color: ${({ theme }) => theme.colors.hover};
     transition: 0.3s ease-in-out;
   }
 
@@ -142,17 +145,19 @@ const ChartContainer = styled.div`
 const OutButton = styled.button`
   font-weight: 500;
   text-transform: uppercase;
-  color: white;
+  color: ${({ theme }) => theme.colors.text};
   padding: 0.3rem 0.6rem;
   font-size: 1.1rem;
-  border: 2px solid white;
+  border: 2px solid;
+  border-color: ${({ theme }) => theme.colors.text};
   background: none;
   border-radius: 6px;
   cursor: pointer;
 
   &:hover {
+    background-color: ${({ theme }) => theme.colors.text};
     border-color: black;
-    color: black;
+    color: ${({ theme }) => theme.colors.body};
     transition: 0.3s ease-in-out;
   }
 `;

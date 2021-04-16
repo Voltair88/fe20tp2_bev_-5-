@@ -1,4 +1,4 @@
-import {Background, Main, Blur, Content, H1, P} from '../StyledCom';
+import {Background, Main, Blur, Content, H1, P} from "../../theme/StyledCom";
 
 
 const Landing = () => {

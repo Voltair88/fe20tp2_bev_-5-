@@ -6,7 +6,7 @@ import { AuthUserContext, withAuthorization } from "../Session";
 import UserProfile from "../UserProfile";
 
 import * as ROUTES from "../../constants/routes";
-import { ChangeButton } from "../StyledCom";
+import { ChangeButton } from "../../theme/StyledCom";
 import Top20Scorers from "../Top20Scorers";
 
 const AccountPage = () => (

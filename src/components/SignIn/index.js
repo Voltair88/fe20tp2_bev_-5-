@@ -6,7 +6,7 @@ import { withFirebase } from "../Firebase";
 import * as ROUTES from "../../constants/routes";
 import styled from "styled-components";
 
-import { Content, Input, MyButton } from "../StyledCom";
+import { Content, Input, MyButton } from "../../theme/StyledCom";
 
 const SignInPage = () => (
   <Content>

@@ -1,7 +1,7 @@
 import { createGlobalStyle} from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
-  * {
+  body {
     background: ${({ theme }) => theme.colors.body};
     color: ${({ theme }) => theme.colors.text};
     font-family: ${({ theme }) => theme.font};
@@ -34,8 +34,5 @@ export const GlobalStyles = createGlobalStyle`
     background-color: #1064EA;
     color: white;
     font-family: ${({ theme }) => theme.font};
-  }
-  Ul li {
-    color: ${({ theme }) => theme.colors.link.text};
-  }   
+  }  
 `;

@@ -4,7 +4,7 @@ import { withFirebase } from "../Firebase";
 import { withAuthorization } from "../Session";
 import * as ROLES from "../../constants/roles";
 import * as ROUTES from "../../constants/routes";
-import { Input, Content, MyButton } from "../StyledCom";
+import { Input, Content, MyButton } from "../../theme/StyledCom";
 class AdminPage extends Component {
   constructor(props) {
     super(props);

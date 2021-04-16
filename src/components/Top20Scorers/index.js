@@ -114,16 +114,18 @@ const StyledPlayerList = styled.div`
     }
 
     table{
+        background-color: ${({ theme }) => theme.colors.body};
         border-collapse: collapse;
         width: 90%;  
         table-layout: fixed;
         font-size: smaller;
+        color: ${({ theme }) => theme.colors.text};
         margin: 0 auto;
     }
 
     th{
       /* background-color: rgb(153, 255, 153,0.2) ; */
-      background-color: rgb(32, 224, 63) ;
+      background-color: ${({ theme }) => theme.colors.body};
       text-align: center;
       border: 0.5px solid #ddd;
     }

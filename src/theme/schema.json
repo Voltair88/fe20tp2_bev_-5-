@@ -4,39 +4,44 @@
           "id": "T_001",
           "name": "Light",
           "colors": {
-              "header": "teal",
-              "body": "#FFFFFF",
+              "header": "rgb(32,224,63);",
+              "header2": "linear-gradient(180deg, rgba(32,224,63,1) 32%, rgba(193,255,187,1) 70%);",
+              "header3": "-webkit-linear-gradient(180deg, rgba(32,224,63,1) 44%, rgba(193,255,187,1) 79%);",
+              "header4": "linear-gradient(180deg, rgba(32,224,63,1) 44%, rgba(193,255,187,1) 79%);",
+              "body": "white",
               "text": "black",
+              "hover": "green",
               "button": {
-                  "text": "",
-                  "background": "red"
+                  "text": "white",
+                  "background": "black"
               },
               "link": {
-                  "text": "red",
+                  "text": "black",
                   "opacity": 1
+              },
+              "div": {
+                  "background": "black"
               }
           },
-          "font": "Tinos"
+          "font": "Helvetica "
       },
       "dark" : {
           "id": "T_002",
           "name": "Dark",
           "colors": {
-              "body": "#000000",
-              "text": "#FFFFFF",
+              "body": "black",
+              "text": "white",
+              "hover": "green",
               "button": {
                   "text": "white",
-                  "background": "red"
+                  "background": "black"
               },
               "link": {
-                  "text": "teal",
+                  "text": "white",
                   "opacity": 1
-              },
-              "Ul": {
-                  "text": "red"
               }
           },
-          "font": "Open Sans"
+          "font": "Gill Sans"
       },
       "material" : {
           "id": "T_003",
@@ -70,7 +75,7 @@
                   "opacity": 0.8
               }
           },
-          "font": "Kufam"
+          "font": "Myriad"
       },
       "calm" : {
           "id": "T_005",
@@ -121,7 +126,7 @@
                   "opacity": 0.8
               }
           },
-          "font": "Ubuntu"
+          "font": "Franklin Gothic"
       }
   }
 }
