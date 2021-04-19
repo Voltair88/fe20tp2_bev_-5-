@@ -3,9 +3,7 @@ import {Background, Main, Blur, Content, H1, P, BgImage, BgContent, BgBanner} fr
 import { Link, withRouter } from "react-router-dom";
 import * as ROUTES from "../../constants/routes";
  
-const Body = styled.html`
-  scroll-behavior: smooth;
-`;
+
  
 const BgButtonI = styled.div`
  
@@ -86,7 +84,7 @@ const TrySignButton = styled.button`
  
 const Landing = () => {
   return (
-    <Body>
+    <body>
         <BgBanner>
             <BgImage>
               <BgContent img={"https://wallpaperaccess.com/full/1150517.jpg"}>
@@ -127,7 +125,7 @@ const Landing = () => {
           <p>Try out the application by signing up. Click the button below!</p>
           <TrySignButton><Link to={ROUTES.SIGN_UP}>Sign Up!</Link></TrySignButton>
         </TrySign>
-    </Body>  
+    </body>  
   );
 };
  
