@@ -443,11 +443,34 @@ const NewUl = styled.ul`
   }
 `;
 
+const TeamItemContainer = styled.div`
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0rem;
+  font-size: 1.2rem;
+
+  @media only screen and (max-width: 540px) {
+    height: 12vh;
+    font-size: 1rem;
+    word-wrap: break-word;
+
+    span:nth-child(2) {
+      flex-grow: 2;
+      min-width: 40%;
+    }
+    span {
+      min-width: 0%;
+    }
+  }
+`;
+
 const StyledTeamList = styled.div`
   display: flex;
   flex-wrap: wrap;
   max-height: 100%;
-  max-width: 80%;
+  max-width: 100%;
   span {
     text-align: center;
     vertical-align: middle;
@@ -458,41 +481,46 @@ const StyledTeamList = styled.div`
     overflow: hidden; // Or flex might break
     list-style: none;
     img {
-      width: 100%;
+      width: 50%;
       height: auto;
+    }
+
+    @media only screen and (max-width: 540px) {
+      padding: 0;
     }
   }
 `;
 
 //landing background
 
-
-
 const BgImage = styled.div`
-    padding-top: 10em;
+  padding-top: 10em;
 `;
 
 const BgContent = styled.div`
-
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    -webkit-background-size: cover;
-    background-size: cover;
-    z-index: -1;
-    background-image: linear-gradient(to left, rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(${props => props.img});
-    background-position: center center;
-    
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-background-size: cover;
+  background-size: cover;
+  z-index: -1;
+  background-image: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.8)
+    ),
+    url(${(props) => props.img});
+  background-position: center center;
 `;
 
 const BgBanner = styled.div`
-    position: relative;
-    justify-content: center;
-    text-align: center;
-    min-height: 100vh;
-    color: #fff;
+  position: relative;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+  color: #fff;
 `;
 
 export {
@@ -523,4 +551,5 @@ export {
   BgContent,
   BgImage,
   BgBanner,
+  TeamItemContainer,
 };
