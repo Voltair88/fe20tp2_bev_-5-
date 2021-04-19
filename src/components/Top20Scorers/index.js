@@ -36,13 +36,13 @@ const Container = styled.div`
   } */
 
   /* width: 100vw; */
+  flex-direction: column;
 
   @media ${device.laptop} { 
     flex-direction: column;
   }
 
 
-  background-color: whitesmoke;
 `;
 
 const LeftSection = styled.div`
@@ -85,6 +85,19 @@ const RightSection = styled.div`
   } */
 
 `;
+
+const Topic = styled.div`
+    width: 100%;
+    h3 {
+    font-size: 1.6rem;
+    margin: 5rem auto;
+    margin-top: 2rem;
+    padding: 1rem 0rem;
+    width: 20%;
+    border-bottom: 1.9px solid black;
+    border-top: 1.9px solid black;
+  }
+`
 
 
 
@@ -148,6 +161,8 @@ const StyledPlayerList = styled.div`
 
 `;
 
+
+
 function Top20Scorers() {
 
     const user = React.useContext(AuthUserContext);
@@ -179,6 +194,7 @@ function Top20Scorers() {
 
     return (
         <Container>
+            <Topic><h3>Top 20 Scorers</h3></Topic>
             <LeftSection>
                 <Top20List topScorersArr={topScorersArr} />
             </LeftSection>
@@ -332,8 +348,6 @@ const Chart = (props) => {
                         }
                     ]
                 },
-
-
 
             }}
         />
