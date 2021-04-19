@@ -1,24 +1,10 @@
 import styled from 'styled-components';
-import { TrySign, Background, Main, Blur, Content, H1, P, BgImage, BgContent, BgBanner} from "../../theme/StyledCom";
+import { BgButtonI, TrySign, Background, Main, Blur, Content, H1, P, BgImage, BgContent, BgBanner} from "../../theme/StyledCom";
 import { Link, withRouter } from "react-router-dom";
 import * as ROUTES from "../../constants/routes";
  
 
- 
-const BgButtonI = styled.div`
- 
-  & a{
-  background-color: red;
-  border-style: none;
-  width: 150px;
-  padding: 10px;
-  font-size: 20px;
- 
-  &:hover {
-    cursor: pointer;
-  }
-}
-`;
+
  
 const BgButton = styled.a`
   border-radius: 5px;
