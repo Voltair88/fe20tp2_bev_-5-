@@ -571,6 +571,12 @@ const Infoboxes = styled.div`
   margin-top: 20px;
 `;
 
+const BoxContainer = styled.div`
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+`;
+
 export {
   OutButton,
   ChartContainer,
@@ -604,4 +610,5 @@ export {
   BgButtonI,
   BgButton,
   Infoboxes,
+  BoxContainer,
 };
