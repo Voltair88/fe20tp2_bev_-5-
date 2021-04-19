@@ -2,33 +2,7 @@ import styled from 'styled-components';
 import { Box, BoxContainer, Infoboxes, BgButton, BgButtonI, TrySign, Background, Main, Blur, Content, H1, P, BgImage, BgContent, BgBanner} from "../../theme/StyledCom";
 import { Link, withRouter } from "react-router-dom";
 import * as ROUTES from "../../constants/routes";
- 
 
- 
-
- 
-
- 
-const TrySignTextArea = styled.div`
-  width: 15%;
-  font-size: 15px;
-`;
- 
-const TrySignButton = styled.button`
-  width: 130px;
-  border-radius: 5px;
-  text-transform: uppercase;
-  font-weight: bold;
-  text-align: center;
-  background-color: red;
-  opacity: 1;
-  text-decoration: none;
-  &:hover {
-    cursor: pointer;
-  }
-`;
- 
- 
  
 const Landing = () => {
   return (
