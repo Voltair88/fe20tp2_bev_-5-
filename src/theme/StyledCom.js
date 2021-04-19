@@ -538,6 +538,21 @@ const TrySign = styled.div`
   text-align: center;
 `;
 
+const BgButtonI = styled.div`
+ 
+  & a{
+  background-color: red;
+  border-style: none;
+  width: 150px;
+  padding: 10px;
+  font-size: 20px;
+ 
+  &:hover {
+    cursor: pointer;
+  }
+}
+`;
+
 export {
   OutButton,
   ChartContainer,
@@ -568,4 +583,5 @@ export {
   BgBanner,
   TeamItemContainer,
   TrySign,
+  BgButtonI,
 };
