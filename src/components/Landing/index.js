@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {Background, Main, Blur, Content, H1, P, BgImage, BgContent, BgBanner} from "../../theme/StyledCom";
+import { TrySign, Background, Main, Blur, Content, H1, P, BgImage, BgContent, BgBanner} from "../../theme/StyledCom";
 import { Link, withRouter } from "react-router-dom";
 import * as ROUTES from "../../constants/routes";
  
@@ -56,10 +56,7 @@ const Box = styled.div`
 	}
 `;
  
-const TrySign = styled.div`
-  margin: 70px;
-  text-align: center;
-`;
+
  
 const TrySignTextArea = styled.div`
   width: 15%;
