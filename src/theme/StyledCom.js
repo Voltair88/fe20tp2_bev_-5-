@@ -499,6 +499,14 @@ const BgContent = styled.div`
     
 `;
 
+const BgBanner = styled.div`
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+    color: #fff;
+`;
+
 export {
   OutButton,
   ChartContainer,
@@ -526,4 +534,5 @@ export {
   StyledTeamList,
   BgContent,
   BgImage,
+  BgBanner,
 };

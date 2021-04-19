@@ -1,14 +1,5 @@
 import styled from 'styled-components';
-import {Background, Main, Blur, Content, H1, P, BgImage, BgContent} from "../../theme/StyledCom";
-
-const BgBanner = styled.div`
-    position: relative;
-    justify-content: center;
-    text-align: center;
-    min-height: 100vh;
-    color: #fff;
-`;
-
+import {Background, Main, Blur, Content, H1, P, BgImage, BgContent, BgBanner} from "../../theme/StyledCom";
 
 
 const Landing = () => {
