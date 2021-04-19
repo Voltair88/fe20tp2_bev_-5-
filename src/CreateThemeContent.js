@@ -44,9 +44,7 @@ const CreateThemeContent = props => {
     };
     const { getFonts } = useTheme();
     const [state, setState] = useState(defaultTheme);
-    
     const [newTheme, setNewTheme] = useState({});
-
     const getThemeObj = () => {
         const themeObj = {};
         themeObj[_.camelCase(state.themeName)] = {

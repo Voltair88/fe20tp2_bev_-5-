@@ -3,9 +3,8 @@ import * as ROUTES from "../../constants/routes";
 import * as ROLES from "../../constants/roles";
 import SignOutButton from "../SignOut";
 import { Burger } from "./Burger.js";
-import React, { useEffect, useState } from "react";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { Navbar, Ul, NavLink, HamMenu } from "../../theme/StyledCom";
+import React from "react";
+import { Navbar, Ul, NavLink } from "../../theme/StyledCom";
 
 const Navigation = (props) => {
   return (
@@ -33,7 +32,16 @@ const NavigationAuth = ({ authUser }) => {
       <li>
         <NavLink to={ROUTES.HOME}>Home</NavLink>
       </li>
-      <NavLink to={ROUTES.ACCOUNT}>Account</NavLink>
+      {!!authUser.fav_team_id && (
+        <li>
+          <NavLink to={`${ROUTES.TEAM}/${authUser.fav_team_id}`}>
+            Favorite
+          </NavLink>
+        </li>
+      )}
+      <li>
+        <NavLink to={ROUTES.ACCOUNT}>Account</NavLink>
+      </li>
       {!!authUser.roles[ROLES.ADMIN] && (
         <li>
           <NavLink to={ROUTES.ADMIN}>Admin</NavLink>
@@ -41,9 +49,6 @@ const NavigationAuth = ({ authUser }) => {
       )}
       <li>
         <SignOutButton />
-      </li>
-      <li>
-        <NavLink to={ROUTES.ACCOUNT}> Account</NavLink>
       </li>
     </Ul>
   );

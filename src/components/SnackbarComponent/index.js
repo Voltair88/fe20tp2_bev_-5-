@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Button from '@material-ui/core/Button';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
 import { makeStyles } from '@material-ui/core/styles';
@@ -18,10 +17,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function SnackbarComponent(props) {
-    const classes = useStyles();
     const [open, setOpen] = useState(true);
 
-    const handleClose = (event, reason) => {
+    const handleClose = (reason) => {
         if (reason === 'clickaway') {
             return;
         }

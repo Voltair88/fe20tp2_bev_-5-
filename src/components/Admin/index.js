@@ -4,7 +4,7 @@ import { withFirebase } from "../Firebase";
 import { withAuthorization } from "../Session";
 import * as ROLES from "../../constants/roles";
 import * as ROUTES from "../../constants/routes";
-import { Input, Content, MyButton } from "../../theme/StyledCom";
+import { Content, MyButton } from "../../theme/StyledCom";
 class AdminPage extends Component {
   constructor(props) {
     super(props);
@@ -38,7 +38,7 @@ class AdminPage extends Component {
   }
 
   render() {
-    const { users, loading } = this.state;
+    const { loading } = this.state;
 
     return (
       <div>
@@ -155,7 +155,6 @@ class UserItemBase extends Component {
   };
 
   onSubmit = (event) => {
-    console.log(this.state.user.league);
   };
 
   updateLeague = (leagueID) => {

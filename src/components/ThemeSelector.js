@@ -4,6 +4,7 @@ import _ from "lodash"; // https://css-tricks.com/theming-and-theme-switching-wi
 import { useTheme } from "../theme/useTheme";
 import { getFromLS } from "../utils/storage";
 import { AuthUserContext, withAuthentication } from "./Session";
+import SnackbarComponent from "./SnackbarComponent";
 
 const ThemedButton = styled.button`
   border: 0;
@@ -61,9 +62,22 @@ const ThemeSelector = (props) => {
   const authUser = useContext(AuthUserContext);
   const themesFromStore = getFromLS("all-themes");
   const [data, setData] = useState(themesFromStore.data);
-  /* const [data, setData] = useState(authUser.theme); */
   const [themes, setThemes] = useState([]);
   const { setMode } = useTheme();
+
+  //Used to display messages in snackbar
+  const [message, setMessage] = useState("");
+  const [severity, setSeverity] = useState("");
+
+  const handleSnackbar = (message, severity) => {
+    setMessage(message);
+    setSeverity(severity);
+  };
+
+  const clearSnackbar = () => {
+    setMessage("");
+    setSeverity("");
+  };
 
   const themeSwitcher = (selectedTheme) => {
     setMode(selectedTheme);
@@ -71,17 +85,20 @@ const ThemeSelector = (props) => {
 
     if (
       props.firebase.user(authUser.uid).update({
-        theme: { name: selectedTheme.name, id: selectedTheme.id },
+        theme: {
+          name: selectedTheme.name,
+          id: selectedTheme.id,
+        },
       })
     ) {
-      console.log("Successfully updated theme");
+      handleSnackbar("Successfully updated the theme", "success");
     } else {
-      console.log("Error updating theme");
+      handleSnackbar("Error updating theme", "error");
     }
 
     window.location.reload();
   };
-  console.log(props);
+  /* console.log(props); */
 
   useEffect(() => {
     setThemes(_.keys(data));
@@ -96,8 +113,6 @@ const ThemeSelector = (props) => {
     const updated = { ...data, [key]: theme[key] };
     setData(updated);
   };
-
-  const refreshPage = () => {};
 
   const ThemeCard = (props) => {
     if (!!props.theme.name) {
@@ -137,6 +152,14 @@ const ThemeSelector = (props) => {
               themes.map((theme) => (
                 <ThemeCard theme={data[theme]} key={data[theme].id} />
               ))}
+
+            {message !== "" ? (
+              <SnackbarComponent
+                severity={severity}
+                message={message}
+                clearSnackbar={clearSnackbar}
+              />
+            ) : null}
           </Container>
         </div>
       )}

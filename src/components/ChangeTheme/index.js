@@ -3,9 +3,7 @@ import styled, { ThemeProvider } from "styled-components";
 import WebFont from "webfontloader";
 import { GlobalStyles } from "../../theme/GlobalStyles";
 import { useTheme } from "../../theme/useTheme";
-
 import ThemeSelector from "../ThemeSelector";
-
 import Dialog from "../../Dialog";
 import CreateThemeContent from "../../CreateThemeContent";
 
@@ -55,7 +53,6 @@ function ChangeTheme() {
   };
 
   const createTheme = (newTheme) => {
-    console.log(newTheme);
     setShowDialog(false);
     setNewTheme(newTheme);
   };

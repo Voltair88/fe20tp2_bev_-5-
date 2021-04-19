@@ -124,7 +124,6 @@ const StyledPlayerList = styled.div`
     }
 
     th{
-      /* background-color: rgb(153, 255, 153,0.2) ; */
       background-color: ${({ theme }) => theme.colors.body};
       text-align: center;
       border: 0.5px solid #ddd;

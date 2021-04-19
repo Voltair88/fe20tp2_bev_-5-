@@ -1,5 +1,4 @@
-import styled from 'styled-components';
-import {Background, Main, Blur, Content, H1, P, BgImage, BgContent, BgBanner} from "../../theme/StyledCom";
+import {Main, Content, H1, P, BgImage, BgContent, BgBanner} from "../../theme/StyledCom";
 
 
 const Landing = () => {
