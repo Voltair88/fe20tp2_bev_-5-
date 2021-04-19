@@ -7,7 +7,7 @@ import { requestOptions } from "../../data.js";
 import { getTeamStats } from "../API";
 import { PieChart } from "../Charts";
 import { LeagueContext, MatchesContext, buildAllMatchStats } from "../API";
-import { StyledTeamList } from "../../theme/StyledCom";
+import { StyledTeamList, TeamItemContainer } from "../../theme/StyledCom";
 
 import FootballImg from "../../img/fotball.png";
 
