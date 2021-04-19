@@ -47,23 +47,14 @@ const Container = styled.div`
 
 const LeftSection = styled.div`
     display: flex;
-    /* align-items: center;
-    justify-content: center; */
     flex: 1;
-    /* margin: 0 50px; */
-    /* width: 40vw; */
     
 `
 const RightSection = styled.div`
-background-color: aquamarine;
-    display: flex;
+    /* display: flex; */
     flex: 1;
     flex-direction: column;
     height: 80vh;
-    /* align-items: center; */
-    /* align-self: center; */
-    
-    /* margin: 0 100px; */
 
     @media ${device.laptop} { 
         width: 100%;
