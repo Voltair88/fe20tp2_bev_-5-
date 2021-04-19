@@ -32,7 +32,16 @@ const NavigationAuth = ({ authUser }) => {
       <li>
         <NavLink to={ROUTES.HOME}>Home</NavLink>
       </li>
-      <NavLink to={ROUTES.ACCOUNT}>Account</NavLink>
+      {!!authUser.fav_team_id && (
+        <li>
+          <NavLink to={`${ROUTES.TEAM}/${authUser.fav_team_id}`}>
+            Favorite
+          </NavLink>
+        </li>
+      )}
+      <li>
+        <NavLink to={ROUTES.ACCOUNT}>Account</NavLink>
+      </li>
       {!!authUser.roles[ROLES.ADMIN] && (
         <li>
           <NavLink to={ROUTES.ADMIN}>Admin</NavLink>
