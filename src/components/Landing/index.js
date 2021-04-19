@@ -1,23 +1,11 @@
 import styled from 'styled-components';
-import { BgButtonI, TrySign, Background, Main, Blur, Content, H1, P, BgImage, BgContent, BgBanner} from "../../theme/StyledCom";
+import { BgButton, BgButtonI, TrySign, Background, Main, Blur, Content, H1, P, BgImage, BgContent, BgBanner} from "../../theme/StyledCom";
 import { Link, withRouter } from "react-router-dom";
 import * as ROUTES from "../../constants/routes";
  
 
 
- 
-const BgButton = styled.a`
-  border-radius: 5px;
-  text-transform: uppercase;
-  font-weight: bold;
-  text-align: center;
-  background-color: #f8c300;
-  opacity: 1;
-  text-decoration: none;
-  &:hover {
-    cursor: pointer;
-  }
-`;
+
  
 const Infoboxes = styled.div`
   margin-top: 20px;

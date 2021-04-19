@@ -553,6 +553,20 @@ const BgButtonI = styled.div`
 }
 `;
 
+ 
+const BgButton = styled.a`
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  background-color: #f8c300;
+  opacity: 1;
+  text-decoration: none;
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
 export {
   OutButton,
   ChartContainer,
@@ -584,4 +598,5 @@ export {
   TeamItemContainer,
   TrySign,
   BgButtonI,
+  BgButton,
 };
