@@ -590,6 +590,25 @@ const Box = styled.div`
 	}
 `;
 
+const TrySignTextArea = styled.div`
+  width: 15%;
+  font-size: 15px;
+`;
+ 
+const TrySignButton = styled.button`
+  width: 130px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  background-color: red;
+  opacity: 1;
+  text-decoration: none;
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
 export {
   OutButton,
   ChartContainer,
@@ -624,4 +643,6 @@ export {
   BgButton,
   Infoboxes,
   BoxContainer,
+  TrySignTextArea,
+  TrySignButton,
 };
