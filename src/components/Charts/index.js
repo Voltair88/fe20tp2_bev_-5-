@@ -4,8 +4,10 @@ import styled from "styled-components";
 
 
 const Container = styled.div`
-  background-color: aqua;
   display: flex;
+  height: 70vh;
+  width: 90%;
+  margin: 0 auto;
 `
 
 export const PieChart = ({ data, children }) => {

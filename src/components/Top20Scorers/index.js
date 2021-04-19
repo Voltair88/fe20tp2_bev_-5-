@@ -30,13 +30,8 @@ export const device = {
 
 const Container = styled.div`
     display: flex;
-    /* overflow-x: hidden; */
-    /* @media (max-width: 768px) {
+    margin: 0 1rem;
     flex-direction: column;
-  } */
-
-  /* width: 100vw; */
-  flex-direction: column;
 
   @media ${device.laptop} { 
     flex-direction: column;
@@ -46,57 +41,38 @@ const Container = styled.div`
 `;
 
 const LeftSection = styled.div`
-    display: flex;
-    flex: 1;
-    
+    display: flex;   
+    margin-bottom: 4rem;
 `
 const RightSection = styled.div`
-    /* display: flex; */
-    flex: 1;
-    flex-direction: column;
-    height: 80vh;
+    height: 90vh;
 
     @media ${device.laptop} { 
         width: 100%;
-        height: 80vh;
-        
+        height: 80vh;  
     }
-    @media ${device.mobileL} { 
-        width: 100%;
-        height: 50vh;
-    }
-    @media ${device.mobileS} { 
-        width: 100%;
-        height: 50vh;
-    }
-
-
-    /* @media screen and (min-width: 769px) and (max-width: 1024px) {
-    width: 50%;
-    font-size: 1.5rem;
-  }
-
-  @media screen and (max-width: 768px) {
-    width: 50%;
-  }
-
-  @media screen and (max-width: 414px) {
-    width: 70%;
-  } */
 
 `;
 
 const Topic = styled.div`
     width: 100%;
+    justify-self: center;
+    margin-top: 2rem;
     h3 {
     font-size: 1.6rem;
-    margin: 5rem auto;
+    margin: 4rem auto;
     margin-top: 2rem;
     padding: 1rem 0rem;
     width: 20%;
     border-bottom: 1.9px solid black;
     border-top: 1.9px solid black;
   }
+
+  @media ${device.mobileL} {
+      h3{
+        width: 70%;
+      }
+    }
 `
 
 
@@ -167,7 +143,6 @@ function Top20Scorers() {
 
     const user = React.useContext(AuthUserContext);
 
-    /* const DEFAULT_LEAGUE = 39;   *///Premier League
     const PREMIER_LEAGUE_ID = 2021;   //Premier league id that admin used to set for a specific user
     const CHAMPIONS_LEAGUE_ID = 2001;   //Champions league id that admin used to set for a specific user
 
@@ -249,7 +224,6 @@ const Chart = (props) => {
     const [player_name_arr, setPlayersArr] = useState([]);
     const [goals_arr, setGoalsArr] = useState([])
     const [shots_arr, setShotsArr] = useState([])
-    const [img_arr, setImgArr] = useState([])
 
     const [red_card, setRedCard] = useState([])
     const [yellow_card, setYellowCard] = useState([])
@@ -272,7 +246,6 @@ const Chart = (props) => {
             setPlayersArr(players_arr)
             setGoalsArr(no_of_goals_arr)
             setShotsArr(no_of_shots_arr)
-            setImgArr(imges_arr)
 
             setRedCard(no_of_red_card)
             setYellowCard(no_of_yellow_card)
