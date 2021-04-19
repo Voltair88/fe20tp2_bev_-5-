@@ -114,7 +114,8 @@ const StyledMatchItem = styled.div`
 
     span:nth-child(2),
     span:nth-child(6) {
-      font-size: 1.1rem;
+      word-break: break-word;
+      font-size: 1rem;
       width: 35%;
     }
     span:nth-child(3),

@@ -17,24 +17,44 @@ const ThemedButton = styled.button`
 `;
 
 const Wrapper = styled.li`
+  width: 60%;
   padding: 48px;
+  margin: 0 auto;
   text-align: center;
   border-radius: 4px;
   border: 1px solid #000;
   list-style: none;
+
+  @media only screen and (max-width: 540px) {
+    width: 50%;
+    margin-bottom: 1rem;
+  }
 `;
 
 const Container = styled.ul`
+  padding: 0;
   display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "a a a";
+  max-width: 100%;
+  grid-gap: 1rem;
+  /* gap: 1rem;
   margin-top: 3rem;
-  padding: 10px;
+  /* padding: 10px; */
+
+  @media only screen and (max-width: 540px) {
+    width: 100%;
+    grid-template-areas: "a";
+    grid-gap: 0.5rem;
+  }
 `;
 
 const Header = styled.h2`
   display: flex;
   justify-content: space-around;
+
+  @media only screen and (max-width: 540px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const ThemeSelector = (props) => {
@@ -44,24 +64,22 @@ const ThemeSelector = (props) => {
   /* const [data, setData] = useState(authUser.theme); */
   const [themes, setThemes] = useState([]);
   const { setMode } = useTheme();
-  
-  const themeSwitcher = (selectedTheme) => {
 
+  const themeSwitcher = (selectedTheme) => {
     setMode(selectedTheme);
     props.setter(selectedTheme);
 
-    if (props.firebase.user(authUser.uid).update({
-      theme: { name: selectedTheme.name, 
-                  id: selectedTheme.id
-        }
-    })) {
+    if (
+      props.firebase.user(authUser.uid).update({
+        theme: { name: selectedTheme.name, id: selectedTheme.id },
+      })
+    ) {
       console.log("Successfully updated theme");
     } else {
-        console.log("Error updating theme");
+      console.log("Error updating theme");
     }
 
     window.location.reload();
-
   };
   console.log(props);
 
@@ -79,14 +97,13 @@ const ThemeSelector = (props) => {
     setData(updated);
   };
 
-  const refreshPage = ()=>{
- }
+  const refreshPage = () => {};
 
   const ThemeCard = (props) => {
-    if(!!props.theme.name){
+    if (!!props.theme.name) {
     }
     return (
-       <Wrapper
+      <Wrapper
         style={{
           backgroundColor: `${data[_.camelCase(props.theme.name)].colors.body}`,
           color: `${data[_.camelCase(props.theme.name)].colors.text}`,
@@ -95,7 +112,7 @@ const ThemeSelector = (props) => {
       >
         <span>Click on the button to set this theme</span>
         <ThemedButton
-          onClick={(theme) => themeSwitcher(props.theme)} 
+          onClick={(theme) => themeSwitcher(props.theme)}
           style={{
             backgroundColor: `${
               data[_.camelCase(props.theme.name)].colors.button.background
@@ -106,7 +123,7 @@ const ThemeSelector = (props) => {
         >
           {props.theme.name}
         </ThemedButton>
-      </Wrapper> 
+      </Wrapper>
     );
   };
 
