@@ -54,6 +54,7 @@ function App() {
   }, [themeLoaded]);
 
   const user = useContext(AuthUserContext);
+  console.log(user);
 
   useEffect(() => {
     fetch(
