@@ -6,7 +6,6 @@ import { getFromLS } from "../utils/storage";
 import { AuthUserContext, withAuthentication } from "./Session";
 import SnackbarComponent from "./SnackbarComponent";
 
-
 const ThemedButton = styled.button`
   border: 0;
   display: inline-block;
@@ -19,24 +18,44 @@ const ThemedButton = styled.button`
 `;
 
 const Wrapper = styled.li`
+  width: 60%;
   padding: 48px;
+  margin: 0 auto;
   text-align: center;
   border-radius: 4px;
   border: 1px solid #000;
   list-style: none;
+
+  @media only screen and (max-width: 540px) {
+    width: 50%;
+    margin-bottom: 1rem;
+  }
 `;
 
 const Container = styled.ul`
+  padding: 0;
   display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "a a a";
+  max-width: 100%;
+  grid-gap: 1rem;
+  /* gap: 1rem;
   margin-top: 3rem;
-  padding: 10px;
+  /* padding: 10px; */
+
+  @media only screen and (max-width: 540px) {
+    width: 100%;
+    grid-template-areas: "a";
+    grid-gap: 0.5rem;
+  }
 `;
 
 const Header = styled.h2`
   display: flex;
   justify-content: space-around;
+
+  @media only screen and (max-width: 540px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const ThemeSelector = (props) => {
@@ -46,38 +65,38 @@ const ThemeSelector = (props) => {
   const [themes, setThemes] = useState([]);
   const { setMode } = useTheme();
 
-
   //Used to display messages in snackbar
-  const [message, setMessage] = useState('');
-  const [severity, setSeverity] = useState('');
+  const [message, setMessage] = useState("");
+  const [severity, setSeverity] = useState("");
 
   const handleSnackbar = (message, severity) => {
     setMessage(message);
     setSeverity(severity);
-  }
+  };
 
   const clearSnackbar = () => {
-    setMessage('');
-    setSeverity('');
-  }
+    setMessage("");
+    setSeverity("");
+  };
 
   const themeSwitcher = (selectedTheme) => {
     setMode(selectedTheme);
     props.setter(selectedTheme);
 
-    if (props.firebase.user(authUser.uid).update({
-      theme: {
-        name: selectedTheme.name,
-        id: selectedTheme.id
-      }
-    })) {
+    if (
+      props.firebase.user(authUser.uid).update({
+        theme: {
+          name: selectedTheme.name,
+          id: selectedTheme.id,
+        },
+      })
+    ) {
       handleSnackbar("Successfully updated the theme", "success");
     } else {
       handleSnackbar("Error updating theme", "error");
     }
 
     window.location.reload();
-
   };
   /* console.log(props); */
 
@@ -110,8 +129,9 @@ const ThemeSelector = (props) => {
         <ThemedButton
           onClick={(theme) => themeSwitcher(props.theme)}
           style={{
-            backgroundColor: `${data[_.camelCase(props.theme.name)].colors.button.background
-              }`,
+            backgroundColor: `${
+              data[_.camelCase(props.theme.name)].colors.button.background
+            }`,
             color: `${data[_.camelCase(props.theme.name)].colors.button.text}`,
             fontFamily: `${data[_.camelCase(props.theme.name)].font}`,
           }}
@@ -133,9 +153,13 @@ const ThemeSelector = (props) => {
                 <ThemeCard theme={data[theme]} key={data[theme].id} />
               ))}
 
-            {message !== '' ?
-              <SnackbarComponent severity={severity} message={message} clearSnackbar={clearSnackbar} /> : null
-            }
+            {message !== "" ? (
+              <SnackbarComponent
+                severity={severity}
+                message={message}
+                clearSnackbar={clearSnackbar}
+              />
+            ) : null}
           </Container>
         </div>
       )}

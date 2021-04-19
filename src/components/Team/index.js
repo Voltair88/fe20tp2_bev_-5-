@@ -7,9 +7,9 @@ import { requestOptions } from "../../data.js";
 import { getTeamStats } from "../API";
 import { PieChart } from "../Charts";
 import { LeagueContext, MatchesContext, buildAllMatchStats } from "../API";
-import { StyledTeamList } from '../../theme/StyledCom';
+import { StyledTeamList } from "../../theme/StyledCom";
 
-
+import FootballImg from "../../img/fotball.png";
 
 //change the props to only recieve team id
 const TeamPage = () => {
@@ -90,15 +90,15 @@ const TeamDetail = ({ team, standings, matches }) => {
 
 export const TeamItem = ({ team }) => {
   return (
-    <>
+    <TeamItemContainer>
       <span>
-        <img src={team.crestUrl} alt="team crest" />
+        <img src={team.crestUrl || FootballImg} alt="team crest" />
       </span>
       <span>{team.name}</span>
       <span>
         <Link to={`${ROUTES.TEAM}/${team.id}`}>Details</Link>
       </span>
-    </>
+    </TeamItemContainer>
   );
 };
 
