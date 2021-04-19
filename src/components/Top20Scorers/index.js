@@ -30,68 +30,51 @@ export const device = {
 
 const Container = styled.div`
     display: flex;
-    /* overflow-x: hidden; */
-    /* @media (max-width: 768px) {
-    flex-direction: column;
-  } */
-
-  /* width: 100vw; */
+    flex-wrap: wrap;
 
   @media ${device.laptop} { 
     flex-direction: column;
   }
 
+`
 
-  background-color: whitesmoke;
+const Topic = styled.div`
+    width: 100%;
+    margin: 10vh auto;
 `
 
 const LeftSection = styled.div`
     display: flex;
-    /* align-items: center;
-    justify-content: center; */
     flex: 1;
-    /* margin: 0 50px; */
-    /* width: 40vw; */
-    
 `
 const RightSection = styled.div`
-background-color: aquamarine;
-    display: flex;
     flex: 1;
-    flex-direction: column;
-    height: 80vh;
-    /* align-items: center; */
-    /* align-self: center; */
+    height: 90vh;
+    /* width: 80%; */
+    align-self: center;
     
-    /* margin: 0 100px; */
 
     @media ${device.laptop} { 
-        width: 100%;
-        height: 80vh;
+        flex: none;
+        height: 60vh;
+        /* width: 100%;
+        height: 80vh; */
+        /* padding-left: 5vw;
+        padding-right: 5vw; */
         
     }
     @media ${device.mobileL} { 
-        width: 100%;
-        height: 50vh;
+        height: 60vh;
+        flex: none;
+        /* width: 50%;
+        height: 50vh; */
     }
     @media ${device.mobileS} { 
-        width: 100%;
-        height: 50vh;
+        height: 60vh;
+        flex: none;
+        /* width: 50%;
+        height: 50vh ; */
     }
-
-
-    /* @media screen and (min-width: 769px) and (max-width: 1024px) {
-    width: 50%;
-    font-size: 1.5rem;
-  }
-
-  @media screen and (max-width: 768px) {
-    width: 50%;
-  }
-
-  @media screen and (max-width: 414px) {
-    width: 70%;
-  } */
 
 `
 
@@ -122,7 +105,6 @@ const StyledPlayerList = styled.div`
     }
 
     th{
-      /* background-color: rgb(153, 255, 153,0.2) ; */
       background-color: rgb(32, 224, 63) ;
       text-align: center;
       border: 0.5px solid #ddd;
@@ -187,6 +169,9 @@ function Top20Scorers() {
 
     return (
         <Container>
+            <Topic>
+                <h3>Top 20 scorers</h3>
+            </Topic>
             <LeftSection>
                 <Top20List topScorersArr={topScorersArr} />
             </LeftSection>
@@ -241,7 +226,6 @@ const Chart = (props) => {
     const [player_name_arr, setPlayersArr] = useState([]);
     const [goals_arr, setGoalsArr] = useState([])
     const [shots_arr, setShotsArr] = useState([])
-    const [img_arr, setImgArr] = useState([])
 
     const [red_card, setRedCard] = useState([])
     const [yellow_card, setYellowCard] = useState([])
@@ -255,7 +239,6 @@ const Chart = (props) => {
             const players_arr = props.topScorersArr.map((item) => item.player.name);
             const no_of_goals_arr = props.topScorersArr.map((item) => item.statistics[0].goals.total);
             const no_of_shots_arr = props.topScorersArr.map((item) => item.statistics[0].shots.total);
-            const imges_arr = props.topScorersArr.map((item) => item.player.photo);
             const no_of_red_card = props.topScorersArr.map((item) => item.statistics[0].cards.red);
             const no_of_yellow_card = props.topScorersArr.map((item) => item.statistics[0].cards.yellow);
             const no_of_red_yellow_card = props.topScorersArr.map((item) => item.statistics[0].cards.yellowred);
@@ -264,7 +247,6 @@ const Chart = (props) => {
             setPlayersArr(players_arr)
             setGoalsArr(no_of_goals_arr)
             setShotsArr(no_of_shots_arr)
-            setImgArr(imges_arr)
 
             setRedCard(no_of_red_card)
             setYellowCard(no_of_yellow_card)
