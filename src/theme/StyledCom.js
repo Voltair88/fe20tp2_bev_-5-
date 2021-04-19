@@ -521,6 +521,16 @@ const BgBanner = styled.div`
   text-align: center;
   min-height: 100vh;
   color: #fff;
+
+  animation: 1s animate 0.5s forwards;
+    @keyframes animate
+    {
+      100%
+      {
+        opacity: 1;
+      }
+ 
+    }
 `;
 
 export {
