@@ -1,22 +1,11 @@
 import styled from 'styled-components';
-import { BoxContainer, Infoboxes, BgButton, BgButtonI, TrySign, Background, Main, Blur, Content, H1, P, BgImage, BgContent, BgBanner} from "../../theme/StyledCom";
+import { Box, BoxContainer, Infoboxes, BgButton, BgButtonI, TrySign, Background, Main, Blur, Content, H1, P, BgImage, BgContent, BgBanner} from "../../theme/StyledCom";
 import { Link, withRouter } from "react-router-dom";
 import * as ROUTES from "../../constants/routes";
  
 
  
-const Box = styled.div`
-  float: left;
-  width: 33.3%;
-  text-align: center;
-  @media (max-width: 768px)
-	{
-		float: none;
-		text-align: center;
-		width: 100%;
-		margin-bottom: 15%;
-	}
-`;
+
  
 
  
