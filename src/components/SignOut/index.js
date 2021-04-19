@@ -1,6 +1,5 @@
 import React from "react";
 import { withFirebase } from "../Firebase";
-import styled from "styled-components";
 import { OutButton } from "../../theme/StyledCom";
 
 const SignOutButton = ({ firebase }) => (

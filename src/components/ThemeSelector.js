@@ -41,29 +41,19 @@ const ThemeSelector = (props) => {
   const authUser = useContext(AuthUserContext);
   const themesFromStore = getFromLS("all-themes");
   const [data, setData] = useState(themesFromStore.data);
-  /* const [data, setData] = useState(authUser.theme); */
   const [themes, setThemes] = useState([]);
   const { setMode } = useTheme();
-  
   const themeSwitcher = (selectedTheme) => {
-
     setMode(selectedTheme);
     props.setter(selectedTheme);
 
-    if (props.firebase.user(authUser.uid).update({
-      theme: { name: selectedTheme.name, 
-                  id: selectedTheme.id
-        }
-    })) {
-      console.log("Successfully updated theme");
-    } else {
-        console.log("Error updating theme");
-    }
-
-    window.location.reload();
-
+    if (
+      props.firebase.user(authUser.uid).update({
+        theme: { name: selectedTheme.name, id: selectedTheme.id },
+      })
+    )
+      window.location.reload();
   };
-  console.log(props);
 
   useEffect(() => {
     setThemes(_.keys(data));
@@ -79,14 +69,11 @@ const ThemeSelector = (props) => {
     setData(updated);
   };
 
-  const refreshPage = ()=>{
- }
-
   const ThemeCard = (props) => {
-    if(!!props.theme.name){
+    if (!!props.theme.name) {
     }
     return (
-       <Wrapper
+      <Wrapper
         style={{
           backgroundColor: `${data[_.camelCase(props.theme.name)].colors.body}`,
           color: `${data[_.camelCase(props.theme.name)].colors.text}`,
@@ -95,7 +82,7 @@ const ThemeSelector = (props) => {
       >
         <span>Click on the button to set this theme</span>
         <ThemedButton
-          onClick={(theme) => themeSwitcher(props.theme)} 
+          onClick={(theme) => themeSwitcher(props.theme)}
           style={{
             backgroundColor: `${
               data[_.camelCase(props.theme.name)].colors.button.background
@@ -106,7 +93,7 @@ const ThemeSelector = (props) => {
         >
           {props.theme.name}
         </ThemedButton>
-      </Wrapper> 
+      </Wrapper>
     );
   };
 

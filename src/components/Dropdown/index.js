@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState } from "react";
 import Select from "react-select";
 import { AuthUserContext, withAuthentication } from "../Session";
 import SnackbarComponent from "../SnackbarComponent";
@@ -59,7 +59,7 @@ function Dropdown(props) {
                 options={props.dataSet}
                 placeholder={props.favorite != null ? props.favorite : ''}  //Set saved value to dropdown as placeholder
             />
-            {message != '' ?
+            {message !== '' ?
                 <SnackbarComponent key={new Date()} severity={severity} message={message} clearSnackbar={clearSnackbar} /> : null
             }
         </div>
@@ -68,7 +68,3 @@ function Dropdown(props) {
 
 
 export default withAuthentication(Dropdown);
-
-
-
-/* key={new Date()}  used this line, https://medium.com/@zaynjarvis/material-ui-is-great-but-how-to-make-snackbar-works-a08b26646fc1*/

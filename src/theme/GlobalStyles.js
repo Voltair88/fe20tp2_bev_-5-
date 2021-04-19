@@ -6,6 +6,7 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.colors.text};
     font-family: ${({ theme }) => theme.font};
     transition: all 0.50s linear;
+    margin: 0px;
   }
   a {
     color: ${({ theme }) => theme.colors.link.text};

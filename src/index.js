@@ -1,9 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
 import App from "./components/App";
 import Firebase, { FirebaseContext } from "./components/Firebase";
-
 import * as themes from './theme/schema.json';
 import { setTols } from './utils/storage';
 

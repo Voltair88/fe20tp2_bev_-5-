@@ -1,16 +1,12 @@
-import React from 'react';
-import styled from 'styled-components';
-import { NavLink} from 'react-router-dom'
+import React from "react";
+import { NavLink } from "react-router-dom";
 import { NewUl } from "../../theme/StyledCom";
-
-
-
 
 const RightNav = ({ open }) => {
   return (
     <NewUl open={open}>
       <div>
-        <NavLink exact to="/" className="Navlink" activeClassName="activ" >
+        <NavLink exact to="/" className="Navlink" activeClassName="activ">
           Landingpage
         </NavLink>
       </div>
@@ -31,6 +27,6 @@ const RightNav = ({ open }) => {
       </div>
     </NewUl>
   );
-}
+};
 
 export default RightNav;

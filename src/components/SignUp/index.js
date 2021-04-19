@@ -1,13 +1,10 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
-
 import { withFirebase } from "../Firebase";
 import * as ROUTES from "../../constants/routes";
 import * as ROLES from "../../constants/roles";
 import * as LEAGUES from "../../constants/leagues";
 import ProfileImage from "../../img/prf_img.png";
-import { faUpload } from "@fortawesome/free-solid-svg-icons";
-
 import { Input, Content, MyButton } from "../../theme/StyledCom";
 
 const SignUpPage = () => (
@@ -68,9 +65,7 @@ class SignUpFormBase extends Component {
         this.props.firebase
           .profileImage(authUser.user.uid)
           .putString(ProfileImage, "data_url", { contentType: "image/png" })
-          .catch((error) => {
-            console.log("Error saving default profile img");
-          });
+          .catch((error) => {});
       })
       .catch((error) => {
         this.setState({ error });
