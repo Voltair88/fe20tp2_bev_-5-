@@ -322,6 +322,7 @@ const ChangeButton = styled(Link)`
 
   @media screen and (max-width: 768px) {
     font-size: 11px;
+    width: 40%;
   }
 `;
 

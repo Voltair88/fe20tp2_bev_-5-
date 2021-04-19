@@ -19,6 +19,7 @@ const UserComp = styled.div`
   display: flex;
   flex-direction: column;
   width: 50%;
+  margin-top: 2rem;
   .username-input{
       font-size: x-large;
       align-self: center;
