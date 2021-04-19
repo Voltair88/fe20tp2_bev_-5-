@@ -533,6 +533,11 @@ const BgBanner = styled.div`
     }
 `;
 
+const TrySign = styled.div`
+  margin: 70px;
+  text-align: center;
+`;
+
 export {
   OutButton,
   ChartContainer,
@@ -562,4 +567,5 @@ export {
   BgImage,
   BgBanner,
   TeamItemContainer,
+  TrySign,
 };
