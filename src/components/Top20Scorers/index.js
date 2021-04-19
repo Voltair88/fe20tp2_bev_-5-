@@ -43,7 +43,7 @@ const Container = styled.div`
 
 
   background-color: whitesmoke;
-`
+`;
 
 const LeftSection = styled.div`
     display: flex;
@@ -93,7 +93,7 @@ background-color: aquamarine;
     width: 70%;
   } */
 
-`
+`;
 
 
 
@@ -156,7 +156,7 @@ const StyledPlayerList = styled.div`
     }
 
 
-`
+`;
 
 function Top20Scorers() {
 
