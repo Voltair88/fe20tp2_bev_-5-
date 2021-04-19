@@ -476,6 +476,29 @@ const StyledTeamList = styled.div`
   }
 `;
 
+//landing background
+
+
+
+const BgImage = styled.div`
+    padding-top: 10em;
+`;
+
+const BgContent = styled.div`
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-background-size: cover;
+    background-size: cover;
+    z-index: -1;
+    background-image: linear-gradient(to left, rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(${props => props.img});
+    background-position: center center;
+    
+`;
+
 export {
   OutButton,
   ChartContainer,
@@ -501,4 +524,6 @@ export {
   StyledBurger,
   NewUl,
   StyledTeamList,
+  BgContent,
+  BgImage,
 };
