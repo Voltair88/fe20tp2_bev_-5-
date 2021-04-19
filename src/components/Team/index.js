@@ -9,27 +9,9 @@ import { PieChart, LineChart } from "../Charts";
 import styled from "styled-components";
 import { LeagueContext, MatchesContext, buildAllMatchStats } from "../API";
 import MatchFeed from "../MatchFeed";
+import { StyledTeamList } from '../../theme/StyledCom';
 
-const StyledTeamList = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  max-height: 100%;
-  max-width: 80%;
-  span {
-    text-align: center;
-    vertical-align: middle;
-    box-sizing: border-box;
-    flex-grow: 1;
-    width: 33.33%;
-    padding: 0.05em 0.5em;
-    overflow: hidden; // Or flex might break
-    list-style: none;
-    img {
-      width: 100%;
-      height: auto;
-    }
-  }
-`;
+
 
 //change the props to only recieve team id
 const TeamPage = () => {

@@ -455,6 +455,27 @@ const NewUl = styled.ul`
   }
 `;
 
+const StyledTeamList = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 100%;
+  max-width: 80%;
+  span {
+    text-align: center;
+    vertical-align: middle;
+    box-sizing: border-box;
+    flex-grow: 1;
+    width: 33.33%;
+    padding: 0.05em 0.5em;
+    overflow: hidden; // Or flex might break
+    list-style: none;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+`;
+
 export {
   OutButton,
   ChartContainer,
@@ -479,4 +500,5 @@ export {
   UserComp,
   StyledBurger,
   NewUl,
+  StyledTeamList,
 };
