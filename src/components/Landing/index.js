@@ -43,7 +43,7 @@ const TrySignButton = styled.button`
  
 const Landing = () => {
   return (
-    <body>
+    <parent>
         <BgBanner>
             <BgImage>
               <BgContent img={"https://wallpaperaccess.com/full/1150517.jpg"}>
@@ -84,7 +84,7 @@ const Landing = () => {
           <p>Try out the application by signing up. Click the button below!</p>
           <TrySignButton><Link to={ROUTES.SIGN_UP}>Sign Up!</Link></TrySignButton>
         </TrySign>
-    </body>  
+    </parent>  
   );
 };
  
