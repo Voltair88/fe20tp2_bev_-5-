@@ -1,15 +1,9 @@
 import styled from 'styled-components';
-import { BgButton, BgButtonI, TrySign, Background, Main, Blur, Content, H1, P, BgImage, BgContent, BgBanner} from "../../theme/StyledCom";
+import { Infoboxes, BgButton, BgButtonI, TrySign, Background, Main, Blur, Content, H1, P, BgImage, BgContent, BgBanner} from "../../theme/StyledCom";
 import { Link, withRouter } from "react-router-dom";
 import * as ROUTES from "../../constants/routes";
  
 
-
-
- 
-const Infoboxes = styled.div`
-  margin-top: 20px;
-`;
  
 const BoxContainer = styled.div`
   width: 100%;

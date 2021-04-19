@@ -567,6 +567,10 @@ const BgButton = styled.a`
   }
 `;
 
+const Infoboxes = styled.div`
+  margin-top: 20px;
+`;
+
 export {
   OutButton,
   ChartContainer,
@@ -599,4 +603,5 @@ export {
   TrySign,
   BgButtonI,
   BgButton,
+  Infoboxes,
 };
