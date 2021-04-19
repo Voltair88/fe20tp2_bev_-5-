@@ -1,9 +1,8 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect} from "react";
 import { useParams } from "react-router-dom"; // https://reactrouter.com/web/api/Hooks/useparams
+import { requestOptions } from "../../data.js";
 import * as ROUTES from "../../constants/routes";
 import { Link } from "react-router-dom";
-import { requestOptions, SEASON_DATA } from "../../data.js";
-import { PieChart, LineChart } from "../Charts";
 import styled from "styled-components";
 
 const MatchContainer = styled.div`
@@ -62,9 +61,7 @@ const MatchDetail = ({ data }) => {
   if (!data) {
     return <p>Loading...</p>;
   }
-  const { match, head2head } = data;
-  console.log(match);
-  console.log(head2head);
+  const { match } = data;
   return (
     <MatchContainer>
       <Head2Head>

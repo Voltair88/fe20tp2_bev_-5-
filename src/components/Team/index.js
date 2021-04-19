@@ -3,12 +3,10 @@ import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom"; // https://reactrouter.com/web/api/Hooks/useparams
 import * as ROUTES from "../../constants/routes";
 import { Link } from "react-router-dom";
-import { requestOptions, SEASON_DATA } from "../../data.js";
+import { requestOptions } from "../../data.js";
 import { getTeamStats } from "../API";
-import { PieChart, LineChart } from "../Charts";
-import styled from "styled-components";
+import { PieChart } from "../Charts";
 import { LeagueContext, MatchesContext, buildAllMatchStats } from "../API";
-import MatchFeed from "../MatchFeed";
 import { StyledTeamList } from '../../theme/StyledCom';
 
 
@@ -47,10 +45,7 @@ const TeamPage = () => {
 };
 
 const TeamDetail = ({ team, standings, matches }) => {
-  //console.log(team);
-  //console.log(standings);
   let lineData = buildAllMatchStats(matches)[team.name];
-  console.log(lineData);
   return (
     <article>
       <figure>

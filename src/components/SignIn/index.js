@@ -4,8 +4,6 @@ import { SignUpLink } from "../SignUp";
 import { PasswordForgetLink } from "../PasswordForget";
 import { withFirebase } from "../Firebase";
 import * as ROUTES from "../../constants/routes";
-import styled from "styled-components";
-
 import { Content, Input, MyButton } from "../../theme/StyledCom";
 
 const SignInPage = () => (

@@ -1939,20 +1939,3 @@ export const TOP_SCORERS = [
 
 
 
-
-
-
-/* fetch("https://api-football-v1.p.rapidapi.com/v3/players/topscorers?league=39&season=2020", {
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-key": "d9ad56e7d3mshf09eb906ca38e7ap162eacjsne5fdd08c2007",
-                "x-rapidapi-host": "api-football-v1.p.rapidapi.com"
-            }
-        })
-            .then((response) => response.json())
-            .then((json) => {
-                console.log(json);
-            })
-            .catch(err => {
-                console.error(err);
-            }); */

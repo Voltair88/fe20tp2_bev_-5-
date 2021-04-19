@@ -3,13 +3,8 @@ export function getTeamsGoalDiff(data) {
     .filter((item) => item.type === "TOTAL")
     .map((item) => {
       return { [item.group]: item.table };
-      //console.log(item.group);
-      //console.log(item.table);
     });
   let flatData = Object.assign(...output);
-  //console.log(flatData);
-  //console.log(Object.keys(flatData));
-
   let flatDataKeys = Object.keys(flatData);
   let flatDataValues = flatDataKeys.map((key) => {
     let object = flatData[key].reduce((acc, item) => {
@@ -18,16 +13,7 @@ export function getTeamsGoalDiff(data) {
     }, {});
     return { [key]: object };
   });
-  console.log(flatDataValues);
 }
-
-/* const getTeamMatches = (data) => {
-  let output = data.matches
-    .filter((item) => item.status === "FINISHED")
-    .map((item) => {});
-}; 
-
-*/
 
 export const buildAllMatchStats = (data) => {
   let teamIDArr = Array(9999)
@@ -65,7 +51,6 @@ export const getMatchStats = (data, teamID) => {
       let goalDiff = 0;
       let team = {};
       //let matchDate = utcDate.substr(0, 10);
-      //console.log(Date.parse(item.utcDate.substr(0, 10)));
       // {goalDiff: 4, (pos om FC Munchen vann)
       // utcDate: '2020-08-08T13:00:00Z',
       // team: {name: 'FC Munchen', id: 42 } }
@@ -88,7 +73,6 @@ export const getMatchStats = (data, teamID) => {
 };
 
 export const getTeamStats = (data, teamId) => {
-  //console.log(`data: ${data}, teamID:${teamId}`);
   let tables = data.standings
     .filter((item) => item.type === "TOTAL")
     .map((item) => {
@@ -98,7 +82,6 @@ export const getTeamStats = (data, teamId) => {
   let mergedTables = [].concat.apply([], tables);
 
   let idTeam = mergedTables.find((item) => item.team.id === Number(teamId));
-  //console.log(idTeam);
   return idTeam;
 };
 

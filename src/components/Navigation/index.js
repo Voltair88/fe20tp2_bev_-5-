@@ -3,9 +3,8 @@ import * as ROUTES from "../../constants/routes";
 import * as ROLES from "../../constants/roles";
 import SignOutButton from "../SignOut";
 import { Burger } from "./Burger.js";
-import React, { useEffect, useState } from "react";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { Navbar, Ul, NavLink, HamMenu } from "../../theme/StyledCom";
+import React from "react";
+import { Navbar, Ul, NavLink } from "../../theme/StyledCom";
 
 const Navigation = (props) => {
   return (

@@ -48,6 +48,7 @@ const NavLink = styled(Link)`
 `;
 //Styling for Landingpage
 
+
 const Main = styled.main`
   box-sizing: border-box;
   display: flex;
@@ -119,11 +120,9 @@ const MyButton = styled.button`
   border: none;
   outline: none;
   cursor: pointer;
-
   padding: 20px 40px;
   border-radius: 4px;
   color: #50c818;
-
   font-size: 15px;
 `;
 
@@ -312,8 +311,6 @@ const ChangeButton = styled(Link)`
   padding: 0.3rem;
   text-decoration: none;
   border: 1.5px black solid;
-  /*   color: black;
- */
   border-radius: 6px;
 
   &:hover {
@@ -332,10 +329,8 @@ const ChangeButton = styled(Link)`
 const UserComp = styled.div`
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   width: 50%;
   .username-input {
-    /* background-color: red; */
     font-size: x-large;
     width: 50%;
     align-self: center;
@@ -372,14 +367,7 @@ const ImageUpload = styled.div`
 
 const Container = styled.div`
   display: flex;
-  /* flex-direction: column; */
-  /* align-items: center; */
   justify-content: center;
-
-  /* & > div{
-        background-color: bisque;
-        width: 400px;
-    } */
 `;
 
 //end user profile page.

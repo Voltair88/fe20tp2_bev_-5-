@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import styled from "styled-components";
+
 import { NavLink } from "react-router-dom";
 import { NewUl } from "../../theme/StyledCom";
 import * as ROUTES from "../../constants/routes";
@@ -7,7 +7,6 @@ import * as ROLES from "../../constants/roles";
 import { AuthUserContext } from "../Session";
 import SignOutButton from "../SignOut";
 import { OpenContext } from "./Burger.js";
-import { Divider } from "@material-ui/core";
 
 const RightNav = ({ open }) => {
   const authUser = useContext(AuthUserContext);

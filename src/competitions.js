@@ -3360,17 +3360,3 @@ export const ALL_COMPETITIONS = [
 
 
 
-
-/* var myHeaders = new Headers();
-myHeaders.append("X-Auth-Token", "ef2c88344214470198023fffda588093");
-
-var requestOptions = {
-  method: 'GET',
-  headers: myHeaders,
-  redirect: 'follow'
-};
-
-fetch("http://api.football-data.org/v2/competitions/", requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error)); */
