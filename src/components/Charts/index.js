@@ -1,5 +1,14 @@
 import { Pie, Line } from "react-chartjs-2";
 import randomColor from "randomcolor";
+import styled from "styled-components";
+
+
+const Container = styled.div`
+  display: flex;
+  height: 70vh;
+  width: 90%;
+  margin: 0 auto;
+`
 
 export const PieChart = ({ data, children }) => {
   if (!data) {
@@ -57,15 +66,19 @@ export const LineChart = ({ data, children }) => {
 
   let labels = [...new Set([].concat.apply([], matchDays()))];
   return (
-    <div>
+    <Container>
       {children && <h5>{children}</h5>}
       <Line
         data={{
           labels: labels,
           datasets: datasets,
         }}
+        options={{
+          responsive: true,
+          maintainAspectRatio: false
+        }}
       />
-    </div>
+    </Container>
   );
 };
 

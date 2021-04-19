@@ -14,7 +14,6 @@ const HomePage = ({ teams }) => {
     <HomeMain>
       <Content>
         <h1>Home</h1>
-        <p>The Home Page is accessible by every signed in user.</p>
         {matches ? (
           <LineChart data={buildAllMatchStats(matches)} />
         ) : (
