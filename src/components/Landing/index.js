@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Box, BoxContainer, Infoboxes, BgButton, BgButtonI, TrySign, Background, Main, Blur, Content, H1, P, BgImage, BgContent, BgBanner} from "../../theme/StyledCom";
+import { TrySignButton, Box, BoxContainer, Infoboxes, BgButton, BgButtonI, TrySign, Main, Content, H1, P, BgImage, BgContent, BgBanner} from "../../theme/StyledCom";
 import { Link, withRouter } from "react-router-dom";
 import * as ROUTES from "../../constants/routes";
 

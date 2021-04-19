@@ -645,4 +645,5 @@ export {
   BoxContainer,
   TrySignTextArea,
   TrySignButton,
+  Box,
 };
