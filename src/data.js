@@ -7,6 +7,85 @@ export const requestOptions = {
   redirect: "follow",
 };
 
+const MATCH_DATA = {
+  head2head: {
+    numberOfMatches: 1,
+    totalGoals: 9,
+    homeTeam: {
+      id: 7518,
+      name: "FK Dinamo Brest",
+      wins: 1,
+      draws: 0,
+      losses: 0,
+    },
+    awayTeam: {
+      id: 1884,
+      name: "Astana FK",
+      wins: 0,
+      draws: 0,
+      losses: 1,
+    },
+  },
+  match: {
+    id: 310556,
+    competition: {
+      id: 2001,
+      name: "UEFA Champions League",
+      area: {
+        name: "Europe",
+        code: "EUR",
+        ensignUrl: null,
+      },
+    },
+    season: {
+      id: 642,
+      startDate: "2020-08-08",
+      endDate: "2021-05-29",
+      currentMatchday: 6,
+      winner: null,
+    },
+    utcDate: "2020-08-18T18:00:00Z",
+    status: "FINISHED",
+    venue: "Stadion OSK Brestskiy",
+    matchday: null,
+    stage: "1ST_QUALIFYING_ROUND",
+    group: "1st Qualifying Round",
+    lastUpdated: "2020-12-17T15:30:07Z",
+    odds: {
+      msg: "Activate Odds-Package in User-Panel to retrieve odds.",
+    },
+    score: {
+      winner: "HOME_TEAM",
+      duration: "REGULAR",
+      fullTime: {
+        homeTeam: 6,
+        awayTeam: 3,
+      },
+      halfTime: {
+        homeTeam: 4,
+        awayTeam: 1,
+      },
+      extraTime: {
+        homeTeam: null,
+        awayTeam: null,
+      },
+      penalties: {
+        homeTeam: null,
+        awayTeam: null,
+      },
+    },
+    homeTeam: {
+      id: 7518,
+      name: "FK Dinamo Brest",
+    },
+    awayTeam: {
+      id: 1884,
+      name: "Astana FK",
+    },
+    referees: [],
+  },
+};
+
 //all leagues available in my api
 export const LEAGUES_DATA = {
   count: 152,

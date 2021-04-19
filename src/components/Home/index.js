@@ -17,7 +17,7 @@ import {
   Blur,
   HomeMain,
   Content,
-} from "../StyledCom";
+} from "../../theme/StyledCom";
 
 const HomePage = ({ teams, scorers }) => {
   /* console.log(matches) */

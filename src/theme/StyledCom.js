@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 //Styling for Navigation
 const Navbar = styled.div`
-  background-color: white;
+  background: ${({ theme }) => theme.colors.header};
   width: 100%;
   height: 8vh;
 `;
@@ -12,11 +12,12 @@ const Ul = styled.ul`
   margin: 0;
   padding-right: 2.5rem;
   display: flex;
+  flex-wrap: nowrap;
   justify-content: flex-end;
   align-items: center;
   list-style: none;
   border-bottom: 2px solid;
-  border-color: white;
+  border-color: ${({ theme }) => theme.colors.text};
   height: 100%;
   font-size: 1.2rem;
   & > li {
@@ -34,11 +35,11 @@ const NavLink = styled(Link)`
   font-weight: 500;
 
   &:hover {
-    color: black;
+    color: ${({ theme }) => theme.colors.hover};
     transition: 0.3s ease-in-out;
   }
 
-  img{
+  img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -141,17 +142,19 @@ const ChartContainer = styled.div`
 const OutButton = styled.button`
   font-weight: 500;
   text-transform: uppercase;
-  color: white;
+  color: ${({ theme }) => theme.colors.text};
   padding: 0.3rem 0.6rem;
   font-size: 1.1rem;
-  border: 2px solid white;
+  border: 2px solid;
+  border-color: ${({ theme }) => theme.colors.text};
   background: none;
   border-radius: 6px;
   cursor: pointer;
 
   &:hover {
+    background-color: ${({ theme }) => theme.colors.text};
     border-color: black;
-    color: black;
+    color: ${({ theme }) => theme.colors.body};
     transition: 0.3s ease-in-out;
   }
 `;
@@ -309,8 +312,9 @@ const ChangeButton = styled(Link)`
   padding: 0.3rem;
   text-decoration: none;
   border: 1.5px black solid;
-/*   color: black;
- */  border-radius: 6px;
+  /*   color: black;
+ */
+  border-radius: 6px;
 
   &:hover {
     border-color: black;
@@ -386,11 +390,11 @@ const StyledBurger = styled.div`
   width: 2rem;
   height: 2rem;
   position: fixed;
-  top: 15px;
-  left: 20px;
+  top: 1.9%;
+  left: 5%;
   z-index: 20;
   display: none;
-  
+
   @media (max-width: 768px) {
     display: flex;
     justify-content: space-around;
@@ -399,58 +403,109 @@ const StyledBurger = styled.div`
   div {
     width: 2rem;
     height: 0.25rem;
-    background-color: ${({ open }) => open ? '#ccc' : '#fff'};
+    background-color: ${({ open }) => (open ? "#ccc" : "#fff")};
     border-radius: 10px;
     transform-origin: 1px;
     transition: all 0.3s linear;
     &:nth-child(1) {
-      transform: ${({ open }) => open ? 'rotate(45deg)' : 'rotate(0)'};
+      transform: ${({ open }) => (open ? "rotate(45deg)" : "rotate(0)")};
     }
     &:nth-child(2) {
-      transform: ${({ open }) => open ? 'translateX(100%)' : 'translateX(0)'};
-      opacity: ${({ open }) => open ? 0 : 1};
+      transform: ${({ open }) => (open ? "translateX(100%)" : "translateX(0)")};
+      opacity: ${({ open }) => (open ? 0 : 1)};
     }
     &:nth-child(3) {
-      transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
+      transform: ${({ open }) => (open ? "rotate(-45deg)" : "rotate(0)")};
     }
   }
 `;
 
 const NewUl = styled.ul`
-  display: flex;
+  display: none;
   flex-flow: row nowrap;
   .Navlink {
-    color:rgba(0,0,0,0);
+    color: rgba(0, 0, 0, 0);
     padding: 1px 20px;
     text-decoration: none;
     border-radius: 5px;
   }
   @media (max-width: 768px) {
+    display: flex;
     margin-top: 0px;
     flex-flow: column nowrap;
-    background-color: #0D2538;
+    background-color: #0d2538;
     position: fixed;
-    transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
-    z-index: 1 ;
+    transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
+    z-index: 1;
     top: 0;
     right: -10;
     width: 150px;
     padding-bottom: 20px;
     padding-top: 3.5rem;
     padding-inline-start: 10px;
-    border-radius: 0px 0px 5px ;
+    border-radius: 0px 0px 5px;
     transition: transform 0.3s ease-in-out;
     font-size: 1.2em;
     line-height: 1.7em;
     .Navlink {
-        text-decoration: none; 
-        border-radius: 8px ;
-        color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      color: white;
     }
-  }`;
+  }
+`;
+
+const StyledTeamList = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 100%;
+  max-width: 80%;
+  span {
+    text-align: center;
+    vertical-align: middle;
+    box-sizing: border-box;
+    flex-grow: 1;
+    width: 33.33%;
+    padding: 0.05em 0.5em;
+    overflow: hidden; // Or flex might break
+    list-style: none;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+`;
+
+//landing background
 
 
 
+const BgImage = styled.div`
+    padding-top: 10em;
+`;
+
+const BgContent = styled.div`
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-background-size: cover;
+    background-size: cover;
+    z-index: -1;
+    background-image: linear-gradient(to left, rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(${props => props.img});
+    background-position: center center;
+    
+`;
+
+const BgBanner = styled.div`
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+    color: #fff;
+`;
 
 export {
   OutButton,
@@ -475,5 +530,9 @@ export {
   ImageUpload,
   UserComp,
   StyledBurger,
-  NewUl
+  NewUl,
+  StyledTeamList,
+  BgContent,
+  BgImage,
+  BgBanner,
 };

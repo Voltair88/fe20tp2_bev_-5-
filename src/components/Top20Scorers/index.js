@@ -38,10 +38,15 @@ const Container = styled.div`
 
 `
 
+<<<<<<< HEAD
 const Topic = styled.div`
     width: 100%;
     margin: 10vh auto;
 `
+=======
+  background-color: whitesmoke;
+`;
+>>>>>>> main
 
 const LeftSection = styled.div`
     display: flex;
@@ -76,7 +81,25 @@ const RightSection = styled.div`
         height: 50vh ; */
     }
 
+<<<<<<< HEAD
 `
+=======
+
+    /* @media screen and (min-width: 769px) and (max-width: 1024px) {
+    width: 50%;
+    font-size: 1.5rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 50%;
+  }
+
+  @media screen and (max-width: 414px) {
+    width: 70%;
+  } */
+
+`;
+>>>>>>> main
 
 
 
@@ -97,15 +120,22 @@ const StyledPlayerList = styled.div`
     }
 
     table{
+        background-color: ${({ theme }) => theme.colors.body};
         border-collapse: collapse;
         width: 90%;  
         table-layout: fixed;
         font-size: smaller;
+        color: ${({ theme }) => theme.colors.text};
         margin: 0 auto;
     }
 
     th{
+<<<<<<< HEAD
       background-color: rgb(32, 224, 63) ;
+=======
+      /* background-color: rgb(153, 255, 153,0.2) ; */
+      background-color: ${({ theme }) => theme.colors.body};
+>>>>>>> main
       text-align: center;
       border: 0.5px solid #ddd;
     }
@@ -136,7 +166,7 @@ const StyledPlayerList = styled.div`
     }
 
 
-`
+`;
 
 function Top20Scorers() {
 

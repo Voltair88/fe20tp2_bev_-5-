@@ -4,7 +4,7 @@ import { withFirebase } from "../Firebase";
 import { withAuthorization } from "../Session";
 import * as ROLES from "../../constants/roles";
 import * as ROUTES from "../../constants/routes";
-import { Input, Content, MyButton } from "../StyledCom";
+import { Input, Content, MyButton } from "../../theme/StyledCom";
 class AdminPage extends Component {
   constructor(props) {
     super(props);
@@ -127,6 +127,7 @@ class UserItemBase extends Component {
       ...props.location.state,
     };
   }
+
   componentDidMount() {
     if (this.state.user) {
       return;
@@ -157,6 +158,12 @@ class UserItemBase extends Component {
     console.log(this.state.user.league);
   };
 
+  updateLeague = (leagueID) => {
+    this.props.firebase.user(this.state.user.uid).update({
+      league: leagueID,
+    });
+  };
+
   render() {
     const { user, loading } = this.state;
     return (
@@ -175,16 +182,16 @@ class UserItemBase extends Component {
               <strong>Username:</strong> {user.username}
             </span>
             <span>
-              <form onSubmit={this.onSubmit}>
-                <Input
-                  name="league"
-                  value={user.league}
-                  onChange={this.onChange}
-                  type="text"
-                  placeholder="User league"
-                />
-                <MyButton type="submit">Update user</MyButton>
-              </form>
+              <MyButton type="button" onClick={() => this.updateLeague(2021)}>
+                change to PL
+              </MyButton>
+            </span>
+            <span>
+              <MyButton type="button" onClick={() => this.updateLeague(2001)}>
+                change to CL
+              </MyButton>
+            </span>
+            <span>
               <MyButton type="button" onClick={this.onSendPasswordResetEmail}>
                 Send Password Reset
               </MyButton>

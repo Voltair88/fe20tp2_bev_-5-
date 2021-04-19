@@ -5,12 +5,9 @@ import SignOutButton from "../SignOut";
 import { Burger } from "./Burger.js";
 import React, { useEffect, useState } from "react";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { Navbar, Ul, NavLink, HamMenu } from "../StyledCom";
+import { Navbar, Ul, NavLink, HamMenu } from "../../theme/StyledCom";
 
 const Navigation = (props) => {
-
-
-
   return (
     <Navbar>
       <AuthUserContext.Consumer>
@@ -48,7 +45,7 @@ const NavigationAuth = ({ authUser }) => {
       <li>
         <NavLink to={ROUTES.ACCOUNT}> Account</NavLink>
       </li>
-    </Ul >
+    </Ul>
   );
 };
 const NavigationNonAuth = () => (

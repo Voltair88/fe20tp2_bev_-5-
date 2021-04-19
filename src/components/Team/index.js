@@ -9,27 +9,9 @@ import { PieChart, LineChart } from "../Charts";
 import styled from "styled-components";
 import { LeagueContext, MatchesContext, buildAllMatchStats } from "../API";
 import MatchFeed from "../MatchFeed";
+import { StyledTeamList } from '../../theme/StyledCom';
 
-const StyledTeamList = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  max-height: 100%;
-  max-width: 80%;
-  span {
-    text-align: center;
-    vertical-align: middle;
-    box-sizing: border-box;
-    flex-grow: 1;
-    width: 33.33%;
-    padding: 0.05em 0.5em;
-    overflow: hidden; // Or flex might break
-    list-style: none;
-    img {
-      width: 100%;
-      height: auto;
-    }
-  }
-`;
+
 
 //change the props to only recieve team id
 const TeamPage = () => {
@@ -39,7 +21,6 @@ const TeamPage = () => {
   const [standingData, setStandingData] = useState(null);
   const League = useContext(LeagueContext);
   const matches = useContext(MatchesContext);
-  //console.log(getMatchStats(matches, id));
 
   //Create another fetch() to get the team data using http://api.football-data.org/v2/teams/{ID from props}
 
@@ -59,15 +40,17 @@ const TeamPage = () => {
           });
       });
   }, []);
-  return team && standingData ? (
-    <TeamDetail standings={standingData} team={team} />
+  return team && matches ? (
+    <TeamDetail matches={matches} standings={standingData} team={team} />
   ) : null;
   //use fetched data to render squad, name and logo of team
 };
 
-const TeamDetail = ({ team, standings }) => {
+const TeamDetail = ({ team, standings, matches }) => {
   //console.log(team);
   //console.log(standings);
+  let lineData = buildAllMatchStats(matches)[team.name];
+  console.log(lineData);
   return (
     <article>
       <figure>
@@ -76,6 +59,7 @@ const TeamDetail = ({ team, standings }) => {
       <h3>{team.name}</h3>
       <div>
         <h4>Season Performance</h4>
+        {/* <LineChart data={lineData && lineData} /> */}
         <PieChart
           data={
             standings &&

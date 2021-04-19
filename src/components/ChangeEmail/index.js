@@ -5,7 +5,7 @@ import {
   MainBlock,
   InputForReset,
   CancelButton,
-} from "../StyledCom";
+} from "../../theme/StyledCom";
 
 import * as ROUTES from "../../constants/routes";
 

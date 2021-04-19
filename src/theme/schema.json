@@ -4,39 +4,42 @@
           "id": "T_001",
           "name": "Light",
           "colors": {
-              "header": "teal",
-              "body": "#FFFFFF",
+              "header": "rgb(9, 130, 82)",
+              "body": "white",
               "text": "black",
+              "hover": "white",
               "button": {
-                  "text": "",
-                  "background": "red"
+                  "text": "white",
+                  "background": "black"
               },
               "link": {
-                  "text": "red",
+                  "text": "black",
                   "opacity": 1
+              },
+              "div": {
+                  "background": "black"
               }
           },
-          "font": "Tinos"
+          "font": "Helvetica "
       },
       "dark" : {
           "id": "T_002",
           "name": "Dark",
           "colors": {
-              "body": "#000000",
-              "text": "#FFFFFF",
+              "header": "rgb(70, 9, 130)",
+              "body": "black",
+              "text": "white",
+              "hover": "black",
               "button": {
                   "text": "white",
-                  "background": "red"
+                  "background": "black"
               },
               "link": {
-                  "text": "teal",
+                  "text": "white",
                   "opacity": 1
-              },
-              "Ul": {
-                  "text": "red"
               }
           },
-          "font": "Open Sans"
+          "font": "Gill Sans"
       },
       "material" : {
           "id": "T_003",
@@ -70,7 +73,7 @@
                   "opacity": 0.8
               }
           },
-          "font": "Kufam"
+          "font": "Myriad"
       },
       "calm" : {
           "id": "T_005",
@@ -121,7 +124,7 @@
                   "opacity": 0.8
               }
           },
-          "font": "Ubuntu"
+          "font": "Franklin Gothic"
       }
   }
 }

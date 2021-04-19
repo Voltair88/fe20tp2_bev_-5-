@@ -8,7 +8,7 @@ import * as LEAGUES from "../../constants/leagues";
 import ProfileImage from "../../img/prf_img.png";
 import { faUpload } from "@fortawesome/free-solid-svg-icons";
 
-import { Input, Content, MyButton } from "../StyledCom";
+import { Input, Content, MyButton } from "../../theme/StyledCom";
 
 const SignUpPage = () => (
   <Content>
