@@ -577,6 +577,19 @@ const BoxContainer = styled.div`
   overflow: hidden;
 `;
 
+const Box = styled.div`
+  float: left;
+  width: 33.3%;
+  text-align: center;
+  @media (max-width: 768px)
+	{
+		float: none;
+		text-align: center;
+		width: 100%;
+		margin-bottom: 15%;
+	}
+`;
+
 export {
   OutButton,
   ChartContainer,
