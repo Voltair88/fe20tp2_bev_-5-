@@ -611,7 +611,7 @@ const BoxContainer = styled.div`
 
 const Box = styled.div`
   float: left;
-  width: 33.3%;
+  width: 100%;
   text-align: center;
   @media (max-width: 768px) {
     float: none;

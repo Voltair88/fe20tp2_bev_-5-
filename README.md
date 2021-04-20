@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# Football Statistics
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
+    <a href="https://github.com/Voltair88/fe20tp2_bev_-5-">
+        <img src="https://i.ibb.co/WKGrNNC/fd0fd54b07d59b6809428816f232841d.jpg">
+    </a>
+</div>
 
-## Available Scripts
+(https://github.com/Voltair88/fe20tp2_bev_-5-)
 
-In the project directory, you can run:
+## App Screenshots
 
-### `npm start`
+Desktop Purple Theme 
+<img src="https://i.ibb.co/t393wQs/Sk-rmbild-2021-04-20-164526.png" width="100%">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+> The source code is open so that you can download the source code and set it up with ease if you would like to have your own exclusive environment.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## What (Football Statistics) ?
 
-### `npm test`
+Free football statistics and data with many different easy-to-use features. Users are able to register with Firebase. Powered by Football-Data and API-Sports.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Why (Football Statistics) ?
 
-### `npm run build`
+- Football Statistics and data in real time
+- The app's responsive web interface helps you to view and interact with football statistics in any resolution device
+- Personalize your experience by applying themes to your account
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Made By
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [Fredrik Wintzell](https://github.com/Tanngrisnr)
+- [Mattias Gulec](https://github.com/Voltair88)
+- [Ivar Munukka](https:://github.com/ivarmun1)
+- [Pathum Weerathunga](https://github.com/pathummw)
+- [Ege Özakdemir](https://github.com/Egeeoz)
 
-### `npm run eject`
+#### Built With
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [Football-Data](https://www.football-data.org/)
+- [Firebase](https://firebase.google.com/)
+- [API Sports](https://api-sports.io/)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Clone Project
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```shell
+git clone https://github.com/Voltair88/fe20tp2_bev_-5-
+```
+![git clone https://github.com/Voltair88/fe20tp2_bev_-5-](https://media.giphy.com/media/tfHlD46ftePiHepZ9V/giphy.gif)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+This command will copy a full project to your local environment.
 
-## Learn More
+## Our Scrumboard
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+(https://trello.com/b/lAOVLYO7/bev)
