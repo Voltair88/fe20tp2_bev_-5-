@@ -8,8 +8,18 @@ import { getTeamStats } from "../API";
 import { PieChart } from "../Charts";
 import { LeagueContext, MatchesContext, buildAllMatchStats } from "../API";
 import { StyledTeamList, TeamItemContainer } from "../../theme/StyledCom";
-
+import styled from "styled-components";
 import FootballImg from "../../img/fotball.png";
+
+const TeamPageContainer = styled.article``;
+
+const PlayerList = styled.div`
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: center;
+`;
 
 //change the props to only recieve team id
 const TeamPage = () => {
@@ -47,7 +57,7 @@ const TeamPage = () => {
 const TeamDetail = ({ team, standings, matches }) => {
   let lineData = buildAllMatchStats(matches)[team.name];
   return (
-    <article>
+    <TeamPageContainer>
       <figure>
         <img src={team.crestUrl} alt="team crest" />
       </figure>
@@ -74,7 +84,7 @@ const TeamDetail = ({ team, standings, matches }) => {
           Goals
         </PieChart>
       </div>
-      <div>
+      <PlayerList>
         <h4>Players</h4>
         {team.squad
           .filter((staff) => staff.role === "PLAYER")
@@ -83,8 +93,8 @@ const TeamDetail = ({ team, standings, matches }) => {
               <Player player={item} />
             </li>
           ))}
-      </div>
-    </article>
+      </PlayerList>
+    </TeamPageContainer>
   );
 };
 
