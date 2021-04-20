@@ -20,7 +20,7 @@
                   "background": "black"
               }
           },
-          "font": "Helvetica "
+          "font": "Nunito Sans "
       },
       "dark" : {
           "id": "T_002",
@@ -32,7 +32,7 @@
               "hover": "black",
               "button": {
                   "text": "white",
-                  "background": "black"
+                  "background": "darkgray"
               },
               "link": {
                   "text": "white",

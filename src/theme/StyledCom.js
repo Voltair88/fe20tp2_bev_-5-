@@ -301,7 +301,15 @@ const CancelButton = styled(Link)`
   }
 `;
 
+const ButtonDiv = styled.div`
+  margin: auto 0;
+  display: flex;
+  flex-direction: row;
+`;
+
 const ChangeButton = styled(Link)`
+  background: ${({ theme }) => theme.colors.header};
+
   display: flex;
   width: 10%;
   flex-direction: column;
@@ -314,17 +322,50 @@ const ChangeButton = styled(Link)`
   border-radius: 6px;
 
   &:hover {
-    border-color: black;
-    color: white;
-    background: black;
+    color: ${({ theme }) => theme.colors.hover};
     transition: 0.3s ease-in-out;
   }
+
+  
 
   @media screen and (max-width: 768px) {
     font-size: 11px;
     width: 40%;
   }
 `;
+
+const HomeButton = styled(Link)`
+  background: ${({ theme }) => theme.colors.header};
+  display: flex;
+  width: 40%;
+  flex-direction: column;
+  font-size: x-large;
+  text-align: center;
+  margin: auto 1px;
+  margin-top: 1rem;
+  padding: 1rem;
+  text-decoration: none;
+  border: 1.5px black solid;
+  border-radius: 3px;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.hover};
+    transition: 0.3s ease-in-out;
+  }
+
+  
+
+  @media screen and (max-width: 768px) {
+    font-size: 11px;
+    width: 40%;
+  }
+`;
+
+const Arrow = styled.span `
+  padding: 12px 5px 2px 5px;
+  border-radius: 50%;
+  border: solid black;
+`
 
 // user profile page
 const UserComp = styled.div`
@@ -647,4 +688,7 @@ export {
   TrySignTextArea,
   TrySignButton,
   Box,
+  ButtonDiv,
+  HomeButton,
+  Arrow,
 };
