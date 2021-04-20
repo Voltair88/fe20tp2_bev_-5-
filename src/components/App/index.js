@@ -15,10 +15,7 @@ import AccountPage from "../Account";
 import AdminPage from "../Admin";
 import TeamPage from "../Team";
 import MatchPage from "../Match";
-import {
-  requestOptions,
-  SCORERS_DATA,
-} from "../../data.js";
+import { requestOptions, SCORERS_DATA } from "../../data.js";
 import { MatchesContext, LeagueContext } from "../API";
 import { AuthUserContext } from "../Session";
 import * as ROUTES from "../../constants/routes";
@@ -26,8 +23,7 @@ import ChangeEmail from "../ChangeEmail";
 import ChangePassword from "../ChangePassword";
 import ChangeTheme from "../ChangeTheme";
 
-const Container = styled.div`
-`;
+const Container = styled.div``;
 
 function App() {
   const [scorersData] = useState(SCORERS_DATA.scorers);
@@ -130,4 +126,3 @@ function App() {
   );
 }
 export default withAuthentication(App);
-
