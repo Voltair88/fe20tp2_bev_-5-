@@ -42,7 +42,7 @@ const HomePage = ({ teams }) => {
               <Top20Scorers />
             </Route>
             <Route path={ROUTES.MATCHFEED}>
-              <MatchFeed matches={matches.matches} />
+              <MatchFeed matches={matches && matches.matches} />
             </Route>
           </Switch>
         </Content>
