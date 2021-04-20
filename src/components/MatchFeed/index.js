@@ -11,8 +11,6 @@ const MatchFeedContainer = styled.div`
     font-size: 1.6rem;
     margin: 0 auto;
     margin-top: 2rem;
-    padding: 1rem 0rem;
-    width: 20%;
     border-bottom: 1.9px solid black;
     border-top: 1.9px solid black;
   }
@@ -54,10 +52,11 @@ const StyledMatchItem = styled.div`
   text-align: center;
   vertical-align: middle;
   box-sizing: border-box;
-  width: 80%;
+  width: 90%;
+  height: auto;
   margin: 0 auto;
-  padding: 1rem;
-  overflow: hidden; // Or flex might break
+/*   padding: 0.2rem;
+ */  overflow: hidden; // Or flex might break
   list-style: none;
   border-bottom: solid 1px black;
 
@@ -77,13 +76,13 @@ const StyledMatchItem = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: 400;
   }
   span:nth-child(3),
   span:nth-child(4),
   span:nth-child(5) {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   span a {
     text-decoration: none;
@@ -100,7 +99,7 @@ const StyledMatchItem = styled.div`
 
   @media only screen and (max-width: 540px) {
     width: 95%;
-    height: 25vh;
+    height: auto;
     padding: 0.3rem 0rem 0rem 0rem;
 
     span {

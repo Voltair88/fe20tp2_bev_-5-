@@ -13,7 +13,6 @@ const HomePage = ({ teams }) => {
   return (
     <HomeMain>
       <Content>
-        <h1>Home</h1>
         {matches ? (
           <LineChart data={buildAllMatchStats(matches)} />
         ) : (
