@@ -14,7 +14,7 @@ const HomePage = ({ teams }) => {
     <HomeMain>
       <Content>
         {matches ? (
-          <LineChart data={buildAllMatchStats(matches)} />
+          <LineChart matchData={buildAllMatchStats(matches)} />
         ) : (
           <p>loading...</p>
         )}
