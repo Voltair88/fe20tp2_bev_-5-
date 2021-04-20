@@ -302,11 +302,14 @@ const CancelButton = styled(Link)`
 `;
 
 const ButtonDiv = styled.div`
+  margin: auto 0;
   display: flex;
   flex-direction: row;
 `;
 
 const ChangeButton = styled(Link)`
+  background: ${({ theme }) => theme.colors.header};
+
   display: flex;
   width: 10%;
   flex-direction: column;
@@ -319,9 +322,7 @@ const ChangeButton = styled(Link)`
   border-radius: 6px;
 
   &:hover {
-    border-color: black;
-    color: white;
-    background: black;
+    color: ${({ theme }) => theme.colors.hover};
     transition: 0.3s ease-in-out;
   }
 
@@ -334,21 +335,21 @@ const ChangeButton = styled(Link)`
 `;
 
 const HomeButton = styled(Link)`
+  background: ${({ theme }) => theme.colors.header};
   display: flex;
   width: 40%;
   flex-direction: column;
-  font-size: large;
+  font-size: x-large;
   text-align: center;
-  margin: auto;
+  margin: auto 1px;
   margin-top: 1rem;
   padding: 1rem;
   text-decoration: none;
   border: 1.5px black solid;
+  border-radius: 3px;
 
   &:hover {
-    border-color: black;
-    color: white;
-    background: black;
+    color: ${({ theme }) => theme.colors.hover};
     transition: 0.3s ease-in-out;
   }
 

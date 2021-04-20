@@ -24,8 +24,8 @@ const HomePage = ({ teams }) => {
 </ScrollToTop>
         <ButtonDiv>
         <HomeButton to={ROUTES.MATCHFEED}>Matchfeed </HomeButton>
-        <HomeButton to={ROUTES.TOP20SCORERS}>Top20Scorers </HomeButton>
-        <HomeButton to={ROUTES.TEAMLIST}>TeamList </HomeButton>
+        <HomeButton to={ROUTES.TOP20SCORERS}>Top 20 Scorers </HomeButton>
+        <HomeButton to={ROUTES.TEAMLIST}>Team List </HomeButton>
         </ButtonDiv>
           <Switch>
           <Route path={ROUTES.TEAMLIST}>

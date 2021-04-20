@@ -32,7 +32,7 @@
               "hover": "black",
               "button": {
                   "text": "white",
-                  "background": "black"
+                  "background": "darkgray"
               },
               "link": {
                   "text": "white",
