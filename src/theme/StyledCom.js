@@ -659,6 +659,7 @@ const AdminContainer = styled.div`
 `;
 
 const UserDetailTable = styled.table`
+  background: ${({ theme }) => theme.colors.body};
   border: 1px solid #ccc;
   border-collapse: collapse;
   margin: 0 auto;
@@ -672,13 +673,14 @@ const UserDetailTable = styled.table`
   }
 
   tr {
-    background-color: #f8f8f8;
     border: 1px solid #ddd;
     padding: 0.35em;
   }
 
   th,
   td {
+    background: ${({ theme }) => theme.colors.body};
+
     padding: 0.625em;
     text-align: center;
   }
@@ -734,6 +736,7 @@ const UserDetailTable = styled.table`
   }
 `;
 const AdminTable = styled.table`
+  background: ${({ theme }) => theme.colors.body};
   border: 1px solid #ccc;
   border-collapse: collapse;
   margin: 0 auto;
@@ -747,7 +750,7 @@ const AdminTable = styled.table`
   }
 
   tr {
-    background-color: #f8f8f8;
+    background: ${({ theme }) => theme.colors.header};
     border: 1px solid #ddd;
     padding: 0.35em;
   }
