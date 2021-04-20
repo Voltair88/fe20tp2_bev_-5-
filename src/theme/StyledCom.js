@@ -360,7 +360,11 @@ const HomeButton = styled(Link)`
   }
 `;
 
-
+const Arrow = styled.span `
+  padding: 12px 5px 2px 5px;
+  border-radius: 50%;
+  border: solid black;
+`
 
 // user profile page
 const UserComp = styled.div`
@@ -685,4 +689,5 @@ export {
   Box,
   ButtonDiv,
   HomeButton,
+  Arrow,
 };
