@@ -4,7 +4,14 @@ import { withFirebase } from "../Firebase";
 import { withAuthorization } from "../Session";
 import * as ROLES from "../../constants/roles";
 import * as ROUTES from "../../constants/routes";
-import { Content, MyButton } from "../../theme/StyledCom";
+import {
+  UserDetailButtonContainer,
+  AdminContainer,
+  UserDetailTable,
+  UserDetailButtons,
+  AdminTable,
+  UserDetailButtonCancel,
+} from "../../theme/StyledCom";
 class AdminPage extends Component {
   constructor(props) {
     super(props);
@@ -41,7 +48,7 @@ class AdminPage extends Component {
     const { loading } = this.state;
 
     return (
-      <div>
+      <AdminContainer>
         <h1>Admin</h1>
         <p>The Admin Page is accessible by every signed in admin user.</p>
 
@@ -51,7 +58,7 @@ class AdminPage extends Component {
           <Route exact path={ROUTES.ADMIN_DETAILS} component={UserItem} />
           <Route exact path={ROUTES.ADMIN} component={UserList} />
         </Switch>
-      </div>
+      </AdminContainer>
     );
   }
 }
@@ -85,35 +92,39 @@ class UserListBase extends Component {
     const { users, loading } = this.state;
 
     return (
-      <div>
-        <h2>Users</h2>
-        {loading && <div>Loading ...</div>}
-        <ul>
+      <>
+        <AdminTable>
+          <caption>Users</caption>
+          {loading && <div>Loading ...</div>}
+          <thead>
+            <tr>
+              <th>Username:</th>
+              <th>E-Mail:</th>
+              <th>ID:</th>
+              <th>Info</th>
+            </tr>
+          </thead>
           {users.map((user) => (
-            <li key={user.uid}>
-              <span>
-                <strong>ID:</strong> {user.uid}
-              </span>
-              <span>
-                <strong>E-Mail:</strong> {user.email}
-              </span>
-              <span>
-                <strong>Username:</strong> {user.username}
-              </span>
-              <span>
-                <Link
-                  to={{
-                    pathname: `${ROUTES.ADMIN}/${user.uid}`,
-                    state: { user },
-                  }}
-                >
-                  Details
-                </Link>
-              </span>
-            </li>
+            <>
+              <tr key={user.uid}>
+                <td data-label="Username:">{user.username}</td>
+                <td data-label="E-Mail:">{user.email}</td>
+                <td data-label="ID:">{user.uid}</td>
+                <td data-label="Info:">
+                  <Link
+                    to={{
+                      pathname: `${ROUTES.ADMIN}/${user.uid}`,
+                      state: { user },
+                    }}
+                  >
+                    Details
+                  </Link>
+                </td>
+              </tr>
+            </>
           ))}
-        </ul>
-      </div>
+        </AdminTable>
+      </>
     );
   }
 }
@@ -154,8 +165,7 @@ class UserItemBase extends Component {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  onSubmit = (event) => {
-  };
+  onSubmit = (event) => {};
 
   updateLeague = (leagueID) => {
     this.props.firebase.user(this.state.user.uid).update({
@@ -167,36 +177,55 @@ class UserItemBase extends Component {
     const { user, loading } = this.state;
     return (
       <div>
-        <h2>User ({this.props.match.params.id})</h2>
         {loading && <div>Loading ...</div>}
         {user && (
-          <Content>
-            <span>
-              <strong>ID:</strong> {user.uid}
-            </span>
-            <span>
-              <strong>E-Mail:</strong> {user.email}
-            </span>
-            <span>
-              <strong>Username:</strong> {user.username}
-            </span>
-            <span>
-              <MyButton type="button" onClick={() => this.updateLeague(2021)}>
-                change to PL
-              </MyButton>
-            </span>
-            <span>
-              <MyButton type="button" onClick={() => this.updateLeague(2001)}>
-                change to CL
-              </MyButton>
-            </span>
-            <span>
-              <MyButton type="button" onClick={this.onSendPasswordResetEmail}>
-                Send Password Reset
-              </MyButton>
-            </span>
-          </Content>
+          <UserDetailTable>
+            <caption>User ({this.props.match.params.id})</caption>
+            <thead>
+              <tr>
+                <th>Username:</th>
+                <th>E-Mail:</th>
+                <th>ID:</th>
+              </tr>
+            </thead>
+            <tr>
+              <td data-label="Username:">{user.username}</td>
+              <td data-label="E-Mail:">{user.email}</td>
+              <td data-label="ID:">{user.uid}</td>
+            </tr>
+          </UserDetailTable>
         )}
+        <UserDetailButtonContainer>
+          <span>
+            <UserDetailButtons
+              type="button"
+              onClick={() => this.updateLeague(2021)}
+            >
+              Change To PL
+            </UserDetailButtons>
+          </span>
+          <span>
+            <UserDetailButtons
+              type="button"
+              onClick={() => this.updateLeague(2001)}
+            >
+              Change To CL
+            </UserDetailButtons>
+          </span>
+          <span>
+            <UserDetailButtons
+              type="button"
+              onClick={this.onSendPasswordResetEmail}
+            >
+              Send Password Reset
+            </UserDetailButtons>
+          </span>
+          <span>
+            <UserDetailButtonCancel to={ROUTES.ADMIN}>
+              Go Back
+            </UserDetailButtonCancel>
+          </span>
+        </UserDetailButtonContainer>
       </div>
     );
   }

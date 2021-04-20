@@ -48,7 +48,6 @@ const NavLink = styled(Link)`
 `;
 //Styling for Landingpage
 
-
 const Main = styled.main`
   box-sizing: border-box;
   display: flex;
@@ -326,8 +325,6 @@ const ChangeButton = styled(Link)`
     transition: 0.3s ease-in-out;
   }
 
-  
-
   @media screen and (max-width: 768px) {
     font-size: 11px;
     width: 40%;
@@ -353,19 +350,17 @@ const HomeButton = styled(Link)`
     transition: 0.3s ease-in-out;
   }
 
-  
-
   @media screen and (max-width: 768px) {
     font-size: 11px;
     width: 40%;
   }
 `;
 
-const Arrow = styled.span `
+const Arrow = styled.span`
   padding: 12px 5px 2px 5px;
   border-radius: 50%;
   border: solid black;
-`
+`;
 
 // user profile page
 const UserComp = styled.div`
@@ -565,14 +560,11 @@ const BgBanner = styled.div`
   color: #fff;
 
   animation: 1s animate 0.5s forwards;
-    @keyframes animate
-    {
-      100%
-      {
-        opacity: 1;
-      }
- 
+  @keyframes animate {
+    100% {
+      opacity: 1;
     }
+  }
 `;
 
 const TrySign = styled.div`
@@ -581,21 +573,19 @@ const TrySign = styled.div`
 `;
 
 const BgButtonI = styled.div`
- 
-  & a{
-  background-color: red;
-  border-style: none;
-  width: 150px;
-  padding: 10px;
-  font-size: 20px;
- 
-  &:hover {
-    cursor: pointer;
+  & a {
+    background-color: red;
+    border-style: none;
+    width: 150px;
+    padding: 10px;
+    font-size: 20px;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
-}
 `;
 
- 
 const BgButton = styled.a`
   border-radius: 5px;
   text-transform: uppercase;
@@ -623,20 +613,19 @@ const Box = styled.div`
   float: left;
   width: 33.3%;
   text-align: center;
-  @media (max-width: 768px)
-	{
-		float: none;
-		text-align: center;
-		width: 100%;
-		margin-bottom: 15%;
-	}
+  @media (max-width: 768px) {
+    float: none;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 15%;
+  }
 `;
 
 const TrySignTextArea = styled.div`
   width: 15%;
   font-size: 15px;
 `;
- 
+
 const TrySignButton = styled.button`
   width: 130px;
   border-radius: 5px;
@@ -648,6 +637,237 @@ const TrySignButton = styled.button`
   text-decoration: none;
   &:hover {
     cursor: pointer;
+  }
+`;
+
+const AdminContainer = styled.div`
+  h1,
+  p,
+  div {
+    text-align: center;
+  }
+
+  @media screen and (max-width: 600px) {
+    h1 {
+      font-size: 1.4rem;
+    }
+    p {
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+`;
+
+const UserDetailTable = styled.table`
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0 auto;
+  padding: 0;
+  width: 90%;
+  table-layout: fixed;
+
+  caption {
+    font-size: 1.5em;
+    margin: 0.5em 0 0.75em;
+  }
+
+  tr {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: 0.35em;
+  }
+
+  th,
+  td {
+    padding: 0.625em;
+    text-align: center;
+  }
+
+  th {
+    font-size: 1em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  @media screen and (max-width: 600px) {
+    border: 0;
+
+    caption {
+      font-size: 1.1em;
+    }
+
+    thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+
+    tr {
+      border-bottom: 3px solid #ddd;
+      display: block;
+      margin-bottom: 0.625em;
+    }
+
+    td {
+      border-bottom: 1px solid #ddd;
+      display: block;
+      font-size: 0.95em;
+      text-align: right;
+      word-wrap: break-word;
+    }
+
+    td::before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    td:last-child {
+      border-bottom: 0;
+    }
+  }
+`;
+const AdminTable = styled.table`
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0 auto;
+  padding: 0;
+  width: 95%;
+  table-layout: fixed;
+
+  caption {
+    font-size: 1.6em;
+    margin: 0.5em 0 0.75em;
+  }
+
+  tr {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: 0.35em;
+  }
+
+  th,
+  td {
+    padding: 0.625em;
+    text-align: center;
+  }
+
+  th {
+    font-size: 1em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 90%;
+    border: 0;
+
+    caption {
+      font-size: 1.3em;
+    }
+
+    thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+
+    tr {
+      border-bottom: 3px solid #ddd;
+      display: block;
+      margin-bottom: 0.625em;
+    }
+
+    td {
+      border-bottom: 1px solid #ddd;
+      display: block;
+      font-size: 0.95em;
+      text-align: right;
+      word-wrap: break-word;
+    }
+
+    td::before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    td:last-child {
+      border-bottom: 0;
+    }
+  }
+`;
+
+const UserDetailButtonContainer = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 20vh;
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    margin: 0 auto;
+    width: 80%;
+    height: 40vh;
+  }
+`;
+
+const UserDetailButtonCancel = styled(Link)`
+  text-decoration: none;
+  font-weight: 500;
+  color: ${({ theme }) => theme.colors.text};
+  padding: 0.3rem 0.6rem;
+  font-size: 1.2rem;
+  border: 2px solid;
+  border-color: ${({ theme }) => theme.colors.text};
+  background: none;
+  border-radius: 6px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.text};
+    border-color: black;
+    color: ${({ theme }) => theme.colors.body};
+    transition: 0.3s ease-in-out;
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 1.1rem;
+  }
+`;
+
+const UserDetailButtons = styled.button`
+  font-weight: 500;
+  color: ${({ theme }) => theme.colors.text};
+  padding: 0.3rem 0.6rem;
+  font-size: 1.2rem;
+  border: 2px solid;
+  border-color: ${({ theme }) => theme.colors.text};
+  background: none;
+  border-radius: 6px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.text};
+    border-color: black;
+    color: ${({ theme }) => theme.colors.body};
+    transition: 0.3s ease-in-out;
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 1.1rem;
   }
 `;
 
@@ -688,6 +908,12 @@ export {
   TrySignTextArea,
   TrySignButton,
   Box,
+  AdminContainer,
+  UserDetailTable,
+  AdminTable,
+  UserDetailButtons,
+  UserDetailButtonContainer,
+  UserDetailButtonCancel,
   ButtonDiv,
   HomeButton,
   Arrow,
