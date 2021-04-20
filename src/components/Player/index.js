@@ -9,11 +9,15 @@ const PlayerItem = styled.div`
   width: 90%;
   height: auto;
   margin: 0 auto;
-  /*   padding: 0.2rem;
- */
   overflow: hidden; // Or flex might break
   list-style: none;
   border-bottom: solid 1px black;
+  span {
+    width: 20%;
+    padding: 1em;
+    box-sizing: border-box;
+    flex-grow: 1;
+  }
 `;
 
 const Player = ({ player }) => (

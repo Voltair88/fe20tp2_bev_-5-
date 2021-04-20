@@ -11,14 +11,30 @@ import { StyledTeamList, TeamItemContainer } from "../../theme/StyledCom";
 import styled from "styled-components";
 import FootballImg from "../../img/fotball.png";
 
-const TeamPageContainer = styled.article``;
+const TeamPageContainer = styled.article`
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  max-width: 100%;
+  align-items: center;
+  text-align: center;
+  div {
+    width: 90%;
+    margin: 0 auto;
+  }
+`;
 
 const PlayerList = styled.div`
+  padding-top: 10%;
   list-style-type: none;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   text-align: center;
+  h3 {
+    width: 100%;
+  }
 `;
 
 //change the props to only recieve team id
@@ -59,10 +75,12 @@ const TeamDetail = ({ team, standings, matches }) => {
 
   return (
     <TeamPageContainer>
-      <figure>
-        <img src={team.crestUrl} alt="team crest" />
-      </figure>
-      <h3>{team.name}</h3>
+      <div>
+        <figure>
+          <img src={team.crestUrl} alt="team crest" />
+        </figure>
+        <h3>{team.name}</h3>
+      </div>
       <div>
         <h4>Season Performance</h4>
         <LineChart matchData={lineData && lineData} />
@@ -86,7 +104,7 @@ const TeamDetail = ({ team, standings, matches }) => {
         </PieChart>
       </div>
       <PlayerList>
-        <h4>Players</h4>
+        <h3>Players</h3>
         {team.squad
           .filter((staff) => staff.role === "PLAYER")
           .map((item) => (

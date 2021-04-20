@@ -23,23 +23,29 @@ export const PieChart = ({ data, children }) => {
   const values = Object.values(data);
 
   return (
-    <div>
+    <Container>
       <h1>Pie chart</h1>
       {children && <h5>{children}</h5>}
-      <Pie
-        data={{
-          datasets: [
-            {
-              data: values,
-              backgroundColor: ["green", "yellow", "red"],
-            },
-          ],
+      <div>
+        <Pie
+          options={{
+            responsive: true,
+            maintainAspectRatio: false,
+          }}
+          data={{
+            datasets: [
+              {
+                data: values,
+                backgroundColor: ["green", "yellow", "red"],
+              },
+            ],
 
-          // These labels appear in the legend and in the tooltips when hovering different arcs
-          labels: labels,
-        }}
-      />
-    </div>
+            // These labels appear in the legend and in the tooltips when hovering different arcs
+            labels: labels,
+          }}
+        />
+      </div>
+    </Container>
   );
 };
 
@@ -111,27 +117,5 @@ export const LineChart = ({ matchData }) => {
         }}
       />
     </Container>
-  );
-};
-
-export const LineChartNew = (props) => {
-  if (!props.data) {
-  }
-
-  //Read LEAGUES_DATA from data.js and choose only id and team name from that data and store in an array
-  let teamArr = [];
-  for (let key of Object.keys(props.data)) {
-    teamArr.push({
-      name: props.data,
-      value: props.data[key],
-    });
-
-    teamArr = [];
-  }
-  return (
-    <>
-      <h1>Hey test</h1>
-      <div>Nothis toosds</div>
-    </>
   );
 };
