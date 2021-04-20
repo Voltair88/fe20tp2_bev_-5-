@@ -17,12 +17,7 @@ const Landing = () => {
                     <BgButtonI>
                       <BgButton href="#info">Get Started</BgButton>
                     </BgButtonI>
-                  </Content>
-                </Main>
-              </BgContent>
-            </BgImage>
-        </BgBanner>
- 
+                     
  
  
         <Infoboxes id="info">
@@ -47,6 +42,11 @@ const Landing = () => {
           <p>Try out the application by signing up. Click the button below!</p>
           <TrySignButton><Link to={ROUTES.SIGN_UP}>Sign Up!</Link></TrySignButton>
         </TrySign>
+                  </Content>
+                </Main>
+              </BgContent>
+            </BgImage>
+        </BgBanner>
     </parent>  
   );
 };
