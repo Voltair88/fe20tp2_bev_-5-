@@ -20,7 +20,6 @@ import { requestOptions, SCORERS_DATA } from "../../data.js";
 import { MatchesContext, LeagueContext } from "../API";
 import { AuthUserContext } from "../Session";
 import * as ROUTES from "../../constants/routes";
-import ChangeEmail from "../ChangeEmail";
 import ChangePassword from "../ChangePassword";
 import ChangeTheme from "../ChangeTheme";
 
@@ -103,9 +102,6 @@ function App() {
                     </Route>
                     <Route path={ROUTES.ADMIN}>
                       <AdminPage />
-                    </Route>
-                    <Route path={ROUTES.CHANGE_EMAIL}>
-                      <ChangeEmail />
                     </Route>
                     <Route path={ROUTES.CHANGE_PASSWORD}>
                       <ChangePassword />

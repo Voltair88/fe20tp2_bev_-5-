@@ -10,7 +10,6 @@ const AccountPage = () => (
       <div>
         <UserProfile user={authUser} />
         <ChangeButton to={ROUTES.CHANGE_PASSWORD}>Change Password</ChangeButton>
-        <ChangeButton to={ROUTES.CHANGE_EMAIL}>Change Email</ChangeButton>
         <ChangeButton to={ROUTES.CHANGE_THEME}>Change theme </ChangeButton>
       </div>
     )}

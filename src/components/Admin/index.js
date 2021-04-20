@@ -106,21 +106,23 @@ class UserListBase extends Component {
           </thead>
           {users.map((user) => (
             <>
-              <tr key={user.uid}>
-                <td data-label="Username:">{user.username}</td>
-                <td data-label="E-Mail:">{user.email}</td>
-                <td data-label="ID:">{user.uid}</td>
-                <td data-label="Info:">
-                  <Link
-                    to={{
-                      pathname: `${ROUTES.ADMIN}/${user.uid}`,
-                      state: { user },
-                    }}
-                  >
-                    Details
-                  </Link>
-                </td>
-              </tr>
+              <tbody>
+                <tr key={user.uid}>
+                  <td data-label="Username:">{user.username}</td>
+                  <td data-label="E-Mail:">{user.email}</td>
+                  <td data-label="ID:">{user.uid}</td>
+                  <td data-label="Info:">
+                    <Link
+                      to={{
+                        pathname: `${ROUTES.ADMIN}/${user.uid}`,
+                        state: { user },
+                      }}
+                    >
+                      Details
+                    </Link>
+                  </td>
+                </tr>
+              </tbody>
             </>
           ))}
         </AdminTable>
@@ -188,11 +190,13 @@ class UserItemBase extends Component {
                 <th>ID:</th>
               </tr>
             </thead>
-            <tr>
-              <td data-label="Username:">{user.username}</td>
-              <td data-label="E-Mail:">{user.email}</td>
-              <td data-label="ID:">{user.uid}</td>
-            </tr>
+            <tbody>
+              <tr>
+                <td data-label="Username:">{user.username}</td>
+                <td data-label="E-Mail:">{user.email}</td>
+                <td data-label="ID:">{user.uid}</td>
+              </tr>
+            </tbody>
           </UserDetailTable>
         )}
         <UserDetailButtonContainer>
