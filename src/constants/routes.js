@@ -15,3 +15,6 @@ export const LEAGUE = "/league";
 export const CHANGE_EMAIL = "/change-email";
 export const CHANGE_PASSWORD = "/change-password";
 export const CHANGE_THEME = "/change-theme";
+export const MATCHFEED = "/home/Matchfeed";
+export const TOP20SCORERS ="/home/top20scorers";
+export const TEAMLIST ="/home/Teamlist";

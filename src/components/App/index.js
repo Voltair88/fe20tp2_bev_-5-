@@ -15,6 +15,7 @@ import AccountPage from "../Account";
 import AdminPage from "../Admin";
 import TeamPage from "../Team";
 import MatchPage from "../Match";
+import Top20Scorers from "../Top20Scorers";
 import { requestOptions, SCORERS_DATA } from "../../data.js";
 import { MatchesContext, LeagueContext } from "../API";
 import { AuthUserContext } from "../Session";
@@ -31,6 +32,7 @@ function App() {
   const [matchesData, setMatchesData] = useState(null);
   const { theme, themeLoaded, getFonts } = useTheme();
   const [selectedTheme, setSelectedTheme] = useState(theme);
+
   useEffect(() => {
     WebFont.load({
       google: {
@@ -44,7 +46,6 @@ function App() {
   }, [themeLoaded]);
 
   const user = useContext(AuthUserContext);
-  console.log(user);
 
   useEffect(() => {
     fetch(
@@ -90,6 +91,9 @@ function App() {
                         scorers={scorersData}
                         teams={teamsData && teamsData.teams}
                       />
+                    </Route>
+                    <Route path={ROUTES.TOP20SCORERS}>
+                      <Top20Scorers />
                     </Route>
                     <Route path={ROUTES.ACCOUNT}>
                       <AccountPage />

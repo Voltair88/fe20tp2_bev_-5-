@@ -55,8 +55,9 @@ const StyledMatchItem = styled.div`
   width: 90%;
   height: auto;
   margin: 0 auto;
-/*   padding: 0.2rem;
- */  overflow: hidden; // Or flex might break
+  /*   padding: 0.2rem;
+ */
+  overflow: hidden; // Or flex might break
   list-style: none;
   border-bottom: solid 1px black;
 
@@ -164,7 +165,7 @@ const MatchItem = ({ match }) => {
 
 const MatchFeed = ({ matches }) => {
   if (!matches) {
-    return null;
+    return <p>Loading...</p>;
   }
 
   return (
