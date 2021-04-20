@@ -15,6 +15,7 @@ import AccountPage from "../Account";
 import AdminPage from "../Admin";
 import TeamPage from "../Team";
 import MatchPage from "../Match";
+import Top20Scorers from "../Top20Scorers";
 import {
   requestOptions,
   SCORERS_DATA,
@@ -35,6 +36,8 @@ function App() {
   const [matchesData, setMatchesData] = useState(null);
   const { theme, themeLoaded, getFonts } = useTheme();
   const [selectedTheme, setSelectedTheme] = useState(theme);
+ 
+
   useEffect(() => {
     WebFont.load({
       google: {
@@ -95,6 +98,9 @@ function App() {
                         teams={teamsData && teamsData.teams}
                       />
                     </Route>
+                    <Route path={ROUTES.TOP20SCORERS}>
+                      <Top20Scorers />
+                    </Route>
                     <Route path={ROUTES.ACCOUNT}>
                       <AccountPage />
                     </Route>
@@ -119,6 +125,7 @@ function App() {
                     <Route path={ROUTES.LANDING}>
                       <LandingPage />
                     </Route>
+
                   </Switch>
                 </MatchesContext.Provider>
               </LeagueContext.Provider>
