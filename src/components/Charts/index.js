@@ -1,14 +1,19 @@
 import { Pie, Line } from "react-chartjs-2";
 import randomColor from "randomcolor";
 import styled from "styled-components";
-
+import { useState } from "react";
 
 const Container = styled.div`
   display: flex;
+  flex-direction: column;
   height: 70vh;
   width: 90%;
+  padding: 3%;
   margin: 0 auto;
-`
+  h5 {
+    width: 100%;
+  }
+`;
 
 export const PieChart = ({ data, children }) => {
   if (!data) {
@@ -38,36 +43,60 @@ export const PieChart = ({ data, children }) => {
   );
 };
 
-export const LineChart = ({ data, children }) => {
-  if (!data) {
+export const LineChart = ({ matchData }) => {
+  if (!matchData) {
     return null;
   }
 
   const matchDays = () => {
-    if (Array.isArray(data)) {
-      let matchdays = data.map(({ matchday }) => matchday);
+    if (Array.isArray(matchData)) {
+      let matchdays = matchData.map(({ matchday }) => `Matchday: ${matchday}`);
       return matchdays;
     } else {
-      let matchdays = Object.values(data).map((item) => {
-        return item.map(({ matchday }) => matchday);
+      let matchdays = Object.values(matchData).map((item) => {
+        return item.map(({ matchday }) => `Matchday: ${matchday}`);
       });
       return matchdays;
     }
   };
 
-  let datasets = Object.values(data).map((item) => {
-    let data = item.map(({ goalDiff }) => goalDiff);
-    let label = item[0].team.name;
-    let datasetKeyProvider = item[0].team.id;
-    let borderColor = randomColor({ seed: item[0].team.id });
-    let fill = false;
-    return { data, label, datasetKeyProvider, borderColor, fill };
-  });
-
+  const getData = () => {
+    if (Array.isArray(matchData)) {
+      let data = matchData.map(({ goalDiff }) => goalDiff);
+      let label = matchData[0].team.name;
+      let datasetKeyProvider = matchData[0].team.id;
+      let borderColor = randomColor({ seed: matchData[0].team.id });
+      let backgroundColor = randomColor({ seed: matchData[0].team.id });
+      let fill = true;
+      return [
+        { data, label, datasetKeyProvider, borderColor, backgroundColor, fill },
+      ];
+    } else {
+      let sets = Object.values(matchData).map((item) => {
+        let data = item.map(({ goalDiff }) => goalDiff);
+        let label = item[0].team.name;
+        let datasetKeyProvider = item[0].team.id;
+        let borderColor = randomColor({ seed: item[0].team.id });
+        let backgroundColor = randomColor({ seed: item[0].team.id });
+        let fill = false;
+        return {
+          data,
+          label,
+          datasetKeyProvider,
+          borderColor,
+          backgroundColor,
+          fill,
+        };
+      });
+      return sets;
+    }
+  };
+  let datasets = getData();
+  console.log(datasets);
   let labels = [...new Set([].concat.apply([], matchDays()))];
   return (
     <Container>
-      {children && <h5>{children}</h5>}
+      <h5>Goal Difference per match</h5>
       <Line
         data={{
           labels: labels,
@@ -75,7 +104,10 @@ export const LineChart = ({ data, children }) => {
         }}
         options={{
           responsive: true,
-          maintainAspectRatio: false
+          maintainAspectRatio: false,
+          legend: {
+            display: false,
+          },
         }}
       />
     </Container>

@@ -5,7 +5,7 @@ import * as ROUTES from "../../constants/routes";
 import { Link } from "react-router-dom";
 import { requestOptions } from "../../data.js";
 import { getTeamStats } from "../API";
-import { PieChart } from "../Charts";
+import { PieChart, LineChart } from "../Charts";
 import { LeagueContext, MatchesContext, buildAllMatchStats } from "../API";
 import { StyledTeamList, TeamItemContainer } from "../../theme/StyledCom";
 import styled from "styled-components";
@@ -56,6 +56,7 @@ const TeamPage = () => {
 
 const TeamDetail = ({ team, standings, matches }) => {
   let lineData = buildAllMatchStats(matches)[team.name];
+
   return (
     <TeamPageContainer>
       <figure>
@@ -64,7 +65,7 @@ const TeamDetail = ({ team, standings, matches }) => {
       <h3>{team.name}</h3>
       <div>
         <h4>Season Performance</h4>
-        {/* <LineChart data={lineData && lineData} /> */}
+        <LineChart matchData={lineData && lineData} />
         <PieChart
           data={
             standings &&
